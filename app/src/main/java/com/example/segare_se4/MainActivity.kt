@@ -7,6 +7,7 @@ import android.media.MediaRecorder
 import android.media.SoundPool
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -254,8 +255,14 @@ class MainActivity : AppCompatActivity() {
             stopRecording()
         }
         imageView15.setOnClickListener {
-            radioButton15.performClick()
             startRecording()
+            AlertDialog.Builder(this)
+                .setTitle("録音しています")
+                .setPositiveButton("OK") { _, _ ->
+                    stopRecording()
+                }
+                .show()
+
         }
     }
 
