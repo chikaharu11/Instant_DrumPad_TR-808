@@ -1,5 +1,6 @@
 package com.example.segare_se4
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.media.AudioAttributes
@@ -10,6 +11,8 @@ import android.os.Handler
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -50,6 +53,7 @@ class MainActivity : AppCompatActivity() {
     private var sound16 = 0
 
 
+    @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -162,7 +166,9 @@ class MainActivity : AppCompatActivity() {
             handler.postDelayed(runnable16, 4993)
         }
 
-        val soundFilePath = this.getExternalFilesDir(null).toString() + "/test.wav"
+        val timeStamp: String = SimpleDateFormat("MM月dd日HH時mm分ss秒").format(Date())
+
+        val soundFilePath = this.getExternalFilesDir(null).toString() + timeStamp + "/.ogg"
 
         val mediaRecorder = MediaRecorder()
 
@@ -196,6 +202,10 @@ class MainActivity : AppCompatActivity() {
                 type = "image/*"
             }
             startActivityForResult(intent, READ_REQUEST_CODE)
+        }
+
+        val runnableREC = Runnable {
+            stopRecording()
         }
 
         imageView.setOnClickListener {
@@ -256,6 +266,7 @@ class MainActivity : AppCompatActivity() {
         }
         imageView15.setOnClickListener {
             startRecording()
+            handler.postDelayed(runnableREC,10000)
             AlertDialog.Builder(this)
                 .setTitle("録音しています")
                 .setPositiveButton("OK") { _, _ ->
