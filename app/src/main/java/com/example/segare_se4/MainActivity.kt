@@ -7,6 +7,7 @@ import android.media.MediaRecorder
 import android.media.SoundPool
 import android.os.Bundle
 import android.os.Handler
+import android.provider.MediaStore
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -162,7 +163,7 @@ class MainActivity : AppCompatActivity() {
             handler.postDelayed(runnable16, 4993)
         }
 
-        val soundFilePath = this.getExternalFilesDir(null).toString() + "/test.ogg"
+        val soundFilePath = this.getExternalFilesDir(null).toString() + "/bj1.ogg"
 
         val mediaRecorder = MediaRecorder()
 
@@ -192,7 +193,7 @@ class MainActivity : AppCompatActivity() {
         fun selectPhoto() {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
-                type = "image/*"
+                type = "audio/*"
             }
             startActivityForResult(intent, READ_REQUEST_CODE)
         }
@@ -209,8 +210,7 @@ class MainActivity : AppCompatActivity() {
             sound1 = soundPool.load(soundFilePath, 1)
         }
         imageView3.setOnClickListener {
-            radioButton3.performClick()
-            selectPhoto()
+            test1()
         }
         imageView4.setOnClickListener {
             radioButton4.performClick()
@@ -258,7 +258,7 @@ class MainActivity : AppCompatActivity() {
         }
         imageView15.setOnClickListener {
             startRecording()
-            handler.postDelayed(runnableREC,10000)
+            handler.postDelayed(runnableREC, 10000)
             AlertDialog.Builder(this)
                 .setTitle("録音しています")
                 .setPositiveButton("OK") { _, _ ->
@@ -300,12 +300,23 @@ class MainActivity : AppCompatActivity() {
                         radioButton13.isChecked -> imageView13.setImageBitmap(image)
                         radioButton14.isChecked -> imageView14.setImageBitmap(image)
                         radioButton15.isChecked -> imageView15.setImageBitmap(image)
-
-
                     }
                 }
             }
         }
+    }
+
+    private fun test1(){
+        val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val cursor = contentResolver.query(audioUri, null, null, null, null)
+        cursor!!.moveToFirst()
+        val path: Array<String?> = arrayOfNulls(cursor.count)
+        for (i in path.indices) {
+            path[i] = cursor.getString(1)
+            cursor.moveToNext()
+        }
+        println(path.contentToString())
+        cursor.close()
     }
 }
 
