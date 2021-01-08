@@ -8,6 +8,10 @@ import android.media.SoundPool
 import android.os.Bundle
 import android.os.Handler
 import android.provider.MediaStore
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -54,6 +58,62 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val cuisine1 = mutableSetOf(
+            ""
+        )
+
+        val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val cursor = contentResolver.query(audioUri, null, null, null, null)
+        cursor!!.moveToFirst()
+        val path: Array<String?> = arrayOfNulls(cursor.count)
+        for (i in path.indices) {
+            path[i] = cursor.getString(1)
+            cuisine1.add(path[i].toString())
+            cursor.moveToNext()
+        }
+
+        println(path.contentToString())
+        cursor.close()
+
+        val spinnerItems = cuisine1.sorted()
+
+        val spinner = findViewById<Spinner>(R.id.spinner)
+
+        val adapter = ArrayAdapter(
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems
+        )
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+
+
+        spinner.adapter = adapter
+
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
+            ) {
+                val spinnerParent = parent as Spinner
+                val item = spinnerParent.selectedItem as String
+
+                    sound1 = soundPool.load(item, 1)
+
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+
+        fun test1(){
+
+        }
 
 
         val audioAttributes = AudioAttributes.Builder()
@@ -193,7 +253,7 @@ class MainActivity : AppCompatActivity() {
         fun selectPhoto() {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
-                type = "audio/*"
+                type = "image/*"
             }
             startActivityForResult(intent, READ_REQUEST_CODE)
         }
@@ -304,19 +364,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    private fun test1(){
-        val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
-        val cursor = contentResolver.query(audioUri, null, null, null, null)
-        cursor!!.moveToFirst()
-        val path: Array<String?> = arrayOfNulls(cursor.count)
-        for (i in path.indices) {
-            path[i] = cursor.getString(1)
-            cursor.moveToNext()
-        }
-        println(path.contentToString())
-        cursor.close()
     }
 }
 
