@@ -59,26 +59,33 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val cuisine1 = mutableSetOf(
+        fun selectPhoto() {
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "image/*"
+            }
+            startActivityForResult(intent, READ_REQUEST_CODE)
+        }
+
+        val audio1 = mutableSetOf(
             ""
         )
 
-        val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
         val cursor = contentResolver.query(audioUri, null, null, null, null)
         cursor!!.moveToFirst()
         val path: Array<String?> = arrayOfNulls(cursor.count)
         for (i in path.indices) {
             path[i] = cursor.getString(1)
-            cuisine1.add(path[i].toString())
+            audio1.add(path[i].toString())
             cursor.moveToNext()
         }
 
-        println(path.contentToString())
         cursor.close()
 
-        val spinnerItems = cuisine1.sorted()
+        val spinnerItems = audio1.sorted()
 
-        val spinner = findViewById<Spinner>(R.id.spinner)
+        val inSpinner = findViewById<Spinner>(R.id.internal_spinner)
 
         val adapter = ArrayAdapter(
             applicationContext,
@@ -89,10 +96,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        spinner.adapter = adapter
+        inSpinner.adapter = adapter
 
 
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -111,8 +118,95 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        fun test1(){
+        val audio2 = mutableSetOf(
+            ""
+        )
 
+        val audioUri2 = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val cursor2 = contentResolver.query(audioUri2, null, null, null, null)
+        cursor2!!.moveToFirst()
+        val path2: Array<String?> = arrayOfNulls(cursor2.count)
+        for (i in path2.indices) {
+            path2[i] = cursor2.getString(1)
+            audio2.add(path2[i].toString())
+            cursor2.moveToNext()
+        }
+
+        cursor2.close()
+
+        val spinnerItems2 = audio2.sorted()
+
+        val exSpinner = findViewById<Spinner>(R.id.external_spinner)
+
+        val adapter2 = ArrayAdapter(
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems2
+        )
+
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+
+
+        exSpinner.adapter = adapter2
+
+
+        exSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
+            ) {
+                val spinnerParent = parent as Spinner
+                val item = spinnerParent.selectedItem as String
+
+                sound1 = soundPool.load(item, 1)
+
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+
+        val menu1 = mutableSetOf(
+            "内部サウンド",
+            "外部サウンド",
+            "画像を選ぶ"
+        )
+
+        val spinnerItems3 = menu1.sorted()
+
+        val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
+
+        val adapter3 = ArrayAdapter(
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems3
+        )
+
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+
+
+        meSpinner.adapter = adapter3
+
+
+        meSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
+            ) {
+                when(position){
+                    0 -> inSpinner.performClick()
+                    1 -> exSpinner.performClick()
+                    2 -> selectPhoto()
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
         }
 
 
@@ -250,13 +344,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        fun selectPhoto() {
-            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-                addCategory(Intent.CATEGORY_OPENABLE)
-                type = "image/*"
-            }
-            startActivityForResult(intent, READ_REQUEST_CODE)
-        }
+
 
         val runnableREC = Runnable {
             stopRecording()
@@ -270,7 +358,7 @@ class MainActivity : AppCompatActivity() {
             sound1 = soundPool.load(soundFilePath, 1)
         }
         imageView3.setOnClickListener {
-            test1()
+
         }
         imageView4.setOnClickListener {
             radioButton4.performClick()
@@ -326,6 +414,58 @@ class MainActivity : AppCompatActivity() {
                 }
                 .show()
 
+        }
+
+        imageView.setOnLongClickListener {
+            radioButton.performClick()
+            true
+        }
+        imageView2.setOnLongClickListener {
+            radioButton2.performClick()
+            true
+        }
+        imageView3.setOnLongClickListener {
+            radioButton3.performClick()
+            true
+        }
+        imageView4.setOnLongClickListener {
+            radioButton4.performClick()
+            true
+        }
+        imageView5.setOnLongClickListener {
+            radioButton5.performClick()
+            meSpinner.performClick()
+            true
+        }
+        imageView6.setOnLongClickListener {
+            true
+        }
+        imageView7.setOnLongClickListener {
+            true
+        }
+        imageView8.setOnLongClickListener {
+            true
+        }
+        imageView9.setOnLongClickListener {
+            true
+        }
+        imageView10.setOnLongClickListener {
+            true
+        }
+        imageView11.setOnLongClickListener {
+            true
+        }
+        imageView12.setOnLongClickListener {
+            true
+        }
+        imageView13.setOnLongClickListener {
+            true
+        }
+        imageView14.setOnLongClickListener {
+            true
+        }
+        imageView15.setOnLongClickListener {
+            true
         }
     }
 
