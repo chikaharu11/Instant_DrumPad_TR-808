@@ -3,40 +3,20 @@ package com.example.segare_se4
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.media.AudioAttributes
-import android.media.MediaRecorder
 import android.media.SoundPool
 import android.os.Bundle
-import android.os.Handler
 import android.provider.MediaStore
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val handler = Handler()
-
-    private val runnable3 = Runnable {
-        soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
-    }
-    private val runnable4 = Runnable {
-        soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
-    }
-    private val runnable8 = Runnable {
-        soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
-    }
-    private val runnable12 = Runnable {
-        soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
-    }
-    private val runnable16 = Runnable {
-        soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f)
-    }
-
     private lateinit var soundPool: SoundPool
+
     private var sound1 = 0
     private var sound2 = 0
     private var sound3 = 0
@@ -52,7 +32,6 @@ class MainActivity : AppCompatActivity() {
     private var sound13 = 0
     private var sound14 = 0
     private var sound15 = 0
-    private var sound16 = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -107,10 +86,23 @@ class MainActivity : AppCompatActivity() {
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
-
-                    sound1 = soundPool.load(item, 1)
-
-
+                when{
+                    radioButton.isChecked -> sound1 = soundPool.load(item, 1)
+                    radioButton2.isChecked -> sound2 = soundPool.load(item, 1)
+                    radioButton3.isChecked -> sound3 = soundPool.load(item, 1)
+                    radioButton4.isChecked -> sound4 = soundPool.load(item, 1)
+                    radioButton5.isChecked -> sound5 = soundPool.load(item, 1)
+                    radioButton6.isChecked -> sound6 = soundPool.load(item, 1)
+                    radioButton7.isChecked -> sound7 = soundPool.load(item, 1)
+                    radioButton8.isChecked -> sound8 = soundPool.load(item, 1)
+                    radioButton9.isChecked -> sound9 = soundPool.load(item, 1)
+                    radioButton10.isChecked -> sound10 = soundPool.load(item, 1)
+                    radioButton11.isChecked -> sound11 = soundPool.load(item, 1)
+                    radioButton12.isChecked -> sound12 = soundPool.load(item, 1)
+                    radioButton13.isChecked -> sound13 = soundPool.load(item, 1)
+                    radioButton14.isChecked -> sound14 = soundPool.load(item, 1)
+                    radioButton15.isChecked -> sound15 = soundPool.load(item, 1)
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -158,10 +150,23 @@ class MainActivity : AppCompatActivity() {
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
-
-                sound1 = soundPool.load(item, 1)
-
-
+                when{
+                    radioButton.isChecked -> sound1 = soundPool.load(item, 1)
+                    radioButton2.isChecked -> sound2 = soundPool.load(item, 1)
+                    radioButton3.isChecked -> sound3 = soundPool.load(item, 1)
+                    radioButton4.isChecked -> sound4 = soundPool.load(item, 1)
+                    radioButton5.isChecked -> sound5 = soundPool.load(item, 1)
+                    radioButton6.isChecked -> sound6 = soundPool.load(item, 1)
+                    radioButton7.isChecked -> sound7 = soundPool.load(item, 1)
+                    radioButton8.isChecked -> sound8 = soundPool.load(item, 1)
+                    radioButton9.isChecked -> sound9 = soundPool.load(item, 1)
+                    radioButton10.isChecked -> sound10 = soundPool.load(item, 1)
+                    radioButton11.isChecked -> sound11 = soundPool.load(item, 1)
+                    radioButton12.isChecked -> sound12 = soundPool.load(item, 1)
+                    radioButton13.isChecked -> sound13 = soundPool.load(item, 1)
+                    radioButton14.isChecked -> sound14 = soundPool.load(item, 1)
+                    radioButton15.isChecked -> sound15 = soundPool.load(item, 1)
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -221,7 +226,7 @@ class MainActivity : AppCompatActivity() {
 
                 .setAudioAttributes(audioAttributes)
 
-                .setMaxStreams(10)
+                .setMaxStreams(15)
                 .build()
 
         sound1 = soundPool.load(this, R.raw.ta, 1)
@@ -254,182 +259,87 @@ class MainActivity : AppCompatActivity() {
 
         sound15 = soundPool.load(this, R.raw.ta, 1)
 
-        sound16 = soundPool.load(this, R.raw.ta, 1)
 
         imageView.setOnClickListener {
-
             soundPool.play(sound1, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView2.setOnClickListener {
-
             soundPool.play(sound2, 1.0f, 1.0f, 1, 0, 1.0f)
-            handler.postDelayed(runnable3, 3998)
-            handler.postDelayed(runnable4, 7996)
         }
 
         imageView3.setOnClickListener {
+            soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
 
+        imageView4.setOnClickListener {
+            soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
+
+        imageView5.setOnClickListener {
             soundPool.play(sound5, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
-        imageView4.setOnClickListener {
-
+        imageView6.setOnClickListener {
             soundPool.play(sound6, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
-        imageView5.setOnClickListener {
-
-            soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
-            handler.postDelayed(runnable8, 4993)
-        }
-
-        imageView6.setOnClickListener {
-
-            soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
-        }
-
         imageView7.setOnClickListener {
+            soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
 
+        imageView8.setOnClickListener {
+            soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
+
+        imageView9.setOnClickListener {
+            soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
+
+        }
+
+        imageView10.setOnClickListener {
             soundPool.play(sound10, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
-        imageView8.setOnClickListener {
-
+        imageView11.setOnClickListener {
             soundPool.play(sound11, 1.0f, 1.0f, 0, 0, 1.0f)
-            handler.postDelayed(runnable12, 3998)
         }
 
-        imageView9.setOnClickListener {
+        imageView12.setOnClickListener {
+            soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
 
+        imageView13.setOnClickListener {
             soundPool.play(sound13, 1.0f, 1.0f, 0, 0, 1.0f)
-
         }
 
-        imageView10.setOnClickListener {
-
+        imageView14.setOnClickListener {
             soundPool.play(sound14, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
-        imageView12.setOnClickListener {
-
-            soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
-            handler.postDelayed(runnable16, 4993)
-        }
-
-        val soundFilePath = this.getExternalFilesDir(null).toString() + "/bj1.ogg"
-
-        val mediaRecorder = MediaRecorder()
-
-        fun startRecording() {
-            try {
-                mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
-                mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
-                mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
-                mediaRecorder.setOutputFile(soundFilePath)
-                mediaRecorder.prepare()
-                mediaRecorder.start()
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
-
-        fun stopRecording() {
-            try {
-                mediaRecorder.stop()
-                mediaRecorder.reset()
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
-
-
-
-
-        val runnableREC = Runnable {
-            stopRecording()
-        }
-
-        imageView.setOnClickListener {
-            radioButton.performClick()
-            soundPool.play(sound1, 1.0f, 1.0f, 0, 0, 1.0f)
-        }
-        imageView2.setOnClickListener {
-            sound1 = soundPool.load(soundFilePath, 1)
-        }
-        imageView3.setOnClickListener {
-
-        }
-        imageView4.setOnClickListener {
-            radioButton4.performClick()
-            selectPhoto()
-        }
-        imageView5.setOnClickListener {
-            radioButton5.performClick()
-            selectPhoto()
-        }
-        imageView6.setOnClickListener {
-            radioButton6.performClick()
-            selectPhoto()
-        }
-        imageView7.setOnClickListener {
-            radioButton7.performClick()
-            selectPhoto()
-        }
-        imageView8.setOnClickListener {
-            radioButton8.performClick()
-            selectPhoto()
-        }
-        imageView9.setOnClickListener {
-            radioButton9.performClick()
-            selectPhoto()
-        }
-        imageView10.setOnClickListener {
-            radioButton10.performClick()
-            selectPhoto()
-        }
-        imageView11.setOnClickListener {
-            radioButton11.performClick()
-            selectPhoto()
-        }
-        imageView12.setOnClickListener {
-            radioButton12.performClick()
-            selectPhoto()
-        }
-        imageView13.setOnClickListener {
-            radioButton13.performClick()
-            AudioRecordSample().startRecording()
-        }
-        imageView14.setOnClickListener {
-            radioButton14.performClick()
-            stopRecording()
-        }
         imageView15.setOnClickListener {
-            startRecording()
-            handler.postDelayed(runnableREC, 10000)
-            AlertDialog.Builder(this)
-                .setTitle("録音しています")
-                .setPositiveButton("OK") { _, _ ->
-                    stopRecording()
-                }
-                .show()
-
+            soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
         }
+
 
         imageView.setOnLongClickListener {
             radioButton.performClick()
+            meSpinner.performClick()
             true
         }
         imageView2.setOnLongClickListener {
             radioButton2.performClick()
+            meSpinner.performClick()
             true
         }
         imageView3.setOnLongClickListener {
             radioButton3.performClick()
+            meSpinner.performClick()
             true
         }
         imageView4.setOnLongClickListener {
             radioButton4.performClick()
+            meSpinner.performClick()
             true
         }
         imageView5.setOnLongClickListener {
@@ -438,33 +348,53 @@ class MainActivity : AppCompatActivity() {
             true
         }
         imageView6.setOnLongClickListener {
+            radioButton6.performClick()
+            meSpinner.performClick()
             true
         }
         imageView7.setOnLongClickListener {
+            radioButton7.performClick()
+            meSpinner.performClick()
             true
         }
         imageView8.setOnLongClickListener {
+            radioButton8.performClick()
+            meSpinner.performClick()
             true
         }
         imageView9.setOnLongClickListener {
+            radioButton9.performClick()
+            meSpinner.performClick()
             true
         }
         imageView10.setOnLongClickListener {
+            radioButton10.performClick()
+            meSpinner.performClick()
             true
         }
         imageView11.setOnLongClickListener {
+            radioButton11.performClick()
+            meSpinner.performClick()
             true
         }
         imageView12.setOnLongClickListener {
+            radioButton12.performClick()
+            meSpinner.performClick()
             true
         }
         imageView13.setOnLongClickListener {
+            radioButton13.performClick()
+            meSpinner.performClick()
             true
         }
         imageView14.setOnLongClickListener {
+            radioButton14.performClick()
+            meSpinner.performClick()
             true
         }
         imageView15.setOnLongClickListener {
+            radioButton15.performClick()
+            meSpinner.performClick()
             true
         }
     }
