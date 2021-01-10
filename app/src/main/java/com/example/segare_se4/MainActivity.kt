@@ -202,6 +202,10 @@ class MainActivity : AppCompatActivity() {
                 parent: AdapterView<*>?,
                 view: View?, position: Int, id: Long
             ) {
+                if (!inSpinner.isFocusable) {
+                    inSpinner.isFocusable = true
+                    return
+                }
                 when(position){
                     0 -> inSpinner.performClick()
                     1 -> exSpinner.performClick()
@@ -213,6 +217,8 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+
+        inSpinner.isFocusable = false
 
 
         val audioAttributes = AudioAttributes.Builder()
