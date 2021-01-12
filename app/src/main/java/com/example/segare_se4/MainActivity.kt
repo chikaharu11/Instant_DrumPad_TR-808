@@ -6,6 +6,8 @@ import android.media.AudioAttributes
 import android.media.SoundPool
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -439,6 +441,41 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+
+            R.id.menu1 -> {
+                return true
+            }
+
+            R.id.menu2 -> {
+                return true
+            }
+
+            R.id.menu3 -> {
+                return true
+            }
+
+            R.id.menu4 -> {
+                return true
+            }
+
+            R.id.menu5 -> {
+                return true
+            }
+
+            else -> return super.onOptionsItemSelected(item)
         }
     }
 }
