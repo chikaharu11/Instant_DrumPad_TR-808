@@ -3,6 +3,8 @@ package com.example.segare_se4
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.media.AudioAttributes
+import android.media.AudioManager
+import android.media.MediaPlayer
 import android.media.SoundPool
 import android.os.Bundle
 import android.provider.MediaStore
@@ -16,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+
+    lateinit var mp: MediaPlayer
 
     private lateinit var soundPool: SoundPool
 
@@ -444,6 +449,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun play() {
+
+        volumeControlStream = AudioManager.STREAM_MUSIC
+        mp= MediaPlayer.create(this,R.raw.ta)
+        mp.isLooping=true
+
+        mp.start()
+    }
+
+    fun stop() {
+        mp.stop()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
 
@@ -456,10 +474,12 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
 
             R.id.menu1 -> {
+                play()
                 return true
             }
 
             R.id.menu2 -> {
+                stop()
                 return true
             }
 
@@ -477,6 +497,10 @@ class MainActivity : AppCompatActivity() {
 
             else -> return super.onOptionsItemSelected(item)
         }
+    }
+    override fun onDestroy() {
+        mp.release()
+        super.onDestroy()
     }
 }
 
