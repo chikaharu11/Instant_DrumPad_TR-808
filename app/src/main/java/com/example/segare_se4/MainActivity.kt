@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
 
-    lateinit var mp: MediaPlayer
+    private lateinit var mp: MediaPlayer
 
     private lateinit var soundPool: SoundPool
 
@@ -450,16 +450,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun play() {
-
+        mp = MediaPlayer()
         volumeControlStream = AudioManager.STREAM_MUSIC
-        mp= MediaPlayer.create(this,R.raw.ta)
+        mp.setDataSource("/system/media/audio/ringtones/Gimme_Mo_Town.ogg")
         mp.isLooping=true
-
+        mp.prepare()
         mp.start()
     }
 
-    fun stop() {
+    private fun stop() {
         mp.stop()
+        mp.reset()
+        mp.release()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
