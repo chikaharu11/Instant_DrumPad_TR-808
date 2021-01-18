@@ -1,11 +1,9 @@
 package com.example.segare_se4
 
 import android.content.Intent
+import android.database.Cursor
 import android.graphics.BitmapFactory
-import android.media.AudioAttributes
-import android.media.AudioManager
-import android.media.MediaPlayer
-import android.media.SoundPool
+import android.media.*
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.Menu
@@ -16,6 +14,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val audio1 = mutableSetOf(
-                ""
+            ""
         )
 
         audio1.clear()
@@ -76,8 +75,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.internal_spinner)
 
         val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -90,8 +89,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
@@ -120,7 +119,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val audio2 = mutableSetOf(
-                ""
+            ""
         )
 
         audio2.clear()
@@ -142,8 +141,8 @@ class MainActivity : AppCompatActivity() {
         val exSpinner = findViewById<Spinner>(R.id.external_spinner)
 
         val adapter2 = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems2
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems2
         )
 
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -156,8 +155,8 @@ class MainActivity : AppCompatActivity() {
         exSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
@@ -186,9 +185,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         val menu1 = mutableSetOf(
-                "内部サウンド",
-                "外部サウンド",
-                "画像を選ぶ"
+            "内部サウンド",
+            "外部サウンド",
+            "画像を選ぶ"
         )
 
         val spinnerItems3 = menu1.sorted()
@@ -196,8 +195,8 @@ class MainActivity : AppCompatActivity() {
         val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
 
         val adapter3 = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems3
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems3
         )
 
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -210,8 +209,8 @@ class MainActivity : AppCompatActivity() {
         meSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -463,30 +462,31 @@ class MainActivity : AppCompatActivity() {
 
     private fun select() {
         val audio1 = mutableSetOf(
-                ""
+            ""
         )
 
         audio1.clear()
 
-        val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
-        val cursor = contentResolver.query(audioUri, null, null, null, null)
-        cursor!!.moveToFirst()
-        val path: Array<String?> = arrayOfNulls(cursor.count)
-        for (i in path.indices) {
-            path[i] = cursor.getString(1)
-            audio1.add(path[i].toString())
-            cursor.moveToNext()
+        val manager = RingtoneManager(this) // マネージャを作成
+
+        manager.setType(RingtoneManager.TYPE_RINGTONE)
+        val cursor: Cursor = manager.cursor
+        while (cursor.moveToNext()) {
+            val title: String = cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX) // 着信音などの名前
+            val uriPrefix: String = cursor.getString(RingtoneManager.URI_COLUMN_INDEX)
+            val index: String = cursor.getString(RingtoneManager.ID_COLUMN_INDEX)
+            val uri = "$uriPrefix/$index" // ※URIはuriPrefixとindexをつなげる必要あり
+                audio1.add("($title)  $uri")
         }
 
-        cursor.close()
 
         val spinnerItems = audio1.sorted()
 
         val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
 
         val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -500,15 +500,19 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
+                if (!inSpinner.isFocusable) {
+                    inSpinner.isFocusable = true
+                    return
+                }
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 mp = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
                 mp.isLooping=true
-                mp.setDataSource(item)
+                mp.setDataSource(item.replace("(","").replaceFirst("[a-z]+","").replace(")","").replace("  ",""))
                 mp.prepare()
             }
 
@@ -516,6 +520,7 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+        inSpinner.isFocusable = false
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
