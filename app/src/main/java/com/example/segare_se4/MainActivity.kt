@@ -467,15 +467,15 @@ class MainActivity : AppCompatActivity() {
 
         audio1.clear()
 
-        val manager = RingtoneManager(this) // マネージャを作成
+        val manager = RingtoneManager(this)
 
         manager.setType(RingtoneManager.TYPE_RINGTONE)
         val cursor: Cursor = manager.cursor
         while (cursor.moveToNext()) {
-            val title: String = cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX) // 着信音などの名前
+            val title: String = cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX)
             val uriPrefix: String = cursor.getString(RingtoneManager.URI_COLUMN_INDEX)
             val index: String = cursor.getString(RingtoneManager.ID_COLUMN_INDEX)
-            val uri = "$uriPrefix/$index" // ※URIはuriPrefixとindexをつなげる必要あり
+            val uri = "$uriPrefix/$index"
                 audio1.add("($title)  $uri")
         }
 
@@ -512,7 +512,7 @@ class MainActivity : AppCompatActivity() {
                 mp = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
                 mp.isLooping=true
-                mp.setDataSource(item.replace("(","").replaceFirst("[a-z]+","").replace(")","").replace("  ",""))
+                mp.setDataSource(item.replaceBefore("content",""))
                 mp.prepare()
             }
 
@@ -521,6 +521,120 @@ class MainActivity : AppCompatActivity() {
             }
         }
         inSpinner.isFocusable = false
+    }
+
+    private fun select2() {
+        val audio1 = mutableSetOf(
+            ""
+        )
+
+        audio1.clear()
+
+        val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val cursor = contentResolver.query(audioUri, null, null, null, null)
+        cursor!!.moveToFirst()
+        val path: Array<String?> = arrayOfNulls(cursor.count)
+        for (i in path.indices) {
+            path[i] = cursor.getString(1)
+            audio1.add(path[i].toString())
+            cursor.moveToNext()
+        }
+
+        cursor.close()
+
+        val spinnerItems = audio1.sorted()
+
+        val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
+
+        val adapter = ArrayAdapter(
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems
+        )
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+
+
+        inSpinner.adapter = adapter
+
+        inSpinner.performClick()
+
+        inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
+            ) {
+                val spinnerParent = parent as Spinner
+                val item = spinnerParent.selectedItem as String
+                mp = MediaPlayer()
+                volumeControlStream = AudioManager.STREAM_MUSIC
+                mp.isLooping=true
+                mp.setDataSource(item)
+                mp.prepare()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+    }
+
+    private fun select3() {
+        val audio1 = mutableSetOf(
+                ""
+        )
+
+        audio1.clear()
+
+        val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
+        val cursor = contentResolver.query(audioUri, null, null, null, null)
+        cursor!!.moveToFirst()
+        val path: Array<String?> = arrayOfNulls(cursor.count)
+        for (i in path.indices) {
+            path[i] = cursor.getString(1)
+            audio1.add(path[i].toString())
+            cursor.moveToNext()
+        }
+
+        cursor.close()
+
+        val spinnerItems = audio1.sorted()
+
+        val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
+
+        val adapter = ArrayAdapter(
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems
+        )
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+
+
+        inSpinner.adapter = adapter
+
+        inSpinner.performClick()
+
+        inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
+            ) {
+                val spinnerParent = parent as Spinner
+                val item = spinnerParent.selectedItem as String
+                mp = MediaPlayer()
+                volumeControlStream = AudioManager.STREAM_MUSIC
+                mp.isLooping=true
+                mp.setDataSource(item)
+                mp.prepare()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -550,10 +664,12 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu4 -> {
+                select3()
                 return true
             }
 
             R.id.menu5 -> {
+                select2()
                 return true
             }
 
