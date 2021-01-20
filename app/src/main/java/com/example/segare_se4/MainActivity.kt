@@ -5,6 +5,7 @@ import android.database.Cursor
 import android.graphics.BitmapFactory
 import android.media.*
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
@@ -18,8 +19,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val handler = Handler()
 
     private lateinit var mp: MediaPlayer
+
+    private lateinit var mp2: MediaPlayer
 
     private lateinit var soundPool: SoundPool
 
@@ -454,6 +458,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun play() {
         mp.start()
+        handler.postDelayed( { mp.stop() }, mp.duration.toLong())
+        handler.postDelayed( { mp2.start() }, mp.duration.toLong())
     }
 
     private fun stop() {
@@ -510,10 +516,12 @@ class MainActivity : AppCompatActivity() {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 mp = MediaPlayer()
+                mp2 = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
-                mp.isLooping=true
                 mp.setDataSource(item.replaceBefore("content",""))
+                mp2.setDataSource(item.replaceBefore("content",""))
                 mp.prepare()
+                mp2.prepare()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -569,7 +577,6 @@ class MainActivity : AppCompatActivity() {
                 val item = spinnerParent.selectedItem as String
                 mp = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
-                mp.isLooping=true
                 mp.setDataSource(item)
                 mp.prepare()
             }
@@ -626,7 +633,6 @@ class MainActivity : AppCompatActivity() {
                 val item = spinnerParent.selectedItem as String
                 mp = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
-                mp.isLooping=true
                 mp.setDataSource(item)
                 mp.prepare()
             }
