@@ -458,12 +458,40 @@ class MainActivity : AppCompatActivity() {
 
     private fun play() {
         mp.start()
-        handler.postDelayed( { mp.stop() }, mp.duration.toLong())
-        handler.postDelayed( { mp2.start() }, mp.duration.toLong())
+        handler.postDelayed({ mp.pause() }, mp.duration.toLong())
+        handler.postDelayed({ mp2.start() }, mp.duration.toLong())
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *2 )
+        handler.postDelayed({ mp.start() }, mp2.duration.toLong() *2 )
+        handler.postDelayed({ mp.pause() }, mp.duration.toLong() *3 )
+        handler.postDelayed({ mp2.start() }, mp.duration.toLong() *3 )
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *4 )
+        handler.postDelayed({ mp.start() }, mp2.duration.toLong() *4 )
+        handler.postDelayed({ mp.pause() }, mp.duration.toLong() *5 )
+        handler.postDelayed({ mp2.start() }, mp.duration.toLong() *5 )
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *6 )
+        handler.postDelayed({ mp.start() }, mp2.duration.toLong() *6 )
+        handler.postDelayed({ mp.pause() }, mp.duration.toLong() *7 )
+        handler.postDelayed({ mp2.start() }, mp.duration.toLong() *7 )
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *8 )
+        handler.postDelayed({ mp.start() }, mp2.duration.toLong() *8 )
+        handler.postDelayed({ mp.pause() }, mp.duration.toLong() *9 )
+        handler.postDelayed({ mp2.start() }, mp.duration.toLong() *9 )
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *10 )
     }
 
     private fun stop() {
-        mp.stop()
+        handler.removeCallbacksAndMessages(null)
+
+        if (mp.isPlaying) {
+            mp.stop()
+            mp.prepare()
+        }
+        if (mp2.isPlaying) {
+            mp2.stop()
+            mp2.prepare()
+        }else{
+            return
+        }
     }
 
     private fun select() {
