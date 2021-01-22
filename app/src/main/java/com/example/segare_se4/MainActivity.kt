@@ -48,6 +48,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        mp = MediaPlayer()
+        mp2 = MediaPlayer()
+
         fun selectPhoto() {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
@@ -543,6 +546,8 @@ class MainActivity : AppCompatActivity() {
                 }
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
+                mp.release()
+                mp2.release()
                 mp = MediaPlayer()
                 mp2 = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
@@ -603,10 +608,15 @@ class MainActivity : AppCompatActivity() {
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
+                mp.release()
+                mp2.release()
                 mp = MediaPlayer()
+                mp2 = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
                 mp.setDataSource(item)
+                mp2.setDataSource(item)
                 mp.prepare()
+                mp2.prepare()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -659,10 +669,15 @@ class MainActivity : AppCompatActivity() {
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
+                mp.release()
+                mp2.release()
                 mp = MediaPlayer()
+                mp2 = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
                 mp.setDataSource(item)
+                mp2.setDataSource(item)
                 mp.prepare()
+                mp2.prepare()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -682,7 +697,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
 
-            R.id.menu1 -> {
+            R.id.menu1 ->{
                 play()
                 return true
             }
@@ -693,16 +708,19 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu3 -> {
+                stop()
                 select()
                 return true
             }
 
             R.id.menu4 -> {
+                stop()
                 select3()
                 return true
             }
 
             R.id.menu5 -> {
+                stop()
                 select2()
                 return true
             }

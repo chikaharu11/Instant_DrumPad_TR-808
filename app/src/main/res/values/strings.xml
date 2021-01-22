@@ -23,5 +23,6 @@
     <string name="rec">着信音から選ぶ</string>
     <string name="select">内部サウンドから選ぶ</string>
     <string name="end">外部サウンドから選ぶ</string>
+    <string name="switch1">再生/停止</string>
 
 </resources>
