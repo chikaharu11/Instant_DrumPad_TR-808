@@ -698,7 +698,13 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
 
             R.id.menu1 ->{
-                play()
+                if (switch1.isChecked){
+                    stop()
+                    switch1.isChecked = false
+                }else{
+                    play()
+                    switch1.isChecked = true
+                }
                 return true
             }
 
