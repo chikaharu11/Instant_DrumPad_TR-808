@@ -102,21 +102,51 @@ class MainActivity : AppCompatActivity() {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 when{
-                    radioButton.isChecked -> sound1 = soundPool.load(item, 1)
-                    radioButton2.isChecked -> sound2 = soundPool.load(item, 1)
-                    radioButton3.isChecked -> sound3 = soundPool.load(item, 1)
-                    radioButton4.isChecked -> sound4 = soundPool.load(item, 1)
-                    radioButton5.isChecked -> sound5 = soundPool.load(item, 1)
-                    radioButton6.isChecked -> sound6 = soundPool.load(item, 1)
-                    radioButton7.isChecked -> sound7 = soundPool.load(item, 1)
-                    radioButton8.isChecked -> sound8 = soundPool.load(item, 1)
-                    radioButton9.isChecked -> sound9 = soundPool.load(item, 1)
-                    radioButton10.isChecked -> sound10 = soundPool.load(item, 1)
-                    radioButton11.isChecked -> sound11 = soundPool.load(item, 1)
-                    radioButton12.isChecked -> sound12 = soundPool.load(item, 1)
-                    radioButton13.isChecked -> sound13 = soundPool.load(item, 1)
-                    radioButton14.isChecked -> sound14 = soundPool.load(item, 1)
-                    radioButton15.isChecked -> sound15 = soundPool.load(item, 1)
+                    radioButton.isChecked -> { sound1 = soundPool.load(item, 1)
+                        textView.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton2.isChecked -> { sound2 = soundPool.load(item, 1)
+                        textView2.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton3.isChecked -> { sound3 = soundPool.load(item, 1)
+                        textView3.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton4.isChecked -> { sound4 = soundPool.load(item, 1)
+                        textView4.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton5.isChecked -> { sound5 = soundPool.load(item, 1)
+                        textView5.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton6.isChecked -> { sound6 = soundPool.load(item, 1)
+                        textView6.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton7.isChecked -> { sound7 = soundPool.load(item, 1)
+                        textView7.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton8.isChecked -> { sound8 = soundPool.load(item, 1)
+                        textView8.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton9.isChecked -> { sound9 = soundPool.load(item, 1)
+                        textView9.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton10.isChecked -> { sound10 = soundPool.load(item, 1)
+                        textView10.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton11.isChecked -> { sound11 = soundPool.load(item, 1)
+                        textView11.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton12.isChecked -> { sound12 = soundPool.load(item, 1)
+                        textView12.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton13.isChecked -> { sound13 = soundPool.load(item, 1)
+                        textView13.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton14.isChecked -> { sound14 = soundPool.load(item, 1)
+                        textView14.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton15.isChecked -> { sound15 = soundPool.load(item, 1)
+                        textView15.text = item.replaceBeforeLast("/", "")
+                    }
                 }
             }
 
@@ -168,21 +198,51 @@ class MainActivity : AppCompatActivity() {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 when{
-                    radioButton.isChecked -> sound1 = soundPool.load(item, 1)
-                    radioButton2.isChecked -> sound2 = soundPool.load(item, 1)
-                    radioButton3.isChecked -> sound3 = soundPool.load(item, 1)
-                    radioButton4.isChecked -> sound4 = soundPool.load(item, 1)
-                    radioButton5.isChecked -> sound5 = soundPool.load(item, 1)
-                    radioButton6.isChecked -> sound6 = soundPool.load(item, 1)
-                    radioButton7.isChecked -> sound7 = soundPool.load(item, 1)
-                    radioButton8.isChecked -> sound8 = soundPool.load(item, 1)
-                    radioButton9.isChecked -> sound9 = soundPool.load(item, 1)
-                    radioButton10.isChecked -> sound10 = soundPool.load(item, 1)
-                    radioButton11.isChecked -> sound11 = soundPool.load(item, 1)
-                    radioButton12.isChecked -> sound12 = soundPool.load(item, 1)
-                    radioButton13.isChecked -> sound13 = soundPool.load(item, 1)
-                    radioButton14.isChecked -> sound14 = soundPool.load(item, 1)
-                    radioButton15.isChecked -> sound15 = soundPool.load(item, 1)
+                    radioButton.isChecked -> { sound1 = soundPool.load(item, 1)
+                        textView.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton2.isChecked -> { sound2 = soundPool.load(item, 1)
+                        textView2.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton3.isChecked -> { sound3 = soundPool.load(item, 1)
+                        textView3.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton4.isChecked -> { sound4 = soundPool.load(item, 1)
+                        textView4.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton5.isChecked -> { sound5 = soundPool.load(item, 1)
+                        textView5.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton6.isChecked -> { sound6 = soundPool.load(item, 1)
+                        textView6.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton7.isChecked -> { sound7 = soundPool.load(item, 1)
+                        textView7.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton8.isChecked -> { sound8 = soundPool.load(item, 1)
+                        textView8.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton9.isChecked -> { sound9 = soundPool.load(item, 1)
+                        textView9.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton10.isChecked -> { sound10 = soundPool.load(item, 1)
+                        textView10.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton11.isChecked -> { sound11 = soundPool.load(item, 1)
+                        textView11.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton12.isChecked -> { sound12 = soundPool.load(item, 1)
+                        textView12.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton13.isChecked -> { sound13 = soundPool.load(item, 1)
+                        textView13.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton14.isChecked -> { sound14 = soundPool.load(item, 1)
+                        textView14.text = item.replaceBeforeLast("/", "")
+                    }
+                    radioButton15.isChecked -> { sound15 = soundPool.load(item, 1)
+                        textView15.text = item.replaceBeforeLast("/", "")
+                    }
                 }
             }
 
