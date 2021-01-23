@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val audio1 = mutableSetOf(
-            ""
+                ""
         )
 
         audio1.clear()
@@ -82,8 +82,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.internal_spinner)
 
         val adapter = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -96,8 +96,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val audio2 = mutableSetOf(
-            ""
+                ""
         )
 
         audio2.clear()
@@ -148,8 +148,8 @@ class MainActivity : AppCompatActivity() {
         val exSpinner = findViewById<Spinner>(R.id.external_spinner)
 
         val adapter2 = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems2
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems2
         )
 
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -162,8 +162,8 @@ class MainActivity : AppCompatActivity() {
         exSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
@@ -192,9 +192,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         val menu1 = mutableSetOf(
-            "内部サウンド",
-            "外部サウンド",
-            "画像を選ぶ"
+                "内部サウンド",
+                "外部サウンド",
+                "画像を選ぶ"
         )
 
         val spinnerItems3 = menu1.sorted()
@@ -202,8 +202,8 @@ class MainActivity : AppCompatActivity() {
         val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
 
         val adapter3 = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems3
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems3
         )
 
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -216,8 +216,8 @@ class MainActivity : AppCompatActivity() {
         meSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -463,23 +463,28 @@ class MainActivity : AppCompatActivity() {
         mp.start()
         handler.postDelayed({ mp.pause() }, mp.duration.toLong())
         handler.postDelayed({ mp2.start() }, mp.duration.toLong())
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *2 )
-        handler.postDelayed({ mp.start() }, mp2.duration.toLong() *2 )
-        handler.postDelayed({ mp.pause() }, mp.duration.toLong() *3 )
-        handler.postDelayed({ mp2.start() }, mp.duration.toLong() *3 )
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *4 )
-        handler.postDelayed({ mp.start() }, mp2.duration.toLong() *4 )
-        handler.postDelayed({ mp.pause() }, mp.duration.toLong() *5 )
-        handler.postDelayed({ mp2.start() }, mp.duration.toLong() *5 )
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *6 )
-        handler.postDelayed({ mp.start() }, mp2.duration.toLong() *6 )
-        handler.postDelayed({ mp.pause() }, mp.duration.toLong() *7 )
-        handler.postDelayed({ mp2.start() }, mp.duration.toLong() *7 )
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *8 )
-        handler.postDelayed({ mp.start() }, mp2.duration.toLong() *8 )
-        handler.postDelayed({ mp.pause() }, mp.duration.toLong() *9 )
-        handler.postDelayed({ mp2.start() }, mp.duration.toLong() *9 )
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() *10 )
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 2)
+        handler.postDelayed({ mp.start() }, mp2.duration.toLong() * 2)
+        handler.postDelayed({ mp.pause() }, mp.duration.toLong() * 3)
+        handler.postDelayed({ mp2.start() }, mp.duration.toLong() * 3)
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 4)
+        handler.postDelayed({ mp.start() }, mp2.duration.toLong() * 4)
+        handler.postDelayed({ mp.pause() }, mp.duration.toLong() * 5)
+        handler.postDelayed({ mp2.start() }, mp.duration.toLong() * 5)
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 6)
+        handler.postDelayed({ mp.start() }, mp2.duration.toLong() * 6)
+        handler.postDelayed({ mp.pause() }, mp.duration.toLong() * 7)
+        handler.postDelayed({ mp2.start() }, mp.duration.toLong() * 7)
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 8)
+        handler.postDelayed({ mp.start() }, mp2.duration.toLong() * 8)
+        handler.postDelayed({ mp.pause() }, mp.duration.toLong() * 9)
+        handler.postDelayed({ mp2.start() }, mp.duration.toLong() * 9)
+        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 10)
+        handler.postDelayed({
+            menuSwitch = true
+            invalidateOptionsMenu()
+            switch1.isChecked = false
+                            }, mp2.duration.toLong() * 10)
     }
 
     private fun stop() {
@@ -499,7 +504,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun select() {
         val audio1 = mutableSetOf(
-            ""
+                ""
         )
 
         audio1.clear()
@@ -522,8 +527,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
 
         val adapter = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -537,8 +542,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -551,8 +556,9 @@ class MainActivity : AppCompatActivity() {
                 mp = MediaPlayer()
                 mp2 = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
-                mp.setDataSource(item.replaceBefore("content",""))
-                mp2.setDataSource(item.replaceBefore("content",""))
+                mp.setDataSource(item.replaceBefore("content", ""))
+                mp2.setDataSource(item.replaceBefore("content", ""))
+                supportActionBar?.title =item.replaceAfter(")", "")
                 mp.prepare()
                 mp2.prepare()
             }
@@ -566,7 +572,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun select2() {
         val audio1 = mutableSetOf(
-            ""
+                ""
         )
 
         audio1.clear()
@@ -588,8 +594,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
 
         val adapter = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -603,9 +609,13 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
+                if (!inSpinner.isFocusable) {
+                    inSpinner.isFocusable = true
+                    return
+                }
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 mp.release()
@@ -615,6 +625,7 @@ class MainActivity : AppCompatActivity() {
                 volumeControlStream = AudioManager.STREAM_MUSIC
                 mp.setDataSource(item)
                 mp2.setDataSource(item)
+                supportActionBar?.title =item.replaceBeforeLast("/", "")
                 mp.prepare()
                 mp2.prepare()
             }
@@ -623,6 +634,7 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+        inSpinner.isFocusable = false
     }
 
     private fun select3() {
@@ -667,6 +679,10 @@ class MainActivity : AppCompatActivity() {
                     parent: AdapterView<*>?,
                     view: View?, position: Int, id: Long
             ) {
+                if (!inSpinner.isFocusable) {
+                    inSpinner.isFocusable = true
+                    return
+                }
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 mp.release()
@@ -676,6 +692,7 @@ class MainActivity : AppCompatActivity() {
                 volumeControlStream = AudioManager.STREAM_MUSIC
                 mp.setDataSource(item)
                 mp2.setDataSource(item)
+                supportActionBar?.title =item.replaceBeforeLast("/", "")
                 mp.prepare()
                 mp2.prepare()
             }
@@ -684,6 +701,7 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+        inSpinner.isFocusable = false
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -691,18 +709,31 @@ class MainActivity : AppCompatActivity() {
 
         val inflater = menuInflater
         inflater.inflate(R.menu.menu, menu)
+
+        val menuLamp = menu!!.findItem(R.id.menu1)
+        if (menuSwitch) {
+            menuLamp.setIcon(R.drawable.ic_baseline_play_arrow_24)
+        } else {
+            menuLamp.setIcon(R.drawable.ic_baseline_stop_24)
+        }
         return true
     }
+
+    private var menuSwitch = true
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
 
-            R.id.menu1 ->{
-                if (switch1.isChecked){
+            R.id.menu1 -> {
+                if (switch1.isChecked) {
                     stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
                     switch1.isChecked = false
-                }else{
+                } else {
                     play()
+                    menuSwitch = false
+                    invalidateOptionsMenu()
                     switch1.isChecked = true
                 }
                 return true
@@ -715,18 +746,27 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu3 -> {
                 stop()
+                menuSwitch = true
+                invalidateOptionsMenu()
+                switch1.isChecked = false
                 select()
                 return true
             }
 
             R.id.menu4 -> {
                 stop()
+                menuSwitch = true
+                invalidateOptionsMenu()
+                switch1.isChecked = false
                 select3()
                 return true
             }
 
             R.id.menu5 -> {
                 stop()
+                menuSwitch = true
+                invalidateOptionsMenu()
+                switch1.isChecked = false
                 select2()
                 return true
             }
@@ -734,11 +774,10 @@ class MainActivity : AppCompatActivity() {
             else -> return super.onOptionsItemSelected(item)
         }
     }
+
     override fun onDestroy() {
         mp.reset()
         mp.release()
         super.onDestroy()
     }
 }
-
-
