@@ -7,20 +7,16 @@
         android:title="@string/play"
         app:showAsAction="ifRoom" />
 
-    <item android:id="@+id/menu2"
-        android:title="@string/stop"
-        app:showAsAction="ifRoom" />
-
     <item android:id="@+id/menu3"
         android:title="@string/rec"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never"/>
 
     <item android:id="@+id/menu4"
         android:title="@string/select"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never"/>
 
     <item android:id="@+id/menu5"
         android:title="@string/end"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never"/>
 
 </menu>

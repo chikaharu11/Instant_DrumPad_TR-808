@@ -799,11 +799,6 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
 
-            R.id.menu2 -> {
-                stop()
-                return true
-            }
-
             R.id.menu3 -> {
                 stop()
                 menuSwitch = true
