@@ -1,12 +1,16 @@
 package com.example.segare_se4
 
+import android.Manifest
+import android.app.AlertDialog
 import android.content.Intent
 import android.database.Cursor
 import android.graphics.BitmapFactory
 import android.media.*
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.provider.MediaStore
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -15,6 +19,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import pub.devrel.easypermissions.EasyPermissions
 
 
 class MainActivity : AppCompatActivity() {
@@ -47,6 +52,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val permissions = arrayOf(
+                Manifest.permission.READ_EXTERNAL_STORAGE
+        )
+
+        if (!EasyPermissions.hasPermissions(this, *permissions)) {
+            AlertDialog.Builder(this)
+                    .setMessage("このアプリはスマートフォン内の\n着信音、音声ファイル、画像を使用します。\nアプリの設定画面に移動して、\nストレージ権限の許可をお願いします。")
+                    .setPositiveButton("設定する") { _, _ ->
+                        val uriString = "package:$packageName"
+                        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse(uriString))
+                        startActivity(intent)
+                        finish()
+                    }
+                    .setNegativeButton("後で") { _, _ ->
+                        finish()
+                    }
+                    .show()
+            return
+        }
 
         mp = MediaPlayer()
         mp2 = MediaPlayer()
@@ -544,7 +569,7 @@ class MainActivity : AppCompatActivity() {
             menuSwitch = true
             invalidateOptionsMenu()
             switch1.isChecked = false
-                            }, mp2.duration.toLong() * 10)
+        }, mp2.duration.toLong() * 10)
     }
 
     private fun stop() {
@@ -831,6 +856,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
+        mp = MediaPlayer()
         mp.reset()
         mp.release()
         super.onDestroy()
