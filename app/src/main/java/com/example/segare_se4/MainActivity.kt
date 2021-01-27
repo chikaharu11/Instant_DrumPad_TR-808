@@ -858,8 +858,23 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         mp = MediaPlayer()
+        mp2 = MediaPlayer()
         mp.reset()
+        mp2.reset()
         mp.release()
+        mp2.release()
         super.onDestroy()
+    }
+
+    override fun onPause() {
+        menuSwitch = true
+        invalidateOptionsMenu()
+        switch1.isChecked = false
+        val permissions = arrayOf(
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        )
+        if (EasyPermissions.hasPermissions(this, *permissions))
+            stop()
+        super.onPause()
     }
 }
