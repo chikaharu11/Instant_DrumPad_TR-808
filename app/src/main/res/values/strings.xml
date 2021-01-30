@@ -19,10 +19,10 @@
     <string name="radiobutton2">RadioButton</string>
     <string name="radiobutton3">RadioButton</string>
     <string name="play">再生</string>
-    <string name="stop">停止</string>
-    <string name="rec">着信音から選ぶ</string>
-    <string name="select">内部サウンドから選ぶ</string>
-    <string name="end">外部サウンドから選ぶ</string>
+    <string name="select">着信音から選ぶ</string>
+    <string name="select2">内部サウンドから選ぶ</string>
+    <string name="select3">外部サウンドから選ぶ</string>
+    <string name="end">終了する</string>
     <string name="switch1">再生/停止</string>
     <string name="textView"> </string>
 

@@ -8,14 +8,18 @@
         app:showAsAction="ifRoom" />
 
     <item android:id="@+id/menu3"
-        android:title="@string/rec"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu4"
         android:title="@string/select"
         app:showAsAction="never"/>
 
+    <item android:id="@+id/menu4"
+        android:title="@string/select2"
+        app:showAsAction="never"/>
+
     <item android:id="@+id/menu5"
+        android:title="@string/select3"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/menu6"
         android:title="@string/end"
         app:showAsAction="never"/>
 

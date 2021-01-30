@@ -813,6 +813,7 @@ class MainActivity : AppCompatActivity() {
             R.id.menu1 -> {
                 if (switch1.isChecked) {
                     stop()
+                    soundPool.autoPause()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1.isChecked = false
@@ -852,6 +853,20 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
 
+            R.id.menu6 -> {
+                AlertDialog.Builder(this)
+                        .setTitle("終了しますか？")
+                        .setPositiveButton("YES") { _, _ ->
+                            finish()
+                        }
+                        .setNegativeButton("NO") { _, _ ->
+
+                        }
+                        .show()
+
+                return true
+            }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }
@@ -863,6 +878,8 @@ class MainActivity : AppCompatActivity() {
         mp2.reset()
         mp.release()
         mp2.release()
+        soundPool.autoPause()
+        soundPool.release()
         super.onDestroy()
     }
 
@@ -870,6 +887,7 @@ class MainActivity : AppCompatActivity() {
         menuSwitch = true
         invalidateOptionsMenu()
         switch1.isChecked = false
+        soundPool.autoPause()
         val permissions = arrayOf(
             Manifest.permission.READ_EXTERNAL_STORAGE
         )
