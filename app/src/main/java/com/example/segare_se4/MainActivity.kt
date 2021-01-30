@@ -5,6 +5,8 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.database.Cursor
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.media.*
 import android.net.Uri
 import android.os.Bundle
@@ -17,6 +19,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.EasyPermissions
@@ -84,6 +87,8 @@ class MainActivity : AppCompatActivity() {
             }
             startActivityForResult(intent, READ_REQUEST_CODE)
         }
+
+
 
         val audio1 = mutableSetOf(
                 ""
@@ -573,6 +578,34 @@ class MainActivity : AppCompatActivity() {
         }, mp2.duration.toLong() * 10)
     }
 
+    private val soundFilePath = "/bj1.ogg"
+
+    private val mediaRecorder = MediaRecorder()
+
+    private fun startRecording() {
+        try {
+            mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
+            mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
+            mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
+            mediaRecorder.setOutputFile(soundFilePath)
+            mediaRecorder.prepare()
+            mediaRecorder.start()
+        } catch (e: Exception) {
+            Toast.makeText(applicationContext, "録音に失敗しました。", Toast.LENGTH_LONG)
+                    .show()
+        }
+    }
+
+    private fun stopRecording() {
+        try {
+            mediaRecorder.stop()
+            mediaRecorder.reset()
+        } catch (e: Exception) {
+        Toast.makeText(applicationContext, "録音に失敗しました。", Toast.LENGTH_LONG)
+                .show()
+    }
+    }
+
     private fun stop() {
         handler.removeCallbacksAndMessages(null)
 
@@ -802,10 +835,18 @@ class MainActivity : AppCompatActivity() {
         } else {
             menuLamp.setIcon(R.drawable.ic_baseline_stop_24)
         }
+
+        val menuLamp2 = menu.findItem(R.id.menu2)
+        if (menuSwitch2) {
+            menuLamp2.setIcon(R.drawable.ic_baseline_radio_button_checked_24)
+        } else {
+            menuLamp2.setIcon(R.drawable.ic_baseline_radio_button_checked_24_2)
+        }
         return true
     }
 
     private var menuSwitch = true
+    private var menuSwitch2 = true
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -822,6 +863,24 @@ class MainActivity : AppCompatActivity() {
                     menuSwitch = false
                     invalidateOptionsMenu()
                     switch1.isChecked = true
+                }
+                return true
+            }
+
+            R.id.menu2 -> {
+                if (switch2.isChecked) {
+                    soundPool.autoPause()
+                    stopRecording()
+                    menuSwitch2 = true
+                    invalidateOptionsMenu()
+                    supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
+                    switch2.isChecked = false
+                } else {
+                    startRecording()
+                    menuSwitch2 = false
+                    invalidateOptionsMenu()
+                    supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#ff7f50")))
+                    switch2.isChecked = true
                 }
                 return true
             }

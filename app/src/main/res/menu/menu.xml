@@ -7,6 +7,11 @@
         android:title="@string/play"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/menu2"
+        android:title="@string/rec"
+        app:showAsAction="ifRoom" />
+
     <item android:id="@+id/menu3"
         android:title="@string/select"
         app:showAsAction="never"/>
