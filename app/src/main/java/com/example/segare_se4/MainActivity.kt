@@ -2,7 +2,6 @@ package com.example.segare_se4
 
 import android.Manifest
 import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.graphics.BitmapFactory
@@ -21,41 +20,13 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.EasyPermissions
 
 
 class MainActivity : AppCompatActivity() {
-
-    open class Hog(context: Context) {
-
-        private val soundFilePath = context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() + "/test.ogg"
-
-        private val mediaRecorder = MediaRecorder()
-
-        fun startRecording() {
-            try {
-                mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
-                mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
-                mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
-                mediaRecorder.setOutputFile(soundFilePath)
-                mediaRecorder.prepare()
-                mediaRecorder.start()
-            } catch (e: Exception) {
-
-            }
-        }
-
-        fun stopRecording() {
-            try {
-                mediaRecorder.stop()
-                mediaRecorder.reset()
-            } catch (e: Exception) {
-
-            }
-        }
-    }
 
     private val handler = Handler()
 
@@ -405,6 +376,7 @@ class MainActivity : AppCompatActivity() {
 
 
         imageView.setOnClickListener {
+            soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
         }
 
         imageView2.setOnClickListener {
@@ -848,8 +820,37 @@ class MainActivity : AppCompatActivity() {
 
     private var menuSwitch = true
     private var menuSwitch2 = true
+    private val mediaRecorder = MediaRecorder()
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        val soundFilePath = this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() + "/test.ogg"
+
+        fun startRecording() {
+            try {
+                mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
+                mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
+                mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
+                mediaRecorder.setOutputFile(soundFilePath)
+                mediaRecorder.prepare()
+                mediaRecorder.start()
+                Toast.makeText(applicationContext, "録音を開始します。", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                Toast.makeText(applicationContext, "録音に失敗しました。", Toast.LENGTH_LONG).show()
+
+            }
+        }
+
+        fun stopRecording() {
+            try {
+                mediaRecorder.stop()
+                mediaRecorder.reset()
+                mediaRecorder.release()
+                Toast.makeText(applicationContext, "録音が終わりました。", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                Toast.makeText(applicationContext, "録音停止に失敗しました。", Toast.LENGTH_LONG).show()
+            }
+        }
         when (item.itemId) {
 
             R.id.menu1 -> {
@@ -870,16 +871,15 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu2 -> {
                 if (switch2.isChecked) {
-                    soundPool.autoPause()
                     menuSwitch2 = true
                     invalidateOptionsMenu()
-                    Hog(this).startRecording()
+                    stopRecording()
                     supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
                     switch2.isChecked = false
                 } else {
                     menuSwitch2 = false
                     invalidateOptionsMenu()
-                    Hog(this).stopRecording()
+                    startRecording()
                     supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#ff7f50")))
                     switch2.isChecked = true
                 }
