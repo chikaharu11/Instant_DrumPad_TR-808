@@ -2,6 +2,7 @@ package com.example.segare_se4
 
 import android.Manifest
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.graphics.BitmapFactory
@@ -10,6 +11,7 @@ import android.graphics.drawable.ColorDrawable
 import android.media.*
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.os.Handler
 import android.provider.MediaStore
 import android.provider.Settings
@@ -19,13 +21,41 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.EasyPermissions
 
 
 class MainActivity : AppCompatActivity() {
+
+    open class Hog(context: Context) {
+
+        private val soundFilePath = context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() + "/test.ogg"
+
+        private val mediaRecorder = MediaRecorder()
+
+        fun startRecording() {
+            try {
+                mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
+                mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
+                mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
+                mediaRecorder.setOutputFile(soundFilePath)
+                mediaRecorder.prepare()
+                mediaRecorder.start()
+            } catch (e: Exception) {
+
+            }
+        }
+
+        fun stopRecording() {
+            try {
+                mediaRecorder.stop()
+                mediaRecorder.reset()
+            } catch (e: Exception) {
+
+            }
+        }
+    }
 
     private val handler = Handler()
 
@@ -375,7 +405,6 @@ class MainActivity : AppCompatActivity() {
 
 
         imageView.setOnClickListener {
-            soundPool.play(sound1, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView2.setOnClickListener {
@@ -576,34 +605,6 @@ class MainActivity : AppCompatActivity() {
             invalidateOptionsMenu()
             switch1.isChecked = false
         }, mp2.duration.toLong() * 10)
-    }
-
-    private val soundFilePath = "/bj1.ogg"
-
-    private val mediaRecorder = MediaRecorder()
-
-    private fun startRecording() {
-        try {
-            mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
-            mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
-            mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
-            mediaRecorder.setOutputFile(soundFilePath)
-            mediaRecorder.prepare()
-            mediaRecorder.start()
-        } catch (e: Exception) {
-            Toast.makeText(applicationContext, "録音に失敗しました。", Toast.LENGTH_LONG)
-                    .show()
-        }
-    }
-
-    private fun stopRecording() {
-        try {
-            mediaRecorder.stop()
-            mediaRecorder.reset()
-        } catch (e: Exception) {
-        Toast.makeText(applicationContext, "録音に失敗しました。", Toast.LENGTH_LONG)
-                .show()
-    }
     }
 
     private fun stop() {
@@ -870,15 +871,15 @@ class MainActivity : AppCompatActivity() {
             R.id.menu2 -> {
                 if (switch2.isChecked) {
                     soundPool.autoPause()
-                    stopRecording()
                     menuSwitch2 = true
                     invalidateOptionsMenu()
+                    Hog(this).startRecording()
                     supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
                     switch2.isChecked = false
                 } else {
-                    startRecording()
                     menuSwitch2 = false
                     invalidateOptionsMenu()
+                    Hog(this).stopRecording()
                     supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#ff7f50")))
                     switch2.isChecked = true
                 }
