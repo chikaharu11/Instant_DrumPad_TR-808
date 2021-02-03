@@ -820,7 +820,7 @@ class MainActivity : AppCompatActivity() {
 
     private var menuSwitch = true
     private var menuSwitch2 = true
-    private val mediaRecorder = MediaRecorder()
+    private var mediaRecorder: MediaRecorder? = null
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
@@ -828,12 +828,12 @@ class MainActivity : AppCompatActivity() {
 
         fun startRecording() {
             try {
-                mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
-                mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
-                mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
-                mediaRecorder.setOutputFile(soundFilePath)
-                mediaRecorder.prepare()
-                mediaRecorder.start()
+                mediaRecorder?.setAudioSource(MediaRecorder.AudioSource.MIC)
+                mediaRecorder?.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
+                mediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
+                mediaRecorder?.setOutputFile(soundFilePath)
+                mediaRecorder?.prepare()
+                mediaRecorder?.start()
                 Toast.makeText(applicationContext, "録音を開始します。", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 Toast.makeText(applicationContext, "録音に失敗しました。", Toast.LENGTH_LONG).show()
@@ -843,9 +843,9 @@ class MainActivity : AppCompatActivity() {
 
         fun stopRecording() {
             try {
-                mediaRecorder.stop()
-                mediaRecorder.reset()
-                mediaRecorder.release()
+                mediaRecorder?.stop()
+                mediaRecorder?.reset()
+                mediaRecorder?.release()
                 Toast.makeText(applicationContext, "録音が終わりました。", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 Toast.makeText(applicationContext, "録音停止に失敗しました。", Toast.LENGTH_LONG).show()
@@ -940,6 +940,11 @@ class MainActivity : AppCompatActivity() {
         mp2.release()
         soundPool.autoPause()
         soundPool.release()
+        if (mediaRecorder != null) {
+            mediaRecorder?.reset()
+            mediaRecorder?.release()
+            mediaRecorder = null
+        }
         super.onDestroy()
     }
 
@@ -947,12 +952,23 @@ class MainActivity : AppCompatActivity() {
         menuSwitch = true
         invalidateOptionsMenu()
         switch1.isChecked = false
+        if (!menuSwitch2) {
+            menuSwitch2 = true
+            invalidateOptionsMenu()
+            supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
+            Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
+        }
+        switch2.isChecked = false
         soundPool.autoPause()
         val permissions = arrayOf(
             Manifest.permission.READ_EXTERNAL_STORAGE
         )
         if (EasyPermissions.hasPermissions(this, *permissions))
             stop()
+        if (mediaRecorder != null) {
+            mediaRecorder?.stop()
+            mediaRecorder?.prepare()
+        }
         super.onPause()
     }
 }
