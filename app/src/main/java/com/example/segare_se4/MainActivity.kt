@@ -1,6 +1,7 @@
 package com.example.segare_se4
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
 import android.database.Cursor
@@ -24,6 +25,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.EasyPermissions
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -93,6 +96,13 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, READ_REQUEST_CODE)
         }
 
+        fun selectAudio() {
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "audio/ogg"
+            }
+            startActivityForResult(intent, READ_REQUEST_CODE2)
+        }
 
 
         val audio1 = mutableSetOf(
@@ -290,6 +300,7 @@ class MainActivity : AppCompatActivity() {
         val menu1 = mutableSetOf(
             "内部サウンド",
             "外部サウンド",
+            "録音したサウンド",
             "画像を選ぶ"
         )
 
@@ -323,6 +334,7 @@ class MainActivity : AppCompatActivity() {
                     0 -> inSpinner.performClick()
                     1 -> exSpinner.performClick()
                     2 -> selectPhoto()
+                    3 -> selectAudio()
                 }
             }
 
@@ -520,6 +532,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val READ_REQUEST_CODE: Int = 42
+        private const val READ_REQUEST_CODE2: Int = 43
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
@@ -552,6 +565,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+            READ_REQUEST_CODE2 -> {}
         }
     }
 
@@ -826,9 +840,11 @@ class MainActivity : AppCompatActivity() {
     private var menuSwitch2 = true
     private var mediaRecorder = MediaRecorder()
 
+    @SuppressLint("SimpleDateFormat")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        val soundFilePath = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/test.ogg"
+        val timeStamp: String = SimpleDateFormat("MM月dd日HH時mm分ss秒").format(Date())
+        val soundFilePath = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/$timeStamp" + "の録音.ogg"
 
         fun startRecording() {
             try {
