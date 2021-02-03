@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val permissions = arrayOf(
-                Manifest.permission.READ_EXTERNAL_STORAGE
+            Manifest.permission.READ_EXTERNAL_STORAGE
         )
 
         if (!EasyPermissions.hasPermissions(this, *permissions)) {
@@ -67,7 +67,11 @@ class MainActivity : AppCompatActivity() {
                     .setMessage("このアプリはスマートフォン内の\n着信音、音声ファイル、画像を使用します。\nアプリの設定画面に移動して、\nストレージ権限の許可をお願いします。")
                     .setPositiveButton("設定する") { _, _ ->
                         val uriString = "package:$packageName"
-                        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse(uriString))
+                        val intent = Intent(
+                            Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse(
+                                uriString
+                            )
+                        )
                         startActivity(intent)
                         finish()
                     }
@@ -92,7 +96,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val audio1 = mutableSetOf(
-                ""
+            ""
         )
 
         audio1.clear()
@@ -114,8 +118,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.internal_spinner)
 
         val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -128,8 +132,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
@@ -188,7 +192,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val audio2 = mutableSetOf(
-                ""
+            ""
         )
 
         audio2.clear()
@@ -210,8 +214,8 @@ class MainActivity : AppCompatActivity() {
         val exSpinner = findViewById<Spinner>(R.id.external_spinner)
 
         val adapter2 = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems2
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems2
         )
 
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -224,8 +228,8 @@ class MainActivity : AppCompatActivity() {
         exSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
@@ -284,9 +288,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         val menu1 = mutableSetOf(
-                "内部サウンド",
-                "外部サウンド",
-                "画像を選ぶ"
+            "内部サウンド",
+            "外部サウンド",
+            "画像を選ぶ"
         )
 
         val spinnerItems3 = menu1.sorted()
@@ -294,8 +298,8 @@ class MainActivity : AppCompatActivity() {
         val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
 
         val adapter3 = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems3
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems3
         )
 
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -308,8 +312,8 @@ class MainActivity : AppCompatActivity() {
         meSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -596,7 +600,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun select() {
         val audio1 = mutableSetOf(
-                ""
+            ""
         )
 
         audio1.clear()
@@ -619,8 +623,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
 
         val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -634,8 +638,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -664,7 +668,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun select2() {
         val audio1 = mutableSetOf(
-                ""
+            ""
         )
 
         audio1.clear()
@@ -686,8 +690,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
 
         val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -701,8 +705,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -731,7 +735,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun select3() {
         val audio1 = mutableSetOf(
-                ""
+            ""
         )
 
         audio1.clear()
@@ -753,8 +757,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
 
         val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
+            applicationContext,
+            android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -768,8 +772,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -832,6 +836,17 @@ class MainActivity : AppCompatActivity() {
                 mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
                 mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
                 mediaRecorder.setOutputFile(soundFilePath)
+                mediaRecorder.setMaxDuration(180000)
+                mediaRecorder.setOnInfoListener { _, what, _ ->
+                    if (what == MediaRecorder.MEDIA_RECORDER_INFO_MAX_DURATION_REACHED) {
+                        mediaRecorder.stop()
+                        menuSwitch2 = true
+                        invalidateOptionsMenu()
+                        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
+                        switch2.isChecked = false
+                        Toast.makeText(applicationContext, "録音時間の上限に達しました。", Toast.LENGTH_SHORT).show()
+                    }
+                }
                 mediaRecorder.prepare()
                 mediaRecorder.start()
                 Toast.makeText(applicationContext, "録音を開始します。", Toast.LENGTH_SHORT).show()
@@ -913,14 +928,14 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu6 -> {
                 AlertDialog.Builder(this)
-                        .setTitle("終了しますか？")
-                        .setPositiveButton("YES") { _, _ ->
-                            finish()
-                        }
-                        .setNegativeButton("NO") { _, _ ->
+                    .setTitle("終了しますか？")
+                    .setPositiveButton("YES") { _, _ ->
+                        finish()
+                    }
+                    .setNegativeButton("NO") { _, _ ->
 
-                        }
-                        .show()
+                    }
+                    .show()
 
                 return true
             }
