@@ -13,6 +13,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
+import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.provider.Settings
 import android.view.Menu
@@ -99,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         fun selectAudio() {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
-                type = "audio/ogg"
+                type = "*/*"
             }
             startActivityForResult(intent, READ_REQUEST_CODE2)
         }
@@ -565,7 +566,20 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-            READ_REQUEST_CODE2 -> {}
+            READ_REQUEST_CODE2 -> {
+
+                resultData?.data?.also { uri ->
+                    val docId = DocumentsContract.getDocumentId(uri)
+                    val split = docId.split(":".toRegex()).toTypedArray()
+                    val type = split[0]
+                    if ("primary".equals(type, ignoreCase = true)) {
+                        val itemTest = ("/storage/emulated/0/" + "/" + split[1])
+                        sound1 = soundPool.load(itemTest, 1)
+                    } else {
+                        println("/stroage/" + type + "/" + split[1])
+                    }
+                }
+            }
         }
     }
 
