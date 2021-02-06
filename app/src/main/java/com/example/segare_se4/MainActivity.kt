@@ -13,6 +13,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
+import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.provider.Settings
 import android.view.Menu
@@ -30,6 +31,29 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        private const val READ_REQUEST_CODE: Int = 42
+        private const val READ_REQUEST_CODE2: Int = 43
+    }
+
+    fun selectPhoto() {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "image/*"
+        }
+        startActivityForResult(intent, READ_REQUEST_CODE)
+    }
+
+    fun selectAudio() {
+        val auri = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fcom.example.segare_se4%2Ffiles%2FMusic")
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            putExtra(DocumentsContract.EXTRA_INITIAL_URI, auri)
+            type = "*/*"
+        }
+        startActivityForResult(intent, READ_REQUEST_CODE2)
+    }
 
     private val handler = Handler()
 
@@ -87,22 +111,6 @@ class MainActivity : AppCompatActivity() {
 
         mp = MediaPlayer()
         mp2 = MediaPlayer()
-
-        fun selectPhoto() {
-            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-                addCategory(Intent.CATEGORY_OPENABLE)
-                type = "image/*"
-            }
-            startActivityForResult(intent, READ_REQUEST_CODE)
-        }
-
-        fun selectAudio() {
-            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-                addCategory(Intent.CATEGORY_OPENABLE)
-                type = "audio/ogg"
-            }
-            startActivityForResult(intent, READ_REQUEST_CODE2)
-        }
 
 
         val audio1 = mutableSetOf(
@@ -530,10 +538,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    companion object {
-        private const val READ_REQUEST_CODE: Int = 42
-        private const val READ_REQUEST_CODE2: Int = 43
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
@@ -565,7 +569,137 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-            READ_REQUEST_CODE2 -> {}
+            READ_REQUEST_CODE2 -> {
+
+                resultData?.data?.also { uri ->
+                    val docId = DocumentsContract.getDocumentId(uri)
+                    val split = docId.split(":".toRegex()).toTypedArray()
+                    val type = split[0]
+                     if ("primary".equals(type, ignoreCase = true)) {
+                         val item = "/storage/emulated/0/" + split[1]
+                         when{
+                             radioButton.isChecked -> { sound1 = soundPool.load(item, 1)
+                                 textView.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton2.isChecked -> { sound2 = soundPool.load(item, 1)
+                                 textView2.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton3.isChecked -> { sound3 = soundPool.load(item, 1)
+                                 textView3.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton4.isChecked -> { sound4 = soundPool.load(item, 1)
+                                 textView4.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton5.isChecked -> { sound5 = soundPool.load(item, 1)
+                                 textView5.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton6.isChecked -> { sound6 = soundPool.load(item, 1)
+                                 textView6.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton7.isChecked -> { sound7 = soundPool.load(item, 1)
+                                 textView7.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton8.isChecked -> { sound8 = soundPool.load(item, 1)
+                                 textView8.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton9.isChecked -> { sound9 = soundPool.load(item, 1)
+                                 textView9.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton10.isChecked -> { sound10 = soundPool.load(item, 1)
+                                 textView10.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton11.isChecked -> { sound11 = soundPool.load(item, 1)
+                                 textView11.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton12.isChecked -> { sound12 = soundPool.load(item, 1)
+                                 textView12.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton13.isChecked -> { sound13 = soundPool.load(item, 1)
+                                 textView13.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton14.isChecked -> { sound14 = soundPool.load(item, 1)
+                                 textView14.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton15.isChecked -> { sound15 = soundPool.load(item, 1)
+                                 textView15.text = item.replaceBeforeLast("/", "")
+                             }
+                             radioButton16.isChecked -> {
+                                 mp.release()
+                                 mp2.release()
+                                 mp = MediaPlayer()
+                                 mp2 = MediaPlayer()
+                                 volumeControlStream = AudioManager.STREAM_MUSIC
+                                 mp.setDataSource(item)
+                                 mp2.setDataSource(item)
+                                 supportActionBar?.title =item.replaceBeforeLast("/", "")
+                                 mp.prepare()
+                                 mp2.prepare()
+                             }
+                         }
+                    } else {
+                        val item2 = "/stroage/" + type + "/" + split[1]
+                         when{
+                             radioButton.isChecked -> { sound1 = soundPool.load(item2, 1)
+                                 textView.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton2.isChecked -> { sound2 = soundPool.load(item2, 1)
+                                 textView2.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton3.isChecked -> { sound3 = soundPool.load(item2, 1)
+                                 textView3.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton4.isChecked -> { sound4 = soundPool.load(item2, 1)
+                                 textView4.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton5.isChecked -> { sound5 = soundPool.load(item2, 1)
+                                 textView5.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton6.isChecked -> { sound6 = soundPool.load(item2, 1)
+                                 textView6.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton7.isChecked -> { sound7 = soundPool.load(item2, 1)
+                                 textView7.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton8.isChecked -> { sound8 = soundPool.load(item2, 1)
+                                 textView8.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton9.isChecked -> { sound9 = soundPool.load(item2, 1)
+                                 textView9.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton10.isChecked -> { sound10 = soundPool.load(item2, 1)
+                                 textView10.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton11.isChecked -> { sound11 = soundPool.load(item2, 1)
+                                 textView11.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton12.isChecked -> { sound12 = soundPool.load(item2, 1)
+                                 textView12.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton13.isChecked -> { sound13 = soundPool.load(item2, 1)
+                                 textView13.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton14.isChecked -> { sound14 = soundPool.load(item2, 1)
+                                 textView14.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton15.isChecked -> { sound15 = soundPool.load(item2, 1)
+                                 textView15.text = item2.replaceBeforeLast("/", "")
+                             }
+                             radioButton16.isChecked -> {
+                                 mp.release()
+                                 mp2.release()
+                                 mp = MediaPlayer()
+                                 mp2 = MediaPlayer()
+                                 volumeControlStream = AudioManager.STREAM_MUSIC
+                                 mp.setDataSource(item2)
+                                 mp2.setDataSource(item2)
+                                 supportActionBar?.title =item2.replaceBeforeLast("/", "")
+                                 mp.prepare()
+                                 mp2.prepare()
+                             }
+                         }
+                    }
+                }
+            }
         }
     }
 
@@ -953,6 +1087,12 @@ class MainActivity : AppCompatActivity() {
                     }
                     .show()
 
+                return true
+            }
+
+            R.id.menu7 -> {
+                radioButton16.performClick()
+                selectAudio()
                 return true
             }
 

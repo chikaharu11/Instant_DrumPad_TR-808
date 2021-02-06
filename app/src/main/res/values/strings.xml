@@ -23,6 +23,7 @@
     <string name="select">着信音から選ぶ</string>
     <string name="select2">内部サウンドから選ぶ</string>
     <string name="select3">外部サウンドから選ぶ</string>
+    <string name="select4">録音したサウンドから選ぶ</string>
     <string name="end">終了する</string>
     <string name="switch1">再生/停止</string>
     <string name="textView"> </string>
