@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             putExtra(DocumentsContract.EXTRA_INITIAL_URI, auri)
-            type = "*/*"
+            type = "audio/ogg"
         }
         startActivityForResult(intent, READ_REQUEST_CODE2)
     }
