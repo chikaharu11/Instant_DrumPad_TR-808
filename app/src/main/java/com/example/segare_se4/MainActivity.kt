@@ -3,16 +3,20 @@ package com.example.segare_se4
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.database.Cursor
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.Matrix
 import android.graphics.drawable.ColorDrawable
 import android.media.*
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
+import android.os.ParcelFileDescriptor
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.provider.Settings
@@ -26,11 +30,34 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.EasyPermissions
+import java.io.FileDescriptor
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+
+    private fun rotateImageIfRequired(bitmap: Bitmap, context: Context, uri: Uri?): Bitmap? {
+        val parcelFileDescriptor: ParcelFileDescriptor? = uri?.let { context.contentResolver.openFileDescriptor(it, "r") }
+        val fileDescriptor: FileDescriptor = parcelFileDescriptor!!.fileDescriptor
+        val ei = ExifInterface(fileDescriptor)
+        val orientation: Int = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL)
+        parcelFileDescriptor.close()
+        return when (orientation) {
+            ExifInterface.ORIENTATION_ROTATE_90 -> rotateImage(bitmap, 90)
+            ExifInterface.ORIENTATION_ROTATE_180 -> rotateImage(bitmap, 180)
+            ExifInterface.ORIENTATION_ROTATE_270 -> rotateImage(bitmap, 270)
+            else -> bitmap
+        }
+    }
+
+    private fun rotateImage(bitmap: Bitmap, degree: Int): Bitmap? {
+        val matrix = Matrix()
+        matrix.postRotate(degree.toFloat())
+        val rotatedImg = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+        bitmap.recycle()
+        return rotatedImg
+    }
 
     companion object {
         private const val READ_REQUEST_CODE: Int = 42
@@ -85,7 +112,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val permissions = arrayOf(
-            Manifest.permission.READ_EXTERNAL_STORAGE
+                Manifest.permission.READ_EXTERNAL_STORAGE
         )
 
         if (!EasyPermissions.hasPermissions(this, *permissions)) {
@@ -95,9 +122,9 @@ class MainActivity : AppCompatActivity() {
                     .setPositiveButton("設定する") { _, _ ->
                         val uriString = "package:$packageName"
                         val intent = Intent(
-                            Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse(
+                                Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse(
                                 uriString
-                            )
+                        )
                         )
                         startActivity(intent)
                         finish()
@@ -114,7 +141,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val audio1 = mutableSetOf(
-            ""
+                ""
         )
 
         audio1.clear()
@@ -136,8 +163,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.internal_spinner)
 
         val adapter = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -150,8 +177,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
@@ -210,7 +237,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val audio2 = mutableSetOf(
-            ""
+                ""
         )
 
         audio2.clear()
@@ -232,8 +259,8 @@ class MainActivity : AppCompatActivity() {
         val exSpinner = findViewById<Spinner>(R.id.external_spinner)
 
         val adapter2 = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems2
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems2
         )
 
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -246,8 +273,8 @@ class MainActivity : AppCompatActivity() {
         exSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
@@ -306,10 +333,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         val menu1 = mutableSetOf(
-            "内部サウンド",
-            "外部サウンド",
-            "録音したサウンド",
-            "画像を選ぶ"
+                "内部サウンド",
+                "外部サウンド",
+                "録音したサウンド",
+                "画像を選ぶ"
         )
 
         val spinnerItems3 = menu1.sorted()
@@ -317,8 +344,8 @@ class MainActivity : AppCompatActivity() {
         val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
 
         val adapter3 = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems3
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems3
         )
 
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -331,8 +358,8 @@ class MainActivity : AppCompatActivity() {
         meSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -551,21 +578,21 @@ class MainActivity : AppCompatActivity() {
                     val inputStream = contentResolver?.openInputStream(uri)
                     val image = BitmapFactory.decodeStream(inputStream)
                     when {
-                        radioButton.isChecked -> imageView.setImageBitmap(image)
-                        radioButton2.isChecked -> imageView2.setImageBitmap(image)
-                        radioButton3.isChecked -> imageView3.setImageBitmap(image)
-                        radioButton4.isChecked -> imageView4.setImageBitmap(image)
-                        radioButton5.isChecked -> imageView5.setImageBitmap(image)
-                        radioButton6.isChecked -> imageView6.setImageBitmap(image)
-                        radioButton7.isChecked -> imageView7.setImageBitmap(image)
-                        radioButton8.isChecked -> imageView8.setImageBitmap(image)
-                        radioButton9.isChecked -> imageView9.setImageBitmap(image)
-                        radioButton10.isChecked -> imageView10.setImageBitmap(image)
-                        radioButton11.isChecked -> imageView11.setImageBitmap(image)
-                        radioButton12.isChecked -> imageView12.setImageBitmap(image)
-                        radioButton13.isChecked -> imageView13.setImageBitmap(image)
-                        radioButton14.isChecked -> imageView14.setImageBitmap(image)
-                        radioButton15.isChecked -> imageView15.setImageBitmap(image)
+                        radioButton.isChecked -> imageView.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton2.isChecked -> imageView2.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton3.isChecked -> imageView3.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton4.isChecked -> imageView4.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton5.isChecked -> imageView5.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton6.isChecked -> imageView6.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton7.isChecked -> imageView7.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton8.isChecked -> imageView8.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton9.isChecked -> imageView9.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton10.isChecked -> imageView10.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton11.isChecked -> imageView11.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton12.isChecked -> imageView12.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton13.isChecked -> imageView13.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton14.isChecked -> imageView14.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton15.isChecked -> imageView15.setImageBitmap(rotateImageIfRequired(image,this,uri))
                     }
                 }
             }
@@ -575,67 +602,82 @@ class MainActivity : AppCompatActivity() {
                     val docId = DocumentsContract.getDocumentId(uri)
                     val split = docId.split(":".toRegex()).toTypedArray()
                     val type = split[0]
-                     if ("primary".equals(type, ignoreCase = true)) {
-                         val item = "/storage/emulated/0/" + split[1]
-                         when{
-                             radioButton.isChecked -> { sound1 = soundPool.load(item, 1)
-                                 textView.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton2.isChecked -> { sound2 = soundPool.load(item, 1)
-                                 textView2.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton3.isChecked -> { sound3 = soundPool.load(item, 1)
-                                 textView3.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton4.isChecked -> { sound4 = soundPool.load(item, 1)
-                                 textView4.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton5.isChecked -> { sound5 = soundPool.load(item, 1)
-                                 textView5.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton6.isChecked -> { sound6 = soundPool.load(item, 1)
-                                 textView6.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton7.isChecked -> { sound7 = soundPool.load(item, 1)
-                                 textView7.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton8.isChecked -> { sound8 = soundPool.load(item, 1)
-                                 textView8.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton9.isChecked -> { sound9 = soundPool.load(item, 1)
-                                 textView9.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton10.isChecked -> { sound10 = soundPool.load(item, 1)
-                                 textView10.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton11.isChecked -> { sound11 = soundPool.load(item, 1)
-                                 textView11.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton12.isChecked -> { sound12 = soundPool.load(item, 1)
-                                 textView12.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton13.isChecked -> { sound13 = soundPool.load(item, 1)
-                                 textView13.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton14.isChecked -> { sound14 = soundPool.load(item, 1)
-                                 textView14.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton15.isChecked -> { sound15 = soundPool.load(item, 1)
-                                 textView15.text = item.replaceBeforeLast("/", "")
-                             }
-                             radioButton16.isChecked -> {
-                                 mp.release()
-                                 mp2.release()
-                                 mp = MediaPlayer()
-                                 mp2 = MediaPlayer()
-                                 volumeControlStream = AudioManager.STREAM_MUSIC
-                                 mp.setDataSource(item)
-                                 mp2.setDataSource(item)
-                                 supportActionBar?.title =item.replaceBeforeLast("/", "")
-                                 mp.prepare()
-                                 mp2.prepare()
-                             }
-                         }
+                    if ("primary".equals(type, ignoreCase = true)) {
+                        val item = "/storage/emulated/0/" + split[1]
+                        when {
+                            radioButton.isChecked -> {
+                                sound1 = soundPool.load(item, 1)
+                                textView.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton2.isChecked -> {
+                                sound2 = soundPool.load(item, 1)
+                                textView2.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton3.isChecked -> {
+                                sound3 = soundPool.load(item, 1)
+                                textView3.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton4.isChecked -> {
+                                sound4 = soundPool.load(item, 1)
+                                textView4.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton5.isChecked -> {
+                                sound5 = soundPool.load(item, 1)
+                                textView5.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton6.isChecked -> {
+                                sound6 = soundPool.load(item, 1)
+                                textView6.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton7.isChecked -> {
+                                sound7 = soundPool.load(item, 1)
+                                textView7.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton8.isChecked -> {
+                                sound8 = soundPool.load(item, 1)
+                                textView8.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton9.isChecked -> {
+                                sound9 = soundPool.load(item, 1)
+                                textView9.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton10.isChecked -> {
+                                sound10 = soundPool.load(item, 1)
+                                textView10.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton11.isChecked -> {
+                                sound11 = soundPool.load(item, 1)
+                                textView11.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton12.isChecked -> {
+                                sound12 = soundPool.load(item, 1)
+                                textView12.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton13.isChecked -> {
+                                sound13 = soundPool.load(item, 1)
+                                textView13.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton14.isChecked -> {
+                                sound14 = soundPool.load(item, 1)
+                                textView14.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton15.isChecked -> {
+                                sound15 = soundPool.load(item, 1)
+                                textView15.text = item.replaceBeforeLast("/", "")
+                            }
+                            radioButton16.isChecked -> {
+                                mp.release()
+                                mp2.release()
+                                mp = MediaPlayer()
+                                mp2 = MediaPlayer()
+                                volumeControlStream = AudioManager.STREAM_MUSIC
+                                mp.setDataSource(item)
+                                mp2.setDataSource(item)
+                                supportActionBar?.title = item.replaceBeforeLast("/", "")
+                                mp.prepare()
+                                mp2.prepare()
+                            }
+                        }
                     } else {
                         try {
                             val item2 = "/stroage/" + type + "/" + split[1]
@@ -767,7 +809,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun select() {
         val audio1 = mutableSetOf(
-            ""
+                ""
         )
 
         audio1.clear()
@@ -790,8 +832,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
 
         val adapter = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -805,8 +847,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -835,7 +877,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun select2() {
         val audio1 = mutableSetOf(
-            ""
+                ""
         )
 
         audio1.clear()
@@ -857,8 +899,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
 
         val adapter = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -872,8 +914,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -902,7 +944,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun select3() {
         val audio1 = mutableSetOf(
-            ""
+                ""
         )
 
         audio1.clear()
@@ -924,8 +966,8 @@ class MainActivity : AppCompatActivity() {
         val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
 
         val adapter = ArrayAdapter(
-            applicationContext,
-            android.R.layout.simple_spinner_item, spinnerItems
+                applicationContext,
+                android.R.layout.simple_spinner_item, spinnerItems
         )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -939,8 +981,8 @@ class MainActivity : AppCompatActivity() {
         inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
             ) {
                 if (!inSpinner.isFocusable) {
                     inSpinner.isFocusable = true
@@ -1097,14 +1139,14 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu6 -> {
                 AlertDialog.Builder(this)
-                    .setTitle("終了しますか？")
-                    .setPositiveButton("YES") { _, _ ->
-                        finish()
-                    }
-                    .setNegativeButton("NO") { _, _ ->
+                        .setTitle("終了しますか？")
+                        .setPositiveButton("YES") { _, _ ->
+                            finish()
+                        }
+                        .setNegativeButton("NO") { _, _ ->
 
-                    }
-                    .show()
+                        }
+                        .show()
 
                 return true
             }
@@ -1120,7 +1162,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val permissions = arrayOf(
-        Manifest.permission.READ_EXTERNAL_STORAGE
+            Manifest.permission.READ_EXTERNAL_STORAGE
     )
 
     override fun onDestroy() {
