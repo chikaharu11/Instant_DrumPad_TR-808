@@ -392,7 +392,7 @@ class MainActivity : AppCompatActivity() {
 
                 .setAudioAttributes(audioAttributes)
 
-                .setMaxStreams(15)
+                .setMaxStreams(10)
                 .build()
 
         sound1 = soundPool.load(this, R.raw.ta, 1)
@@ -427,63 +427,108 @@ class MainActivity : AppCompatActivity() {
 
 
         imageView.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
         }
 
         imageView2.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound2, 1.0f, 1.0f, 1, 0, 1.0f)
         }
 
         imageView3.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView4.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView5.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound5, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView6.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound6, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView7.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView8.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView9.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
 
         }
 
         imageView10.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound10, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView11.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound11, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView12.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView13.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound13, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView14.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound14, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
         imageView15.setOnClickListener {
+            if (switch0.isChecked) {
+                soundPool.autoPause()
+            }
             soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
         }
 
@@ -1028,11 +1073,20 @@ class MainActivity : AppCompatActivity() {
         } else {
             menuLamp2.setIcon(R.drawable.ic_baseline_radio_button_checked_24_2)
         }
+
+        val menuLamp3 = menu.findItem(R.id.menu8)
+        if (menuSwitch0) {
+            menuLamp3.setIcon(R.drawable.ic_baseline_filter_2_24)
+        } else {
+            menuLamp3.setIcon(R.drawable.ic_baseline_filter_1_24)
+        }
+
         return true
     }
 
     private var menuSwitch = true
     private var menuSwitch2 = true
+    private var menuSwitch0 = true
     private var mediaRecorder = MediaRecorder()
 
     @SuppressLint("SimpleDateFormat")
@@ -1060,7 +1114,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 mediaRecorder.prepare()
                 mediaRecorder.start()
-                Toast.makeText(applicationContext, "録音を開始します。", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "音声録音を開始します。", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 Toast.makeText(applicationContext, "録音に失敗したか、マイクの権限がありません。", Toast.LENGTH_LONG).show()
 
@@ -1154,6 +1208,19 @@ class MainActivity : AppCompatActivity() {
             R.id.menu7 -> {
                 radioButton16.performClick()
                 selectAudio()
+                return true
+            }
+
+            R.id.menu8 -> {
+                if (switch0.isChecked) {
+                    menuSwitch0 = true
+                    invalidateOptionsMenu()
+                    switch0.isChecked = false
+                } else {
+                    menuSwitch0 = false
+                    invalidateOptionsMenu()
+                    switch0.isChecked = true
+                }
                 return true
             }
 
