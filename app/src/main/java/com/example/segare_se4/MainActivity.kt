@@ -621,23 +621,44 @@ class MainActivity : AppCompatActivity() {
 
                 resultData?.data?.also { uri ->
                     val inputStream = contentResolver?.openInputStream(uri)
-                    val image = BitmapFactory.decodeStream(inputStream)
+                    val imageOptions = BitmapFactory.Options()
+                    val contentResolver = this.contentResolver
+                    val projection = arrayOf(MediaStore.MediaColumns.SIZE)
+                    val fileSize = contentResolver.query(uri, projection, null, null, null)?.use { cursor ->
+                        if (cursor.moveToFirst()) {
+                            cursor.getLong(0)
+                        } else {
+                            null
+                        }
+                    }
+                    if (fileSize != null) {
+                        when  {
+                            fileSize in 1048576..2097151 -> imageOptions.inSampleSize = 2
+                            fileSize in 2097152..4194303 -> imageOptions.inSampleSize = 4
+                            fileSize in 4194304..8388607 -> imageOptions.inSampleSize = 8
+                            fileSize in 8388608..16777215 -> imageOptions.inSampleSize = 16
+                            fileSize > 16777216 ->imageOptions.inSampleSize = 32
+                        }
+                    }
+                    imageOptions.inPreferredConfig = Bitmap.Config.RGB_565
+                    val image = BitmapFactory.decodeStream(inputStream, null, imageOptions)
+
                     when {
-                        radioButton.isChecked -> imageView.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton2.isChecked -> imageView2.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton3.isChecked -> imageView3.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton4.isChecked -> imageView4.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton5.isChecked -> imageView5.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton6.isChecked -> imageView6.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton7.isChecked -> imageView7.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton8.isChecked -> imageView8.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton9.isChecked -> imageView9.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton10.isChecked -> imageView10.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton11.isChecked -> imageView11.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton12.isChecked -> imageView12.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton13.isChecked -> imageView13.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton14.isChecked -> imageView14.setImageBitmap(rotateImageIfRequired(image,this,uri))
-                        radioButton15.isChecked -> imageView15.setImageBitmap(rotateImageIfRequired(image,this,uri))
+                        radioButton.isChecked -> imageView.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton2.isChecked -> imageView2.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton3.isChecked -> imageView3.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton4.isChecked -> imageView4.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton5.isChecked -> imageView5.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton6.isChecked -> imageView6.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton7.isChecked -> imageView7.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton8.isChecked -> imageView8.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton9.isChecked -> imageView9.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton10.isChecked -> imageView10.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton11.isChecked -> imageView11.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton12.isChecked -> imageView12.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton13.isChecked -> imageView13.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton14.isChecked -> imageView14.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
+                        radioButton15.isChecked -> imageView15.setImageBitmap(image?.let { rotateImageIfRequired(it, this, uri) })
                     }
                 }
             }
