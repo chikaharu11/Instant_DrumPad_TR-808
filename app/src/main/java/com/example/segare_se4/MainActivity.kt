@@ -633,11 +633,15 @@ class MainActivity : AppCompatActivity() {
                     }
                     if (fileSize != null) {
                         when  {
+                            fileSize < 1048576 -> imageOptions.inSampleSize = 1
                             fileSize in 1048576..2097151 -> imageOptions.inSampleSize = 2
                             fileSize in 2097152..4194303 -> imageOptions.inSampleSize = 4
                             fileSize in 4194304..8388607 -> imageOptions.inSampleSize = 8
                             fileSize in 8388608..16777215 -> imageOptions.inSampleSize = 16
-                            fileSize > 16777216 ->imageOptions.inSampleSize = 32
+                            fileSize in 16777216..33554431 -> imageOptions.inSampleSize = 32
+                            fileSize in 33554432..67108863 -> imageOptions.inSampleSize = 64
+                            fileSize in 67108864..134217728 -> imageOptions.inSampleSize = 128
+                            else -> imageOptions.inSampleSize = 256
                         }
                     }
                     imageOptions.inPreferredConfig = Bitmap.Config.RGB_565
