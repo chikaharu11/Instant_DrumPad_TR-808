@@ -1,4 +1,4 @@
-package com.example.segare_se4
+package jp.chikaharu11.segare_se
 
 import org.junit.Test
 
