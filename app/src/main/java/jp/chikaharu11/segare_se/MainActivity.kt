@@ -151,7 +151,7 @@ class MainActivity : AppCompatActivity() {
         cursor!!.moveToFirst()
         val path: Array<String?> = arrayOfNulls(cursor.count)
         for (i in path.indices) {
-            path[i] = cursor.getString(1)
+            path[i] = cursor.getString(cursor.getColumnIndex("_data"))
             audio1.add(path[i].toString())
             cursor.moveToNext()
         }
@@ -247,7 +247,7 @@ class MainActivity : AppCompatActivity() {
         cursor2!!.moveToFirst()
         val path2: Array<String?> = arrayOfNulls(cursor2.count)
         for (i in path2.indices) {
-            path2[i] = cursor2.getString(1)
+            path2[i] = cursor2.getString(cursor2.getColumnIndex("_data"))
             audio2.add(path2[i].toString())
             cursor2.moveToNext()
         }
@@ -960,7 +960,7 @@ class MainActivity : AppCompatActivity() {
         cursor!!.moveToFirst()
         val path: Array<String?> = arrayOfNulls(cursor.count)
         for (i in path.indices) {
-            path[i] = cursor.getString(1)
+            path[i] = cursor.getString(cursor.getColumnIndex("_data"))
             audio1.add(path[i].toString())
             cursor.moveToNext()
         }
@@ -1028,7 +1028,7 @@ class MainActivity : AppCompatActivity() {
         cursor!!.moveToFirst()
         val path: Array<String?> = arrayOfNulls(cursor.count)
         for (i in path.indices) {
-            path[i] = cursor.getString(1)
+            path[i] = cursor.getString(cursor.getColumnIndex("_data"))
             audio1.add(path[i].toString())
             cursor.moveToNext()
         }
