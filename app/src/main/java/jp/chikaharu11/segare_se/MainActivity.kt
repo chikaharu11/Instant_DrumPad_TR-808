@@ -332,20 +332,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val menu1 = mutableSetOf(
-                "内部サウンド",
-                "外部サウンド",
-                "録音したサウンド",
-                "画像を選ぶ"
+        val menu1 = listOf(
+                "内部サウンドから選ぶ",
+                "外部サウンドから選ぶ",
+                "録音したサウンドから選ぶ",
+                "画像を選ぶ",
+                "フリー音源サイトからDLする"
         )
-
-        val spinnerItems3 = menu1.sorted()
 
         val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
 
         val adapter3 = ArrayAdapter(
                 applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems3
+                android.R.layout.simple_spinner_item, menu1
         )
 
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -368,8 +367,9 @@ class MainActivity : AppCompatActivity() {
                 when(position){
                     0 -> inSpinner.performClick()
                     1 -> exSpinner.performClick()
-                    2 -> selectPhoto()
-                    3 -> selectAudio()
+                    2 -> selectAudio()
+                    3 -> selectPhoto()
+                    4 -> startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://maoudamashii.jokersounds.com/")))
                 }
             }
 
