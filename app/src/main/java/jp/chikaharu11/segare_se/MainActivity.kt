@@ -926,19 +926,23 @@ class MainActivity : AppCompatActivity() {
                     inSpinner.isFocusable = true
                     return
                 }
-                val spinnerParent = parent as Spinner
-                val item = spinnerParent.selectedItem as String
-                mp.release()
-                mp2.release()
-                mp = MediaPlayer()
-                mp2 = MediaPlayer()
-                volumeControlStream = AudioManager.STREAM_MUSIC
-                val uri = Uri.parse(item.replaceBefore("content", ""))
-                mp.setDataSource(applicationContext, uri)
-                mp2.setDataSource(applicationContext, uri)
-                supportActionBar?.title =item.replaceAfter(")", "")
-                mp.prepare()
-                mp2.prepare()
+                try {
+                    val spinnerParent = parent as Spinner
+                    val item = spinnerParent.selectedItem as String
+                    mp.release()
+                    mp2.release()
+                    mp = MediaPlayer()
+                    mp2 = MediaPlayer()
+                    volumeControlStream = AudioManager.STREAM_MUSIC
+                    val uri = Uri.parse(item.replaceBefore("content", ""))
+                    mp.setDataSource(applicationContext, uri)
+                    mp2.setDataSource(applicationContext, uri)
+                    supportActionBar?.title = item.replaceAfter(")", "")
+                    mp.prepare()
+                    mp2.prepare()
+                } catch (e: Exception) {
+                    Toast.makeText(applicationContext, "この音声ファイルは\n設定できません。", Toast.LENGTH_LONG).show()
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -994,19 +998,23 @@ class MainActivity : AppCompatActivity() {
                     inSpinner.isFocusable = true
                     return
                 }
-                val spinnerParent = parent as Spinner
-                val item = spinnerParent.selectedItem as String
-                mp.release()
-                mp2.release()
-                mp = MediaPlayer()
-                mp2 = MediaPlayer()
-                volumeControlStream = AudioManager.STREAM_MUSIC
-                val uri3 = Uri.parse(item)
-                mp.setDataSource(applicationContext, uri3)
-                mp2.setDataSource(applicationContext, uri3)
-                supportActionBar?.title =item.replaceBeforeLast("/", "")
-                mp.prepare()
-                mp2.prepare()
+                try {
+                    val spinnerParent = parent as Spinner
+                    val item = spinnerParent.selectedItem as String
+                    mp.release()
+                    mp2.release()
+                    mp = MediaPlayer()
+                    mp2 = MediaPlayer()
+                    volumeControlStream = AudioManager.STREAM_MUSIC
+                    val uri3 = Uri.parse(item)
+                    mp.setDataSource(applicationContext, uri3)
+                    mp2.setDataSource(applicationContext, uri3)
+                    supportActionBar?.title = item.replaceBeforeLast("/", "")
+                    mp.prepare()
+                    mp2.prepare()
+                } catch (e: Exception) {
+                    Toast.makeText(applicationContext, "この音声ファイルは\n設定できません。", Toast.LENGTH_LONG).show()
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -1099,9 +1107,9 @@ class MainActivity : AppCompatActivity() {
 
         val menuLamp2 = menu.findItem(R.id.menu2)
         if (menuSwitch2) {
-            menuLamp2.setIcon(R.drawable.ic_baseline_radio_button_checked_24)
+            menuLamp2.setIcon(R.drawable.ic_baseline_mic_24)
         } else {
-            menuLamp2.setIcon(R.drawable.ic_baseline_radio_button_checked_24_2)
+            menuLamp2.setIcon(R.drawable.ic_baseline_mic_24_2)
         }
 
         val menuLamp3 = menu.findItem(R.id.menu8)
