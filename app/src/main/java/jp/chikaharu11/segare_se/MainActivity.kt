@@ -152,7 +152,7 @@ class MainActivity : AppCompatActivity() {
         val path: Array<String?> = arrayOfNulls(cursor.count)
         for (i in path.indices) {
             path[i] = cursor.getString(cursor.getColumnIndex("_data"))
-            audio1.add(path[i].toString())
+            audio1.add(path[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path[i].toString())
             cursor.moveToNext()
         }
 
@@ -183,50 +183,50 @@ class MainActivity : AppCompatActivity() {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 when{
-                    radioButton.isChecked -> { sound1 = soundPool.load(item, 1)
-                        textView.text = item.replaceBeforeLast("/", "")
+                    radioButton.isChecked -> { sound1 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton2.isChecked -> { sound2 = soundPool.load(item, 1)
-                        textView2.text = item.replaceBeforeLast("/", "")
+                    radioButton2.isChecked -> { sound2 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView2.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton3.isChecked -> { sound3 = soundPool.load(item, 1)
-                        textView3.text = item.replaceBeforeLast("/", "")
+                    radioButton3.isChecked -> { sound3 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView3.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton4.isChecked -> { sound4 = soundPool.load(item, 1)
-                        textView4.text = item.replaceBeforeLast("/", "")
+                    radioButton4.isChecked -> { sound4 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView4.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton5.isChecked -> { sound5 = soundPool.load(item, 1)
-                        textView5.text = item.replaceBeforeLast("/", "")
+                    radioButton5.isChecked -> { sound5 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView5.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton6.isChecked -> { sound6 = soundPool.load(item, 1)
-                        textView6.text = item.replaceBeforeLast("/", "")
+                    radioButton6.isChecked -> { sound6 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView6.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton7.isChecked -> { sound7 = soundPool.load(item, 1)
-                        textView7.text = item.replaceBeforeLast("/", "")
+                    radioButton7.isChecked -> { sound7 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView7.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton8.isChecked -> { sound8 = soundPool.load(item, 1)
-                        textView8.text = item.replaceBeforeLast("/", "")
+                    radioButton8.isChecked -> { sound8 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView8.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton9.isChecked -> { sound9 = soundPool.load(item, 1)
-                        textView9.text = item.replaceBeforeLast("/", "")
+                    radioButton9.isChecked -> { sound9 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView9.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton10.isChecked -> { sound10 = soundPool.load(item, 1)
-                        textView10.text = item.replaceBeforeLast("/", "")
+                    radioButton10.isChecked -> { sound10 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView10.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton11.isChecked -> { sound11 = soundPool.load(item, 1)
-                        textView11.text = item.replaceBeforeLast("/", "")
+                    radioButton11.isChecked -> { sound11 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView11.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton12.isChecked -> { sound12 = soundPool.load(item, 1)
-                        textView12.text = item.replaceBeforeLast("/", "")
+                    radioButton12.isChecked -> { sound12 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView12.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton13.isChecked -> { sound13 = soundPool.load(item, 1)
-                        textView13.text = item.replaceBeforeLast("/", "")
+                    radioButton13.isChecked -> { sound13 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView13.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton14.isChecked -> { sound14 = soundPool.load(item, 1)
-                        textView14.text = item.replaceBeforeLast("/", "")
+                    radioButton14.isChecked -> { sound14 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView14.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton15.isChecked -> { sound15 = soundPool.load(item, 1)
-                        textView15.text = item.replaceBeforeLast("/", "")
+                    radioButton15.isChecked -> { sound15 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView15.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
                 }
             }
@@ -248,7 +248,7 @@ class MainActivity : AppCompatActivity() {
         val path2: Array<String?> = arrayOfNulls(cursor2.count)
         for (i in path2.indices) {
             path2[i] = cursor2.getString(cursor2.getColumnIndex("_data"))
-            audio2.add(path2[i].toString())
+            audio2.add(path2[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path2[i].toString())
             cursor2.moveToNext()
         }
 
@@ -279,50 +279,50 @@ class MainActivity : AppCompatActivity() {
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
                 when{
-                    radioButton.isChecked -> { sound1 = soundPool.load(item, 1)
-                        textView.text = item.replaceBeforeLast("/", "")
+                    radioButton.isChecked -> { sound1 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton2.isChecked -> { sound2 = soundPool.load(item, 1)
-                        textView2.text = item.replaceBeforeLast("/", "")
+                    radioButton2.isChecked -> { sound2 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView2.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton3.isChecked -> { sound3 = soundPool.load(item, 1)
-                        textView3.text = item.replaceBeforeLast("/", "")
+                    radioButton3.isChecked -> { sound3 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView3.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton4.isChecked -> { sound4 = soundPool.load(item, 1)
-                        textView4.text = item.replaceBeforeLast("/", "")
+                    radioButton4.isChecked -> { sound4 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView4.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton5.isChecked -> { sound5 = soundPool.load(item, 1)
-                        textView5.text = item.replaceBeforeLast("/", "")
+                    radioButton5.isChecked -> { sound5 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView5.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton6.isChecked -> { sound6 = soundPool.load(item, 1)
-                        textView6.text = item.replaceBeforeLast("/", "")
+                    radioButton6.isChecked -> { sound6 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView6.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton7.isChecked -> { sound7 = soundPool.load(item, 1)
-                        textView7.text = item.replaceBeforeLast("/", "")
+                    radioButton7.isChecked -> { sound7 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView7.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton8.isChecked -> { sound8 = soundPool.load(item, 1)
-                        textView8.text = item.replaceBeforeLast("/", "")
+                    radioButton8.isChecked -> { sound8 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView8.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton9.isChecked -> { sound9 = soundPool.load(item, 1)
-                        textView9.text = item.replaceBeforeLast("/", "")
+                    radioButton9.isChecked -> { sound9 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView9.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton10.isChecked -> { sound10 = soundPool.load(item, 1)
-                        textView10.text = item.replaceBeforeLast("/", "")
+                    radioButton10.isChecked -> { sound10 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView10.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton11.isChecked -> { sound11 = soundPool.load(item, 1)
-                        textView11.text = item.replaceBeforeLast("/", "")
+                    radioButton11.isChecked -> { sound11 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView11.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton12.isChecked -> { sound12 = soundPool.load(item, 1)
-                        textView12.text = item.replaceBeforeLast("/", "")
+                    radioButton12.isChecked -> { sound12 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView12.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton13.isChecked -> { sound13 = soundPool.load(item, 1)
-                        textView13.text = item.replaceBeforeLast("/", "")
+                    radioButton13.isChecked -> { sound13 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView13.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton14.isChecked -> { sound14 = soundPool.load(item, 1)
-                        textView14.text = item.replaceBeforeLast("/", "")
+                    radioButton14.isChecked -> { sound14 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView14.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
-                    radioButton15.isChecked -> { sound15 = soundPool.load(item, 1)
-                        textView15.text = item.replaceBeforeLast("/", "")
+                    radioButton15.isChecked -> { sound15 = soundPool.load(item.replaceBefore("/", ""), 1)
+                        textView15.text = item.replaceBeforeLast("/", "").replace("/", "")
                     }
                 }
             }
@@ -677,63 +677,63 @@ class MainActivity : AppCompatActivity() {
                         when {
                             radioButton.isChecked -> {
                                 sound1 = soundPool.load(item, 1)
-                                textView.text = item.replaceBeforeLast("/", "")
+                                textView.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton2.isChecked -> {
                                 sound2 = soundPool.load(item, 1)
-                                textView2.text = item.replaceBeforeLast("/", "")
+                                textView2.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton3.isChecked -> {
                                 sound3 = soundPool.load(item, 1)
-                                textView3.text = item.replaceBeforeLast("/", "")
+                                textView3.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton4.isChecked -> {
                                 sound4 = soundPool.load(item, 1)
-                                textView4.text = item.replaceBeforeLast("/", "")
+                                textView4.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton5.isChecked -> {
                                 sound5 = soundPool.load(item, 1)
-                                textView5.text = item.replaceBeforeLast("/", "")
+                                textView5.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton6.isChecked -> {
                                 sound6 = soundPool.load(item, 1)
-                                textView6.text = item.replaceBeforeLast("/", "")
+                                textView6.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton7.isChecked -> {
                                 sound7 = soundPool.load(item, 1)
-                                textView7.text = item.replaceBeforeLast("/", "")
+                                textView7.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton8.isChecked -> {
                                 sound8 = soundPool.load(item, 1)
-                                textView8.text = item.replaceBeforeLast("/", "")
+                                textView8.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton9.isChecked -> {
                                 sound9 = soundPool.load(item, 1)
-                                textView9.text = item.replaceBeforeLast("/", "")
+                                textView9.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton10.isChecked -> {
                                 sound10 = soundPool.load(item, 1)
-                                textView10.text = item.replaceBeforeLast("/", "")
+                                textView10.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton11.isChecked -> {
                                 sound11 = soundPool.load(item, 1)
-                                textView11.text = item.replaceBeforeLast("/", "")
+                                textView11.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton12.isChecked -> {
                                 sound12 = soundPool.load(item, 1)
-                                textView12.text = item.replaceBeforeLast("/", "")
+                                textView12.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton13.isChecked -> {
                                 sound13 = soundPool.load(item, 1)
-                                textView13.text = item.replaceBeforeLast("/", "")
+                                textView13.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton14.isChecked -> {
                                 sound14 = soundPool.load(item, 1)
-                                textView14.text = item.replaceBeforeLast("/", "")
+                                textView14.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton15.isChecked -> {
                                 sound15 = soundPool.load(item, 1)
-                                textView15.text = item.replaceBeforeLast("/", "")
+                                textView15.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton16.isChecked -> {
                                 mp.release()
@@ -744,7 +744,7 @@ class MainActivity : AppCompatActivity() {
                                 val uri1 = Uri.parse(item)
                                 mp.setDataSource(applicationContext, uri1)
                                 mp2.setDataSource(applicationContext, uri1)
-                                supportActionBar?.title = item.replaceBeforeLast("/", "")
+                                supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
                                 mp.prepare()
                                 mp2.prepare()
                             }
@@ -755,63 +755,63 @@ class MainActivity : AppCompatActivity() {
                             when {
                                 radioButton.isChecked -> {
                                     sound1 = soundPool.load(item2, 1)
-                                    textView.text = item2.replaceBeforeLast("/", "")
+                                    textView.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton2.isChecked -> {
                                     sound2 = soundPool.load(item2, 1)
-                                    textView2.text = item2.replaceBeforeLast("/", "")
+                                    textView2.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton3.isChecked -> {
                                     sound3 = soundPool.load(item2, 1)
-                                    textView3.text = item2.replaceBeforeLast("/", "")
+                                    textView3.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton4.isChecked -> {
                                     sound4 = soundPool.load(item2, 1)
-                                    textView4.text = item2.replaceBeforeLast("/", "")
+                                    textView4.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton5.isChecked -> {
                                     sound5 = soundPool.load(item2, 1)
-                                    textView5.text = item2.replaceBeforeLast("/", "")
+                                    textView5.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton6.isChecked -> {
                                     sound6 = soundPool.load(item2, 1)
-                                    textView6.text = item2.replaceBeforeLast("/", "")
+                                    textView6.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton7.isChecked -> {
                                     sound7 = soundPool.load(item2, 1)
-                                    textView7.text = item2.replaceBeforeLast("/", "")
+                                    textView7.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton8.isChecked -> {
                                     sound8 = soundPool.load(item2, 1)
-                                    textView8.text = item2.replaceBeforeLast("/", "")
+                                    textView8.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton9.isChecked -> {
                                     sound9 = soundPool.load(item2, 1)
-                                    textView9.text = item2.replaceBeforeLast("/", "")
+                                    textView9.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton10.isChecked -> {
                                     sound10 = soundPool.load(item2, 1)
-                                    textView10.text = item2.replaceBeforeLast("/", "")
+                                    textView10.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton11.isChecked -> {
                                     sound11 = soundPool.load(item2, 1)
-                                    textView11.text = item2.replaceBeforeLast("/", "")
+                                    textView11.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton12.isChecked -> {
                                     sound12 = soundPool.load(item2, 1)
-                                    textView12.text = item2.replaceBeforeLast("/", "")
+                                    textView12.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton13.isChecked -> {
                                     sound13 = soundPool.load(item2, 1)
-                                    textView13.text = item2.replaceBeforeLast("/", "")
+                                    textView13.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton14.isChecked -> {
                                     sound14 = soundPool.load(item2, 1)
-                                    textView14.text = item2.replaceBeforeLast("/", "")
+                                    textView14.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton15.isChecked -> {
                                     sound15 = soundPool.load(item2, 1)
-                                    textView15.text = item2.replaceBeforeLast("/", "")
+                                    textView15.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton16.isChecked -> {
                                     mp.release()
@@ -822,7 +822,7 @@ class MainActivity : AppCompatActivity() {
                                     val uri2 = Uri.parse(item2)
                                     mp.setDataSource(applicationContext, uri2)
                                     mp2.setDataSource(applicationContext, uri2)
-                                    supportActionBar?.title = item2.replaceBeforeLast("/", "")
+                                    supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "")
                                     mp.prepare()
                                     mp2.prepare()
                                 }
@@ -937,7 +937,7 @@ class MainActivity : AppCompatActivity() {
                     val uri = Uri.parse(item.replaceBefore("content", ""))
                     mp.setDataSource(applicationContext, uri)
                     mp2.setDataSource(applicationContext, uri)
-                    supportActionBar?.title = item.replaceAfter(")", "")
+                    supportActionBar?.title = item.replaceAfter(")", "").replace("/", "")
                     mp.prepare()
                     mp2.prepare()
                 } catch (e: Exception) {
@@ -965,7 +965,7 @@ class MainActivity : AppCompatActivity() {
         val path: Array<String?> = arrayOfNulls(cursor.count)
         for (i in path.indices) {
             path[i] = cursor.getString(cursor.getColumnIndex("_data"))
-            audio1.add(path[i].toString())
+            audio1.add(path[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path[i].toString())
             cursor.moveToNext()
         }
 
@@ -1006,10 +1006,10 @@ class MainActivity : AppCompatActivity() {
                     mp = MediaPlayer()
                     mp2 = MediaPlayer()
                     volumeControlStream = AudioManager.STREAM_MUSIC
-                    val uri3 = Uri.parse(item)
+                    val uri3 = Uri.parse(item.replaceBefore("/", ""))
                     mp.setDataSource(applicationContext, uri3)
                     mp2.setDataSource(applicationContext, uri3)
-                    supportActionBar?.title = item.replaceBeforeLast("/", "")
+                    supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
                     mp.prepare()
                     mp2.prepare()
                 } catch (e: Exception) {
@@ -1037,7 +1037,7 @@ class MainActivity : AppCompatActivity() {
         val path: Array<String?> = arrayOfNulls(cursor.count)
         for (i in path.indices) {
             path[i] = cursor.getString(cursor.getColumnIndex("_data"))
-            audio1.add(path[i].toString())
+            audio1.add(path[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path[i].toString())
             cursor.moveToNext()
         }
 
@@ -1077,10 +1077,10 @@ class MainActivity : AppCompatActivity() {
                 mp = MediaPlayer()
                 mp2 = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
-                val uri4 = Uri.parse(item)
+                val uri4 = Uri.parse(item.replaceBefore("/", ""))
                 mp.setDataSource(applicationContext, uri4)
                 mp2.setDataSource(applicationContext, uri4)
-                supportActionBar?.title =item.replaceBeforeLast("/", "")
+                supportActionBar?.title =item.replaceBeforeLast("/", "").replace("/", "")
                 mp.prepare()
                 mp2.prepare()
             }
