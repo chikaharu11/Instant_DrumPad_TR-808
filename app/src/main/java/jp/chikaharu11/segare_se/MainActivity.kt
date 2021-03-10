@@ -378,8 +378,8 @@ class MainActivity : AppCompatActivity() {
                 "内部サウンドから選ぶ",
                 "外部サウンドから選ぶ",
                 "録音したサウンドから選ぶ",
-                "画像を選ぶ",
-                "フリー音源サイトからDLする"
+                "魔王魂さんからDLする",
+                "画像を選ぶ"
         )
 
         val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
@@ -410,8 +410,8 @@ class MainActivity : AppCompatActivity() {
                     0 -> inSpinner.performClick()
                     1 -> selectEX()
                     2 -> selectAudio()
-                    3 -> selectPhoto()
-                    4 -> startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://maoudamashii.jokersounds.com/")))
+                    3 -> startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://maoudamashii.jokersounds.com/")))
+                    4 -> selectPhoto()
                 }
             }
 
@@ -1302,6 +1302,11 @@ class MainActivity : AppCompatActivity() {
                     invalidateOptionsMenu()
                     switch0.isChecked = true
                 }
+                return true
+            }
+
+            R.id.menu9 -> {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://maoudamashii.jokersounds.com/")))
                 return true
             }
 
