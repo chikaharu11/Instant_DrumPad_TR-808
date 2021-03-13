@@ -438,35 +438,35 @@ class MainActivity : AppCompatActivity() {
                 .setMaxStreams(10)
                 .build()
 
-        sound1 = soundPool.load(this, R.raw.ta, 1)
+        sound1 = soundPool.load(this, R.raw.e808_bd_short_01, 1)
 
-        sound2 = soundPool.load(this, R.raw.ta, 1)
+        sound2 = soundPool.load(this, R.raw.e808_bd_long_02, 1)
 
-        sound3 = soundPool.load(this, R.raw.ta, 1)
+        sound3 = soundPool.load(this, R.raw.e808_bd_long_03, 1)
 
-        sound4 = soundPool.load(this, R.raw.ta, 1)
+        sound4 = soundPool.load(this, R.raw.e808_rs09, 1)
 
-        sound5 = soundPool.load(this, R.raw.ta, 1)
+        sound5 = soundPool.load(this, R.raw.e808_bd_short_05, 1)
 
-        sound6 = soundPool.load(this, R.raw.ta, 1)
+        sound6 = soundPool.load(this, R.raw.e808_hc03, 1)
 
-        sound7 = soundPool.load(this, R.raw.ta, 1)
+        sound7 = soundPool.load(this, R.raw.e808_lc08, 1)
 
-        sound8 = soundPool.load(this, R.raw.ta, 1)
+        sound8 = soundPool.load(this, R.raw.e808_lt02, 1)
 
-        sound9 = soundPool.load(this, R.raw.ta, 1)
+        sound9 = soundPool.load(this, R.raw.e808_cy04, 1)
 
-        sound10 = soundPool.load(this, R.raw.ta, 1)
+        sound10 = soundPool.load(this, R.raw.e808_mc05, 1)
 
-        sound11 = soundPool.load(this, R.raw.ta, 1)
+        sound11 = soundPool.load(this, R.raw.e808_cb07, 1)
 
-        sound12 = soundPool.load(this, R.raw.ta, 1)
+        sound12 = soundPool.load(this, R.raw.e808_sd09, 1)
 
-        sound13 = soundPool.load(this, R.raw.ta, 1)
+        sound13 = soundPool.load(this, R.raw.e808_bd_long_07, 1)
 
-        sound14 = soundPool.load(this, R.raw.ta, 1)
+        sound14 = soundPool.load(this, R.raw.e808_lc10, 1)
 
-        sound15 = soundPool.load(this, R.raw.ta, 1)
+        sound15 = soundPool.load(this, R.raw.e808_oh09, 1)
 
 
         imageView.setOnClickListener {

@@ -26,7 +26,21 @@
     <string name="end">終了する</string>
     <string name="switch1">再生/停止</string>
     <string name="switch2">録音/終了</string>
-    <string name="textView"> </string>
+    <string name="textView">e808_bd_short_01</string>
+    <string name="textView2">e808_bd_long_02</string>
+    <string name="textView3">e808_bd_long_03</string>
+    <string name="textView4">e808_rs09</string>
+    <string name="textView5">e808_bd_short_05</string>
+    <string name="textView6">e808_hc03</string>
+    <string name="textView7">e808_lc08</string>
+    <string name="textView8">e808_lt02</string>
+    <string name="textView9">e808_cy04</string>
+    <string name="textView10">e808_mc05</string>
+    <string name="textView11">e808_cb07</string>
+    <string name="textView12">e808_sd09</string>
+    <string name="textView13">e808_bd_long_07</string>
+    <string name="textView14">e808_lc10</string>
+    <string name="textView15">e808_oh09</string>
     <string name="select9">魔王魂さんからDLする</string>
 
 </resources>
