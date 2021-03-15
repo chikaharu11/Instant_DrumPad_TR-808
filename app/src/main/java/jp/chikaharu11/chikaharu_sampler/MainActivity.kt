@@ -111,6 +111,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.title ="Sampler"
+
         val permissions = arrayOf(
                 Manifest.permission.READ_EXTERNAL_STORAGE
         )

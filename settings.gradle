@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "segare_SE4"
+rootProject.name = "chikaharu_sampler"
