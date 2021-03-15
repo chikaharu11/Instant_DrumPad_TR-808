@@ -1,4 +1,4 @@
-package jp.chikaharu11.segare_se
+package jp.chikaharu11.chikaharu_sampler
 
 import org.junit.Test
 

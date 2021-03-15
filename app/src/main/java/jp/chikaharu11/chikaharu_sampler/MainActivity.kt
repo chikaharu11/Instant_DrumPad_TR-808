@@ -1,4 +1,4 @@
-package jp.chikaharu11.segare_se
+package jp.chikaharu11.chikaharu_sampler
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun selectAudio() {
-        val sa = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fjp.chikaharu11.segare_se%2Ffiles%2FMusic")
+        val sa = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fjp.chikaharu11.chikaharu_sampler%2Ffiles%2FMusic")
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             putExtra(DocumentsContract.EXTRA_INITIAL_URI, sa)
