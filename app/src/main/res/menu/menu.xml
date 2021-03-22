@@ -31,6 +31,10 @@
         android:title="@string/select3"
         app:showAsAction="never"/>
 
+    <item android:id="@+id/menu5a"
+        android:title="@string/select5a"
+        app:showAsAction="never"/>
+
     <item android:id="@+id/menu7"
         android:title="@string/select4"
         app:showAsAction="never"/>
