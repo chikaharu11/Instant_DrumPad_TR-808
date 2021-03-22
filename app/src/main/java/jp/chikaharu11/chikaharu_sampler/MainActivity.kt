@@ -560,10 +560,9 @@ class MainActivity : AppCompatActivity() {
                         mp = MediaPlayer()
                         mp2 = MediaPlayer()
                         volumeControlStream = AudioManager.STREAM_MUSIC
-                        val uri2 = Uri.parse(item)
-                        mp.setDataSource(applicationContext, uri2)
-                        mp2.setDataSource(applicationContext, uri2)
-                        supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
+                        mp.setDataSource(assets.openFd(item).fileDescriptor, assets.openFd(item).startOffset, assets.openFd(item).length)
+                        mp2.setDataSource(assets.openFd(item).fileDescriptor, assets.openFd(item).startOffset, assets.openFd(item).length)
+                        supportActionBar?.title = item
                         mp.prepare()
                         mp2.prepare()
                     }
@@ -1775,6 +1774,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu5a -> {
+                    radioButton16.performClick()
                 selectSA()
                 return true
             }
