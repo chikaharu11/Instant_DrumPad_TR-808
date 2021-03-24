@@ -555,16 +555,7 @@ class MainActivity : AppCompatActivity() {
                         textView15.text = item
                     }
                     radioButton16.isChecked -> {
-                        mp.release()
-                        mp2.release()
-                        mp = MediaPlayer()
-                        mp2 = MediaPlayer()
-                        volumeControlStream = AudioManager.STREAM_MUSIC
-                        mp.setDataSource(assets.openFd(item).fileDescriptor, assets.openFd(item).startOffset, assets.openFd(item).length)
-                        mp2.setDataSource(assets.openFd(item).fileDescriptor, assets.openFd(item).startOffset, assets.openFd(item).length)
-                        supportActionBar?.title = item
-                        mp.prepare()
-                        mp2.prepare()
+                            LoopMediaPlayer.create(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + item.replace(".ogg", "")))
                     }
                 }
             }
