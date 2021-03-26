@@ -15,7 +15,6 @@ import android.media.*
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.os.Handler
 import android.os.ParcelFileDescriptor
 import android.provider.DocumentsContract
 import android.provider.MediaStore
@@ -555,7 +554,10 @@ class MainActivity : AppCompatActivity() {
                         textView15.text = item
                     }
                     radioButton16.isChecked -> {
-                            LoopMediaPlayer.create(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + item.replace(".ogg", "")))
+                        lmp.release()
+                        lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + item.replace(".ogg", "")))
+                        supportActionBar?.title = item
+
                     }
                 }
             }
@@ -567,13 +569,13 @@ class MainActivity : AppCompatActivity() {
         saSpinner.isFocusable = false
     }
 
-    private val handler = Handler()
-
     private lateinit var mp: MediaPlayer
 
     private lateinit var mp2: MediaPlayer
 
     private lateinit var soundPool: SoundPool
+
+    private lateinit var lmp: LoopMediaPlayer
 
     private var sound1 = 0
     private var sound2 = 0
@@ -596,7 +598,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.title ="Sampler"
+        supportActionBar?.title ="e808_loop_bd_8501"
 
         val permissions = arrayOf(
                 Manifest.permission.READ_EXTERNAL_STORAGE
@@ -959,6 +961,8 @@ class MainActivity : AppCompatActivity() {
         sound14 = soundPool.load(this, R.raw.e808_lc10, 1)
 
         sound15 = soundPool.load(this, R.raw.e808_oh09, 1)
+
+        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.e808_loop_bd_8501))
 
 
         imageView.setOnClickListener {
@@ -1371,49 +1375,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun play() {
-        mp.start()
-        handler.postDelayed({ mp.pause() }, mp.duration.toLong())
-        handler.postDelayed({ mp2.start() }, mp.duration.toLong())
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 2)
-        handler.postDelayed({ mp.start() }, mp2.duration.toLong() * 2)
-        handler.postDelayed({ mp.pause() }, mp.duration.toLong() * 3)
-        handler.postDelayed({ mp2.start() }, mp.duration.toLong() * 3)
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 4)
-        handler.postDelayed({ mp.start() }, mp2.duration.toLong() * 4)
-        handler.postDelayed({ mp.pause() }, mp.duration.toLong() * 5)
-        handler.postDelayed({ mp2.start() }, mp.duration.toLong() * 5)
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 6)
-        handler.postDelayed({ mp.start() }, mp2.duration.toLong() * 6)
-        handler.postDelayed({ mp.pause() }, mp.duration.toLong() * 7)
-        handler.postDelayed({ mp2.start() }, mp.duration.toLong() * 7)
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 8)
-        handler.postDelayed({ mp.start() }, mp2.duration.toLong() * 8)
-        handler.postDelayed({ mp.pause() }, mp.duration.toLong() * 9)
-        handler.postDelayed({ mp2.start() }, mp.duration.toLong() * 9)
-        handler.postDelayed({ mp2.pause() }, mp2.duration.toLong() * 10)
-        handler.postDelayed({
-            menuSwitch = true
-            invalidateOptionsMenu()
-            switch1.isChecked = false
-        }, mp2.duration.toLong() * 10)
-    }
-
-    private fun stop() {
-        handler.removeCallbacksAndMessages(null)
-
-        if (mp.isPlaying) {
-            mp.stop()
-            mp.prepare()
-        }
-        if (mp2.isPlaying) {
-            mp2.stop()
-            mp2.prepare()
-        }else{
-            return
-        }
-    }
-
     private fun select() {
         val audio1 = mutableSetOf(
                 ""
@@ -1706,13 +1667,13 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu1 -> {
                 if (switch1.isChecked) {
-                    stop()
+                    lmp.stop()
                     soundPool.autoPause()
                     menuSwitch = true
                     invalidateOptionsMenu()
                     switch1.isChecked = false
                 } else {
-                    play()
+                    lmp.start()
                     menuSwitch = false
                     invalidateOptionsMenu()
                     switch1.isChecked = true
@@ -1738,7 +1699,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu3 -> {
-                stop()
+                lmp.stop()
                 menuSwitch = true
                 invalidateOptionsMenu()
                 switch1.isChecked = false
@@ -1747,7 +1708,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu4 -> {
-                stop()
+                lmp.stop()
                 menuSwitch = true
                 invalidateOptionsMenu()
                 switch1.isChecked = false
@@ -1756,7 +1717,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu5 -> {
-                stop()
+                lmp.stop()
                 menuSwitch = true
                 invalidateOptionsMenu()
                 switch1.isChecked = false
@@ -1765,7 +1726,11 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu5a -> {
-                    radioButton16.performClick()
+                lmp.stop()
+                menuSwitch = true
+                invalidateOptionsMenu()
+                switch1.isChecked = false
+                radioButton16.performClick()
                 selectSA()
                 return true
             }
@@ -1823,6 +1788,8 @@ class MainActivity : AppCompatActivity() {
         mp2.reset()
         mp.release()
         mp2.release()
+        lmp.reset()
+        lmp.release()
         if (EasyPermissions.hasPermissions(this, *permissions)) {
             soundPool.autoPause()
             soundPool.release()
@@ -1846,7 +1813,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (EasyPermissions.hasPermissions(this, *permissions)) {
-            stop()
+            lmp.stop()
             soundPool.autoPause()
         }
         super.onPause()
