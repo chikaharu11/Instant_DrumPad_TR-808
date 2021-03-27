@@ -557,7 +557,6 @@ class MainActivity : AppCompatActivity() {
                         lmp.release()
                         lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + item.replace(".ogg", "")))
                         supportActionBar?.title = item
-
                     }
                 }
             }
@@ -568,10 +567,6 @@ class MainActivity : AppCompatActivity() {
         }
         saSpinner.isFocusable = false
     }
-
-    private lateinit var mp: MediaPlayer
-
-    private lateinit var mp2: MediaPlayer
 
     private lateinit var soundPool: SoundPool
 
@@ -624,9 +619,6 @@ class MainActivity : AppCompatActivity() {
                     .show()
             return
         }
-
-        mp = MediaPlayer()
-        mp2 = MediaPlayer()
 
 
             val audio1 = mutableSetOf(
@@ -1275,17 +1267,9 @@ class MainActivity : AppCompatActivity() {
                                 textView15.text = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton16.isChecked -> {
-                                mp.release()
-                                mp2.release()
-                                mp = MediaPlayer()
-                                mp2 = MediaPlayer()
-                                volumeControlStream = AudioManager.STREAM_MUSIC
-                                val uri1 = Uri.parse(item)
-                                mp.setDataSource(applicationContext, uri1)
-                                mp2.setDataSource(applicationContext, uri1)
-                                supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
-                                mp.prepare()
-                                mp2.prepare()
+                                lmp.release()
+                                lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item))
+                                supportActionBar?.title = item
                             }
                         }
                     } else {
@@ -1353,17 +1337,9 @@ class MainActivity : AppCompatActivity() {
                                     textView15.text = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton16.isChecked -> {
-                                    mp.release()
-                                    mp2.release()
-                                    mp = MediaPlayer()
-                                    mp2 = MediaPlayer()
-                                    volumeControlStream = AudioManager.STREAM_MUSIC
-                                    val uri2 = Uri.parse(item2)
-                                    mp.setDataSource(applicationContext, uri2)
-                                    mp2.setDataSource(applicationContext, uri2)
-                                    supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "")
-                                    mp.prepare()
-                                    mp2.prepare()
+                                    lmp.release()
+                                    lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item2))
+                                    supportActionBar?.title = item2
                                 }
                             }
                         } catch (e: Exception) {
@@ -1425,17 +1401,11 @@ class MainActivity : AppCompatActivity() {
                 try {
                     val spinnerParent = parent as Spinner
                     val item = spinnerParent.selectedItem as String
-                    mp.release()
-                    mp2.release()
-                    mp = MediaPlayer()
-                    mp2 = MediaPlayer()
                     volumeControlStream = AudioManager.STREAM_MUSIC
                     val uri = Uri.parse(item.replaceBefore("content", ""))
-                    mp.setDataSource(applicationContext, uri)
-                    mp2.setDataSource(applicationContext, uri)
+                    lmp.release()
+                    lmp = LoopMediaPlayer(this@MainActivity, uri)
                     supportActionBar?.title = item.replaceAfter(")", "").replace("/", "")
-                    mp.prepare()
-                    mp2.prepare()
                 } catch (e: Exception) {
                     Toast.makeText(applicationContext, "この音声ファイルは\n設定できません。", Toast.LENGTH_LONG).show()
                 }
@@ -1497,17 +1467,11 @@ class MainActivity : AppCompatActivity() {
                 try {
                     val spinnerParent = parent as Spinner
                     val item = spinnerParent.selectedItem as String
-                    mp.release()
-                    mp2.release()
-                    mp = MediaPlayer()
-                    mp2 = MediaPlayer()
                     volumeControlStream = AudioManager.STREAM_MUSIC
                     val uri3 = Uri.parse(item.replaceBefore("/", ""))
-                    mp.setDataSource(applicationContext, uri3)
-                    mp2.setDataSource(applicationContext, uri3)
+                    lmp.release()
+                    lmp = LoopMediaPlayer(this@MainActivity, uri3)
                     supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
-                    mp.prepare()
-                    mp2.prepare()
                 } catch (e: Exception) {
                     Toast.makeText(applicationContext, "この音声ファイルは\n設定できません。", Toast.LENGTH_LONG).show()
                 }
@@ -1568,17 +1532,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 val spinnerParent = parent as Spinner
                 val item = spinnerParent.selectedItem as String
-                mp.release()
-                mp2.release()
-                mp = MediaPlayer()
-                mp2 = MediaPlayer()
                 volumeControlStream = AudioManager.STREAM_MUSIC
                 val uri4 = Uri.parse(item.replaceBefore("/", ""))
-                mp.setDataSource(applicationContext, uri4)
-                mp2.setDataSource(applicationContext, uri4)
+                lmp.release()
+                lmp = LoopMediaPlayer(this@MainActivity, uri4)
                 supportActionBar?.title =item.replaceBeforeLast("/", "").replace("/", "")
-                mp.prepare()
-                mp2.prepare()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -1782,12 +1740,6 @@ class MainActivity : AppCompatActivity() {
     )
 
     override fun onDestroy() {
-        mp = MediaPlayer()
-        mp2 = MediaPlayer()
-        mp.reset()
-        mp2.reset()
-        mp.release()
-        mp2.release()
         lmp.reset()
         lmp.release()
         if (EasyPermissions.hasPermissions(this, *permissions)) {

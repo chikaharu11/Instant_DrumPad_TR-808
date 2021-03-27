@@ -71,7 +71,6 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
         mContext = context
         mResId = resId
         mCurrentPlayer = MediaPlayer.create(mContext, mResId)
-        mCurrentPlayer?.setOnPreparedListener {}
         createNextMediaPlayer()
     }
 }
