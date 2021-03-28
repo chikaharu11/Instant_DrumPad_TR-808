@@ -19,10 +19,6 @@
         android:title="@string/rec"
         app:showAsAction="always" />
 
-    <item android:id="@+id/menu3"
-        android:title="@string/select"
-        app:showAsAction="never"/>
-
     <item android:id="@+id/menu4"
         android:title="@string/select2"
         app:showAsAction="never"/>

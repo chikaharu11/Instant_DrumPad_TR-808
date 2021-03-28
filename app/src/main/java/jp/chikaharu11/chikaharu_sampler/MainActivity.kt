@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -553,11 +552,6 @@ class MainActivity : AppCompatActivity() {
                         sound15 = soundPool.load(assets.openFd(item), 1)
                         textView15.text = item
                     }
-                    radioButton16.isChecked -> {
-                        lmp.release()
-                        lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + item.replace(".ogg", "")))
-                        supportActionBar?.title = item
-                    }
                 }
             }
 
@@ -566,6 +560,212 @@ class MainActivity : AppCompatActivity() {
             }
         }
         saSpinner.isFocusable = false
+    }
+
+    private fun selectLSA() {
+
+        val audioSA = listOf(
+                "e808_loop_bd_8501.ogg",
+                "e808_loop_bd_8502.ogg",
+                "e808_loop_bd_8503.ogg",
+                "e808_loop_bd_8504.ogg",
+                "e808_loop_bd_8505.ogg",
+                "e808_loop_bd_8506.ogg",
+                "e808_loop_bd_8507.ogg",
+                "e808_loop_bd_8508.ogg",
+                "e808_loop_bd_9501.ogg",
+                "e808_loop_bd_9502.ogg",
+                "e808_loop_bd_9503.ogg",
+                "e808_loop_bd_9504.ogg",
+                "e808_loop_bd_9505.ogg",
+                "e808_loop_bd_9506.ogg",
+                "e808_loop_bd_9507.ogg",
+                "e808_loop_bd_9508.ogg",
+                "e808_loop_bd_10501.ogg",
+                "e808_loop_bd_10502.ogg",
+                "e808_loop_bd_10503.ogg",
+                "e808_loop_bd_10504.ogg",
+                "e808_loop_bd_10505.ogg",
+                "e808_loop_bd_10506.ogg",
+                "e808_loop_bd_10507.ogg",
+                "e808_loop_bd_10508.ogg",
+                "e808_loop_bd_12401.ogg",
+                "e808_loop_bd_12402.ogg",
+                "e808_loop_bd_12403.ogg",
+                "e808_loop_bd_12404.ogg",
+                "e808_loop_bd_12405.ogg",
+                "e808_loop_bd_12406.ogg",
+                "e808_loop_bd_12407.ogg",
+                "e808_loop_bd_12408.ogg",
+                "e808_loop_bd_13201.ogg",
+                "e808_loop_bd_13202.ogg",
+                "e808_loop_bd_13203.ogg",
+                "e808_loop_bd_13204.ogg",
+                "e808_loop_bd_13205.ogg",
+                "e808_loop_bd_13206.ogg",
+                "e808_loop_bd_13207.ogg",
+                "e808_loop_bd_13208.ogg",
+                "e808_loop_hats_8501.ogg",
+                "e808_loop_hats_8502.ogg",
+                "e808_loop_hats_8503.ogg",
+                "e808_loop_hats_8504.ogg",
+                "e808_loop_hats_8505.ogg",
+                "e808_loop_hats_8506.ogg",
+                "e808_loop_hats_8507.ogg",
+                "e808_loop_hats_8508.ogg",
+                "e808_loop_hats_9501.ogg",
+                "e808_loop_hats_9502.ogg",
+                "e808_loop_hats_9503.ogg",
+                "e808_loop_hats_9504.ogg",
+                "e808_loop_hats_9505.ogg",
+                "e808_loop_hats_9506.ogg",
+                "e808_loop_hats_9507.ogg",
+                "e808_loop_hats_9508.ogg",
+                "e808_loop_hats_10501.ogg",
+                "e808_loop_hats_10502.ogg",
+                "e808_loop_hats_10503.ogg",
+                "e808_loop_hats_10504.ogg",
+                "e808_loop_hats_10505.ogg",
+                "e808_loop_hats_10506.ogg",
+                "e808_loop_hats_10507.ogg",
+                "e808_loop_hats_10508.ogg",
+                "e808_loop_hats_12401.ogg",
+                "e808_loop_hats_12402.ogg",
+                "e808_loop_hats_12403.ogg",
+                "e808_loop_hats_12404.ogg",
+                "e808_loop_hats_12405.ogg",
+                "e808_loop_hats_12406.ogg",
+                "e808_loop_hats_12407.ogg",
+                "e808_loop_hats_12408.ogg",
+                "e808_loop_hats_13201.ogg",
+                "e808_loop_hats_13202.ogg",
+                "e808_loop_hats_13203.ogg",
+                "e808_loop_hats_13204.ogg",
+                "e808_loop_hats_13205.ogg",
+                "e808_loop_hats_13206.ogg",
+                "e808_loop_hats_13207.ogg",
+                "e808_loop_hats_13208.ogg",
+                "e808_loop_perc_8501.ogg",
+                "e808_loop_perc_8502.ogg",
+                "e808_loop_perc_8503.ogg",
+                "e808_loop_perc_8504.ogg",
+                "e808_loop_perc_9501.ogg",
+                "e808_loop_perc_9502.ogg",
+                "e808_loop_perc_9503.ogg",
+                "e808_loop_perc_9504.ogg",
+                "e808_loop_perc_10501.ogg",
+                "e808_loop_perc_10502.ogg",
+                "e808_loop_perc_10503.ogg",
+                "e808_loop_perc_10504.ogg",
+                "e808_loop_perc_12401.ogg",
+                "e808_loop_perc_12402.ogg",
+                "e808_loop_perc_12403.ogg",
+                "e808_loop_perc_12404.ogg",
+                "e808_loop_perc_13201.ogg",
+                "e808_loop_perc_13202.ogg",
+                "e808_loop_perc_13203.ogg",
+                "e808_loop_perc_13204.ogg",
+                "e808_loop_sd_8501.ogg",
+                "e808_loop_sd_8502.ogg",
+                "e808_loop_sd_8503.ogg",
+                "e808_loop_sd_8504.ogg",
+                "e808_loop_sd_8505.ogg",
+                "e808_loop_sd_8506.ogg",
+                "e808_loop_sd_8507.ogg",
+                "e808_loop_sd_8508.ogg",
+                "e808_loop_sd_9501.ogg",
+                "e808_loop_sd_9502.ogg",
+                "e808_loop_sd_9503.ogg",
+                "e808_loop_sd_9504.ogg",
+                "e808_loop_sd_9505.ogg",
+                "e808_loop_sd_9506.ogg",
+                "e808_loop_sd_9507.ogg",
+                "e808_loop_sd_9508.ogg",
+                "e808_loop_sd_10501.ogg",
+                "e808_loop_sd_10502.ogg",
+                "e808_loop_sd_10503.ogg",
+                "e808_loop_sd_10504.ogg",
+                "e808_loop_sd_10505.ogg",
+                "e808_loop_sd_10506.ogg",
+                "e808_loop_sd_10507.ogg",
+                "e808_loop_sd_10508.ogg",
+                "e808_loop_sd_12401.ogg",
+                "e808_loop_sd_12402.ogg",
+                "e808_loop_sd_12403.ogg",
+                "e808_loop_sd_12404.ogg",
+                "e808_loop_sd_12405.ogg",
+                "e808_loop_sd_12406.ogg",
+                "e808_loop_sd_12407.ogg",
+                "e808_loop_sd_13201.ogg",
+                "e808_loop_sd_13202.ogg",
+                "e808_loop_sd_13203.ogg",
+                "e808_loop_sd_13204.ogg",
+                "e808_loop_sd_13205.ogg",
+                "e808_loop_sd_13206.ogg",
+                "e808_loop_sd_13207.ogg",
+                "e808_loop_sd_13208.ogg",
+                "e808_loop_toms_8501.ogg",
+                "e808_loop_toms_8502.ogg",
+                "e808_loop_toms_8503.ogg",
+                "e808_loop_toms_8504.ogg",
+                "e808_loop_toms_9501.ogg",
+                "e808_loop_toms_9502.ogg",
+                "e808_loop_toms_9503.ogg",
+                "e808_loop_toms_9504.ogg",
+                "e808_loop_toms_10501.ogg",
+                "e808_loop_toms_10502.ogg",
+                "e808_loop_toms_10503.ogg",
+                "e808_loop_toms_10504.ogg",
+                "e808_loop_toms_12401.ogg",
+                "e808_loop_toms_12402.ogg",
+                "e808_loop_toms_12403.ogg",
+                "e808_loop_toms_12404.ogg",
+                "e808_loop_toms_13201.ogg",
+                "e808_loop_toms_13202.ogg",
+                "e808_loop_toms_13203.ogg",
+                "e808_loop_toms_13204.ogg"
+        )
+
+        val lsaSpinner = findViewById<Spinner>(R.id.loop_sampler_spinner)
+
+        val adapterSA = ArrayAdapter(
+                applicationContext,
+                android.R.layout.simple_spinner_item, audioSA
+        )
+
+        adapterSA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+
+
+        lsaSpinner.adapter = adapterSA
+
+        lsaSpinner.performClick()
+
+
+        lsaSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
+            ) {
+                if (!lsaSpinner.isFocusable) {
+                    lsaSpinner.isFocusable = true
+                    return
+                }
+                val spinnerParent = parent as Spinner
+                val item = spinnerParent.selectedItem as String
+                    if (radioButton16.isChecked) {
+                        lmp.release()
+                        lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + item.replace(".ogg", "")))
+                        supportActionBar?.title = item
+                    }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+        lsaSpinner.isFocusable = false
     }
 
     private lateinit var soundPool: SoundPool
@@ -924,35 +1124,35 @@ class MainActivity : AppCompatActivity() {
                 .setMaxStreams(10)
                 .build()
 
-        sound1 = soundPool.load(this, R.raw.e808_bd_short_01, 1)
+        sound1 = soundPool.load(assets.openFd("e808_bd_long_01.ogg"), 1)
 
-        sound2 = soundPool.load(this, R.raw.e808_bd_long_02, 1)
+        sound2 = soundPool.load(assets.openFd("e808_bd_long_02.ogg"), 1)
 
-        sound3 = soundPool.load(this, R.raw.e808_bd_long_03, 1)
+        sound3 = soundPool.load(assets.openFd("e808_bd_long_03.ogg"), 1)
 
-        sound4 = soundPool.load(this, R.raw.e808_rs09, 1)
+        sound4 = soundPool.load(assets.openFd("e808_rs09.ogg"), 1)
 
-        sound5 = soundPool.load(this, R.raw.e808_bd_short_05, 1)
+        sound5 = soundPool.load(assets.openFd("e808_bd_short_05.ogg"), 1)
 
-        sound6 = soundPool.load(this, R.raw.e808_hc03, 1)
+        sound6 = soundPool.load(assets.openFd("e808_hc03.ogg"), 1)
 
-        sound7 = soundPool.load(this, R.raw.e808_lc08, 1)
+        sound7 = soundPool.load(assets.openFd("e808_lc08.ogg"), 1)
 
-        sound8 = soundPool.load(this, R.raw.e808_lt02, 1)
+        sound8 = soundPool.load(assets.openFd("e808_lt02.ogg"), 1)
 
-        sound9 = soundPool.load(this, R.raw.e808_cy04, 1)
+        sound9 = soundPool.load(assets.openFd("e808_cy04.ogg"), 1)
 
-        sound10 = soundPool.load(this, R.raw.e808_mc05, 1)
+        sound10 = soundPool.load(assets.openFd("e808_mc05.ogg"), 1)
 
-        sound11 = soundPool.load(this, R.raw.e808_cb07, 1)
+        sound11 = soundPool.load(assets.openFd("e808_cb07.ogg"), 1)
 
-        sound12 = soundPool.load(this, R.raw.e808_sd09, 1)
+        sound12 = soundPool.load(assets.openFd("e808_sd09.ogg"), 1)
 
-        sound13 = soundPool.load(this, R.raw.e808_bd_long_07, 1)
+        sound13 = soundPool.load(assets.openFd("e808_bd_long_07.ogg"), 1)
 
-        sound14 = soundPool.load(this, R.raw.e808_lc10, 1)
+        sound14 = soundPool.load(assets.openFd("e808_lc10.ogg"), 1)
 
-        sound15 = soundPool.load(this, R.raw.e808_oh09, 1)
+        sound15 = soundPool.load(assets.openFd("e808_oh09.ogg"), 1)
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.e808_loop_bd_8501))
 
@@ -1351,73 +1551,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun select() {
-        val audio1 = mutableSetOf(
-                ""
-        )
-
-        audio1.clear()
-
-        val manager = RingtoneManager(this)
-
-        manager.setType(RingtoneManager.TYPE_RINGTONE)
-        val cursor: Cursor = manager.cursor
-        while (cursor.moveToNext()) {
-            val title: String = cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX)
-            val uriPrefix: String = cursor.getString(RingtoneManager.URI_COLUMN_INDEX)
-            val index: String = cursor.getString(RingtoneManager.ID_COLUMN_INDEX)
-            val uri = "$uriPrefix/$index"
-                audio1.add("($title)  $uri")
-        }
-
-
-        val spinnerItems = audio1.sorted()
-
-        val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
-
-        val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
-        )
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
-
-        inSpinner.adapter = adapter
-
-        inSpinner.performClick()
-
-        inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
-            ) {
-                if (!inSpinner.isFocusable) {
-                    inSpinner.isFocusable = true
-                    return
-                }
-                try {
-                    val spinnerParent = parent as Spinner
-                    val item = spinnerParent.selectedItem as String
-                    volumeControlStream = AudioManager.STREAM_MUSIC
-                    val uri = Uri.parse(item.replaceBefore("content", ""))
-                    lmp.release()
-                    lmp = LoopMediaPlayer(this@MainActivity, uri)
-                    supportActionBar?.title = item.replaceAfter(")", "").replace("/", "")
-                } catch (e: Exception) {
-                    Toast.makeText(applicationContext, "この音声ファイルは\n設定できません。", Toast.LENGTH_LONG).show()
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-        }
-        inSpinner.isFocusable = false
-    }
-
     private fun select2() {
         val audio1 = mutableSetOf(
                 ""
@@ -1656,15 +1789,6 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
 
-            R.id.menu3 -> {
-                lmp.stop()
-                menuSwitch = true
-                invalidateOptionsMenu()
-                switch1.isChecked = false
-                select()
-                return true
-            }
-
             R.id.menu4 -> {
                 lmp.stop()
                 menuSwitch = true
@@ -1689,7 +1813,7 @@ class MainActivity : AppCompatActivity() {
                 invalidateOptionsMenu()
                 switch1.isChecked = false
                 radioButton16.performClick()
-                selectSA()
+                selectLSA()
                 return true
             }
 
