@@ -657,6 +657,94 @@
 
     </RadioGroup>
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/radioButton1a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton2a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton3a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton4a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton5a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton6a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton7a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton8a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton9a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton10a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton11a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton12a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+        <RadioButton
+            android:id="@+id/radioButton13a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton" />
+
+    </RadioGroup>
+
     <jp.chikaharu11.chikaharu_sampler.CSpinner
         android:id="@+id/internal_spinner"
         android:layout_width="match_parent"

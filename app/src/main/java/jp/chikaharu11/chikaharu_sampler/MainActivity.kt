@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
     fun selectSA() {
 
-        val audioSA = listOf(
+        val audioSA = mutableListOf(
                 "e808_bd_long_01.ogg",
                 "e808_bd_long_02.ogg",
                 "e808_bd_long_03.ogg",
@@ -462,6 +462,11 @@ class MainActivity : AppCompatActivity() {
                 "e808_sd19.ogg",
                 "e808_sd20.ogg"
         )
+
+            when {
+                    radioButton1a.isChecked -> audioSA.removeIf { !it.contains("bd") }
+                    radioButton2a.isChecked -> audioSA.removeIf { !it.contains("cp") }
+            }
 
         val saSpinner = findViewById<Spinner>(R.id.sampler_spinner)
 
@@ -1059,9 +1064,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         val menu1 = listOf(
+                "Bass Drum [BD]",
+                "Clap [CP]",
+                "Claves [CL]",
+                "Closed Hi Hat [CH]",
+                "Congas [HC-MC-LC]",
+                "Cowbell [CB]",
+                "Cymbal [CY]",
+                "Maracas [MA]",
+                "Open Hi Hat [OH]",
+                "Rimshot [RS]",
+                "Snare Drum [SD]",
+                "Tom Toms [LT-MT-HT]",
+                "Loops",
                 "内部サウンドから選ぶ",
                 "外部サウンドから選ぶ",
-                "サンプラー音源から選ぶ",
                 "録音したサウンドから選ぶ",
                 "魔王魂さんからDLする",
                 "画像を選ぶ"
@@ -1092,12 +1109,37 @@ class MainActivity : AppCompatActivity() {
                     return
                 }
                 when(position){
-                    0 -> inSpinner.performClick()
-                    1 -> selectEX()
-                    2 -> selectSA()
-                    3 -> selectAudio()
-                    4 -> startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://maoudamashii.jokersounds.com/")))
-                    5 -> selectPhoto()
+                    0 -> { radioButton1a.performClick()
+                            selectSA() }
+                    1 -> { radioButton2a.performClick()
+                            selectSA() }
+                    2 -> { radioButton3a.performClick()
+                            selectSA() }
+                    3 -> { radioButton4a.performClick()
+                            selectSA() }
+                    4 -> { radioButton5a.performClick()
+                            selectSA() }
+                    5 -> { radioButton6a.performClick()
+                            selectSA() }
+                    6 -> { radioButton7a.performClick()
+                            selectSA() }
+                    7 -> { radioButton8a.performClick()
+                            selectSA() }
+                    8 -> { radioButton9a.performClick()
+                            selectSA() }
+                    9 -> { radioButton10a.performClick()
+                            selectSA() }
+                    10 -> { radioButton11a.performClick()
+                            selectSA() }
+                    11 -> { radioButton12a.performClick()
+                            selectSA() }
+                    12 -> { radioButton13a.performClick()
+                            selectSA() }
+                    13 -> inSpinner.performClick()
+                    14 -> selectEX()
+                    15 -> selectAudio()
+                    16 -> startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://maoudamashii.jokersounds.com/")))
+                    17 -> selectPhoto()
                 }
             }
 
