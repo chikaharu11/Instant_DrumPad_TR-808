@@ -464,8 +464,20 @@ class MainActivity : AppCompatActivity() {
         )
 
             when {
-                    radioButton1a.isChecked -> audioSA.removeIf { !it.contains("bd") }
+                    radioButton1a.isChecked -> audioSA.removeIf { !it.contains("bd")
+                            it.contains("loop")}
                     radioButton2a.isChecked -> audioSA.removeIf { !it.contains("cp") }
+                    radioButton3a.isChecked -> audioSA.removeIf { !it.contains("cl") }
+                    radioButton4a.isChecked -> audioSA.removeIf { !it.contains("ch") }
+                    radioButton5a.isChecked -> audioSA.removeIf { !it.contains("hc"+ "mc"+ "lc") }
+                    radioButton6a.isChecked -> audioSA.removeIf { !it.contains("cb") }
+                    radioButton7a.isChecked -> audioSA.removeIf { !it.contains("cy") }
+                    radioButton8a.isChecked -> audioSA.removeIf { !it.contains("ma") }
+                    radioButton9a.isChecked -> audioSA.removeIf { !it.contains("oh") }
+                    radioButton10a.isChecked -> audioSA.removeIf { !it.contains("rs") }
+                    radioButton11a.isChecked -> audioSA.removeIf { !it.contains("sd") }
+                    radioButton12a.isChecked -> audioSA.removeIf { !it.contains("") }
+                    radioButton13a.isChecked -> audioSA.removeIf { !it.contains("loop") }
             }
 
         val saSpinner = findViewById<Spinner>(R.id.sampler_spinner)
