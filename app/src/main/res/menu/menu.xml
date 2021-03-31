@@ -19,16 +19,32 @@
         android:title="@string/rec"
         app:showAsAction="always" />
 
+    <item android:id="@+id/menu3a"
+        android:title="@string/select3a"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/menu3b"
+        android:title="@string/select3b"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/menu3c"
+        android:title="@string/select3c"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/menu3d"
+        android:title="@string/select3d"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/menu3e"
+        android:title="@string/select3e"
+        app:showAsAction="never"/>
+
     <item android:id="@+id/menu4"
         android:title="@string/select2"
         app:showAsAction="never"/>
 
     <item android:id="@+id/menu5"
         android:title="@string/select3"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu5a"
-        android:title="@string/select5a"
         app:showAsAction="never"/>
 
     <item android:id="@+id/menu7"

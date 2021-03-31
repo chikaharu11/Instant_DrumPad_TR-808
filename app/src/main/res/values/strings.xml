@@ -19,10 +19,9 @@
     <string name="switch0">オンオフ</string>
     <string name="play">再生</string>
     <string name="rec">音声録音</string>
-    <string name="select">着信音から選ぶ</string>
-    <string name="select2">内部サウンドから選ぶ</string>
-    <string name="select3">外部サウンドから選ぶ</string>
-    <string name="select4">録音したサウンドから選ぶ</string>
+    <string name="select2">内部サウンド</string>
+    <string name="select3">外部(ダウンロード)サウンド</string>
+    <string name="select4">録音したサウンド</string>
     <string name="end">終了する</string>
     <string name="switch1">再生/停止</string>
     <string name="switch2">録音/終了</string>
@@ -42,6 +41,10 @@
     <string name="textView14">e808_lc10</string>
     <string name="textView15">e808_oh09</string>
     <string name="select9">魔王魂さんからDLする</string>
-    <string name="select5a">サンプラー音源から選ぶ</string>
+    <string name="select3a">Loop [85bpm]</string>
+    <string name="select3b">Loop [95bpm]</string>
+    <string name="select3c">Loop [105bpm]</string>
+    <string name="select3d">Loop [124bpm]</string>
+    <string name="select3e">Loop [132bpm]</string>
 
 </resources>

@@ -464,19 +464,33 @@ class MainActivity : AppCompatActivity() {
         )
 
             when {
-                    radioButton1a.isChecked -> audioSA.removeIf { !it.contains("bd")
-                            it.contains("loop")}
+                    radioButton1a.isChecked -> {
+                        audioSA.removeIf { !it.contains("bd") }
+                        audioSA.removeIf { it.contains("loop") }
+                    }
                     radioButton2a.isChecked -> audioSA.removeIf { !it.contains("cp") }
                     radioButton3a.isChecked -> audioSA.removeIf { !it.contains("cl") }
                     radioButton4a.isChecked -> audioSA.removeIf { !it.contains("ch") }
-                    radioButton5a.isChecked -> audioSA.removeIf { !it.contains("hc"+ "mc"+ "lc") }
+                    radioButton5a.isChecked -> {
+                        audioSA.removeIf { !it.contains("c") }
+                        audioSA.removeIf { it.contains("cp") }
+                        audioSA.removeIf { it.contains("cl") }
+                        audioSA.removeIf { it.contains("ch") }
+                        audioSA.removeIf { it.contains("cb") }
+                        audioSA.removeIf { it.contains("cy") }
+                        audioSA.removeIf { it.contains("loop") }
+                    }
                     radioButton6a.isChecked -> audioSA.removeIf { !it.contains("cb") }
                     radioButton7a.isChecked -> audioSA.removeIf { !it.contains("cy") }
                     radioButton8a.isChecked -> audioSA.removeIf { !it.contains("ma") }
                     radioButton9a.isChecked -> audioSA.removeIf { !it.contains("oh") }
                     radioButton10a.isChecked -> audioSA.removeIf { !it.contains("rs") }
                     radioButton11a.isChecked -> audioSA.removeIf { !it.contains("sd") }
-                    radioButton12a.isChecked -> audioSA.removeIf { !it.contains("") }
+                    radioButton12a.isChecked -> {
+                        audioSA.removeIf { !it.contains("t") }
+                        audioSA.removeIf { it.contains("bd") }
+                        audioSA.removeIf { it.contains("loop") }
+                    }
                     radioButton13a.isChecked -> audioSA.removeIf { !it.contains("loop") }
             }
 
@@ -581,7 +595,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun selectLSA() {
 
-        val audioSA = listOf(
+        val audioLSA = mutableListOf(
                 "e808_loop_bd_8501.ogg",
                 "e808_loop_bd_8502.ogg",
                 "e808_loop_bd_8503.ogg",
@@ -743,11 +757,19 @@ class MainActivity : AppCompatActivity() {
                 "e808_loop_toms_13204.ogg"
         )
 
+        when {
+            radioButton1b.isChecked -> audioLSA.removeIf { !it.contains("85") }
+            radioButton2b.isChecked -> audioLSA.removeIf { !it.contains("95") }
+            radioButton3b.isChecked -> audioLSA.removeIf { !it.contains("105") }
+            radioButton4b.isChecked -> audioLSA.removeIf { !it.contains("124") }
+            radioButton5b.isChecked -> audioLSA.removeIf { !it.contains("132") }
+        }
+
         val lsaSpinner = findViewById<Spinner>(R.id.loop_sampler_spinner)
 
         val adapterSA = ArrayAdapter(
                 applicationContext,
-                android.R.layout.simple_spinner_item, audioSA
+                android.R.layout.simple_spinner_item, audioLSA
         )
 
         adapterSA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -1089,9 +1111,9 @@ class MainActivity : AppCompatActivity() {
                 "Snare Drum [SD]",
                 "Tom Toms [LT-MT-HT]",
                 "Loops",
-                "内部サウンドから選ぶ",
-                "外部サウンドから選ぶ",
-                "録音したサウンドから選ぶ",
+                "内部サウンド",
+                "外部(ダウンロード)サウンド",
+                "録音したサウンド",
                 "魔王魂さんからDLする",
                 "画像を選ぶ"
         )
@@ -1523,7 +1545,7 @@ class MainActivity : AppCompatActivity() {
                             radioButton16.isChecked -> {
                                 lmp.release()
                                 lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item))
-                                supportActionBar?.title = item
+                                supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                         }
                     } else {
@@ -1593,7 +1615,7 @@ class MainActivity : AppCompatActivity() {
                                 radioButton16.isChecked -> {
                                     lmp.release()
                                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item2))
-                                    supportActionBar?.title = item2
+                                    supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                             }
                         } catch (e: Exception) {
@@ -1843,6 +1865,61 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
 
+            R.id.menu3a -> {
+                lmp.stop()
+                menuSwitch = true
+                invalidateOptionsMenu()
+                switch1.isChecked = false
+                radioButton16.performClick()
+                radioButton1b.performClick()
+                selectLSA()
+                return true
+            }
+
+            R.id.menu3b -> {
+                lmp.stop()
+                menuSwitch = true
+                invalidateOptionsMenu()
+                switch1.isChecked = false
+                radioButton16.performClick()
+                radioButton2b.performClick()
+                selectLSA()
+                return true
+            }
+
+            R.id.menu3c -> {
+                lmp.stop()
+                menuSwitch = true
+                invalidateOptionsMenu()
+                switch1.isChecked = false
+                radioButton16.performClick()
+                radioButton3b.performClick()
+                selectLSA()
+                return true
+            }
+
+            R.id.menu3d -> {
+                lmp.stop()
+                menuSwitch = true
+                invalidateOptionsMenu()
+                switch1.isChecked = false
+                radioButton16.performClick()
+                radioButton4b.performClick()
+                selectLSA()
+                return true
+            }
+
+            R.id.menu3e -> {
+                lmp.stop()
+                menuSwitch = true
+                invalidateOptionsMenu()
+                switch1.isChecked = false
+                radioButton16.performClick()
+                radioButton5b.performClick()
+                selectLSA()
+                return true
+            }
+
             R.id.menu4 -> {
                 lmp.stop()
                 menuSwitch = true
@@ -1858,16 +1935,6 @@ class MainActivity : AppCompatActivity() {
                 invalidateOptionsMenu()
                 switch1.isChecked = false
                 select2()
-                return true
-            }
-
-            R.id.menu5a -> {
-                lmp.stop()
-                menuSwitch = true
-                invalidateOptionsMenu()
-                switch1.isChecked = false
-                radioButton16.performClick()
-                selectLSA()
                 return true
             }
 
