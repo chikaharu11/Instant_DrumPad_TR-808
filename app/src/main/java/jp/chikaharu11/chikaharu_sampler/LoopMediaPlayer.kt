@@ -58,6 +58,7 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
 
     fun reset() {
         mCurrentPlayer!!.reset()
+        mNextPlayer!!.reset()
     }
 
     companion object {

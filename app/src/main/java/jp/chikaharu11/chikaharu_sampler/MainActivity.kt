@@ -2032,6 +2032,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     override fun onDestroy() {
+            lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
         lmp.reset()
         lmp.release()
         if (EasyPermissions.hasPermissions(this, *permissions)) {
