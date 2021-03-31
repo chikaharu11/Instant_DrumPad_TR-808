@@ -20,6 +20,7 @@ import android.provider.MediaStore
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
+import android.view.MotionEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -767,16 +768,16 @@ class MainActivity : AppCompatActivity() {
 
         val lsaSpinner = findViewById<Spinner>(R.id.loop_sampler_spinner)
 
-        val adapterSA = ArrayAdapter(
+        val adapterLSA = ArrayAdapter(
                 applicationContext,
                 android.R.layout.simple_spinner_item, audioLSA
         )
 
-        adapterSA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapterLSA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
 
 
-        lsaSpinner.adapter = adapterSA
+        lsaSpinner.adapter = adapterLSA
 
         lsaSpinner.performClick()
 
@@ -828,6 +829,7 @@ class MainActivity : AppCompatActivity() {
     private var sound15 = 0
 
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -1233,110 +1235,155 @@ class MainActivity : AppCompatActivity() {
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.e808_loop_bd_8501))
 
 
-        imageView.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+        imageView.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+                }
+                false
         }
 
-        imageView2.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound2, 1.0f, 1.0f, 1, 0, 1.0f)
+        imageView2.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound2, 1.0f, 1.0f, 1, 0, 1.0f)
+                }
+                false
         }
 
-        imageView3.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView3.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView4.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView4.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView5.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound5, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView5.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound5, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView6.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound6, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView6.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound6, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView7.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView7.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView8.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView8.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView9.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView9.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
 
         }
 
-        imageView10.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound10, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView10.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound10, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView11.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound11, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView11.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound11, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView12.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView12.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView13.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound13, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView13.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound13, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView14.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound14, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView14.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound14, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
-        imageView15.setOnClickListener {
-            if (switch0.isChecked) {
-                soundPool.autoPause()
-            }
-            soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
+        imageView15.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                        if (switch0.isChecked) {
+                                soundPool.autoPause()
+                        }
+                        soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
+                }
+                false
         }
 
 
