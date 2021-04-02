@@ -843,7 +843,7 @@ class MainActivity : AppCompatActivity() {
         if (!EasyPermissions.hasPermissions(this, *permissions)) {
             AlertDialog.Builder(this)
                     .setCancelable(false)
-                    .setMessage("このアプリはスマートフォン内の\n着信音、音声ファイル、画像を使用します。\nアプリの設定画面に移動して、\nストレージ権限の許可をお願いします。")
+                    .setMessage("このアプリはスマートフォンや、\nSDカード内の音声ファイル、\n画像を使用します。\nアプリの設定画面に移動して、\nストレージ権限の許可をお願いします。")
                     .setPositiveButton("設定する") { _, _ ->
                         val uriString = "package:$packageName"
                         val intent = Intent(
