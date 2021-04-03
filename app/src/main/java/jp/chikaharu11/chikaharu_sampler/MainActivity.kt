@@ -486,7 +486,10 @@ class MainActivity : AppCompatActivity() {
                     radioButton8a.isChecked -> audioSA.removeIf { !it.contains("ma") }
                     radioButton9a.isChecked -> audioSA.removeIf { !it.contains("oh") }
                     radioButton10a.isChecked -> audioSA.removeIf { !it.contains("rs") }
-                    radioButton11a.isChecked -> audioSA.removeIf { !it.contains("sd") }
+                    radioButton11a.isChecked -> {
+                        audioSA.removeIf { !it.contains("sd") }
+                        audioSA.removeIf { it.contains("loop") }
+                    }
                     radioButton12a.isChecked -> {
                         audioSA.removeIf { !it.contains("t") }
                         audioSA.removeIf { it.contains("bd") }
