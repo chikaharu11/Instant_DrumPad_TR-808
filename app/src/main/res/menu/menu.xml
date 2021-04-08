@@ -15,9 +15,15 @@
         tools:ignore="AlwaysShowAction" />
 
     <item
+        android:id="@+id/menu1a"
+        android:title="@string/menu1a"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+
+    <item
         android:id="@+id/menu2"
         android:title="@string/rec"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
 
     <item android:id="@+id/menu3a"
         android:title="@string/select3a"

@@ -22,12 +22,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.arthenica.mobileffmpeg.FFmpeg
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.custom_dialog.*
 import pub.devrel.easypermissions.EasyPermissions
 import java.io.FileDescriptor
 import java.text.SimpleDateFormat
@@ -76,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             putExtra(DocumentsContract.EXTRA_INITIAL_URI, sa)
-            type = "audio/*"
+            type = "*/*"
         }
         startActivityForResult(intent, READ_REQUEST_CODE2)
     }
@@ -866,7 +865,7 @@ class MainActivity : AppCompatActivity() {
 
 
             val audio1 = mutableSetOf(
-                ""
+                    ""
             )
 
             audio1.clear()
@@ -878,8 +877,8 @@ class MainActivity : AppCompatActivity() {
             for (i in path.indices) {
                 path[i] = cursor.getString(cursor.getColumnIndex("_data"))
                 audio1.add(
-                    path[i]?.replaceBeforeLast("/", "(")
-                        ?.replace("/", "") + ")  " + path[i].toString()
+                        path[i]?.replaceBeforeLast("/", "(")
+                                ?.replace("/", "") + ")  " + path[i].toString()
                 )
                 cursor.moveToNext()
             }
@@ -891,8 +890,8 @@ class MainActivity : AppCompatActivity() {
             val inSpinner = findViewById<Spinner>(R.id.internal_spinner)
 
             val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
+                    applicationContext,
+                    android.R.layout.simple_spinner_item, spinnerItems
             )
 
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -905,8 +904,8 @@ class MainActivity : AppCompatActivity() {
             inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
                 override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                        parent: AdapterView<*>?,
+                        view: View?, position: Int, id: Long
                 ) {
                     val spinnerParent = parent as Spinner
                     val item = spinnerParent.selectedItem as String
@@ -1148,32 +1147,58 @@ class MainActivity : AppCompatActivity() {
                     return
                 }
                 when(position){
-                    0 -> { radioButton1a.performClick()
-                            selectSA() }
-                    1 -> { radioButton2a.performClick()
-                            selectSA() }
-                    2 -> { radioButton3a.performClick()
-                            selectSA() }
-                    3 -> { radioButton4a.performClick()
-                            selectSA() }
-                    4 -> { radioButton5a.performClick()
-                            selectSA() }
-                    5 -> { radioButton6a.performClick()
-                            selectSA() }
-                    6 -> { radioButton7a.performClick()
-                            selectSA() }
-                    7 -> { radioButton8a.performClick()
-                            selectSA() }
-                    8 -> { radioButton9a.performClick()
-                            selectSA() }
-                    9 -> { radioButton10a.performClick()
-                            selectSA() }
-                    10 -> { radioButton11a.performClick()
-                            selectSA() }
-                    11 -> { radioButton12a.performClick()
-                            selectSA() }
-                    12 -> { radioButton13a.performClick()
-                            selectSA() }
+                    0 -> {
+                        radioButton1a.performClick()
+                        selectSA()
+                    }
+                    1 -> {
+                        radioButton2a.performClick()
+                        selectSA()
+                    }
+                    2 -> {
+                        radioButton3a.performClick()
+                        selectSA()
+                    }
+                    3 -> {
+                        radioButton4a.performClick()
+                        selectSA()
+                    }
+                    4 -> {
+                        radioButton5a.performClick()
+                        selectSA()
+                    }
+                    5 -> {
+                        radioButton6a.performClick()
+                        selectSA()
+                    }
+                    6 -> {
+                        radioButton7a.performClick()
+                        selectSA()
+                    }
+                    7 -> {
+                        radioButton8a.performClick()
+                        selectSA()
+                    }
+                    8 -> {
+                        radioButton9a.performClick()
+                        selectSA()
+                    }
+                    9 -> {
+                        radioButton10a.performClick()
+                        selectSA()
+                    }
+                    10 -> {
+                        radioButton11a.performClick()
+                        selectSA()
+                    }
+                    11 -> {
+                        radioButton12a.performClick()
+                        selectSA()
+                    }
+                    12 -> {
+                        radioButton13a.performClick()
+                        selectSA()
+                    }
                     13 -> inSpinner.performClick()
                     14 -> selectEX()
                     15 -> selectAudio()
@@ -1489,7 +1514,7 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     if (fileSize != null) {
-                        when  {
+                        when {
                             fileSize < 1048576 -> imageOptions.inSampleSize = 1
                             fileSize in 1048576..2097151 -> imageOptions.inSampleSize = 2
                             fileSize in 2097152..4194303 -> imageOptions.inSampleSize = 4
@@ -1895,6 +1920,39 @@ class MainActivity : AppCompatActivity() {
                     invalidateOptionsMenu()
                     switch1.isChecked = true
                 }
+                return true
+            }
+
+            R.id.menu1a -> {
+                val a = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou.ogg"
+                val a2 = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou2.ogg"
+                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespic5.png"
+                FFmpeg.execute("-i $a -filter_complex showwavespic=s=2560x1280:colors=black $myDir")
+
+                val builder = AlertDialog.Builder(this)
+                val inflater = layoutInflater
+                val dialogView = inflater.inflate(R.layout.custom_dialog, null)
+
+                val image = dialogView.findViewById<View>(R.id.imageView16) as ImageView
+
+                image.setImageURI(Uri.parse(myDir))
+
+                val button = dialogView.findViewById(R.id.button) as Button
+
+                button.setOnClickListener {
+                    FFmpeg.execute("-ss 10 -i $a -to 15 -y $a2")
+                    FFmpeg.execute("-i $a2 -filter_complex showwavespic=s=2560x1280:colors=black -y $myDir")
+                    image.setImageURI(Uri.parse(myDir))
+                }
+
+                builder.setView(dialogView)
+                        .setPositiveButton("YES") { _, _ ->
+                            finish()
+                        }
+                        .setNegativeButton("NO") { _, _ ->
+
+                        }
+                        .show()
                 return true
             }
 

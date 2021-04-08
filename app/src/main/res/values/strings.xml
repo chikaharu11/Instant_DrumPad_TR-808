@@ -46,5 +46,10 @@
     <string name="select3c">Loop [105bpm]</string>
     <string name="select3d">Loop [124bpm]</string>
     <string name="select3e">Loop [132bpm]</string>
+    <string name="menu1a">編集</string>
+    <string name="todo22">TODO</string>
+    <string name="切り取る">Button</string>
+    <string name="button2">Button</string>
+    <string name="button3">Button</string>
 
 </resources>
