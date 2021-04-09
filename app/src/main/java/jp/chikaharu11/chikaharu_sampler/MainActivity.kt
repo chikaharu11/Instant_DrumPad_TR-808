@@ -812,6 +812,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var soundPool: SoundPool
 
+    private lateinit var mp: MediaPlayer
+
     private lateinit var lmp: LoopMediaPlayer
 
     private var sound1 = 0
@@ -835,6 +837,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
+        mp = MediaPlayer()
 
         supportActionBar?.title ="e808_loop_bd_8501"
 
@@ -1933,16 +1939,56 @@ class MainActivity : AppCompatActivity() {
                 val inflater = layoutInflater
                 val dialogView = inflater.inflate(R.layout.custom_dialog, null)
 
+                mp.release()
+                mp = MediaPlayer()
+                mp.setDataSource(this, Uri.parse(a))
+                mp.prepare()
+
+                    val seekBar = dialogView.findViewById<SeekBar>(R.id.seekBar)
+                    val seekBar2 = dialogView.findViewById<SeekBar>(R.id.seekBar2)
+
+                    seekBar.progress = 0
+                    seekBar2.progress = 0
+
+                seekBar.max = 100
+
+                seekBar2.max = 100
+                seekBar2.progress = 50
+
+                    object : SeekBar.OnSeekBarChangeListener {
+                            //ツマミがドラッグされると呼ばれる
+                            override fun onProgressChanged(
+                                    seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                                    // 68 % のようにフォーマト
+                                    val str: String = getString(R.string.percentage, progress)
+                                val text1 = dialogView.findViewById(R.id.textView16) as TextView
+                                    text1.text = str
+                            }
+
+                            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                                    // ツマミがタッチされた時に呼ばれる
+                            }
+
+                            override fun onStopTrackingTouch(seekBar: SeekBar) {
+                                    // ツマミがリリースされた時に呼ばれる
+                            }
+
+                    }
                 val image = dialogView.findViewById<View>(R.id.imageView16) as ImageView
 
                 image.setImageURI(Uri.parse(myDir))
 
                 val button = dialogView.findViewById(R.id.button) as Button
+                val button2 = dialogView.findViewById(R.id.button2) as Button
 
                 button.setOnClickListener {
                     FFmpeg.execute("-ss 10 -i $a -to 15 -y $a2")
                     FFmpeg.execute("-i $a2 -filter_complex showwavespic=s=2560x1280:colors=black -y $myDir")
                     image.setImageURI(Uri.parse(myDir))
+                }
+
+                button2.setOnClickListener {
+                    mp.start()
                 }
 
                 builder.setView(dialogView)
