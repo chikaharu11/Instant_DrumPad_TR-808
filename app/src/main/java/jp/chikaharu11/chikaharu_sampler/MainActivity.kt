@@ -838,8 +838,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
         mp = MediaPlayer()
 
         supportActionBar?.title ="e808_loop_bd_8501"
@@ -1933,7 +1931,7 @@ class MainActivity : AppCompatActivity() {
                 val a = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou.ogg"
                 val a2 = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou2.ogg"
                 val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespic5.png"
-                FFmpeg.execute("-i $a -filter_complex showwavespic=s=2560x1280:colors=black $myDir")
+                FFmpeg.execute("-i $a -filter_complex showwavespic=s=600×240:colors=black $myDir")
 
                 val builder = AlertDialog.Builder(this)
                 val inflater = layoutInflater
@@ -1950,30 +1948,52 @@ class MainActivity : AppCompatActivity() {
                     seekBar.progress = 0
                     seekBar2.progress = 0
 
-                seekBar.max = 100
+                seekBar.max = mp.duration
 
-                seekBar2.max = 100
-                seekBar2.progress = 50
+                seekBar2.max = mp.duration
+                seekBar2.progress = mp.duration
 
-                    object : SeekBar.OnSeekBarChangeListener {
-                            //ツマミがドラッグされると呼ばれる
-                            override fun onProgressChanged(
-                                    seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                                    // 68 % のようにフォーマト
-                                    val str: String = getString(R.string.percentage, progress)
-                                val text1 = dialogView.findViewById(R.id.textView16) as TextView
-                                    text1.text = str
-                            }
+                val text1 = dialogView.findViewById<TextView>(R.id.textView16)
+                val text2 = dialogView.findViewById<TextView>(R.id.textView17)
+                text2.text = SimpleDateFormat("mm:ss:SSS").format(Date(mp.duration.toLong())).toString()
 
-                            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                                    // ツマミがタッチされた時に呼ばれる
-                            }
+                seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
-                            override fun onStopTrackingTouch(seekBar: SeekBar) {
-                                    // ツマミがリリースされた時に呼ばれる
-                            }
+
+                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                        text1.setText(SimpleDateFormat("mm:ss:SSS").format(Date(progress.toLong())).toString(), TextView.BufferType.NORMAL)
+                    }
+
+
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
 
                     }
+
+
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+                    }
+                })
+
+                seekBar2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+
+
+                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                        text2.text = SimpleDateFormat("mm:ss:SSS").format(Date(progress.toLong())).toString()
+                    }
+
+
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+                    }
+
+
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+                    }
+                })
+
+
                 val image = dialogView.findViewById<View>(R.id.imageView16) as ImageView
 
                 image.setImageURI(Uri.parse(myDir))
