@@ -35,6 +35,8 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+        private var hoge = "test"
+
     private fun rotateImageIfRequired(bitmap: Bitmap, context: Context, uri: Uri?): Bitmap? {
         val parcelFileDescriptor: ParcelFileDescriptor? = uri?.let { context.contentResolver.openFileDescriptor(it, "r") }
         val fileDescriptor: FileDescriptor = parcelFileDescriptor!!.fileDescriptor
@@ -1626,6 +1628,10 @@ class MainActivity : AppCompatActivity() {
                                 lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item))
                                 supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
                             }
+                                radioButton17.isChecked -> {
+                                        hoge = item
+                                        button4.performClick()
+                                }
                         }
                     } else {
                         try {
@@ -1696,6 +1702,10 @@ class MainActivity : AppCompatActivity() {
                                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item2))
                                     supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
+                                    radioButton17.isChecked -> {
+                                            hoge = item2
+                                            button4.performClick()
+                                    }
                             }
                         } catch (e: Exception) {
                             Toast.makeText(applicationContext, "MUSICフォルダ以外の音声ファイルは\n指定できません。", Toast.LENGTH_LONG).show()
@@ -1901,6 +1911,99 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+            button4.setOnClickListener {
+                    val a2 = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou2.ogg"
+                    val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespic5.png"
+                    FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2400x960:colors=black -y $myDir")
+
+                    val builder = AlertDialog.Builder(this)
+                    val inflater = layoutInflater
+                    val dialogView = inflater.inflate(R.layout.custom_dialog, null)
+
+                    mp.release()
+                    mp = MediaPlayer()
+                    mp.setDataSource(this, Uri.parse(hoge))
+                    mp.prepare()
+
+                    val seekBar = dialogView.findViewById<SeekBar>(R.id.seekBar)
+                    val seekBar2 = dialogView.findViewById<SeekBar>(R.id.seekBar2)
+
+                    seekBar.progress = 0
+                    seekBar2.progress = 0
+
+                    seekBar.max = mp.duration
+
+                    seekBar2.max = mp.duration
+                    seekBar2.progress = mp.duration
+
+                    val text1 = dialogView.findViewById<TextView>(R.id.textView16)
+                    val text2 = dialogView.findViewById<TextView>(R.id.textView17)
+                    text2.text = SimpleDateFormat("mm:ss:SSS").format(Date(mp.duration.toLong())).toString()
+
+                    seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+
+
+                            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                                    text1.setText(SimpleDateFormat("mm:ss:SSS").format(Date(progress.toLong())).toString(), TextView.BufferType.NORMAL)
+                            }
+
+
+                            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+                            }
+
+
+                            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+                            }
+                    })
+
+                    seekBar2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+
+
+                            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                                    text2.text = SimpleDateFormat("mm:ss:SSS").format(Date(progress.toLong())).toString()
+                            }
+
+
+                            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+                            }
+
+
+                            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+                            }
+                    })
+
+
+                    val image = dialogView.findViewById<View>(R.id.imageView16) as ImageView
+
+                    image.setImageURI(Uri.parse(myDir))
+
+                    val button = dialogView.findViewById(R.id.button) as Button
+                    val button2 = dialogView.findViewById(R.id.button2) as Button
+
+                    button.setOnClickListener {
+                            FFmpeg.execute("-ss $text1 -i $hoge -to $text2 -y $a2")
+                            FFmpeg.execute("-i $a2 -filter_complex showwavespic=s=2560x1280:colors=black -y $myDir")
+                            image.setImageURI(Uri.parse(myDir))
+                    }
+
+                    button2.setOnClickListener {
+                            mp.start()
+                    }
+
+                    builder.setView(dialogView)
+                            .setPositiveButton("YES") { _, _ ->
+                                    finish()
+                            }
+                            .setNegativeButton("NO") { _, _ ->
+
+                            }
+                            .show()
+            }
+
         fun stopRecording() {
             try {
                 mediaRecorder.stop()
@@ -1928,97 +2031,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu1a -> {
-                val a = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou.ogg"
-                val a2 = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou2.ogg"
-                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespic5.png"
-                FFmpeg.execute("-i $a -filter_complex showwavespic=s=600×240:colors=black $myDir")
-
-                val builder = AlertDialog.Builder(this)
-                val inflater = layoutInflater
-                val dialogView = inflater.inflate(R.layout.custom_dialog, null)
-
-                mp.release()
-                mp = MediaPlayer()
-                mp.setDataSource(this, Uri.parse(a))
-                mp.prepare()
-
-                    val seekBar = dialogView.findViewById<SeekBar>(R.id.seekBar)
-                    val seekBar2 = dialogView.findViewById<SeekBar>(R.id.seekBar2)
-
-                    seekBar.progress = 0
-                    seekBar2.progress = 0
-
-                seekBar.max = mp.duration
-
-                seekBar2.max = mp.duration
-                seekBar2.progress = mp.duration
-
-                val text1 = dialogView.findViewById<TextView>(R.id.textView16)
-                val text2 = dialogView.findViewById<TextView>(R.id.textView17)
-                text2.text = SimpleDateFormat("mm:ss:SSS").format(Date(mp.duration.toLong())).toString()
-
-                seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-
-
-                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                        text1.setText(SimpleDateFormat("mm:ss:SSS").format(Date(progress.toLong())).toString(), TextView.BufferType.NORMAL)
-                    }
-
-
-                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
-                    }
-
-
-                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-                    }
-                })
-
-                seekBar2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-
-
-                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                        text2.text = SimpleDateFormat("mm:ss:SSS").format(Date(progress.toLong())).toString()
-                    }
-
-
-                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
-                    }
-
-
-                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-                    }
-                })
-
-
-                val image = dialogView.findViewById<View>(R.id.imageView16) as ImageView
-
-                image.setImageURI(Uri.parse(myDir))
-
-                val button = dialogView.findViewById(R.id.button) as Button
-                val button2 = dialogView.findViewById(R.id.button2) as Button
-
-                button.setOnClickListener {
-                    FFmpeg.execute("-ss 10 -i $a -to 15 -y $a2")
-                    FFmpeg.execute("-i $a2 -filter_complex showwavespic=s=2560x1280:colors=black -y $myDir")
-                    image.setImageURI(Uri.parse(myDir))
-                }
-
-                button2.setOnClickListener {
-                    mp.start()
-                }
-
-                builder.setView(dialogView)
-                        .setPositiveButton("YES") { _, _ ->
-                            finish()
-                        }
-                        .setNegativeButton("NO") { _, _ ->
-
-                        }
-                        .show()
+                    radioButton17.performClick()
+                    selectAudio()
                 return true
             }
 
@@ -2113,17 +2127,17 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu6 -> {
-                AlertDialog.Builder(this)
-                        .setTitle("終了しますか？")
-                        .setPositiveButton("YES") { _, _ ->
-                            finish()
-                        }
-                        .setNegativeButton("NO") { _, _ ->
+                    AlertDialog.Builder(this)
+                            .setTitle("終了しますか？")
+                            .setPositiveButton("YES") { _, _ ->
+                                    finish()
+                            }
+                            .setNegativeButton("NO") { _, _ ->
 
-                        }
-                        .show()
+                            }
+                            .show()
 
-                return true
+                    return true
             }
 
             R.id.menu7 -> {

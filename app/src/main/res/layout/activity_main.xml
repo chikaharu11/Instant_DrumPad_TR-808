@@ -874,11 +874,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
 
-    <TextView
-        android:id="@+id/textView18"
+    <Button
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textviewX"
+        android:text="@string/dialog_button"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
 
