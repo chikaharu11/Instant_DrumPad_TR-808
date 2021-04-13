@@ -54,5 +54,6 @@
     <string name="textview1">00:00:000</string>
     <string name="textview2">0 %</string>
     <string name="percentage">%d %%</string>
+    <string name="textviewX">TextView</string>
 
 </resources>
