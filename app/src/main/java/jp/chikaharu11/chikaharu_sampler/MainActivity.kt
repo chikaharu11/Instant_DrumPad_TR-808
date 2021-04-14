@@ -36,6 +36,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
         private var hoge = "test"
+        var fuga = 0
 
     private fun rotateImageIfRequired(bitmap: Bitmap, context: Context, uri: Uri?): Bitmap? {
         val parcelFileDescriptor: ParcelFileDescriptor? = uri?.let { context.contentResolver.openFileDescriptor(it, "r") }
@@ -1946,6 +1947,8 @@ class MainActivity : AppCompatActivity() {
 
                         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                             text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
+                                fuga = progress
+
                         }
 
 
@@ -1984,13 +1987,20 @@ class MainActivity : AppCompatActivity() {
 
                     val button = dialogView.findViewById(R.id.button) as Button
                     val button2 = dialogView.findViewById(R.id.button2) as Button
+                    val button3 = dialogView.findViewById(R.id.button3) as Button
 
                     button.setOnClickListener {
                         FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $hoge -y $a2")
                     }
 
                     button2.setOnClickListener {
+                            mp.seekTo(fuga)
                             mp.start()
+                    }
+
+                    button3.setOnClickListener {
+                            mp.stop()
+                            mp.prepare()
                     }
 
                     builder.setView(dialogView)
