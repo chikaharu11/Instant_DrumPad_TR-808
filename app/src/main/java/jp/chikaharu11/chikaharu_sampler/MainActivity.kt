@@ -1628,10 +1628,10 @@ class MainActivity : AppCompatActivity() {
                                 lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item))
                                 supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
                             }
-                                radioButton17.isChecked -> {
-                                        hoge = item
-                                        button4.performClick()
-                                }
+                            radioButton17.isChecked -> {
+                                hoge = item
+                                button4.performClick()
+                            }
                         }
                     } else {
                         try {
@@ -1702,10 +1702,10 @@ class MainActivity : AppCompatActivity() {
                                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item2))
                                     supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
-                                    radioButton17.isChecked -> {
-                                            hoge = item2
-                                            button4.performClick()
-                                    }
+                                radioButton17.isChecked -> {
+                                    hoge = item2
+                                    button4.performClick()
+                                }
                             }
                         } catch (e: Exception) {
                             Toast.makeText(applicationContext, "MUSICフォルダ以外の音声ファイルは\n指定できません。", Toast.LENGTH_LONG).show()
@@ -1912,68 +1912,69 @@ class MainActivity : AppCompatActivity() {
         }
 
             button4.setOnClickListener {
-                    val a2 = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou2.ogg"
-                    val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespic5.png"
-                    FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2400x960:colors=black -y $myDir")
+                val a2 = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou2.ogg"
+                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespic5.png"
+                FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2560x1280:colors=black -y $myDir")
 
-                    val builder = AlertDialog.Builder(this)
-                    val inflater = layoutInflater
-                    val dialogView = inflater.inflate(R.layout.custom_dialog, null)
+                val builder = AlertDialog.Builder(this)
+                val inflater = layoutInflater
+                val dialogView = inflater.inflate(R.layout.custom_dialog, null)
 
-                    mp.release()
-                    mp = MediaPlayer()
-                    mp.setDataSource(this, Uri.parse(hoge))
-                    mp.prepare()
+                mp.release()
+                mp = MediaPlayer()
+                mp.setDataSource(this, Uri.parse(hoge))
+                mp.prepare()
 
-                    val seekBar = dialogView.findViewById<SeekBar>(R.id.seekBar)
-                    val seekBar2 = dialogView.findViewById<SeekBar>(R.id.seekBar2)
+                val seekBar = dialogView.findViewById<SeekBar>(R.id.seekBar)
+                val seekBar2 = dialogView.findViewById<SeekBar>(R.id.seekBar2)
 
-                    seekBar.progress = 0
-                    seekBar2.progress = 0
+                seekBar.progress = 0
+                seekBar2.progress = 0
 
-                    seekBar.max = mp.duration
+                seekBar.max = mp.duration
 
-                    seekBar2.max = mp.duration
-                    seekBar2.progress = mp.duration
+                seekBar2.max = mp.duration
+                seekBar2.progress = mp.duration
 
-                    val text1 = dialogView.findViewById<TextView>(R.id.textView16)
-                    val text2 = dialogView.findViewById<TextView>(R.id.textView17)
-                    text2.text = SimpleDateFormat("mm:ss:SSS").format(Date(mp.duration.toLong())).toString()
+                val text1 = dialogView.findViewById<TextView>(R.id.textView16)
+                val text2 = dialogView.findViewById<TextView>(R.id.textView17)
+                text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(0.toLong())).toString()
+                text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(mp.duration.toLong())).toString()
 
                     seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
 
-                            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                                    text1.setText(SimpleDateFormat("mm:ss:SSS").format(Date(progress.toLong())).toString(), TextView.BufferType.NORMAL)
-                            }
+                        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                            text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
+                        }
 
 
-                            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                        override fun onStartTrackingTouch(seekBar: SeekBar?) {
 
-                            }
+                        }
 
 
-                            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                        override fun onStopTrackingTouch(seekBar: SeekBar?) {
 
-                            }
+                        }
                     })
 
                     seekBar2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
 
-                            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                                    text2.text = SimpleDateFormat("mm:ss:SSS").format(Date(progress.toLong())).toString()
-                            }
+                        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                            text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
+                        }
 
 
-                            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                        override fun onStartTrackingTouch(seekBar: SeekBar?) {
 
-                            }
+                        }
 
 
-                            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                        override fun onStopTrackingTouch(seekBar: SeekBar?) {
 
-                            }
+                        }
                     })
 
 
@@ -1985,9 +1986,7 @@ class MainActivity : AppCompatActivity() {
                     val button2 = dialogView.findViewById(R.id.button2) as Button
 
                     button.setOnClickListener {
-                            FFmpeg.execute("-ss $text1 -i $hoge -to $text2 -y $a2")
-                            FFmpeg.execute("-i $a2 -filter_complex showwavespic=s=2560x1280:colors=black -y $myDir")
-                            image.setImageURI(Uri.parse(myDir))
+                        FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $hoge -y $a2")
                     }
 
                     button2.setOnClickListener {
@@ -2031,8 +2030,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu1a -> {
-                    radioButton17.performClick()
-                    selectAudio()
+                radioButton17.performClick()
+                selectAudio()
                 return true
             }
 
@@ -2127,17 +2126,17 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu6 -> {
-                    AlertDialog.Builder(this)
-                            .setTitle("終了しますか？")
-                            .setPositiveButton("YES") { _, _ ->
-                                    finish()
-                            }
-                            .setNegativeButton("NO") { _, _ ->
+                AlertDialog.Builder(this)
+                        .setTitle("終了しますか？")
+                        .setPositiveButton("YES") { _, _ ->
+                            finish()
+                        }
+                        .setNegativeButton("NO") { _, _ ->
 
-                            }
-                            .show()
+                        }
+                        .show()
 
-                    return true
+                return true
             }
 
             R.id.menu7 -> {
