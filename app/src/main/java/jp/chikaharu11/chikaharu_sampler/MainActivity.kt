@@ -1939,10 +1939,16 @@ class MainActivity : AppCompatActivity() {
                 seekBar2.max = mp.duration
                 seekBar2.progress = mp.duration
 
+                fuga = 0
+                fuga2 = mp.duration
+
                 val text1 = dialogView.findViewById<TextView>(R.id.textView16)
                 val text2 = dialogView.findViewById<TextView>(R.id.textView17)
+                val text3 = dialogView.findViewById<TextView>(R.id.textView18)
+
                 text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(0.toLong())).toString()
                 text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(mp.duration.toLong())).toString()
+                text3.text = hoge.replaceBeforeLast("/", "").replace("/", "")
 
                     seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
@@ -2002,7 +2008,7 @@ class MainActivity : AppCompatActivity() {
                                                     .setTitle("ファイル名を入力して下さい")
                                                     .setPositiveButton("保存") { _, _ ->
                                                             val nt = dialogView2.findViewById<EditText>(R.id.filename)
-                                                            val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text + ".ogg"
+                                                            val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text + hoge.replaceBeforeLast(".", "")
                                                             FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $hoge -y $fnt")
                                                     }
                                                     .setNegativeButton("キャンセル") { _, _ ->

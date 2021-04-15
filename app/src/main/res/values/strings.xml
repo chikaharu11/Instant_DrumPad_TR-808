@@ -51,11 +51,12 @@
     <string name="切り取る">Button</string>
     <string name="button2">Button</string>
     <string name="button3">Button</string>
-    <string name="textview1">00:00:000</string>
-    <string name="textview2">0 %</string>
+    <string name="textview1">00:00.000</string>
+    <string name="textview2">00:00.000</string>
     <string name="percentage">%d %%</string>
     <string name="textviewX">TextView</string>
     <string name="dialog_button">Button</string>
     <string name="filename" />
+    <string name="title">TextView</string>
 
 </resources>
