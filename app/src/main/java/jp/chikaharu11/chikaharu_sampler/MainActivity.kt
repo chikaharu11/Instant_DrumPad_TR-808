@@ -14,6 +14,7 @@ import android.media.*
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
 import android.os.ParcelFileDescriptor
 import android.provider.DocumentsContract
 import android.provider.MediaStore
@@ -35,8 +36,10 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+        private val handler = Handler()
         private var hoge = "test"
         var fuga = 0
+        var fuga2 = 0
 
     private fun rotateImageIfRequired(bitmap: Bitmap, context: Context, uri: Uri?): Bitmap? {
         val parcelFileDescriptor: ParcelFileDescriptor? = uri?.let { context.contentResolver.openFileDescriptor(it, "r") }
@@ -1913,8 +1916,7 @@ class MainActivity : AppCompatActivity() {
         }
 
             button4.setOnClickListener {
-                val a2 = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/maou2.ogg"
-                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespic5.png"
+                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespics.png"
                 FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2560x1280:colors=black -y $myDir")
 
                 val builder = AlertDialog.Builder(this)
@@ -1967,6 +1969,7 @@ class MainActivity : AppCompatActivity() {
 
                         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                             text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
+                                fuga2 = progress
                         }
 
 
@@ -1990,24 +1993,46 @@ class MainActivity : AppCompatActivity() {
                     val button3 = dialogView.findViewById(R.id.button3) as Button
 
                     button.setOnClickListener {
-                        FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $hoge -y $a2")
+                            when {
+                                    fuga < fuga2 -> {
+                                            val builder2 = AlertDialog.Builder(this)
+                                            val inflater2 = layoutInflater
+                                            val dialogView2 = inflater2.inflate(R.layout.file_name, null)
+                                            builder2.setView(dialogView2)
+                                                    .setTitle("ファイル名を入力して下さい")
+                                                    .setPositiveButton("保存") { _, _ ->
+                                                            val nt = dialogView2.findViewById<EditText>(R.id.filename)
+                                                            val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text + ".ogg"
+                                                            FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $hoge -y $fnt")
+                                                    }
+                                                    .setNegativeButton("キャンセル") { _, _ ->
+
+                                                    }
+                                                    .show()
+
+                                    }
+                                    fuga > fuga2 -> Toast.makeText(applicationContext, "時間を設定し直してください", Toast.LENGTH_SHORT).show()
+                                    fuga == fuga2 -> Toast.makeText(applicationContext, "時間を設定し直してください", Toast.LENGTH_SHORT).show()
+                            }
                     }
 
                     button2.setOnClickListener {
                             mp.seekTo(fuga)
                             mp.start()
+                            if (mp.isPlaying)
+                            handler.postDelayed({
+                                    mp.stop()
+                                    mp.prepare() }, (fuga2 - fuga).toLong())
                     }
 
                     button3.setOnClickListener {
                             mp.stop()
                             mp.prepare()
+                            handler.removeCallbacksAndMessages(null)
                     }
 
                     builder.setView(dialogView)
-                            .setPositiveButton("YES") { _, _ ->
-                                    finish()
-                            }
-                            .setNegativeButton("NO") { _, _ ->
+                            .setNegativeButton("戻る") { _, _ ->
 
                             }
                             .show()

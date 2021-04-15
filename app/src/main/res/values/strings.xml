@@ -56,5 +56,6 @@
     <string name="percentage">%d %%</string>
     <string name="textviewX">TextView</string>
     <string name="dialog_button">Button</string>
+    <string name="filename" />
 
 </resources>
