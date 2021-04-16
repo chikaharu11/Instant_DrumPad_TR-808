@@ -1917,7 +1917,7 @@ class MainActivity : AppCompatActivity() {
 
             button4.setOnClickListener {
                 val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespics.png"
-                FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2560x1280:colors=black -y $myDir")
+                FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2560x1280:colors=green:scale=0 -y $myDir")
 
                 val builder = AlertDialog.Builder(this)
                 val inflater = layoutInflater
@@ -2008,7 +2008,7 @@ class MainActivity : AppCompatActivity() {
                                                     .setTitle("ファイル名を入力して下さい")
                                                     .setPositiveButton("保存") { _, _ ->
                                                             val nt = dialogView2.findViewById<EditText>(R.id.filename)
-                                                            val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text + hoge.replaceBeforeLast(".", "")
+                                                            val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text.replace("/".toRegex(), "") + hoge.replaceBeforeLast(".", "")
                                                             FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $hoge -y $fnt")
                                                     }
                                                     .setNegativeButton("キャンセル") { _, _ ->

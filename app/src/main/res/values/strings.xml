@@ -48,9 +48,9 @@
     <string name="select3e">Loop [132bpm]</string>
     <string name="menu1a">編集</string>
     <string name="todo22">TODO</string>
-    <string name="切り取る">Button</string>
-    <string name="button2">Button</string>
-    <string name="button3">Button</string>
+    <string name="button1">切り取り</string>
+    <string name="button2">再生</string>
+    <string name="button3">停止</string>
     <string name="textview1">00:00.000</string>
     <string name="textview2">00:00.000</string>
     <string name="percentage">%d %%</string>
@@ -58,5 +58,7 @@
     <string name="dialog_button">Button</string>
     <string name="filename" />
     <string name="title">TextView</string>
+    <string name="textviewa">〜</string>
+    <string name="string_textviewa">〜</string>
 
 </resources>
