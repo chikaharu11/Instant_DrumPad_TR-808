@@ -1917,7 +1917,7 @@ class MainActivity : AppCompatActivity() {
 
             button4.setOnClickListener {
                 val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespics.png"
-                FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2560x1280:colors=green:scale=0 -y $myDir")
+                FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2560x1280:colors=blue:scale=0 -y $myDir")
 
                 val builder = AlertDialog.Builder(this)
                 val inflater = layoutInflater
@@ -2009,7 +2009,13 @@ class MainActivity : AppCompatActivity() {
                                                     .setPositiveButton("保存") { _, _ ->
                                                             val nt = dialogView2.findViewById<EditText>(R.id.filename)
                                                             val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text.replace("/".toRegex(), "") + hoge.replaceBeforeLast(".", "")
-                                                            FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $hoge -y $fnt")
+                                                            try {
+                                                                FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $hoge -y $fnt")
+                                                                button3.performClick()
+                                                                Toast.makeText(applicationContext, "保存しました", Toast.LENGTH_SHORT).show()
+                                                            } catch (e: Exception) {
+                                                                Toast.makeText(applicationContext, "保存できませんでした", Toast.LENGTH_LONG).show()
+                                                            }
                                                     }
                                                     .setNegativeButton("キャンセル") { _, _ ->
 
@@ -2023,25 +2029,33 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     button2.setOnClickListener {
-                            mp.seekTo(fuga)
-                            mp.start()
-                            if (mp.isPlaying)
-                            handler.postDelayed({
-                                    mp.stop()
-                                    mp.prepare() }, (fuga2 - fuga).toLong())
-                    }
-
-                    button3.setOnClickListener {
+                        if (switch3.isChecked) {
                             mp.stop()
                             mp.prepare()
                             handler.removeCallbacksAndMessages(null)
+                            switch3.isChecked = false
+                        } else {
+                            mp.seekTo(fuga)
+                            mp.start()
+                            switch3.isChecked = true
+                            if (mp.isPlaying)
+                                handler.postDelayed({
+                                    mp.stop()
+                                    mp.prepare()
+                                    switch3.isChecked = false
+                                }, (fuga2 - fuga).toLong())
+                        }
                     }
 
-                    builder.setView(dialogView)
-                            .setNegativeButton("戻る") { _, _ ->
 
-                            }
-                            .show()
+
+                    builder.setView(dialogView)
+                            val dialog = builder.create()
+                            dialog.show()
+                button3.setOnClickListener {
+                    dialog.dismiss()
+                }
+
             }
 
         fun stopRecording() {
@@ -2216,6 +2230,8 @@ class MainActivity : AppCompatActivity() {
             lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
         lmp.reset()
         lmp.release()
+        mp.reset()
+        mp.release()
         if (EasyPermissions.hasPermissions(this, *permissions)) {
             soundPool.autoPause()
             soundPool.release()
@@ -2229,6 +2245,11 @@ class MainActivity : AppCompatActivity() {
         menuSwitch = true
         invalidateOptionsMenu()
         switch1.isChecked = false
+        if (mp.isPlaying) {
+            mp.stop()
+            mp.prepare()
+            switch3.isChecked = false
+        }
         if (!menuSwitch2) {
             menuSwitch2 = true
             invalidateOptionsMenu()
