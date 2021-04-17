@@ -4,26 +4,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/menu1"
+        android:title="@string/play"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+    <item
         android:id="@+id/menu8"
         android:title="@string/switch0"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/menu1"
-        android:title="@string/play"
-        app:showAsAction="always"
-        tools:ignore="AlwaysShowAction" />
-
+        android:id="@+id/menu2"
+        android:title="@string/rec"
+        app:showAsAction="always" />
     <item
         android:id="@+id/menu1a"
         android:title="@string/menu1a"
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction" />
-
-    <item
-        android:id="@+id/menu2"
-        android:title="@string/rec"
-        app:showAsAction="never" />
 
     <item android:id="@+id/menu3a"
         android:title="@string/select3a"
@@ -59,7 +57,7 @@
 
     <item android:id="@+id/menu9"
         android:title="@string/select9"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 
     <item android:id="@+id/menu6"
         android:title="@string/end"
