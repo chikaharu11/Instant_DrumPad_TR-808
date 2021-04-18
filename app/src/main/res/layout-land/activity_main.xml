@@ -853,6 +853,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 
+    <jp.chikaharu11.chikaharu_sampler.CSpinner
+        android:id="@+id/choose_loop_spinner"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
@@ -891,7 +900,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
+        tools:ignore="MissingConstraints,TooManyViews,UseSwitchCompatOrMaterialXml" />
 
 
     <Button

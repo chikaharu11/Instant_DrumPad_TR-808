@@ -8,6 +8,12 @@
         android:title="@string/play"
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction" />
+
+    <item
+        android:id="@+id/menu10"
+        android:title="@string/menu10"
+        app:showAsAction="always" />
+
     <item
         android:id="@+id/menu8"
         android:title="@string/switch0"
@@ -17,11 +23,17 @@
         android:id="@+id/menu2"
         android:title="@string/rec"
         app:showAsAction="always" />
+
     <item
         android:id="@+id/menu1a"
         android:title="@string/menu1a"
-        app:showAsAction="always"
+        app:showAsAction="never"
         tools:ignore="AlwaysShowAction" />
+
+    <item
+        android:id="@+id/menu9"
+        android:title="@string/select9"
+        app:showAsAction="never" />
 
     <item android:id="@+id/menu3a"
         android:title="@string/select3a"
@@ -54,10 +66,6 @@
     <item android:id="@+id/menu7"
         android:title="@string/select4"
         app:showAsAction="never"/>
-
-    <item android:id="@+id/menu9"
-        android:title="@string/select9"
-        app:showAsAction="always"/>
 
     <item android:id="@+id/menu6"
         android:title="@string/end"

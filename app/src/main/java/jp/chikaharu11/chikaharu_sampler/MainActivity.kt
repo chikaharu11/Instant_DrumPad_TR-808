@@ -1077,9 +1077,6 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-
-
-
         val menu1 = listOf(
                 "Bass Drum [BD]",
                 "Clap [CP]",
@@ -1187,8 +1184,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         meSpinner.isFocusable = false
-
-
 
 
         val audioAttributes = AudioAttributes.Builder()
@@ -1765,6 +1760,91 @@ class MainActivity : AppCompatActivity() {
         inSpinner.isFocusable = false
     }
 
+    private fun selectCh() {
+        val menuC = listOf(
+                "Loop [85bpm]",
+                "Loop [95bpm]",
+                "Loop [105bpm]",
+                "Loop [124bpm]",
+                "Loop [132bpm]",
+                "内部サウンド",
+                "外部(ダウンロード)サウンド",
+                "録音したサウンド"
+        )
+
+        val chSpinner = findViewById<Spinner>(R.id.choose_loop_spinner)
+
+        val adapterC = ArrayAdapter(
+                applicationContext,
+                android.R.layout.simple_spinner_item, menuC
+        )
+
+        adapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+
+        chSpinner.adapter = adapterC
+
+        chSpinner.performClick()
+
+
+        chSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?, position: Int, id: Long
+            ) {
+                if (!chSpinner.isFocusable) {
+                    chSpinner.isFocusable = true
+                    return
+                }
+                when(position){
+                    0 -> {
+                        lmp.stop()
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1.isChecked = false
+                        radioButton16.performClick()
+                        radioButton1b.performClick()
+                        selectLSA()
+                    }
+                    1 -> {
+                        radioButton2a.performClick()
+                        selectSA()
+                    }
+                    2 -> {
+                        radioButton3a.performClick()
+                        selectSA()
+                    }
+                    3 -> {
+                        radioButton4a.performClick()
+                        selectSA()
+                    }
+                    4 -> {
+                        radioButton5a.performClick()
+                        selectSA()
+                    }
+                    5 -> {
+                        radioButton6a.performClick()
+                        selectSA()
+                    }
+                    6 -> {
+                        radioButton7a.performClick()
+                        selectSA()
+                    }
+                    7 -> {
+                        radioButton8a.performClick()
+                        selectSA()
+                    }
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+        chSpinner.isFocusable = false
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
 
@@ -2138,6 +2218,11 @@ class MainActivity : AppCompatActivity() {
             R.id.menu9 -> {
                 radioButton17.performClick()
                 selectEX()
+                return true
+            }
+
+            R.id.menu10 -> {
+                selectCh()
                 return true
             }
 
