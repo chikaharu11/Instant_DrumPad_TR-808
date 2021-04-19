@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+
     <item
         android:id="@+id/menu1"
         android:title="@string/play"
@@ -12,6 +14,7 @@
     <item
         android:id="@+id/menu10"
         android:title="@string/menu10"
+        android:icon="@drawable/ic_baseline_folder_24"
         app:showAsAction="always" />
 
     <item
@@ -25,6 +28,13 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/action_settings"
+        android:title="@string/play"
+        app:showAsAction="always" >
+
+        <menu>
+
+    <item
         android:id="@+id/menu1a"
         android:title="@string/menu1a"
         app:showAsAction="never"
@@ -35,40 +45,10 @@
         android:title="@string/select9"
         app:showAsAction="never" />
 
-    <item android:id="@+id/menu3a"
-        android:title="@string/select3a"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu3b"
-        android:title="@string/select3b"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu3c"
-        android:title="@string/select3c"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu3d"
-        android:title="@string/select3d"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu3e"
-        android:title="@string/select3e"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu4"
-        android:title="@string/select2"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu5"
-        android:title="@string/select3"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/menu7"
-        android:title="@string/select4"
-        app:showAsAction="never"/>
-
     <item android:id="@+id/menu6"
         android:title="@string/end"
         app:showAsAction="never"/>
 
+        </menu>
+    </item>
 </menu>

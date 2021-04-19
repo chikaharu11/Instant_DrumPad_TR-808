@@ -1808,32 +1808,58 @@ class MainActivity : AppCompatActivity() {
                         selectLSA()
                     }
                     1 -> {
-                        radioButton2a.performClick()
-                        selectSA()
+                        lmp.stop()
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1.isChecked = false
+                        radioButton16.performClick()
+                        radioButton2b.performClick()
+                        selectLSA()
                     }
                     2 -> {
-                        radioButton3a.performClick()
-                        selectSA()
+                        lmp.stop()
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1.isChecked = false
+                        radioButton16.performClick()
+                        radioButton3b.performClick()
+                        selectLSA()
                     }
                     3 -> {
-                        radioButton4a.performClick()
-                        selectSA()
+                        lmp.stop()
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1.isChecked = false
+                        radioButton16.performClick()
+                        radioButton4b.performClick()
+                        selectLSA()
                     }
                     4 -> {
-                        radioButton5a.performClick()
-                        selectSA()
+                        lmp.stop()
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1.isChecked = false
+                        radioButton16.performClick()
+                        radioButton5b.performClick()
+                        selectLSA()
                     }
                     5 -> {
-                        radioButton6a.performClick()
-                        selectSA()
+                        lmp.stop()
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1.isChecked = false
+                        select3()
                     }
                     6 -> {
-                        radioButton7a.performClick()
-                        selectSA()
+                        lmp.stop()
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1.isChecked = false
+                        select2()
                     }
                     7 -> {
-                        radioButton8a.performClick()
-                        selectSA()
+                        radioButton16.performClick()
+                        selectAudio()
                     }
                 }
             }
@@ -2109,79 +2135,6 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
 
-            R.id.menu3a -> {
-                lmp.stop()
-                menuSwitch = true
-                invalidateOptionsMenu()
-                switch1.isChecked = false
-                radioButton16.performClick()
-                radioButton1b.performClick()
-                selectLSA()
-                return true
-            }
-
-            R.id.menu3b -> {
-                lmp.stop()
-                menuSwitch = true
-                invalidateOptionsMenu()
-                switch1.isChecked = false
-                radioButton16.performClick()
-                radioButton2b.performClick()
-                selectLSA()
-                return true
-            }
-
-            R.id.menu3c -> {
-                lmp.stop()
-                menuSwitch = true
-                invalidateOptionsMenu()
-                switch1.isChecked = false
-                radioButton16.performClick()
-                radioButton3b.performClick()
-                selectLSA()
-                return true
-            }
-
-            R.id.menu3d -> {
-                lmp.stop()
-                menuSwitch = true
-                invalidateOptionsMenu()
-                switch1.isChecked = false
-                radioButton16.performClick()
-                radioButton4b.performClick()
-                selectLSA()
-                return true
-            }
-
-            R.id.menu3e -> {
-                lmp.stop()
-                menuSwitch = true
-                invalidateOptionsMenu()
-                switch1.isChecked = false
-                radioButton16.performClick()
-                radioButton5b.performClick()
-                selectLSA()
-                return true
-            }
-
-            R.id.menu4 -> {
-                lmp.stop()
-                menuSwitch = true
-                invalidateOptionsMenu()
-                switch1.isChecked = false
-                select3()
-                return true
-            }
-
-            R.id.menu5 -> {
-                lmp.stop()
-                menuSwitch = true
-                invalidateOptionsMenu()
-                switch1.isChecked = false
-                select2()
-                return true
-            }
-
             R.id.menu6 -> {
                 AlertDialog.Builder(this)
                         .setTitle("終了しますか？")
@@ -2193,12 +2146,6 @@ class MainActivity : AppCompatActivity() {
                         }
                         .show()
 
-                return true
-            }
-
-            R.id.menu7 -> {
-                radioButton16.performClick()
-                selectAudio()
                 return true
             }
 
