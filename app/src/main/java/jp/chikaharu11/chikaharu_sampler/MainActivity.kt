@@ -1939,7 +1939,7 @@ class MainActivity : AppCompatActivity() {
         }
 
             button4.setOnClickListener {
-                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/showwavespics.png"
+                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).toString() + "/showwavespics.png"
                 FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2560x1280:colors=blue:scale=0 -y $myDir")
 
                 val builder = AlertDialog.Builder(this)
