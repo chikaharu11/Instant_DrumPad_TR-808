@@ -6,6 +6,19 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
+        <item name="android:actionBarStyle">@style/CustomActionBar</item>
+        <item name="actionBarStyle">@style/CustomActionBar</item>
+    </style>
+
+    <!-- 背景色の設定とタイトルカラーのスタイル設定 -->
+    <style name="CustomActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="titleTextStyle">@style/titleTextStyle</item>
+    </style>
+
+    <!-- タイトルカラーの設定 -->
+    <style name="titleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">10sp</item>
     </style>
 
     <color name="colorPrimary">#00BCD4</color>
