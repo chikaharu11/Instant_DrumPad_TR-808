@@ -14,7 +14,7 @@
     <item
         android:id="@+id/menu10"
         android:title="@string/menu10"
-        android:icon="@drawable/ic_baseline_folder_24"
+        android:icon="@drawable/ic_baseline_library_music_24"
         app:showAsAction="always" />
 
     <item

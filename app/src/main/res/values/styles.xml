@@ -10,15 +10,13 @@
         <item name="actionBarStyle">@style/CustomActionBar</item>
     </style>
 
-    <!-- 背景色の設定とタイトルカラーのスタイル設定 -->
     <style name="CustomActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="titleTextStyle">@style/titleTextStyle</item>
     </style>
 
-    <!-- タイトルカラーの設定 -->
     <style name="titleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:autoSizeTextType">uniform</item>
     </style>
 
     <color name="colorPrimary">#00BCD4</color>
