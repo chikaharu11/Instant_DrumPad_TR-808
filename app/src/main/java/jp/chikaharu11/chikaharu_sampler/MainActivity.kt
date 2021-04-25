@@ -12,6 +12,7 @@ import android.graphics.drawable.ColorDrawable
 import android.media.*
 import android.media.projection.MediaProjectionManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
@@ -944,6 +945,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btn_start_recording)
                 .setOnClickListener {
+                    if(Build.VERSION.SDK_INT < Build.VERSION_CODES.Q){
+                        Toast.makeText(applicationContext, "この機能はAndroid10以上の機種で使えます", Toast.LENGTH_LONG).show()
+                        return@setOnClickListener
+                    }
                     startCapturing()
                 }
 
