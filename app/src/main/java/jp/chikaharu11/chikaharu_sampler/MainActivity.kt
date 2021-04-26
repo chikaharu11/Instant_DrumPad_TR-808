@@ -1461,6 +1461,9 @@ class MainActivity : AppCompatActivity() {
         startService(Intent(this, AudioCaptureService::class.java).apply {
             action = AudioCaptureService.ACTION_STOP
         })
+        menuSwitch0 = true
+        switch0.isChecked = false
+        invalidateOptionsMenu()
     }
 
     private fun isRecordAudioPermissionGranted(): Boolean {
@@ -1521,6 +1524,9 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, resultData)
         if (requestCode == MEDIA_PROJECTION_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
+                menuSwitch0 = false
+                switch0.isChecked = true
+                invalidateOptionsMenu()
                 Toast.makeText(
                         this,
                         "MediaProjection permission obtained. Foreground service will be started to capture audio.",
@@ -2014,6 +2020,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        fun stopRecording() {
+            try {
+                mediaRecorder.stop()
+                Toast.makeText(applicationContext, "録音が終わりました。", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                Toast.makeText(applicationContext, "録音停止に失敗しました。", Toast.LENGTH_LONG).show()
+            }
+        }
+
             button4.setOnClickListener {
                 val myDir = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).toString() + "/showwavespics.png"
                 FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2560x1280:colors=blue:scale=0 -y $myDir")
@@ -2096,6 +2111,7 @@ class MainActivity : AppCompatActivity() {
                     val button = dialogView.findViewById(R.id.button) as Button
                     val button2 = dialogView.findViewById(R.id.button2) as Button
                     val button3 = dialogView.findViewById(R.id.button3) as Button
+                    val button5 = dialogView.findViewById(R.id.button5) as Button
 
                     button.setOnClickListener {
                             when {
@@ -2156,20 +2172,26 @@ class MainActivity : AppCompatActivity() {
                             }
                             val dialog = builder.create()
                             dialog.show()
+
                 button3.setOnClickListener {
                     dialog.cancel()
                 }
 
+                button5.setOnClickListener {
+                    if (switch2.isChecked) {
+                        menuSwitch2 = true
+                        stopRecording()
+                        switch2.isChecked = false
+                    } else {
+                        menuSwitch2 = false
+                        startRecording()
+                        switch2.isChecked = true
+                    }
+                }
+
             }
 
-        fun stopRecording() {
-            try {
-                mediaRecorder.stop()
-                Toast.makeText(applicationContext, "録音が終わりました。", Toast.LENGTH_SHORT).show()
-            } catch (e: Exception) {
-                Toast.makeText(applicationContext, "録音停止に失敗しました。", Toast.LENGTH_LONG).show()
-            }
-        }
+
         when (item.itemId) {
 
             R.id.menu1 -> {
@@ -2198,13 +2220,13 @@ class MainActivity : AppCompatActivity() {
                 if (switch2.isChecked) {
                     menuSwitch2 = true
                     invalidateOptionsMenu()
-                    stopRecording()
+                    stopCapturing()
                     supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
                     switch2.isChecked = false
                 } else {
                     menuSwitch2 = false
                     invalidateOptionsMenu()
-                    startRecording()
+                    startCapturing()
                     supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#ff7f50")))
                     switch2.isChecked = true
                 }
@@ -2227,13 +2249,9 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu8 -> {
                 if (switch0.isChecked) {
-                    menuSwitch0 = true
-                    invalidateOptionsMenu()
-                    switch0.isChecked = false
+                    stopCapturing()
                 } else {
-                    menuSwitch0 = false
-                    invalidateOptionsMenu()
-                    switch0.isChecked = true
+                    startCapturing()
                 }
                 return true
             }
