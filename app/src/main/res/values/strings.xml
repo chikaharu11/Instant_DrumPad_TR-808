@@ -16,7 +16,7 @@
     <string name="todo14">14</string>
     <string name="todo15">15</string>
     <string name="radiobutton">RadioButton</string>
-    <string name="switch0">オンオフ</string>
+    <string name="switch0">録音/停止</string>
     <string name="play">再生</string>
     <string name="rec">音声録音</string>
     <string name="select2">内部サウンド</string>

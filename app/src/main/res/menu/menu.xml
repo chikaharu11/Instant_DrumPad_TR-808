@@ -23,11 +23,6 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/menu2"
-        android:title="@string/rec"
-        app:showAsAction="always" />
-
-    <item
         android:id="@+id/action_settings"
         android:title="@string/menu"
         android:icon="@drawable/ic_baseline_tune_24"

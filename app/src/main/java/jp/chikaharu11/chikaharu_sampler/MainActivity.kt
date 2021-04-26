@@ -1464,6 +1464,7 @@ class MainActivity : AppCompatActivity() {
         menuSwitch0 = true
         switch0.isChecked = false
         invalidateOptionsMenu()
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
     }
 
     private fun isRecordAudioPermissionGranted(): Boolean {
@@ -1527,6 +1528,7 @@ class MainActivity : AppCompatActivity() {
                 menuSwitch0 = false
                 switch0.isChecked = true
                 invalidateOptionsMenu()
+                supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#ff7f50")))
                 Toast.makeText(
                         this,
                         "MediaProjection permission obtained. Foreground service will be started to capture audio.",
@@ -1966,18 +1968,11 @@ class MainActivity : AppCompatActivity() {
             menuLamp.setIcon(R.drawable.ic_baseline_stop_24)
         }
 
-        val menuLamp2 = menu.findItem(R.id.menu2)
-        if (menuSwitch2) {
-            menuLamp2.setIcon(R.drawable.ic_baseline_mic_24)
-        } else {
-            menuLamp2.setIcon(R.drawable.ic_baseline_mic_24_2)
-        }
-
         val menuLamp3 = menu.findItem(R.id.menu8)
         if (menuSwitch0) {
-            menuLamp3.setIcon(R.drawable.ic_baseline_filter_2_24)
+            menuLamp3.setIcon(R.drawable.ic_baseline_radio_button_checked_24_2)
         } else {
-            menuLamp3.setIcon(R.drawable.ic_baseline_filter_1_24)
+            menuLamp3.setIcon(R.drawable.ic_baseline_radio_button_checked_24)
         }
 
         return true
@@ -2216,23 +2211,6 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
 
-            R.id.menu2 -> {
-                if (switch2.isChecked) {
-                    menuSwitch2 = true
-                    invalidateOptionsMenu()
-                    stopCapturing()
-                    supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
-                    switch2.isChecked = false
-                } else {
-                    menuSwitch2 = false
-                    invalidateOptionsMenu()
-                    startCapturing()
-                    supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#ff7f50")))
-                    switch2.isChecked = true
-                }
-                return true
-            }
-
             R.id.menu6 -> {
                 AlertDialog.Builder(this)
                         .setTitle("終了しますか？")
@@ -2248,11 +2226,16 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu8 -> {
-                if (switch0.isChecked) {
-                    stopCapturing()
-                } else {
-                    startCapturing()
+                when {
+
+                    Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> Toast.makeText(applicationContext, "この機能はAndroid10以上の機種で使えます", Toast.LENGTH_LONG).show()
+
+                    switch0.isChecked -> stopCapturing()
+
+                    else -> startCapturing()
+
                 }
+
                 return true
             }
 
