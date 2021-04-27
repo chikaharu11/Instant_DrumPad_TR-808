@@ -65,5 +65,7 @@
     <string name="aa">Button</string>
     <string name="bb">Button</string>
     <string name="button5">録音/停止</string>
+    <string name="todo_rec">rec</string>
+    <string name="select9b">音声録音</string>
 
 </resources>

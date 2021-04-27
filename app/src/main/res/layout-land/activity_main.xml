@@ -928,22 +928,5 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints,TooManyViews" />
 
-    <Button
-        android:id="@+id/btn_start_recording"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/aa"
-        app:layout_constraintBottom_toTopOf="@+id/textView14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
-    <Button
-        android:id="@+id/btn_stop_recording"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bb"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-        app:layout_constraintEnd_toEndOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

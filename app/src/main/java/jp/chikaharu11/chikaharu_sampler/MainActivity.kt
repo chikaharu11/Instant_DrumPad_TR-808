@@ -943,20 +943,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<Button>(R.id.btn_start_recording)
-                .setOnClickListener {
-                    if(Build.VERSION.SDK_INT < Build.VERSION_CODES.Q){
-                        Toast.makeText(applicationContext, "この機能はAndroid10以上の機種で使えます", Toast.LENGTH_LONG).show()
-                        return@setOnClickListener
-                    }
-                    startCapturing()
-                }
-
-        findViewById<Button>(R.id.btn_stop_recording)
-                .setOnClickListener {
-                    stopCapturing()
-                }
-
         mp = MediaPlayer()
 
         supportActionBar?.title ="e808_loop_bd_8501"
@@ -1442,11 +1428,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setButtonsEnabled(isCapturingAudio: Boolean) {
-        findViewById<Button>(R.id.btn_start_recording).isEnabled = !isCapturingAudio
-        findViewById<Button>(R.id.btn_stop_recording).isEnabled = isCapturingAudio
-    }
-
     private fun startCapturing() {
         if (!isRecordAudioPermissionGranted()) {
             requestRecordAudioPermission()
@@ -1456,7 +1437,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun stopCapturing() {
-        setButtonsEnabled(isCapturingAudio = false)
 
         startService(Intent(this, AudioCaptureService::class.java).apply {
             action = AudioCaptureService.ACTION_STOP
@@ -1540,8 +1520,6 @@ class MainActivity : AppCompatActivity() {
                     putExtra(AudioCaptureService.EXTRA_RESULT_DATA, resultData!!)
                 }
                 startForegroundService(audioCaptureIntent)
-
-                setButtonsEnabled(isCapturingAudio = true)
             } else {
                 Toast.makeText(
                         this, "Request to obtain MediaProjection denied.",
@@ -2001,7 +1979,6 @@ class MainActivity : AppCompatActivity() {
                         mediaRecorder.stop()
                         menuSwitch2 = true
                         invalidateOptionsMenu()
-                        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
                         switch2.isChecked = false
                         Toast.makeText(applicationContext, "録音時間の上限に達しました。", Toast.LENGTH_SHORT).show()
                     }
@@ -2018,7 +1995,6 @@ class MainActivity : AppCompatActivity() {
         fun stopRecording() {
             try {
                 mediaRecorder.stop()
-                Toast.makeText(applicationContext, "録音が終わりました。", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 Toast.makeText(applicationContext, "録音停止に失敗しました。", Toast.LENGTH_LONG).show()
             }
@@ -2106,7 +2082,6 @@ class MainActivity : AppCompatActivity() {
                     val button = dialogView.findViewById(R.id.button) as Button
                     val button2 = dialogView.findViewById(R.id.button2) as Button
                     val button3 = dialogView.findViewById(R.id.button3) as Button
-                    val button5 = dialogView.findViewById(R.id.button5) as Button
 
                     button.setOnClickListener {
                             when {
@@ -2172,18 +2147,6 @@ class MainActivity : AppCompatActivity() {
                     dialog.cancel()
                 }
 
-                button5.setOnClickListener {
-                    if (switch2.isChecked) {
-                        menuSwitch2 = true
-                        stopRecording()
-                        switch2.isChecked = false
-                    } else {
-                        menuSwitch2 = false
-                        startRecording()
-                        switch2.isChecked = true
-                    }
-                }
-
             }
 
 
@@ -2245,6 +2208,55 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
 
+            R.id.menu9b -> {
+                if (switch0.isChecked) {
+                    stopCapturing()
+                }
+                val builder3 = AlertDialog.Builder(this)
+                val inflater3 = layoutInflater
+                val dialogView3 = inflater3.inflate(R.layout.record_dialog, null)
+                val rec = dialogView3.findViewById<ImageView>(R.id.imageView17)
+                rec.setImageResource(R.drawable.ic_baseline_mic_24)
+                rec.setOnClickListener {
+                    if (switch2.isChecked) {
+                        menuSwitch2 = true
+                        stopRecording()
+                        Toast.makeText(applicationContext, "録音が終わりました。", Toast.LENGTH_SHORT).show()
+                        rec.setImageResource(R.drawable.ic_baseline_mic_24)
+                        switch2.isChecked = false
+                    } else {
+                        menuSwitch2 = false
+                        startRecording()
+                        rec.setImageResource(R.drawable.ic_baseline_mic_24_2)
+                        switch2.isChecked = true
+                    }
+                }
+                builder3.setView(dialogView3)
+                    .setTitle("録音を(開始/終了)するには、\nマイクをクリックしてください")
+                    .setNegativeButton("戻る") { _, _ ->
+                        if (switch2.isChecked) {
+                            menuSwitch2 = true
+                            stopRecording()
+                            Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
+                            rec.setImageResource(R.drawable.ic_baseline_mic_24)
+                            switch2.isChecked = false
+                        }
+                    }
+                    .setOnCancelListener {
+                        if (switch2.isChecked) {
+                            menuSwitch2 = true
+                            stopRecording()
+                            Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
+                            rec.setImageResource(R.drawable.ic_baseline_mic_24)
+                            switch2.isChecked = false
+                        }
+                    }
+                val dialog = builder3.create()
+                dialog.show()
+
+                return true
+            }
+
             R.id.menu10 -> {
                 selectCh()
                 return true
@@ -2286,7 +2298,6 @@ class MainActivity : AppCompatActivity() {
             menuSwitch2 = true
             invalidateOptionsMenu()
             mediaRecorder.stop()
-            supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
             Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
             switch2.isChecked = false
         }
