@@ -2232,7 +2232,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 builder3.setView(dialogView3)
-                    .setTitle("録音を(開始/終了)するには、\nマイクをクリックしてください")
+                    .setTitle("録音を(開始/終了)するには、\nマイクをクリックしてください。")
                     .setNegativeButton("戻る") { _, _ ->
                         if (switch2.isChecked) {
                             menuSwitch2 = true
