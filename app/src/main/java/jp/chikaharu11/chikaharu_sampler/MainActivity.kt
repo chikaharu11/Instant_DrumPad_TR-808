@@ -18,7 +18,6 @@ import android.os.Environment
 import android.os.Handler
 import android.provider.DocumentsContract
 import android.provider.MediaStore
-import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
@@ -39,13 +38,14 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var mediaProjectionManager: MediaProjectionManager
 
-        private val handler = Handler()
-        private var hoge = "test"
-        var fuga = 0
-        var fuga2 = 0
+    private val handler = Handler()
+    private var hoge = "test"
+    var fuga = 0
+    var fuga2 = 0
 
     companion object {
         private const val READ_REQUEST_CODE2: Int = 43
+        private const val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 41
         private const val RECORD_AUDIO_PERMISSION_REQUEST_CODE = 42
         private const val MEDIA_PROJECTION_REQUEST_CODE = 13
     }
@@ -61,128 +61,131 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun selectEX() {
+        if (!isReadExternalStoragePermissionGranted()) {
+            requestReadExternalStoragePermission()
+        } else {
+            val audio2 = mutableSetOf(
+                    ""
+            )
 
-        val audio2 = mutableSetOf(
-                ""
-        )
+            audio2.clear()
 
-        audio2.clear()
-
-        val audioUri2 = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
-        val cursor2 = contentResolver.query(audioUri2, null, null, null, null)
-        cursor2!!.moveToFirst()
-        val path2: Array<String?> = arrayOfNulls(cursor2.count)
-        for (i in path2.indices) {
-            path2[i] = cursor2.getString(cursor2.getColumnIndex("_data"))
-            audio2.add(path2[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path2[i].toString())
-            cursor2.moveToNext()
-        }
-
-        cursor2.close()
-
-        val spinnerItems2 = audio2.sorted()
-
-        val exSpinner = findViewById<Spinner>(R.id.external_spinner)
-
-        val adapter2 = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems2
-        )
-
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
-
-        exSpinner.adapter = adapter2
-
-        exSpinner.performClick()
-
-
-        exSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
-            ) {
-                if (!exSpinner.isFocusable) {
-                    exSpinner.isFocusable = true
-                    return
-                }
-                val spinnerParent = parent as Spinner
-                val item = spinnerParent.selectedItem as String
-                when {
-                    radioButton.isChecked -> {
-                        sound1 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton2.isChecked -> {
-                        sound2 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView2.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton3.isChecked -> {
-                        sound3 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView3.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton4.isChecked -> {
-                        sound4 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView4.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton5.isChecked -> {
-                        sound5 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView5.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton6.isChecked -> {
-                        sound6 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView6.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton7.isChecked -> {
-                        sound7 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView7.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton8.isChecked -> {
-                        sound8 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView8.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton9.isChecked -> {
-                        sound9 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView9.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton10.isChecked -> {
-                        sound10 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView10.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton11.isChecked -> {
-                        sound11 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView11.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton12.isChecked -> {
-                        sound12 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView12.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton13.isChecked -> {
-                        sound13 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView13.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton14.isChecked -> {
-                        sound14 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView14.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton15.isChecked -> {
-                        sound15 = soundPool.load(item.replaceBefore("/", ""), 1)
-                        textView15.text = item.replaceBeforeLast("/", "").replace("/", "")
-                    }
-                    radioButton17.isChecked -> {
-                        hoge = item.replaceBefore("/", "")
-                        button4.performClick()
-                    }
-                }
+            val audioUri2 = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+            val cursor2 = contentResolver.query(audioUri2, null, null, null, null)
+            cursor2!!.moveToFirst()
+            val path2: Array<String?> = arrayOfNulls(cursor2.count)
+            for (i in path2.indices) {
+                path2[i] = cursor2.getString(cursor2.getColumnIndex("_data"))
+                audio2.add(path2[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path2[i].toString())
+                cursor2.moveToNext()
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
+            cursor2.close()
 
+            val spinnerItems2 = audio2.sorted()
+
+            val exSpinner = findViewById<Spinner>(R.id.external_spinner)
+
+            val adapter2 = ArrayAdapter(
+                    applicationContext,
+                    android.R.layout.simple_spinner_item, spinnerItems2
+            )
+
+            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+
+
+            exSpinner.adapter = adapter2
+
+            exSpinner.performClick()
+
+
+            exSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+                override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?, position: Int, id: Long
+                ) {
+                    if (!exSpinner.isFocusable) {
+                        exSpinner.isFocusable = true
+                        return
+                    }
+                    val spinnerParent = parent as Spinner
+                    val item = spinnerParent.selectedItem as String
+                    when {
+                        radioButton.isChecked -> {
+                            sound1 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton2.isChecked -> {
+                            sound2 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView2.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton3.isChecked -> {
+                            sound3 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView3.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton4.isChecked -> {
+                            sound4 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView4.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton5.isChecked -> {
+                            sound5 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView5.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton6.isChecked -> {
+                            sound6 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView6.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton7.isChecked -> {
+                            sound7 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView7.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton8.isChecked -> {
+                            sound8 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView8.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton9.isChecked -> {
+                            sound9 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView9.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton10.isChecked -> {
+                            sound10 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView10.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton11.isChecked -> {
+                            sound11 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView11.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton12.isChecked -> {
+                            sound12 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView12.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton13.isChecked -> {
+                            sound13 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView13.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton14.isChecked -> {
+                            sound14 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView14.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton15.isChecked -> {
+                            sound15 = soundPool.load(item.replaceBefore("/", ""), 1)
+                            textView15.text = item.replaceBeforeLast("/", "").replace("/", "")
+                        }
+                        radioButton17.isChecked -> {
+                            hoge = item.replaceBefore("/", "")
+                            button4.performClick()
+                        }
+                    }
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
             }
+            exSpinner.isFocusable = false
         }
-        exSpinner.isFocusable = false
     }
 
     fun selectSA() {
@@ -947,31 +950,6 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.title ="e808_loop_bd_8501"
 
-        val permissions = arrayOf(
-                Manifest.permission.READ_EXTERNAL_STORAGE
-        )
-
-        if (!EasyPermissions.hasPermissions(this, *permissions)) {
-            AlertDialog.Builder(this)
-                    .setCancelable(false)
-                    .setMessage("このアプリはスマートフォンや、\nSDカード内の音声ファイル、\n画像を使用します。\nアプリの設定画面に移動して、\nストレージ権限の許可をお願いします。")
-                    .setPositiveButton("設定する") { _, _ ->
-                        val uriString = "package:$packageName"
-                        val intent = Intent(
-                                Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse(
-                                uriString
-                        )
-                        )
-                        startActivity(intent)
-                        finish()
-                    }
-                    .setNegativeButton("後で") { _, _ ->
-                        finish()
-                    }
-                    .show()
-            return
-        }
-
 
             val audio1 = mutableSetOf(
                     ""
@@ -1462,12 +1440,42 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    private fun isReadExternalStoragePermissionGranted(): Boolean {
+        return ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun requestReadExternalStoragePermission() {
+        ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                RECORD_AUDIO_PERMISSION_REQUEST_CODE
+        )
+    }
+
     override fun onRequestPermissionsResult(
             requestCode: Int,
             permissions: Array<out String>,
             grantResults: IntArray
     ) {
         if (requestCode == RECORD_AUDIO_PERMISSION_REQUEST_CODE) {
+            if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(
+                        this,
+                        "Permissions to capture audio granted. Click the button once again.",
+                        Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(
+                        this, "Permissions to capture audio denied.",
+                        Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
+        if (requestCode == READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE) {
             if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(
                         this,
@@ -1695,69 +1703,74 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun select2() {
-        val audio1 = mutableSetOf(
-                ""
-        )
+        if (!isReadExternalStoragePermissionGranted()) {
+            requestReadExternalStoragePermission()
+        } else {
 
-        audio1.clear()
+            val audio1 = mutableSetOf(
+                    ""
+            )
 
-        val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
-        val cursor = contentResolver.query(audioUri, null, null, null, null)
-        cursor!!.moveToFirst()
-        val path: Array<String?> = arrayOfNulls(cursor.count)
-        for (i in path.indices) {
-            path[i] = cursor.getString(cursor.getColumnIndex("_data"))
-            audio1.add(path[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path[i].toString())
-            cursor.moveToNext()
-        }
+            audio1.clear()
 
-        cursor.close()
-
-        val spinnerItems = audio1.sorted()
-
-        val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
-
-        val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
-        )
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
-
-        inSpinner.adapter = adapter
-
-        inSpinner.performClick()
-
-        inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
-            ) {
-                if (!inSpinner.isFocusable) {
-                    inSpinner.isFocusable = true
-                    return
-                }
-                try {
-                    val spinnerParent = parent as Spinner
-                    val item = spinnerParent.selectedItem as String
-                    volumeControlStream = AudioManager.STREAM_MUSIC
-                    val uri3 = Uri.parse(item.replaceBefore("/", ""))
-                    lmp.release()
-                    lmp = LoopMediaPlayer(this@MainActivity, uri3)
-                    supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
-                } catch (e: Exception) {
-                    Toast.makeText(applicationContext, "この音声ファイルは\n設定できません。", Toast.LENGTH_LONG).show()
-                }
+            val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+            val cursor = contentResolver.query(audioUri, null, null, null, null)
+            cursor!!.moveToFirst()
+            val path: Array<String?> = arrayOfNulls(cursor.count)
+            for (i in path.indices) {
+                path[i] = cursor.getString(cursor.getColumnIndex("_data"))
+                audio1.add(path[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path[i].toString())
+                cursor.moveToNext()
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
+            cursor.close()
 
+            val spinnerItems = audio1.sorted()
+
+            val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
+
+            val adapter = ArrayAdapter(
+                    applicationContext,
+                    android.R.layout.simple_spinner_item, spinnerItems
+            )
+
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+
+
+            inSpinner.adapter = adapter
+
+            inSpinner.performClick()
+
+            inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+                override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?, position: Int, id: Long
+                ) {
+                    if (!inSpinner.isFocusable) {
+                        inSpinner.isFocusable = true
+                        return
+                    }
+                    try {
+                        val spinnerParent = parent as Spinner
+                        val item = spinnerParent.selectedItem as String
+                        volumeControlStream = AudioManager.STREAM_MUSIC
+                        val uri3 = Uri.parse(item.replaceBefore("/", ""))
+                        lmp.release()
+                        lmp = LoopMediaPlayer(this@MainActivity, uri3)
+                        supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
+                    } catch (e: Exception) {
+                        Toast.makeText(applicationContext, "この音声ファイルは\n設定できません。", Toast.LENGTH_LONG).show()
+                    }
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
             }
+            inSpinner.isFocusable = false
         }
-        inSpinner.isFocusable = false
     }
 
     private fun select3() {
