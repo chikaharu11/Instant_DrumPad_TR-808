@@ -40,13 +40,13 @@
     <string name="textView13">e808_bd_long_07</string>
     <string name="textView14">e808_lc10</string>
     <string name="textView15">e808_oh09</string>
-    <string name="select9">DL編集</string>
+    <string name="select9">外部サウンドの編集</string>
     <string name="select3a">Loop [85bpm]</string>
     <string name="select3b">Loop [95bpm]</string>
     <string name="select3c">Loop [105bpm]</string>
     <string name="select3d">Loop [124bpm]</string>
     <string name="select3e">Loop [132bpm]</string>
-    <string name="menu1a">編集</string>
+    <string name="menu1a">録音サウンドの編集</string>
     <string name="todo22">TODO</string>
     <string name="button1">切り取り</string>
     <string name="button2">再生/停止</string>

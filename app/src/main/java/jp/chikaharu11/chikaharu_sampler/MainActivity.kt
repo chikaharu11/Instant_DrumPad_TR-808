@@ -29,7 +29,6 @@ import androidx.core.content.ContextCompat
 import com.arthenica.mobileffmpeg.FFmpeg
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_dialog.*
-import pub.devrel.easypermissions.EasyPermissions
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -1081,8 +1080,8 @@ class MainActivity : AppCompatActivity() {
                 "Tom Toms [LT-MT-HT]",
                 "Loops",
                 "内部サウンド",
-                "外部(ダウンロード)サウンド",
-                "録音したサウンド"
+                "外部サウンド",
+                "録音/編集サウンド"
         )
 
         val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
@@ -1843,8 +1842,8 @@ class MainActivity : AppCompatActivity() {
                 "Loop [124bpm]",
                 "Loop [132bpm]",
                 "内部サウンド",
-                "外部(ダウンロード)サウンド",
-                "録音したサウンド"
+                "外部サウンド",
+                "録音/編集サウンド"
         )
 
         val chSpinner = findViewById<Spinner>(R.id.choose_loop_spinner)
@@ -2222,51 +2221,55 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu9b -> {
-                if (switch0.isChecked) {
-                    stopCapturing()
-                }
-                val builder3 = AlertDialog.Builder(this)
-                val inflater3 = layoutInflater
-                val dialogView3 = inflater3.inflate(R.layout.record_dialog, null)
-                val rec = dialogView3.findViewById<ImageView>(R.id.imageView17)
-                rec.setImageResource(R.drawable.ic_baseline_mic_24)
-                rec.setOnClickListener {
-                    if (switch2.isChecked) {
-                        menuSwitch2 = true
-                        stopRecording()
-                        Toast.makeText(applicationContext, "録音が終わりました。", Toast.LENGTH_SHORT).show()
-                        rec.setImageResource(R.drawable.ic_baseline_mic_24)
-                        switch2.isChecked = false
-                    } else {
-                        menuSwitch2 = false
-                        startRecording()
-                        rec.setImageResource(R.drawable.ic_baseline_mic_24_2)
-                        switch2.isChecked = true
+                if (!isRecordAudioPermissionGranted()) {
+                    requestRecordAudioPermission()
+                } else {
+                    if (switch0.isChecked) {
+                        stopCapturing()
                     }
-                }
-                builder3.setView(dialogView3)
-                    .setTitle("録音を(開始/終了)するには、\nマイクをクリックしてください。")
-                    .setNegativeButton("戻る") { _, _ ->
+                    val builder3 = AlertDialog.Builder(this)
+                    val inflater3 = layoutInflater
+                    val dialogView3 = inflater3.inflate(R.layout.record_dialog, null)
+                    val rec = dialogView3.findViewById<ImageView>(R.id.imageView17)
+                    rec.setImageResource(R.drawable.ic_baseline_mic_24)
+                    rec.setOnClickListener {
                         if (switch2.isChecked) {
                             menuSwitch2 = true
                             stopRecording()
-                            Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext, "録音が終わりました。", Toast.LENGTH_SHORT).show()
                             rec.setImageResource(R.drawable.ic_baseline_mic_24)
                             switch2.isChecked = false
+                        } else {
+                            menuSwitch2 = false
+                            startRecording()
+                            rec.setImageResource(R.drawable.ic_baseline_mic_24_2)
+                            switch2.isChecked = true
                         }
                     }
-                    .setOnCancelListener {
-                        if (switch2.isChecked) {
-                            menuSwitch2 = true
-                            stopRecording()
-                            Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
-                            rec.setImageResource(R.drawable.ic_baseline_mic_24)
-                            switch2.isChecked = false
-                        }
-                    }
-                val dialog = builder3.create()
-                dialog.show()
+                    builder3.setView(dialogView3)
+                            .setTitle("録音を(開始/終了)するには、\nマイクをタッチしてください。")
+                            .setNegativeButton("戻る") { _, _ ->
+                                if (switch2.isChecked) {
+                                    menuSwitch2 = true
+                                    stopRecording()
+                                    Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
+                                    rec.setImageResource(R.drawable.ic_baseline_mic_24)
+                                    switch2.isChecked = false
+                                }
+                            }
+                            .setOnCancelListener {
+                                if (switch2.isChecked) {
+                                    menuSwitch2 = true
+                                    stopRecording()
+                                    Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
+                                    rec.setImageResource(R.drawable.ic_baseline_mic_24)
+                                    switch2.isChecked = false
+                                }
+                            }
+                    val dialog = builder3.create()
+                    dialog.show()
 
+                }
                 return true
             }
 
@@ -2279,20 +2282,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private val permissions = arrayOf(
-            Manifest.permission.READ_EXTERNAL_STORAGE
-    )
-
     override fun onDestroy() {
             lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
         lmp.reset()
         lmp.release()
         mp.reset()
         mp.release()
-        if (EasyPermissions.hasPermissions(this, *permissions)) {
-            soundPool.autoPause()
-            soundPool.release()
-        }
+        soundPool.autoPause()
+        soundPool.release()
+
         mediaRecorder.reset()
         mediaRecorder.release()
         super.onDestroy()
@@ -2315,10 +2313,9 @@ class MainActivity : AppCompatActivity() {
             switch2.isChecked = false
         }
 
-        if (EasyPermissions.hasPermissions(this, *permissions)) {
             lmp.stop()
             soundPool.autoPause()
-        }
+
         super.onPause()
     }
 }
