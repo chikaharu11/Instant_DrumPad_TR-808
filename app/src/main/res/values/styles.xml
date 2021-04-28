@@ -15,12 +15,12 @@
     </style>
 
     <style name="titleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColor">#ffffff</item>
         <item name="android:autoSizeTextType">uniform</item>
     </style>
 
-    <color name="colorPrimary">#00BCD4</color>
-    <color name="colorPrimaryDark">#673AB7</color>
+    <color name="colorPrimary">#5A5A66</color>
+    <color name="colorPrimaryDark">#2A2B2E</color>
     <color name="colorAccent">#8BC34A</color>
-    <color name="colorControlHighlight">#FF674D</color>
+    <color name="colorControlHighlight">#EC7357</color>
 </resources>

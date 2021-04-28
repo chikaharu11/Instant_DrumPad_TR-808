@@ -1081,7 +1081,7 @@ class MainActivity : AppCompatActivity() {
                 "Loops",
                 "内部サウンド",
                 "外部サウンド",
-                "録音/編集サウンド"
+                "録音/編集したサウンド"
         )
 
         val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
@@ -1421,7 +1421,7 @@ class MainActivity : AppCompatActivity() {
         menuSwitch0 = true
         switch0.isChecked = false
         invalidateOptionsMenu()
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00BCD4")))
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#5A5A66")))
     }
 
     private fun isRecordAudioPermissionGranted(): Boolean {
@@ -1515,7 +1515,7 @@ class MainActivity : AppCompatActivity() {
                 menuSwitch0 = false
                 switch0.isChecked = true
                 invalidateOptionsMenu()
-                supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#ff7f50")))
+                supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#EC7357")))
                 Toast.makeText(
                         this,
                         "MediaProjection permission obtained. Foreground service will be started to capture audio.",
@@ -1843,7 +1843,7 @@ class MainActivity : AppCompatActivity() {
                 "Loop [132bpm]",
                 "内部サウンド",
                 "外部サウンド",
-                "録音/編集サウンド"
+                "録音/編集したサウンド"
         )
 
         val chSpinner = findViewById<Spinner>(R.id.choose_loop_spinner)
