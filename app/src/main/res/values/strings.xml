@@ -15,14 +15,15 @@
     <string name="todo13">13</string>
     <string name="todo14">14</string>
     <string name="todo15">15</string>
+    <string name="todo16">16</string>
     <string name="radiobutton">RadioButton</string>
-    <string name="switch0">録音/停止</string>
+    <string name="dialog_button">DialogButton</string>
     <string name="play">再生</string>
-    <string name="rec">音声録音</string>
     <string name="select2">内部サウンド</string>
     <string name="select3">外部(ダウンロード)サウンド</string>
     <string name="select4">録音したサウンド</string>
     <string name="end">終了する</string>
+    <string name="switch0">録音/停止</string>
     <string name="switch1">再生/停止</string>
     <string name="switch2">録音/終了</string>
     <string name="textView">e808_bd_short_01</string>
@@ -40,32 +41,56 @@
     <string name="textView13">e808_bd_long_07</string>
     <string name="textView14">e808_lc10</string>
     <string name="textView15">e808_oh09</string>
-    <string name="select9">外部サウンドの編集</string>
     <string name="select3a">Loop [85bpm]</string>
     <string name="select3b">Loop [95bpm]</string>
     <string name="select3c">Loop [105bpm]</string>
     <string name="select3d">Loop [124bpm]</string>
     <string name="select3e">Loop [132bpm]</string>
     <string name="menu1a">録音サウンドの編集</string>
-    <string name="todo22">TODO</string>
+    <string name="select9">外部サウンドの編集</string>
     <string name="button1">切り取り</string>
     <string name="button2">再生/停止</string>
     <string name="button3">閉じる</string>
-    <string name="textview1">00:00.000</string>
-    <string name="textview2">00:00.000</string>
-    <string name="percentage">%d %%</string>
-    <string name="textviewX">TextView</string>
-    <string name="dialog_button">Button</string>
+    <string name="time1">00:00.000</string>
+    <string name="time2">00:00.000</string>
     <string name="filename" />
     <string name="title">TextView</string>
-    <string name="textviewa">〜</string>
-    <string name="string_textviewa">〜</string>
+    <string name="range">〜</string>
     <string name="menu10">選択</string>
     <string name="menu">メニュー</string>
-    <string name="aa">Button</string>
-    <string name="bb">Button</string>
     <string name="button5">録音/停止</string>
     <string name="todo_rec">rec</string>
     <string name="select9b">音声録音</string>
+
+    <string-array name="spinnerItems">
+        <item>Bass Drum [BD]</item>
+        <item>Clap [CP]</item>
+        <item>Claves [CL]</item>
+        <item>Closed Hi Hat [CH]</item>
+        <item>Congas [HC-MC-LC]</item>
+        <item>Cowbell [CB]</item>
+        <item>Cymbal [CY]</item>
+        <item>Maracas [MA]</item>
+        <item>Open Hi Hat [OH]</item>
+        <item>Rimshot [RS]</item>
+        <item>Snare Drum [SD]</item>
+        <item>Tom Toms [LT-MT-HT]</item>
+        <item>Loops</item>
+        <item>内部サウンド</item>
+        <item>外部サウンド</item>
+        <item>録音/編集したサウンド"</item>
+    </string-array>
+
+    <string-array name="spinnerItems2">
+        <item>Loop [85bpm]</item>
+        <item>Loop [95bpm]</item>
+        <item>Loop [105bpm]</item>
+        <item>Loop [124bpm]</item>
+        <item>Loop [132bpm]</item>
+        <item>内部サウンド</item>
+        <item>外部サウンド</item>
+        <item>録音/編集したサウンド"</item>
+    </string-array>
+
 
 </resources>

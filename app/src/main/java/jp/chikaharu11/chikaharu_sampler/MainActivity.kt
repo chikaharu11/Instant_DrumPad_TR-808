@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             putExtra(DocumentsContract.EXTRA_INITIAL_URI, sa)
-            type = "*/*"
+            type = "audio/*"
         }
         startActivityForResult(intent, READ_REQUEST_CODE2)
     }
@@ -1065,31 +1065,9 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-        val menu1 = listOf(
-                "Bass Drum [BD]",
-                "Clap [CP]",
-                "Claves [CL]",
-                "Closed Hi Hat [CH]",
-                "Congas [HC-MC-LC]",
-                "Cowbell [CB]",
-                "Cymbal [CY]",
-                "Maracas [MA]",
-                "Open Hi Hat [OH]",
-                "Rimshot [RS]",
-                "Snare Drum [SD]",
-                "Tom Toms [LT-MT-HT]",
-                "Loops",
-                "内部サウンド",
-                "外部サウンド",
-                "録音/編集したサウンド"
-        )
-
         val meSpinner = findViewById<Spinner>(R.id.menu_spinner)
 
-        val adapter3 = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, menu1
-        )
+        val adapter3 = ArrayAdapter.createFromResource(this, R.array.spinnerItems, android.R.layout.simple_spinner_item)
 
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -1835,23 +1813,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun selectCh() {
-        val menuC = listOf(
-                "Loop [85bpm]",
-                "Loop [95bpm]",
-                "Loop [105bpm]",
-                "Loop [124bpm]",
-                "Loop [132bpm]",
-                "内部サウンド",
-                "外部サウンド",
-                "録音/編集したサウンド"
-        )
 
         val chSpinner = findViewById<Spinner>(R.id.choose_loop_spinner)
 
-        val adapterC = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, menuC
-        )
+        val adapterC = ArrayAdapter.createFromResource(this, R.array.spinnerItems2, android.R.layout.simple_spinner_item)
 
         adapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 

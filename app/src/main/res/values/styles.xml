@@ -20,7 +20,7 @@
     </style>
 
     <color name="colorPrimary">#5A5A66</color>
-    <color name="colorPrimaryDark">#2A2B2E</color>
+    <color name="colorPrimaryDark">#e2e3e3</color>
     <color name="colorAccent">#8BC34A</color>
     <color name="colorControlHighlight">#EC7357</color>
 </resources>
