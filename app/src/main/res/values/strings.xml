@@ -61,6 +61,10 @@
     <string name="button5">録音/停止</string>
     <string name="todo_rec">rec</string>
     <string name="select9b">音声録音</string>
+    <string name="tes">追加</string>
+    <string name="todo23">TODO</string>
+    <string name="textI">追加</string>
+    <string name="textviewget">TextView</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>

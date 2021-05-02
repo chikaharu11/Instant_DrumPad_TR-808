@@ -33,7 +33,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private lateinit var mediaProjectionManager: MediaProjectionManager
 
@@ -923,6 +923,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var lmp: LoopMediaPlayer
 
+    private lateinit var mCustomAdapter: CustomAdapter
+
+    private lateinit var mAnimalList: ArrayList<Animal>
+
     private var sound1 = 0
     private var sound2 = 0
     private var sound3 = 0
@@ -938,12 +942,25 @@ class MainActivity : AppCompatActivity() {
     private var sound13 = 0
     private var sound14 = 0
     private var sound15 = 0
+    private var sound16 = 0
 
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val dog = Animal("e808_bd_long_01.ogg")
+        val cat = Animal("e808_bd_long_02.ogg")
+        val elephant = Animal("e808_bd_long_03.ogg")
+        val horse = Animal("e808_bd_long_04.ogg")
+        val lion = Animal("e808_bd_long_05.ogg")
+        mAnimalList = arrayListOf(dog, cat, elephant, horse, lion)
+
+        val listView = findViewById<ListView>(R.id.list_view)
+        // MainActivity自身をListenerとして渡す
+        mCustomAdapter = CustomAdapter(this, mAnimalList, this)
+        listView.adapter = mCustomAdapter
 
         mp = MediaPlayer()
 
@@ -1381,6 +1398,18 @@ class MainActivity : AppCompatActivity() {
             meSpinner.performClick()
             true
         }
+    }
+
+    override fun clicked(animal: Animal) {
+        sound16 = soundPool.load(assets.openFd(animal.name), 1)
+        soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
+            soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
+    }
+
+    override fun clicked2(animal: Animal) {
+        sound15 = soundPool.load(assets.openFd(animal.name), 1)
+        findViewById<ListView>(R.id.list_view).visibility = View.INVISIBLE
     }
 
     private fun startCapturing() {
