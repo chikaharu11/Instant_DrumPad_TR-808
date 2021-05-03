@@ -10,20 +10,18 @@ import android.widget.Button
 import android.widget.TextView
 
 interface CustomAdapterListener {
-    fun clicked(animal: Animal)
-    fun clicked2(animal: Animal)
+    fun clicked(soundList: SoundList)
+    fun clicked2(soundList: SoundList)
 }
 
-
-
-class CustomAdapter(context: Context, private var mAnimalList: List<Animal>, private val listener: CustomAdapterListener) : ArrayAdapter<Animal>(context, 0, mAnimalList) {
+class CustomAdapter(context: Context, private var mSoundListList: List<SoundList>, private val listener: CustomAdapterListener) : ArrayAdapter<SoundList>(context, 0, mSoundListList) {
 
     private val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     @SuppressLint("SetTextI18n")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // Animalの取得
-        val animal = mAnimalList[position]
+        val soundList = mSoundListList[position]
 
         // レイアウトの設定
         var view = convertView
@@ -32,14 +30,14 @@ class CustomAdapter(context: Context, private var mAnimalList: List<Animal>, pri
         }
 
         val name = view?.findViewById<TextView>(R.id.name)
-        name?.text = animal.name
+        name?.text = soundList.name
         name?.setOnClickListener {
-            listener.clicked2(animal)
+            listener.clicked2(soundList)
         }
 
         val button = view?.findViewById<Button>(R.id.button)
         button?.setOnClickListener {
-            listener.clicked(animal)
+            listener.clicked(soundList)
         }
 
         return view!!

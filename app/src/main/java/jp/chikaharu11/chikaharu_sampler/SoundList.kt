@@ -1,5 +1,5 @@
 package jp.chikaharu11.chikaharu_sampler
 
-data class Animal(
+data class SoundList(
         val name: String
 )
