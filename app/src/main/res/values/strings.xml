@@ -65,6 +65,7 @@
     <string name="todo23">TODO</string>
     <string name="textI">追加</string>
     <string name="textviewget">TextView</string>
+    <string name="todo17">TODO</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
