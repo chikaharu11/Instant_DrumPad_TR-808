@@ -31,7 +31,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_dialog.*
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
@@ -64,127 +63,17 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if (!isReadExternalStoragePermissionGranted()) {
             requestReadExternalStoragePermission()
         } else {
-            val audio2 = mutableSetOf(
-                    ""
-            )
-
-            audio2.clear()
-
-            val audioUri2 = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
-            val cursor2 = contentResolver.query(audioUri2, null, null, null, null)
-            cursor2!!.moveToFirst()
-            val path2: Array<String?> = arrayOfNulls(cursor2.count)
-            for (i in path2.indices) {
-                path2[i] = cursor2.getString(cursor2.getColumnIndex("_data"))
-                audio2.add(path2[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path2[i].toString())
-                cursor2.moveToNext()
+            val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+            val cursor = contentResolver.query(audioUri, null, null, null, null)
+            cursor!!.moveToFirst()
+            val path: Array<String?> = arrayOfNulls(cursor.count)
+            for (i in path.indices) {
+                path[i] = cursor.getString(cursor.getColumnIndex("_data"))
+                tSoundList.add(SoundList(path[i].toString()))
+                cursor.moveToNext()
             }
 
-            cursor2.close()
-
-            val spinnerItems2 = audio2.sorted()
-
-            val exSpinner = findViewById<Spinner>(R.id.external_spinner)
-
-            val adapter2 = ArrayAdapter(
-                    applicationContext,
-                    android.R.layout.simple_spinner_item, spinnerItems2
-            )
-
-            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
-
-            exSpinner.adapter = adapter2
-
-            exSpinner.performClick()
-
-
-            exSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-                override fun onItemSelected(
-                        parent: AdapterView<*>?,
-                        view: View?, position: Int, id: Long
-                ) {
-                    if (!exSpinner.isFocusable) {
-                        exSpinner.isFocusable = true
-                        return
-                    }
-                    val spinnerParent = parent as Spinner
-                    val item = spinnerParent.selectedItem as String
-                    when {
-                        radioButton.isChecked -> {
-                            sound1 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton2.isChecked -> {
-                            sound2 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView2.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton3.isChecked -> {
-                            sound3 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView3.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton4.isChecked -> {
-                            sound4 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView4.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton5.isChecked -> {
-                            sound5 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView5.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton6.isChecked -> {
-                            sound6 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView6.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton7.isChecked -> {
-                            sound7 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView7.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton8.isChecked -> {
-                            sound8 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView8.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton9.isChecked -> {
-                            sound9 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView9.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton10.isChecked -> {
-                            sound10 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView10.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton11.isChecked -> {
-                            sound11 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView11.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton12.isChecked -> {
-                            sound12 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView12.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton13.isChecked -> {
-                            sound13 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView13.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton14.isChecked -> {
-                            sound14 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView14.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton15.isChecked -> {
-                            sound15 = soundPool.load(item.replaceBefore("/", ""), 1)
-                            textView15.text = item.replaceBeforeLast("/", "").replace("/", "")
-                        }
-                        radioButton17.isChecked -> {
-                            hoge = item.replaceBefore("/", "")
-                            button4.performClick()
-                        }
-                    }
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-
-                }
-            }
-            exSpinner.isFocusable = false
+            cursor.close()
         }
     }
 
@@ -213,7 +102,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var pCustomAdapter: CustomAdapter
     private lateinit var qCustomAdapter: CustomAdapter
     private lateinit var rCustomAdapter: CustomAdapter
+
     private lateinit var sCustomAdapter: CustomAdapter
+    private lateinit var tCustomAdapter: CustomAdapter
 
     private lateinit var aSoundList: MutableList<SoundList>
     private lateinit var bSoundList: MutableList<SoundList>
@@ -236,6 +127,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var rSoundList: MutableList<SoundList>
 
     private lateinit var sSoundList: MutableList<SoundList>
+    private lateinit var tSoundList: MutableList<SoundList>
 
     private var sound1 = 0
     private var sound2 = 0
@@ -836,6 +728,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("e808_loop_toms_13204.ogg")
         )
         sSoundList = arrayListOf()
+        tSoundList = arrayListOf()
 
         val listView = findViewById<ListView>(R.id.list_view)
         // MainActivity自身をListenerとして渡す
@@ -858,6 +751,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         qCustomAdapter = CustomAdapter(this, qSoundList, this)
         rCustomAdapter = CustomAdapter(this, rSoundList, this)
         sCustomAdapter = CustomAdapter(this, sSoundList, this)
+        tCustomAdapter = CustomAdapter(this, tSoundList, this)
 
         listView.adapter = aCustomAdapter
 
@@ -872,9 +766,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             val path: Array<String?> = arrayOfNulls(cursor.count)
             for (i in path.indices) {
                 path[i] = cursor.getString(cursor.getColumnIndex("_data"))
-                (sSoundList as ArrayList<SoundList>).add(
-                        SoundList(path[i].toString())
-                )
+                sSoundList.add(SoundList(path[i].toString()))
                 cursor.moveToNext()
             }
 
@@ -990,7 +882,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         sCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    14 -> selectEX()
+                    14 -> {
+                        selectEX()
+                        radioButton18.performClick()
+                        soundListView.adapter = tCustomAdapter
+                        tCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
+                    }
                     15 -> selectAudio()
                 }
             }
@@ -1463,6 +1361,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
+            }
+            radioButton17.isChecked -> {
+                hoge = soundList.name
+                button4.performClick()
             }
         }
         findViewById<ListView>(R.id.list_view).visibility = View.INVISIBLE
@@ -2219,6 +2121,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             }
 
+        val soundListView = findViewById<ListView>(R.id.list_view)
 
         when (item.itemId) {
 
@@ -2274,7 +2177,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             R.id.menu9 -> {
                 radioButton17.performClick()
+                radioButton18.performClick()
                 selectEX()
+                soundListView.adapter = tCustomAdapter
+                tCustomAdapter.notifyDataSetChanged()
+                soundListView.visibility = View.VISIBLE
                 return true
             }
 
