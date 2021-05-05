@@ -1249,6 +1249,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 textView15.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
             }
+            radioButton16.isChecked && radioButton18.isChecked -> {
+                lmp.release()
+                lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
+                supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
+                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                }
+            }
             radioButton.isChecked && radioButton19.isChecked -> {
                 sound1 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
@@ -1882,14 +1890,23 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1.isChecked = false
-                        select3()
+                        radioButton16.performClick()
+                        radioButton18.performClick()
+                        soundListView.adapter = sCustomAdapter
+                        sCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
                     }
                     6 -> {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1.isChecked = false
-                        select2()
+                        radioButton16.performClick()
+                        radioButton18.performClick()
+                        selectEX()
+                        soundListView.adapter = tCustomAdapter
+                        tCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
                     }
                     7 -> {
                         radioButton16.performClick()
