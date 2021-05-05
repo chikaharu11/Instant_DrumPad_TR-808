@@ -187,736 +187,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
-    fun selectSA() {
-
-        val audioSA = mutableListOf(
-                "e808_bd_long_01.ogg",
-                "e808_bd_long_02.ogg",
-                "e808_bd_long_03.ogg",
-                "e808_bd_long_04.ogg",
-                "e808_bd_long_05.ogg",
-                "e808_bd_long_06.ogg",
-                "e808_bd_long_07.ogg",
-                "e808_bd_long_08.ogg",
-                "e808_bd_long_09.ogg",
-                "e808_bd_long_10.ogg",
-                "e808_bd_long_11.ogg",
-                "e808_bd_long_12.ogg",
-                "e808_bd_long_13.ogg",
-                "e808_bd_long_14.ogg",
-                "e808_bd_long_15.ogg",
-                "e808_bd_long_16.ogg",
-                "e808_bd_long_17.ogg",
-                "e808_bd_short_01.ogg",
-                "e808_bd_short_02.ogg",
-                "e808_bd_short_03.ogg",
-                "e808_bd_short_04.ogg",
-                "e808_bd_short_05.ogg",
-                "e808_bd_short_06.ogg",
-                "e808_bd_short_07.ogg",
-                "e808_bd_short_08.ogg",
-                "e808_bd_short_09.ogg",
-                "e808_bd_short_10.ogg",
-                "e808_bd_short_11.ogg",
-                "e808_bd_short_12.ogg",
-                "e808_cb01.ogg",
-                "e808_cb02.ogg",
-                "e808_cb03.ogg",
-                "e808_cb04.ogg",
-                "e808_cb05.ogg",
-                "e808_cb06.ogg",
-                "e808_cb07.ogg",
-                "e808_cb08.ogg",
-                "e808_cb09.ogg",
-                "e808_cb10.ogg",
-                "e808_cb11.ogg",
-                "e808_cb12.ogg",
-                "e808_cb13.ogg",
-                "e808_cb14.ogg",
-                "e808_cb15.ogg",
-                "e808_ch01.ogg",
-                "e808_ch02.ogg",
-                "e808_ch03.ogg",
-                "e808_ch04.ogg",
-                "e808_ch05.ogg",
-                "e808_ch06.ogg",
-                "e808_ch07.ogg",
-                "e808_ch08.ogg",
-                "e808_ch09.ogg",
-                "e808_ch10.ogg",
-                "e808_ch11.ogg",
-                "e808_ch12.ogg",
-                "e808_cl01.ogg",
-                "e808_cl02.ogg",
-                "e808_cl03.ogg",
-                "e808_cl04.ogg",
-                "e808_cl05.ogg",
-                "e808_cl06.ogg",
-                "e808_cl07.ogg",
-                "e808_cl08.ogg",
-                "e808_cl09.ogg",
-                "e808_cl10.ogg",
-                "e808_cl11.ogg",
-                "e808_cp01.ogg",
-                "e808_cp02.ogg",
-                "e808_cp03.ogg",
-                "e808_cp04.ogg",
-                "e808_cp05.ogg",
-                "e808_cp06.ogg",
-                "e808_cp07.ogg",
-                "e808_cp08.ogg",
-                "e808_cp09.ogg",
-                "e808_cp10.ogg",
-                "e808_cp11.ogg",
-                "e808_cp12.ogg",
-                "e808_cp13.ogg",
-                "e808_cp14.ogg",
-                "e808_cp15.ogg",
-                "e808_cy01.ogg",
-                "e808_cy02.ogg",
-                "e808_cy03.ogg",
-                "e808_cy04.ogg",
-                "e808_cy05.ogg",
-                "e808_cy06.ogg",
-                "e808_cy07.ogg",
-                "e808_cy08.ogg",
-                "e808_cy09.ogg",
-                "e808_cy10.ogg",
-                "e808_cy11.ogg",
-                "e808_cy12.ogg",
-                "e808_cy13.ogg",
-                "e808_cy14.ogg",
-                "e808_cy15.ogg",
-                "e808_cy16.ogg",
-                "e808_hc01.ogg",
-                "e808_hc02.ogg",
-                "e808_hc03.ogg",
-                "e808_hc04.ogg",
-                "e808_hc05.ogg",
-                "e808_hc06.ogg",
-                "e808_hc07.ogg",
-                "e808_hc08.ogg",
-                "e808_hc09.ogg",
-                "e808_hc10.ogg",
-                "e808_ht01.ogg",
-                "e808_ht02.ogg",
-                "e808_ht03.ogg",
-                "e808_ht04.ogg",
-                "e808_ht05.ogg",
-                "e808_ht06.ogg",
-                "e808_ht07.ogg",
-                "e808_ht08.ogg",
-                "e808_ht09.ogg",
-                "e808_ht10.ogg",
-                "e808_ht11.ogg",
-                "e808_ht12.ogg",
-                "e808_lc01.ogg",
-                "e808_lc02.ogg",
-                "e808_lc03.ogg",
-                "e808_lc04.ogg",
-                "e808_lc05.ogg",
-                "e808_lc06.ogg",
-                "e808_lc07.ogg",
-                "e808_lc08.ogg",
-                "e808_lc09.ogg",
-                "e808_lc10.ogg",
-                "e808_loop_bd_8501.ogg",
-                "e808_loop_bd_8502.ogg",
-                "e808_loop_bd_8503.ogg",
-                "e808_loop_bd_8504.ogg",
-                "e808_loop_bd_8505.ogg",
-                "e808_loop_bd_8506.ogg",
-                "e808_loop_bd_8507.ogg",
-                "e808_loop_bd_8508.ogg",
-                "e808_loop_bd_9501.ogg",
-                "e808_loop_bd_9502.ogg",
-                "e808_loop_bd_9503.ogg",
-                "e808_loop_bd_9504.ogg",
-                "e808_loop_bd_9505.ogg",
-                "e808_loop_bd_9506.ogg",
-                "e808_loop_bd_9507.ogg",
-                "e808_loop_bd_9508.ogg",
-                "e808_loop_bd_10501.ogg",
-                "e808_loop_bd_10502.ogg",
-                "e808_loop_bd_10503.ogg",
-                "e808_loop_bd_10504.ogg",
-                "e808_loop_bd_10505.ogg",
-                "e808_loop_bd_10506.ogg",
-                "e808_loop_bd_10507.ogg",
-                "e808_loop_bd_10508.ogg",
-                "e808_loop_bd_12401.ogg",
-                "e808_loop_bd_12402.ogg",
-                "e808_loop_bd_12403.ogg",
-                "e808_loop_bd_12404.ogg",
-                "e808_loop_bd_12405.ogg",
-                "e808_loop_bd_12406.ogg",
-                "e808_loop_bd_12407.ogg",
-                "e808_loop_bd_12408.ogg",
-                "e808_loop_bd_13201.ogg",
-                "e808_loop_bd_13202.ogg",
-                "e808_loop_bd_13203.ogg",
-                "e808_loop_bd_13204.ogg",
-                "e808_loop_bd_13205.ogg",
-                "e808_loop_bd_13206.ogg",
-                "e808_loop_bd_13207.ogg",
-                "e808_loop_bd_13208.ogg",
-                "e808_loop_hats_8501.ogg",
-                "e808_loop_hats_8502.ogg",
-                "e808_loop_hats_8503.ogg",
-                "e808_loop_hats_8504.ogg",
-                "e808_loop_hats_8505.ogg",
-                "e808_loop_hats_8506.ogg",
-                "e808_loop_hats_8507.ogg",
-                "e808_loop_hats_8508.ogg",
-                "e808_loop_hats_9501.ogg",
-                "e808_loop_hats_9502.ogg",
-                "e808_loop_hats_9503.ogg",
-                "e808_loop_hats_9504.ogg",
-                "e808_loop_hats_9505.ogg",
-                "e808_loop_hats_9506.ogg",
-                "e808_loop_hats_9507.ogg",
-                "e808_loop_hats_9508.ogg",
-                "e808_loop_hats_10501.ogg",
-                "e808_loop_hats_10502.ogg",
-                "e808_loop_hats_10503.ogg",
-                "e808_loop_hats_10504.ogg",
-                "e808_loop_hats_10505.ogg",
-                "e808_loop_hats_10506.ogg",
-                "e808_loop_hats_10507.ogg",
-                "e808_loop_hats_10508.ogg",
-                "e808_loop_hats_12401.ogg",
-                "e808_loop_hats_12402.ogg",
-                "e808_loop_hats_12403.ogg",
-                "e808_loop_hats_12404.ogg",
-                "e808_loop_hats_12405.ogg",
-                "e808_loop_hats_12406.ogg",
-                "e808_loop_hats_12407.ogg",
-                "e808_loop_hats_12408.ogg",
-                "e808_loop_hats_13201.ogg",
-                "e808_loop_hats_13202.ogg",
-                "e808_loop_hats_13203.ogg",
-                "e808_loop_hats_13204.ogg",
-                "e808_loop_hats_13205.ogg",
-                "e808_loop_hats_13206.ogg",
-                "e808_loop_hats_13207.ogg",
-                "e808_loop_hats_13208.ogg",
-                "e808_loop_perc_8501.ogg",
-                "e808_loop_perc_8502.ogg",
-                "e808_loop_perc_8503.ogg",
-                "e808_loop_perc_8504.ogg",
-                "e808_loop_perc_9501.ogg",
-                "e808_loop_perc_9502.ogg",
-                "e808_loop_perc_9503.ogg",
-                "e808_loop_perc_9504.ogg",
-                "e808_loop_perc_10501.ogg",
-                "e808_loop_perc_10502.ogg",
-                "e808_loop_perc_10503.ogg",
-                "e808_loop_perc_10504.ogg",
-                "e808_loop_perc_12401.ogg",
-                "e808_loop_perc_12402.ogg",
-                "e808_loop_perc_12403.ogg",
-                "e808_loop_perc_12404.ogg",
-                "e808_loop_perc_13201.ogg",
-                "e808_loop_perc_13202.ogg",
-                "e808_loop_perc_13203.ogg",
-                "e808_loop_perc_13204.ogg",
-                "e808_loop_sd_8501.ogg",
-                "e808_loop_sd_8502.ogg",
-                "e808_loop_sd_8503.ogg",
-                "e808_loop_sd_8504.ogg",
-                "e808_loop_sd_8505.ogg",
-                "e808_loop_sd_8506.ogg",
-                "e808_loop_sd_8507.ogg",
-                "e808_loop_sd_8508.ogg",
-                "e808_loop_sd_9501.ogg",
-                "e808_loop_sd_9502.ogg",
-                "e808_loop_sd_9503.ogg",
-                "e808_loop_sd_9504.ogg",
-                "e808_loop_sd_9505.ogg",
-                "e808_loop_sd_9506.ogg",
-                "e808_loop_sd_9507.ogg",
-                "e808_loop_sd_9508.ogg",
-                "e808_loop_sd_10501.ogg",
-                "e808_loop_sd_10502.ogg",
-                "e808_loop_sd_10503.ogg",
-                "e808_loop_sd_10504.ogg",
-                "e808_loop_sd_10505.ogg",
-                "e808_loop_sd_10506.ogg",
-                "e808_loop_sd_10507.ogg",
-                "e808_loop_sd_10508.ogg",
-                "e808_loop_sd_12401.ogg",
-                "e808_loop_sd_12402.ogg",
-                "e808_loop_sd_12403.ogg",
-                "e808_loop_sd_12404.ogg",
-                "e808_loop_sd_12405.ogg",
-                "e808_loop_sd_12406.ogg",
-                "e808_loop_sd_12407.ogg",
-                "e808_loop_sd_13201.ogg",
-                "e808_loop_sd_13202.ogg",
-                "e808_loop_sd_13203.ogg",
-                "e808_loop_sd_13204.ogg",
-                "e808_loop_sd_13205.ogg",
-                "e808_loop_sd_13206.ogg",
-                "e808_loop_sd_13207.ogg",
-                "e808_loop_sd_13208.ogg",
-                "e808_loop_toms_8501.ogg",
-                "e808_loop_toms_8502.ogg",
-                "e808_loop_toms_8503.ogg",
-                "e808_loop_toms_8504.ogg",
-                "e808_loop_toms_9501.ogg",
-                "e808_loop_toms_9502.ogg",
-                "e808_loop_toms_9503.ogg",
-                "e808_loop_toms_9504.ogg",
-                "e808_loop_toms_10501.ogg",
-                "e808_loop_toms_10502.ogg",
-                "e808_loop_toms_10503.ogg",
-                "e808_loop_toms_10504.ogg",
-                "e808_loop_toms_12401.ogg",
-                "e808_loop_toms_12402.ogg",
-                "e808_loop_toms_12403.ogg",
-                "e808_loop_toms_12404.ogg",
-                "e808_loop_toms_13201.ogg",
-                "e808_loop_toms_13202.ogg",
-                "e808_loop_toms_13203.ogg",
-                "e808_loop_toms_13204.ogg",
-                "e808_lt01.ogg",
-                "e808_lt02.ogg",
-                "e808_lt03.ogg",
-                "e808_lt04.ogg",
-                "e808_lt05.ogg",
-                "e808_lt06.ogg",
-                "e808_lt07.ogg",
-                "e808_lt08.ogg",
-                "e808_lt09.ogg",
-                "e808_lt10.ogg",
-                "e808_lt11.ogg",
-                "e808_lt12.ogg",
-                "e808_ma01.ogg",
-                "e808_ma02.ogg",
-                "e808_ma03.ogg",
-                "e808_ma04.ogg",
-                "e808_ma05.ogg",
-                "e808_ma06.ogg",
-                "e808_ma07.ogg",
-                "e808_ma08.ogg",
-                "e808_ma09.ogg",
-                "e808_ma10.ogg",
-                "e808_ma11.ogg",
-                "e808_mc01.ogg",
-                "e808_mc02.ogg",
-                "e808_mc03.ogg",
-                "e808_mc04.ogg",
-                "e808_mc05.ogg",
-                "e808_mc06.ogg",
-                "e808_mc07.ogg",
-                "e808_mc08.ogg",
-                "e808_mc09.ogg",
-                "e808_mc10.ogg",
-                "e808_mt01.ogg",
-                "e808_mt02.ogg",
-                "e808_mt03.ogg",
-                "e808_mt04.ogg",
-                "e808_mt05.ogg",
-                "e808_mt06.ogg",
-                "e808_mt07.ogg",
-                "e808_mt08.ogg",
-                "e808_mt09.ogg",
-                "e808_mt10.ogg",
-                "e808_mt11.ogg",
-                "e808_mt12.ogg",
-                "e808_oh01.ogg",
-                "e808_oh02.ogg",
-                "e808_oh03.ogg",
-                "e808_oh04.ogg",
-                "e808_oh05.ogg",
-                "e808_oh06.ogg",
-                "e808_oh07.ogg",
-                "e808_oh08.ogg",
-                "e808_oh09.ogg",
-                "e808_oh10.ogg",
-                "e808_oh11.ogg",
-                "e808_oh12.ogg",
-                "e808_oh13.ogg",
-                "e808_rs01.ogg",
-                "e808_rs02.ogg",
-                "e808_rs03.ogg",
-                "e808_rs04.ogg",
-                "e808_rs05.ogg",
-                "e808_rs06.ogg",
-                "e808_rs07.ogg",
-                "e808_rs08.ogg",
-                "e808_rs09.ogg",
-                "e808_rs10.ogg",
-                "e808_rs11.ogg",
-                "e808_sd01.ogg",
-                "e808_sd02.ogg",
-                "e808_sd03.ogg",
-                "e808_sd04.ogg",
-                "e808_sd05.ogg",
-                "e808_sd06.ogg",
-                "e808_sd07.ogg",
-                "e808_sd08.ogg",
-                "e808_sd09.ogg",
-                "e808_sd10.ogg",
-                "e808_sd11.ogg",
-                "e808_sd12.ogg",
-                "e808_sd13.ogg",
-                "e808_sd14.ogg",
-                "e808_sd15.ogg",
-                "e808_sd16.ogg",
-                "e808_sd17.ogg",
-                "e808_sd18.ogg",
-                "e808_sd19.ogg",
-                "e808_sd20.ogg"
-        )
-
-            when {
-                    radioButton1a.isChecked -> {
-                        audioSA.removeIf { !it.contains("bd") }
-                        audioSA.removeIf { it.contains("loop") }
-                    }
-                    radioButton2a.isChecked -> audioSA.removeIf { !it.contains("cp") }
-                    radioButton3a.isChecked -> audioSA.removeIf { !it.contains("cl") }
-                    radioButton4a.isChecked -> audioSA.removeIf { !it.contains("ch") }
-                    radioButton5a.isChecked -> {
-                        audioSA.removeIf { !it.contains("c") }
-                        audioSA.removeIf { it.contains("cp") }
-                        audioSA.removeIf { it.contains("cl") }
-                        audioSA.removeIf { it.contains("ch") }
-                        audioSA.removeIf { it.contains("cb") }
-                        audioSA.removeIf { it.contains("cy") }
-                        audioSA.removeIf { it.contains("loop") }
-                    }
-                    radioButton6a.isChecked -> audioSA.removeIf { !it.contains("cb") }
-                    radioButton7a.isChecked -> audioSA.removeIf { !it.contains("cy") }
-                    radioButton8a.isChecked -> audioSA.removeIf { !it.contains("ma") }
-                    radioButton9a.isChecked -> audioSA.removeIf { !it.contains("oh") }
-                    radioButton10a.isChecked -> audioSA.removeIf { !it.contains("rs") }
-                    radioButton11a.isChecked -> {
-                        audioSA.removeIf { !it.contains("sd") }
-                        audioSA.removeIf { it.contains("loop") }
-                    }
-                    radioButton12a.isChecked -> {
-                        audioSA.removeIf { !it.contains("t") }
-                        audioSA.removeIf { it.contains("bd") }
-                        audioSA.removeIf { it.contains("loop") }
-                    }
-                    radioButton13a.isChecked -> audioSA.removeIf { !it.contains("loop") }
-            }
-
-        val saSpinner = findViewById<Spinner>(R.id.sampler_spinner)
-
-        val adapterSA = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, audioSA
-        )
-
-        adapterSA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
-
-        saSpinner.adapter = adapterSA
-
-        saSpinner.performClick()
-
-
-        saSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
-            ) {
-                if (!saSpinner.isFocusable) {
-                    saSpinner.isFocusable = true
-                    return
-                }
-                val spinnerParent = parent as Spinner
-                val item = spinnerParent.selectedItem as String
-                when {
-                    radioButton.isChecked -> {
-                        sound1 = soundPool.load(assets.openFd(item), 1)
-                        textView.text = item
-                    }
-                    radioButton2.isChecked -> {
-                        sound2 = soundPool.load(assets.openFd(item), 1)
-                        textView2.text = item
-                    }
-                    radioButton3.isChecked -> {
-                        sound3 = soundPool.load(assets.openFd(item), 1)
-                        textView3.text = item
-                    }
-                    radioButton4.isChecked -> {
-                        sound4 = soundPool.load(assets.openFd(item), 1)
-                        textView4.text = item
-                    }
-                    radioButton5.isChecked -> {
-                        sound5 = soundPool.load(assets.openFd(item), 1)
-                        textView5.text = item
-                    }
-                    radioButton6.isChecked -> {
-                        sound6 = soundPool.load(assets.openFd(item), 1)
-                        textView6.text = item
-                    }
-                    radioButton7.isChecked -> {
-                        sound7 = soundPool.load(assets.openFd(item), 1)
-                        textView7.text = item
-                    }
-                    radioButton8.isChecked -> {
-                        sound8 = soundPool.load(assets.openFd(item), 1)
-                        textView8.text = item
-                    }
-                    radioButton9.isChecked -> {
-                        sound9 = soundPool.load(assets.openFd(item), 1)
-                        textView9.text = item
-                    }
-                    radioButton10.isChecked -> {
-                        sound10 = soundPool.load(assets.openFd(item), 1)
-                        textView10.text = item
-                    }
-                    radioButton11.isChecked -> {
-                        sound11 = soundPool.load(assets.openFd(item), 1)
-                        textView11.text = item
-                    }
-                    radioButton12.isChecked -> {
-                        sound12 = soundPool.load(assets.openFd(item), 1)
-                        textView12.text = item
-                    }
-                    radioButton13.isChecked -> {
-                        sound13 = soundPool.load(assets.openFd(item), 1)
-                        textView13.text = item
-                    }
-                    radioButton14.isChecked -> {
-                        sound14 = soundPool.load(assets.openFd(item), 1)
-                        textView14.text = item
-                    }
-                    radioButton15.isChecked -> {
-                        sound15 = soundPool.load(assets.openFd(item), 1)
-                        textView15.text = item
-                    }
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-        }
-        saSpinner.isFocusable = false
-    }
-
-    private fun selectLSA() {
-
-        val audioLSA = mutableListOf(
-                "e808_loop_bd_8501.ogg",
-                "e808_loop_bd_8502.ogg",
-                "e808_loop_bd_8503.ogg",
-                "e808_loop_bd_8504.ogg",
-                "e808_loop_bd_8505.ogg",
-                "e808_loop_bd_8506.ogg",
-                "e808_loop_bd_8507.ogg",
-                "e808_loop_bd_8508.ogg",
-                "e808_loop_bd_9501.ogg",
-                "e808_loop_bd_9502.ogg",
-                "e808_loop_bd_9503.ogg",
-                "e808_loop_bd_9504.ogg",
-                "e808_loop_bd_9505.ogg",
-                "e808_loop_bd_9506.ogg",
-                "e808_loop_bd_9507.ogg",
-                "e808_loop_bd_9508.ogg",
-                "e808_loop_bd_10501.ogg",
-                "e808_loop_bd_10502.ogg",
-                "e808_loop_bd_10503.ogg",
-                "e808_loop_bd_10504.ogg",
-                "e808_loop_bd_10505.ogg",
-                "e808_loop_bd_10506.ogg",
-                "e808_loop_bd_10507.ogg",
-                "e808_loop_bd_10508.ogg",
-                "e808_loop_bd_12401.ogg",
-                "e808_loop_bd_12402.ogg",
-                "e808_loop_bd_12403.ogg",
-                "e808_loop_bd_12404.ogg",
-                "e808_loop_bd_12405.ogg",
-                "e808_loop_bd_12406.ogg",
-                "e808_loop_bd_12407.ogg",
-                "e808_loop_bd_12408.ogg",
-                "e808_loop_bd_13201.ogg",
-                "e808_loop_bd_13202.ogg",
-                "e808_loop_bd_13203.ogg",
-                "e808_loop_bd_13204.ogg",
-                "e808_loop_bd_13205.ogg",
-                "e808_loop_bd_13206.ogg",
-                "e808_loop_bd_13207.ogg",
-                "e808_loop_bd_13208.ogg",
-                "e808_loop_hats_8501.ogg",
-                "e808_loop_hats_8502.ogg",
-                "e808_loop_hats_8503.ogg",
-                "e808_loop_hats_8504.ogg",
-                "e808_loop_hats_8505.ogg",
-                "e808_loop_hats_8506.ogg",
-                "e808_loop_hats_8507.ogg",
-                "e808_loop_hats_8508.ogg",
-                "e808_loop_hats_9501.ogg",
-                "e808_loop_hats_9502.ogg",
-                "e808_loop_hats_9503.ogg",
-                "e808_loop_hats_9504.ogg",
-                "e808_loop_hats_9505.ogg",
-                "e808_loop_hats_9506.ogg",
-                "e808_loop_hats_9507.ogg",
-                "e808_loop_hats_9508.ogg",
-                "e808_loop_hats_10501.ogg",
-                "e808_loop_hats_10502.ogg",
-                "e808_loop_hats_10503.ogg",
-                "e808_loop_hats_10504.ogg",
-                "e808_loop_hats_10505.ogg",
-                "e808_loop_hats_10506.ogg",
-                "e808_loop_hats_10507.ogg",
-                "e808_loop_hats_10508.ogg",
-                "e808_loop_hats_12401.ogg",
-                "e808_loop_hats_12402.ogg",
-                "e808_loop_hats_12403.ogg",
-                "e808_loop_hats_12404.ogg",
-                "e808_loop_hats_12405.ogg",
-                "e808_loop_hats_12406.ogg",
-                "e808_loop_hats_12407.ogg",
-                "e808_loop_hats_12408.ogg",
-                "e808_loop_hats_13201.ogg",
-                "e808_loop_hats_13202.ogg",
-                "e808_loop_hats_13203.ogg",
-                "e808_loop_hats_13204.ogg",
-                "e808_loop_hats_13205.ogg",
-                "e808_loop_hats_13206.ogg",
-                "e808_loop_hats_13207.ogg",
-                "e808_loop_hats_13208.ogg",
-                "e808_loop_perc_8501.ogg",
-                "e808_loop_perc_8502.ogg",
-                "e808_loop_perc_8503.ogg",
-                "e808_loop_perc_8504.ogg",
-                "e808_loop_perc_9501.ogg",
-                "e808_loop_perc_9502.ogg",
-                "e808_loop_perc_9503.ogg",
-                "e808_loop_perc_9504.ogg",
-                "e808_loop_perc_10501.ogg",
-                "e808_loop_perc_10502.ogg",
-                "e808_loop_perc_10503.ogg",
-                "e808_loop_perc_10504.ogg",
-                "e808_loop_perc_12401.ogg",
-                "e808_loop_perc_12402.ogg",
-                "e808_loop_perc_12403.ogg",
-                "e808_loop_perc_12404.ogg",
-                "e808_loop_perc_13201.ogg",
-                "e808_loop_perc_13202.ogg",
-                "e808_loop_perc_13203.ogg",
-                "e808_loop_perc_13204.ogg",
-                "e808_loop_sd_8501.ogg",
-                "e808_loop_sd_8502.ogg",
-                "e808_loop_sd_8503.ogg",
-                "e808_loop_sd_8504.ogg",
-                "e808_loop_sd_8505.ogg",
-                "e808_loop_sd_8506.ogg",
-                "e808_loop_sd_8507.ogg",
-                "e808_loop_sd_8508.ogg",
-                "e808_loop_sd_9501.ogg",
-                "e808_loop_sd_9502.ogg",
-                "e808_loop_sd_9503.ogg",
-                "e808_loop_sd_9504.ogg",
-                "e808_loop_sd_9505.ogg",
-                "e808_loop_sd_9506.ogg",
-                "e808_loop_sd_9507.ogg",
-                "e808_loop_sd_9508.ogg",
-                "e808_loop_sd_10501.ogg",
-                "e808_loop_sd_10502.ogg",
-                "e808_loop_sd_10503.ogg",
-                "e808_loop_sd_10504.ogg",
-                "e808_loop_sd_10505.ogg",
-                "e808_loop_sd_10506.ogg",
-                "e808_loop_sd_10507.ogg",
-                "e808_loop_sd_10508.ogg",
-                "e808_loop_sd_12401.ogg",
-                "e808_loop_sd_12402.ogg",
-                "e808_loop_sd_12403.ogg",
-                "e808_loop_sd_12404.ogg",
-                "e808_loop_sd_12405.ogg",
-                "e808_loop_sd_12406.ogg",
-                "e808_loop_sd_12407.ogg",
-                "e808_loop_sd_13201.ogg",
-                "e808_loop_sd_13202.ogg",
-                "e808_loop_sd_13203.ogg",
-                "e808_loop_sd_13204.ogg",
-                "e808_loop_sd_13205.ogg",
-                "e808_loop_sd_13206.ogg",
-                "e808_loop_sd_13207.ogg",
-                "e808_loop_sd_13208.ogg",
-                "e808_loop_toms_8501.ogg",
-                "e808_loop_toms_8502.ogg",
-                "e808_loop_toms_8503.ogg",
-                "e808_loop_toms_8504.ogg",
-                "e808_loop_toms_9501.ogg",
-                "e808_loop_toms_9502.ogg",
-                "e808_loop_toms_9503.ogg",
-                "e808_loop_toms_9504.ogg",
-                "e808_loop_toms_10501.ogg",
-                "e808_loop_toms_10502.ogg",
-                "e808_loop_toms_10503.ogg",
-                "e808_loop_toms_10504.ogg",
-                "e808_loop_toms_12401.ogg",
-                "e808_loop_toms_12402.ogg",
-                "e808_loop_toms_12403.ogg",
-                "e808_loop_toms_12404.ogg",
-                "e808_loop_toms_13201.ogg",
-                "e808_loop_toms_13202.ogg",
-                "e808_loop_toms_13203.ogg",
-                "e808_loop_toms_13204.ogg"
-        )
-
-        when {
-            radioButton1b.isChecked -> audioLSA.removeIf { !it.contains("85") }
-            radioButton2b.isChecked -> audioLSA.removeIf { !it.contains("95") }
-            radioButton3b.isChecked -> audioLSA.removeIf { !it.contains("105") }
-            radioButton4b.isChecked -> audioLSA.removeIf { !it.contains("124") }
-            radioButton5b.isChecked -> audioLSA.removeIf { !it.contains("132") }
-        }
-
-        val lsaSpinner = findViewById<Spinner>(R.id.loop_sampler_spinner)
-
-        val adapterLSA = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, audioLSA
-        )
-
-        adapterLSA.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
-
-        lsaSpinner.adapter = adapterLSA
-
-        lsaSpinner.performClick()
-
-
-        lsaSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
-            ) {
-                if (!lsaSpinner.isFocusable) {
-                    lsaSpinner.isFocusable = true
-                    return
-                }
-                val spinnerParent = parent as Spinner
-                val item = spinnerParent.selectedItem as String
-                    if (radioButton16.isChecked) {
-                        lmp.release()
-                        lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + item.replace(".ogg", "")))
-                        supportActionBar?.title = item
-                    }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-        }
-        lsaSpinner.isFocusable = false
-    }
-
     private lateinit var soundPool: SoundPool
 
     private lateinit var mp: MediaPlayer
@@ -1731,79 +1001,66 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 when(position){
                     0 -> {
-                        radioButton1a.performClick()
                         soundListView.adapter = aCustomAdapter
                         aCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     1 -> {
-                        radioButton2a.performClick()
                         soundListView.adapter = bCustomAdapter
                         bCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     2 -> {
-                        radioButton3a.performClick()
                         soundListView.adapter = cCustomAdapter
                         cCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     3 -> {
-                        radioButton4a.performClick()
                         soundListView.adapter = dCustomAdapter
                         dCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     4 -> {
-                        radioButton5a.performClick()
                         soundListView.adapter = eCustomAdapter
                         eCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     5 -> {
-                        radioButton6a.performClick()
                         soundListView.adapter = fCustomAdapter
                         fCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     6 -> {
-                        radioButton7a.performClick()
                         soundListView.adapter = gCustomAdapter
                         gCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     7 -> {
-                        radioButton8a.performClick()
                         soundListView.adapter = hCustomAdapter
                         hCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     8 -> {
-                        radioButton9a.performClick()
                         soundListView.adapter = iCustomAdapter
                         iCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     9 -> {
-                        radioButton10a.performClick()
                         soundListView.adapter = jCustomAdapter
                         jCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     10 -> {
-                        radioButton11a.performClick()
                         soundListView.adapter = kCustomAdapter
                         kCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     11 -> {
-                        radioButton12a.performClick()
                         soundListView.adapter = lCustomAdapter
                         lCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     12 -> {
-                        radioButton13a.performClick()
                         soundListView.adapter = mCustomAdapter
                         mCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -2165,6 +1422,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
                 textView15.text = soundList.name
+            }
+            radioButton16.isChecked -> {
+                lmp.release()
+                lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
+                supportActionBar?.title = soundList.name
+                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
+                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                }
             }
         }
         findViewById<ListView>(R.id.list_view).visibility = View.INVISIBLE
@@ -2623,6 +1888,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     chSpinner.isFocusable = true
                     return
                 }
+
+                val soundListView = findViewById<ListView>(R.id.list_view)
+
                 when(position){
                     0 -> {
                         lmp.stop()
@@ -2630,8 +1898,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
-                        radioButton1b.performClick()
-                        selectLSA()
+                        soundListView.adapter = nCustomAdapter
+                        nCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
                     }
                     1 -> {
                         lmp.stop()
@@ -2639,8 +1908,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
-                        radioButton2b.performClick()
-                        selectLSA()
+                        soundListView.adapter = oCustomAdapter
+                        oCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
                     }
                     2 -> {
                         lmp.stop()
@@ -2648,8 +1918,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
-                        radioButton3b.performClick()
-                        selectLSA()
+                        soundListView.adapter = pCustomAdapter
+                        pCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
                     }
                     3 -> {
                         lmp.stop()
@@ -2657,8 +1928,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
-                        radioButton4b.performClick()
-                        selectLSA()
+                        soundListView.adapter = qCustomAdapter
+                        qCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
                     }
                     4 -> {
                         lmp.stop()
@@ -2666,8 +1938,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
-                        radioButton5b.performClick()
-                        selectLSA()
+                        soundListView.adapter = rCustomAdapter
+                        rCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
                     }
                     5 -> {
                         lmp.stop()
