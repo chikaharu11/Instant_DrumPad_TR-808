@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var mediaProjectionManager: MediaProjectionManager
 
     private val handler = Handler()
-    private var hoge = "test"
-    var fuga = 0
-    var fuga2 = 0
+    private var audioName = ""
+    var start = 0
+    var stop = 0
 
     companion object {
         private const val READ_REQUEST_CODE2: Int = 43
@@ -732,7 +732,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         tSoundList = arrayListOf()
 
         val listView = findViewById<ListView>(R.id.list_view)
-        // MainActivity自身をListenerとして渡す
+
         aCustomAdapter = CustomAdapter(this, aSoundList, this)
         bCustomAdapter = CustomAdapter(this, bSoundList, this)
         cCustomAdapter = CustomAdapter(this, cSoundList, this)
@@ -1372,7 +1372,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
             }
             radioButton17.isChecked -> {
-                hoge = soundList.name
+                audioName = soundList.name
                 button4.performClick()
             }
         }
@@ -1471,8 +1471,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
      * capturing session to be started. This will allow both video and audio to be captured.
      */
     private fun startMediaProjectionRequest() {
-        // use applicationContext to avoid memory leak on Android 10.
-        // see: https://partnerissuetracker.corp.google.com/issues/139732252
         mediaProjectionManager =
                 applicationContext.getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
         startActivityForResult(
@@ -1588,7 +1586,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
                             }
                             radioButton17.isChecked -> {
-                                hoge = item
+                                audioName = item
                                 button4.performClick()
                             }
                         }
@@ -1662,7 +1660,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                     supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "")
                                 }
                                 radioButton17.isChecked -> {
-                                    hoge = item2
+                                    audioName = item2
                                     button4.performClick()
                                 }
                             }
@@ -1864,7 +1862,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             button4.setOnClickListener {
                 val myDir = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).toString() + "/showwavespics.png"
-                FFmpeg.execute("-i $hoge -filter_complex showwavespic=s=2560x1280:colors=blue:scale=0 -y $myDir")
+                FFmpeg.execute("-i $audioName -filter_complex showwavespic=s=2560x1280:colors=blue:scale=0 -y $myDir")
 
                 val builder = AlertDialog.Builder(this)
                 val inflater = layoutInflater
@@ -1872,7 +1870,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 mp.release()
                 mp = MediaPlayer()
-                mp.setDataSource(this, Uri.parse(hoge))
+                mp.setDataSource(this, Uri.parse(audioName))
                 mp.prepare()
 
                 val seekBar = dialogView.findViewById<SeekBar>(R.id.seekBar)
@@ -1886,8 +1884,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 seekBar2.max = mp.duration
                 seekBar2.progress = mp.duration
 
-                fuga = 0
-                fuga2 = mp.duration
+                start = 0
+                stop = mp.duration
 
                 val text1 = dialogView.findViewById<TextView>(R.id.textView16)
                 val text2 = dialogView.findViewById<TextView>(R.id.textView17)
@@ -1895,14 +1893,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(0.toLong())).toString()
                 text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(mp.duration.toLong())).toString()
-                text3.text = hoge.replaceBeforeLast("/", "").replace("/", "")
+                text3.text = audioName.replaceBeforeLast("/", "").replace("/", "")
 
                     seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
 
                         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                             text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
-                                fuga = progress
+                                start = progress
 
                         }
 
@@ -1922,7 +1920,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                             text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
-                                fuga2 = progress
+                                stop = progress
                         }
 
 
@@ -1947,7 +1945,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                     button.setOnClickListener {
                             when {
-                                    fuga < fuga2 -> {
+                                    start < stop -> {
                                             val builder2 = AlertDialog.Builder(this)
                                             val inflater2 = layoutInflater
                                             val dialogView2 = inflater2.inflate(R.layout.file_name, null)
@@ -1955,9 +1953,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                     .setTitle("ファイル名を入力して下さい")
                                                     .setPositiveButton("保存") { _, _ ->
                                                             val nt = dialogView2.findViewById<EditText>(R.id.filename)
-                                                            val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text.replace("/".toRegex(), "") + hoge.replaceBeforeLast(".", "")
+                                                            val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text.replace("/".toRegex(), "") + audioName.replaceBeforeLast(".", "")
                                                             try {
-                                                                FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $hoge -y $fnt")
+                                                                FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $audioName -y $fnt")
                                                                 button3.performClick()
                                                                 Toast.makeText(applicationContext, "保存しました", Toast.LENGTH_SHORT).show()
                                                             } catch (e: Exception) {
@@ -1970,8 +1968,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                     .show()
 
                                     }
-                                    fuga > fuga2 -> Toast.makeText(applicationContext, "時間を設定し直してください", Toast.LENGTH_SHORT).show()
-                                    fuga == fuga2 -> Toast.makeText(applicationContext, "時間を設定し直してください", Toast.LENGTH_SHORT).show()
+                                    start > stop -> Toast.makeText(applicationContext, "時間を設定し直してください", Toast.LENGTH_SHORT).show()
+                                    start == stop -> Toast.makeText(applicationContext, "時間を設定し直してください", Toast.LENGTH_SHORT).show()
                             }
                     }
 
@@ -1982,7 +1980,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             handler.removeCallbacksAndMessages(null)
                             switch3.isChecked = false
                         } else {
-                            mp.seekTo(fuga)
+                            mp.seekTo(start)
                             mp.start()
                             switch3.isChecked = true
                             if (mp.isPlaying)
@@ -1990,7 +1988,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                     mp.stop()
                                     mp.prepare()
                                     switch3.isChecked = false
-                                }, (fuga2 - fuga).toLong())
+                                }, (stop - start).toLong())
                         }
                     }
 
