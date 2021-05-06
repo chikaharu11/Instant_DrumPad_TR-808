@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if (!isReadExternalStoragePermissionGranted()) {
             requestReadExternalStoragePermission()
         } else {
+            tSoundList.clear()
             val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
             val cursor = contentResolver.query(audioUri, null, null, null, null)
             cursor!!.moveToFirst()
@@ -1674,139 +1675,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
-    private fun select2() {
-        if (!isReadExternalStoragePermissionGranted()) {
-            requestReadExternalStoragePermission()
-        } else {
-
-            val audio1 = mutableSetOf(
-                    ""
-            )
-
-            audio1.clear()
-
-            val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
-            val cursor = contentResolver.query(audioUri, null, null, null, null)
-            cursor!!.moveToFirst()
-            val path: Array<String?> = arrayOfNulls(cursor.count)
-            for (i in path.indices) {
-                path[i] = cursor.getString(cursor.getColumnIndex("_data"))
-                audio1.add(path[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path[i].toString())
-                cursor.moveToNext()
-            }
-
-            cursor.close()
-
-            val spinnerItems = audio1.sorted()
-
-            val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
-
-            val adapter = ArrayAdapter(
-                    applicationContext,
-                    android.R.layout.simple_spinner_item, spinnerItems
-            )
-
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
-
-            inSpinner.adapter = adapter
-
-            inSpinner.performClick()
-
-            inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-                override fun onItemSelected(
-                        parent: AdapterView<*>?,
-                        view: View?, position: Int, id: Long
-                ) {
-                    if (!inSpinner.isFocusable) {
-                        inSpinner.isFocusable = true
-                        return
-                    }
-                    try {
-                        val spinnerParent = parent as Spinner
-                        val item = spinnerParent.selectedItem as String
-                        volumeControlStream = AudioManager.STREAM_MUSIC
-                        val uri3 = Uri.parse(item.replaceBefore("/", ""))
-                        lmp.release()
-                        lmp = LoopMediaPlayer(this@MainActivity, uri3)
-                        supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
-                    } catch (e: Exception) {
-                        Toast.makeText(applicationContext, "この音声ファイルは\n設定できません。", Toast.LENGTH_LONG).show()
-                    }
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-
-                }
-            }
-            inSpinner.isFocusable = false
-        }
-    }
-
-    private fun select3() {
-        val audio1 = mutableSetOf(
-                ""
-        )
-
-        audio1.clear()
-
-        val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
-        val cursor = contentResolver.query(audioUri, null, null, null, null)
-        cursor!!.moveToFirst()
-        val path: Array<String?> = arrayOfNulls(cursor.count)
-        for (i in path.indices) {
-            path[i] = cursor.getString(cursor.getColumnIndex("_data"))
-            audio1.add(path[i]?.replaceBeforeLast("/", "(")?.replace("/", "") + ")  " + path[i].toString())
-            cursor.moveToNext()
-        }
-
-        cursor.close()
-
-        val spinnerItems = audio1.sorted()
-
-        val inSpinner = findViewById<Spinner>(R.id.mp_spinner)
-
-        val adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_item, spinnerItems
-        )
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
-
-        inSpinner.adapter = adapter
-
-        inSpinner.performClick()
-
-        inSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
-            ) {
-                if (!inSpinner.isFocusable) {
-                    inSpinner.isFocusable = true
-                    return
-                }
-                val spinnerParent = parent as Spinner
-                val item = spinnerParent.selectedItem as String
-                volumeControlStream = AudioManager.STREAM_MUSIC
-                val uri4 = Uri.parse(item.replaceBefore("/", ""))
-                lmp.release()
-                lmp = LoopMediaPlayer(this@MainActivity, uri4)
-                supportActionBar?.title =item.replaceBeforeLast("/", "").replace("/", "")
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-        }
-        inSpinner.isFocusable = false
-    }
-
     private fun selectCh() {
 
         val chSpinner = findViewById<Spinner>(R.id.choose_loop_spinner)
@@ -1841,6 +1709,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
+                        radioButton19.performClick()
                         soundListView.adapter = nCustomAdapter
                         nCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -1851,6 +1720,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
+                        radioButton19.performClick()
                         soundListView.adapter = oCustomAdapter
                         oCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -1861,6 +1731,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
+                        radioButton19.performClick()
                         soundListView.adapter = pCustomAdapter
                         pCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -1871,6 +1742,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
+                        radioButton19.performClick()
                         soundListView.adapter = qCustomAdapter
                         qCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -1881,6 +1753,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         invalidateOptionsMenu()
                         switch1.isChecked = false
                         radioButton16.performClick()
+                        radioButton19.performClick()
                         soundListView.adapter = rCustomAdapter
                         rCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
