@@ -50,10 +50,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     fun selectAudio() {
-        val sa = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fjp.chikaharu11.chikaharu_sampler%2Ffiles%2FMusic")
+        val uri = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fjp.chikaharu11.chikaharu_sampler%2Ffiles%2FMusic")
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
-            putExtra(DocumentsContract.EXTRA_INITIAL_URI, sa)
+            putExtra(DocumentsContract.EXTRA_INITIAL_URI, uri)
             type = "audio/*"
         }
         startActivityForResult(intent, READ_REQUEST_CODE2)

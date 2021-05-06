@@ -16,16 +16,8 @@
     <string name="todo14">14</string>
     <string name="todo15">15</string>
     <string name="todo16">16</string>
-    <string name="radiobutton">RadioButton</string>
-    <string name="dialog_button">DialogButton</string>
-    <string name="play">再生</string>
-    <string name="select2">内部サウンド</string>
-    <string name="select3">外部(ダウンロード)サウンド</string>
-    <string name="select4">録音したサウンド</string>
-    <string name="end">終了する</string>
-    <string name="switch0">録音/停止</string>
-    <string name="switch1">再生/停止</string>
-    <string name="switch2">録音/終了</string>
+    <string name="todo17">17</string>
+    <string name="todo23">23</string>
     <string name="textView">e808_bd_short_01</string>
     <string name="textView2">e808_bd_long_02</string>
     <string name="textView3">e808_bd_long_03</string>
@@ -46,6 +38,16 @@
     <string name="select3c">Loop [105bpm]</string>
     <string name="select3d">Loop [124bpm]</string>
     <string name="select3e">Loop [132bpm]</string>
+    <string name="radiobutton">RadioButton</string>
+    <string name="dialog_button">DialogButton</string>
+    <string name="play">再生</string>
+    <string name="select2">内部サウンド</string>
+    <string name="select3">外部(ダウンロード)サウンド</string>
+    <string name="select4">録音したサウンド</string>
+    <string name="end">終了する</string>
+    <string name="switch0">録音/停止</string>
+    <string name="switch1">再生/停止</string>
+    <string name="switch2">録音/終了</string>
     <string name="menu1a">録音サウンドの編集</string>
     <string name="select9">外部サウンドの編集</string>
     <string name="button1">切り取り</string>
@@ -61,11 +63,7 @@
     <string name="button5">録音/停止</string>
     <string name="todo_rec">rec</string>
     <string name="select9b">音声録音</string>
-    <string name="tes">追加</string>
-    <string name="todo23">TODO</string>
-    <string name="textI">追加</string>
-    <string name="textviewget">TextView</string>
-    <string name="todo17">TODO</string>
+
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>

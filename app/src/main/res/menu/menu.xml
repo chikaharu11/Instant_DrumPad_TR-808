@@ -30,16 +30,16 @@
 
         <menu>
 
-    <item
+            <item
+                android:id="@+id/menu9"
+                android:title="@string/select9"
+                app:showAsAction="never" />
+
+            <item
         android:id="@+id/menu1a"
         android:title="@string/menu1a"
         app:showAsAction="never"
         tools:ignore="AlwaysShowAction" />
-
-    <item
-        android:id="@+id/menu9"
-        android:title="@string/select9"
-        app:showAsAction="never" />
 
             <item
                 android:id="@+id/menu9b"
