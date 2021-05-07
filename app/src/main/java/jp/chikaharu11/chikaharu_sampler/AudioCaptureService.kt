@@ -15,6 +15,7 @@ import android.media.projection.MediaProjectionManager
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.arthenica.mobileffmpeg.FFmpeg
@@ -175,6 +176,7 @@ class AudioCaptureService : Service() {
 
         mediaProjection!!.stop()
         stopSelf()
+        Toast.makeText(this, "Musicフォルダに保存されました", Toast.LENGTH_LONG).show()
     }
 
     override fun onBind(p0: Intent?): IBinder? = null

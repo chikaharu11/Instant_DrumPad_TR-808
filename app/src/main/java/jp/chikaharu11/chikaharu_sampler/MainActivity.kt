@@ -912,7 +912,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 .setAudioAttributes(audioAttributes)
 
-                .setMaxStreams(10)
+                .setMaxStreams(20)
                 .build()
 
         sound1 = soundPool.load(assets.openFd("e808_bd_long_01.ogg"), 1)
@@ -1665,7 +1665,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                             }
                         } catch (e: Exception) {
-                            Toast.makeText(applicationContext, "MUSICフォルダ以外の音声ファイルは\n指定できません。", Toast.LENGTH_LONG).show()
+                            Toast.makeText(applicationContext, "Musicフォルダ以外の音声ファイルは\n指定できません。", Toast.LENGTH_LONG).show()
                         }
                     }
                 }
@@ -2089,7 +2089,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         if (switch2.isChecked) {
                             menuSwitch2 = true
                             stopRecording()
-                            Toast.makeText(applicationContext, "録音が終わりました。", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
                             rec.setImageResource(R.drawable.ic_baseline_mic_24)
                             switch2.isChecked = false
                         } else {
@@ -2105,7 +2105,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 if (switch2.isChecked) {
                                     menuSwitch2 = true
                                     stopRecording()
-                                    Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
                                     rec.setImageResource(R.drawable.ic_baseline_mic_24)
                                     switch2.isChecked = false
                                 }
@@ -2114,7 +2114,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 if (switch2.isChecked) {
                                     menuSwitch2 = true
                                     stopRecording()
-                                    Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
                                     rec.setImageResource(R.drawable.ic_baseline_mic_24)
                                     switch2.isChecked = false
                                 }
@@ -2162,7 +2162,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             menuSwitch2 = true
             invalidateOptionsMenu()
             mediaRecorder.stop()
-            Toast.makeText(applicationContext, "録音を中断しました。", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
             switch2.isChecked = false
         }
 
