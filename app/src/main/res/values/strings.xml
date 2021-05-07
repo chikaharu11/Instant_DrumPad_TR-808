@@ -41,14 +41,11 @@
     <string name="radiobutton">RadioButton</string>
     <string name="dialog_button">DialogButton</string>
     <string name="play">再生</string>
-    <string name="select2">内部サウンド</string>
-    <string name="select3">外部(ダウンロード)サウンド</string>
-    <string name="select4">録音したサウンド</string>
     <string name="end">終了する</string>
     <string name="switch0">録音/停止</string>
     <string name="switch1">再生/停止</string>
     <string name="switch2">録音/終了</string>
-    <string name="menu1a">録音サウンドの編集</string>
+    <string name="menu1a">Musicフォルダの編集</string>
     <string name="select9">外部サウンドの編集</string>
     <string name="button1">切り取り</string>
     <string name="button2">再生/停止</string>
@@ -81,7 +78,7 @@
         <item>Loops</item>
         <item>内部サウンド</item>
         <item>外部サウンド</item>
-        <item>録音/編集したサウンド"</item>
+        <item>Musicフォルダのサウンド"</item>
     </string-array>
 
     <string-array name="spinnerItems2">
@@ -92,7 +89,7 @@
         <item>Loop [132bpm]</item>
         <item>内部サウンド</item>
         <item>外部サウンド</item>
-        <item>録音/編集したサウンド"</item>
+        <item>Musicフォルダのサウンド"</item>
     </string-array>
 
 

@@ -1957,7 +1957,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                             try {
                                                                 FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $audioName -y $fnt")
                                                                 button3.performClick()
-                                                                Toast.makeText(applicationContext, "保存しました", Toast.LENGTH_SHORT).show()
+                                                                Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
                                                             } catch (e: Exception) {
                                                                 Toast.makeText(applicationContext, "保存できませんでした", Toast.LENGTH_LONG).show()
                                                             }
