@@ -1150,110 +1150,110 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton2.isChecked && radioButton18.isChecked -> {
                 sound2 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView2.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView2.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton3.isChecked && radioButton18.isChecked -> {
                 sound3 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView3.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView3.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton4.isChecked && radioButton18.isChecked -> {
                 sound4 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView4.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView4.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton5.isChecked && radioButton18.isChecked -> {
                 sound5 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView5.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView5.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton6.isChecked && radioButton18.isChecked -> {
                 sound6 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView6.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView6.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton7.isChecked && radioButton18.isChecked -> {
                 sound7 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView7.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView7.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton8.isChecked && radioButton18.isChecked -> {
                 sound8 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView8.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView8.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton9.isChecked && radioButton18.isChecked -> {
                 sound9 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView9.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView9.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton10.isChecked && radioButton18.isChecked -> {
                 sound10 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView10.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView10.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton11.isChecked && radioButton18.isChecked -> {
                 sound11 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView11.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView11.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton12.isChecked && radioButton18.isChecked -> {
                 sound12 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView12.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView12.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton13.isChecked && radioButton18.isChecked -> {
                 sound13 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView13.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView13.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton14.isChecked && radioButton18.isChecked -> {
                 sound14 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView14.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView14.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton15.isChecked && radioButton18.isChecked -> {
                 sound15 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView15.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                textView15.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
             }
             radioButton16.isChecked && radioButton18.isChecked -> {
                 lmp.release()
                 lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
-                supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
@@ -1263,110 +1263,110 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView.text = soundList.name
+                textView.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton2.isChecked && radioButton19.isChecked -> {
                 sound2 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView2.text = soundList.name
+                textView2.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton3.isChecked && radioButton19.isChecked -> {
                 sound3 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView3.text = soundList.name
+                textView3.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton4.isChecked && radioButton19.isChecked -> {
                 sound4 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView4.text = soundList.name
+                textView4.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton5.isChecked && radioButton19.isChecked -> {
                 sound5 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView5.text = soundList.name
+                textView5.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton6.isChecked && radioButton19.isChecked -> {
                 sound6 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView6.text = soundList.name
+                textView6.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton7.isChecked && radioButton19.isChecked -> {
                 sound7 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView7.text = soundList.name
+                textView7.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton8.isChecked && radioButton19.isChecked -> {
                 sound8 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView8.text = soundList.name
+                textView8.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton9.isChecked && radioButton19.isChecked -> {
                 sound9 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView9.text = soundList.name
+                textView9.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton10.isChecked && radioButton19.isChecked -> {
                 sound10 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView10.text = soundList.name
+                textView10.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton11.isChecked && radioButton19.isChecked -> {
                 sound11 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView11.text = soundList.name
+                textView11.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton12.isChecked && radioButton19.isChecked -> {
                 sound12 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView12.text = soundList.name
+                textView12.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton13.isChecked && radioButton19.isChecked -> {
                 sound13 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView13.text = soundList.name
+                textView13.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton14.isChecked && radioButton19.isChecked -> {
                 sound14 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView14.text = soundList.name
+                textView14.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton15.isChecked && radioButton19.isChecked -> {
                 sound15 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
-                textView15.text = soundList.name
+                textView15.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
             }
             radioButton16.isChecked -> {
                 lmp.release()
                 lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
-                supportActionBar?.title = soundList.name
+                supportActionBar?.title = soundList.name.replaceAfterLast(".", "").replace(".", "")
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                 }
@@ -1522,68 +1522,68 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         when {
                             radioButton.isChecked -> {
                                 sound1 = soundPool.load(item, 1)
-                                textView.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton2.isChecked -> {
                                 sound2 = soundPool.load(item, 1)
-                                textView2.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView2.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton3.isChecked -> {
                                 sound3 = soundPool.load(item, 1)
-                                textView3.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView3.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton4.isChecked -> {
                                 sound4 = soundPool.load(item, 1)
-                                textView4.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView4.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton5.isChecked -> {
                                 sound5 = soundPool.load(item, 1)
-                                textView5.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView5.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton6.isChecked -> {
                                 sound6 = soundPool.load(item, 1)
-                                textView6.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView6.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton7.isChecked -> {
                                 sound7 = soundPool.load(item, 1)
-                                textView7.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView7.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton8.isChecked -> {
                                 sound8 = soundPool.load(item, 1)
-                                textView8.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView8.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton9.isChecked -> {
                                 sound9 = soundPool.load(item, 1)
-                                textView9.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView9.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton10.isChecked -> {
                                 sound10 = soundPool.load(item, 1)
-                                textView10.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView10.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton11.isChecked -> {
                                 sound11 = soundPool.load(item, 1)
-                                textView11.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView11.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton12.isChecked -> {
                                 sound12 = soundPool.load(item, 1)
-                                textView12.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView12.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton13.isChecked -> {
                                 sound13 = soundPool.load(item, 1)
-                                textView13.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView13.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton14.isChecked -> {
                                 sound14 = soundPool.load(item, 1)
-                                textView14.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView14.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton15.isChecked -> {
                                 sound15 = soundPool.load(item, 1)
-                                textView15.text = item.replaceBeforeLast("/", "").replace("/", "")
+                                textView15.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton16.isChecked -> {
                                 lmp.release()
                                 lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item))
-                                supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "")
+                                supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                             }
                             radioButton17.isChecked -> {
                                 audioName = item
@@ -1596,68 +1596,68 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             when {
                                 radioButton.isChecked -> {
                                     sound1 = soundPool.load(item2, 1)
-                                    textView.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton2.isChecked -> {
                                     sound2 = soundPool.load(item2, 1)
-                                    textView2.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView2.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton3.isChecked -> {
                                     sound3 = soundPool.load(item2, 1)
-                                    textView3.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView3.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton4.isChecked -> {
                                     sound4 = soundPool.load(item2, 1)
-                                    textView4.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView4.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton5.isChecked -> {
                                     sound5 = soundPool.load(item2, 1)
-                                    textView5.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView5.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton6.isChecked -> {
                                     sound6 = soundPool.load(item2, 1)
-                                    textView6.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView6.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton7.isChecked -> {
                                     sound7 = soundPool.load(item2, 1)
-                                    textView7.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView7.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton8.isChecked -> {
                                     sound8 = soundPool.load(item2, 1)
-                                    textView8.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView8.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton9.isChecked -> {
                                     sound9 = soundPool.load(item2, 1)
-                                    textView9.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView9.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton10.isChecked -> {
                                     sound10 = soundPool.load(item2, 1)
-                                    textView10.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView10.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton11.isChecked -> {
                                     sound11 = soundPool.load(item2, 1)
-                                    textView11.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView11.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton12.isChecked -> {
                                     sound12 = soundPool.load(item2, 1)
-                                    textView12.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView12.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton13.isChecked -> {
                                     sound13 = soundPool.load(item2, 1)
-                                    textView13.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView13.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton14.isChecked -> {
                                     sound14 = soundPool.load(item2, 1)
-                                    textView14.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView14.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton15.isChecked -> {
                                     sound15 = soundPool.load(item2, 1)
-                                    textView15.text = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    textView15.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton16.isChecked -> {
                                     lmp.release()
                                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item2))
-                                    supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "")
+                                    supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
                                 }
                                 radioButton17.isChecked -> {
                                     audioName = item2
