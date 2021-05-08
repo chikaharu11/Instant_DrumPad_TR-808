@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Instant_DrumPad</string>
+    <string name="app_name">クイックドラムパッド</string>
     <string name="todo">1</string>
     <string name="todo2">2</string>
     <string name="todo3">3</string>
@@ -40,34 +40,34 @@
     <string name="select3e">Loop [132bpm]</string>
     <string name="radiobutton">RadioButton</string>
     <string name="dialog_button">DialogButton</string>
-    <string name="play">play</string>
-    <string name="end">exit</string>
-    <string name="switch0">rec/stop</string>
-    <string name="switch1">play/stop</string>
-    <string name="switch2">rec/end</string>
-    <string name="menu1a">Edit Music folder</string>
-    <string name="select9">Edit External sounds</string>
-    <string name="button1">cut</string>
-    <string name="button2">play/stop</string>
-    <string name="button3">exit</string>
+    <string name="play">再生</string>
+    <string name="end">終了する</string>
+    <string name="switch0">録音/停止</string>
+    <string name="switch1">再生/停止</string>
+    <string name="switch2">録音/終了</string>
+    <string name="menu1a">Musicフォルダの編集</string>
+    <string name="select9">外部サウンドの編集</string>
+    <string name="button1">切り取り</string>
+    <string name="button2">再生/停止</string>
+    <string name="button3">閉じる</string>
     <string name="time1">00:00.000</string>
     <string name="time2">00:00.000</string>
     <string name="filename" />
     <string name="title">TextView</string>
     <string name="range">〜</string>
-    <string name="menu10">choose</string>
-    <string name="menu">menu</string>
-    <string name="button5">rec/stop</string>
+    <string name="menu10">選択</string>
+    <string name="menu">メニュー</string>
+    <string name="button5">録音/停止</string>
     <string name="todo_rec">rec</string>
-    <string name="select9b">Voice Recording</string>
+    <string name="select9b">音声録音</string>
 
-    <string name="onRequestPermissionsResult1">Permissions to capture audio granted. Click the button once again.</string>
-    <string name="onRequestPermissionsResult2">Permissions to capture audio denied.</string>
+    <string name="onRequestPermissionsResult1">オーディオをキャプチャするための権限が付与されました。もう一度、ボタンをクリックしてください。</string>
+    <string name="onRequestPermissionsResult2">オーディオをキャプチャするためのパーミッションが拒否されました。</string>
 
-    <string name="onActivityResult1">MediaProjection permission obtained. Foreground service will be started to capture audio.</string>
-    <string name="onActivityResult2">Request to obtain MediaProjection denied.</string>
+    <string name="onActivityResult1">MediaProjectionの許可が得られました。音声を取り込むためのフォアグラウンドサービスが開始されます。</string>
+    <string name="onActivityResult2">MediaProjectionを取得するリクエストが拒否されました。</string>
 
-    <string name="READ_REQUEST_CODE2">cannot specify audio files outside of the Music folder.</string>
+    <string name="READ_REQUEST_CODE2">Musicフォルダ以外の音声ファイルは指定できません。</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
@@ -83,9 +83,9 @@
         <item>Snare Drum [SD]</item>
         <item>Tom Toms [LT-MT-HT]</item>
         <item>Loops</item>
-        <item>Internal sounds</item>
-        <item>External sounds</item>
-        <item>Sounds in Music folder</item>
+        <item>内部サウンド</item>
+        <item>外部サウンド</item>
+        <item>Musicフォルダのサウンド"</item>
     </string-array>
 
     <string-array name="spinnerItems2">
@@ -94,9 +94,9 @@
         <item>Loop [105bpm]</item>
         <item>Loop [124bpm]</item>
         <item>Loop [132bpm]</item>
-        <item>Internal sounds</item>
-        <item>External sounds</item>
-        <item>Sounds in Music folder</item>
+        <item>内部サウンド</item>
+        <item>外部サウンド</item>
+        <item>Musicフォルダのサウンド"</item>
     </string-array>
 
 

@@ -1437,12 +1437,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(
                         this,
-                        "Permissions to capture audio granted. Click the button once again.",
+                        R.string.onRequestPermissionsResult1,
                         Toast.LENGTH_SHORT
                 ).show()
             } else {
                 Toast.makeText(
-                        this, "Permissions to capture audio denied.",
+                        this,
+                        R.string.onRequestPermissionsResult2,
                         Toast.LENGTH_SHORT
                 ).show()
             }
@@ -1452,12 +1453,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(
                         this,
-                        "Permissions to capture audio granted. Click the button once again.",
+                        R.string.onRequestPermissionsResult1,
                         Toast.LENGTH_SHORT
                 ).show()
             } else {
                 Toast.makeText(
-                        this, "Permissions to capture audio denied.",
+                        this,
+                        R.string.onRequestPermissionsResult2,
                         Toast.LENGTH_SHORT
                 ).show()
             }
@@ -1490,7 +1492,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#EC7357")))
                 Toast.makeText(
                         this,
-                        "MediaProjection permission obtained. Foreground service will be started to capture audio.",
+                        R.string.onActivityResult1,
                         Toast.LENGTH_SHORT
                 ).show()
 
@@ -1501,7 +1503,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 startForegroundService(audioCaptureIntent)
             } else {
                 Toast.makeText(
-                        this, "Request to obtain MediaProjection denied.",
+                        this,
+                        R.string.onActivityResult2,
                         Toast.LENGTH_SHORT
                 ).show()
             }
@@ -1665,7 +1668,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 }
                             }
                         } catch (e: Exception) {
-                            Toast.makeText(applicationContext, "Musicフォルダ以外の音声ファイルは\n指定できません。", Toast.LENGTH_LONG).show()
+                            Toast.makeText(applicationContext, R.string.READ_REQUEST_CODE2, Toast.LENGTH_LONG).show()
                         }
                     }
                 }
@@ -1840,7 +1843,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch2 = true
                         invalidateOptionsMenu()
                         switch2.isChecked = false
-                        Toast.makeText(applicationContext, "録音時間の上限に達しました。", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "録音時間の上限の３分に達しました。", Toast.LENGTH_SHORT).show()
                     }
                 }
                 mediaRecorder.prepare()
