@@ -69,6 +69,14 @@
 
     <string name="READ_REQUEST_CODE2">cannot specify audio files outside of the Music folder.</string>
 
+    <string name="startRecording1">The recording time limit of 3 minutes has been reached.</string>
+    <string name="startRecording2">Start voice recording.</string>
+    <string name="startRecording3">Recording failed or the microphone is not authorized.</string>
+
+    <string name="stopRecording">Failed to stop recording.</string>
+
+    <string name="button_setOnClickListener">Enter the file name.</string>
+
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
         <item>Clap [CP]</item>

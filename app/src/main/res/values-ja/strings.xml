@@ -69,6 +69,14 @@
 
     <string name="READ_REQUEST_CODE2">Musicフォルダ以外の音声ファイルは指定できません。</string>
 
+    <string name="startRecording1">録音時間の上限の３分に達しました。</string>
+    <string name="startRecording2">音声録音を開始します。</string>
+    <string name="startRecording3">録音に失敗したか、マイクの権限がありません。</string>
+
+    <string name="stopRecording">録音停止に失敗しました。</string>
+
+    <string name="button_setOnClickListener">ファイル名を入力して下さい。</string>
+
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
         <item>Clap [CP]</item>

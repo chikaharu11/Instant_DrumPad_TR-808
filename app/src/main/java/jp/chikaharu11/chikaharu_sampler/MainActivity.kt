@@ -1824,18 +1824,28 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var menuSwitch0 = true
     private var mediaRecorder = MediaRecorder()
 
+    private val locale: Locale = Locale.getDefault()
+
+
     @SuppressLint("SimpleDateFormat")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         val timeStamp: String = SimpleDateFormat("MM月dd日HH時mm分ss秒").format(Date())
-        val soundFilePath = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/$timeStamp" + "の録音.ogg"
+        val soundFilePathJA = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/$timeStamp" + "の録音.ogg"
+
+        val timestamp2: String = SimpleDateFormat("dd-MM-yyyy-hh-mm-ss", Locale.US).format(Date())
+        val soundFilePathEN = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/Record-$timestamp2.ogg"
 
         fun startRecording() {
             try {
                 mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
                 mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
                 mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
-                mediaRecorder.setOutputFile(soundFilePath)
+                if (locale == Locale.JAPAN) {
+                    mediaRecorder.setOutputFile(soundFilePathJA)
+                } else {
+                    mediaRecorder.setOutputFile(soundFilePathEN)
+                }
                 mediaRecorder.setMaxDuration(180000)
                 mediaRecorder.setOnInfoListener { _, what, _ ->
                     if (what == MediaRecorder.MEDIA_RECORDER_INFO_MAX_DURATION_REACHED) {
@@ -1843,14 +1853,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch2 = true
                         invalidateOptionsMenu()
                         switch2.isChecked = false
-                        Toast.makeText(applicationContext, "録音時間の上限の３分に達しました。", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, R.string.startRecording1, Toast.LENGTH_SHORT).show()
                     }
                 }
                 mediaRecorder.prepare()
                 mediaRecorder.start()
-                Toast.makeText(applicationContext, "音声録音を開始します。", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, R.string.startRecording2, Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
-                Toast.makeText(applicationContext, "録音に失敗したか、マイクの権限がありません。", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, R.string.startRecording3, Toast.LENGTH_LONG).show()
 
             }
         }
@@ -1859,7 +1869,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             try {
                 mediaRecorder.stop()
             } catch (e: Exception) {
-                Toast.makeText(applicationContext, "録音停止に失敗しました。", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, R.string.stopRecording, Toast.LENGTH_LONG).show()
             }
         }
 
@@ -1953,7 +1963,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                             val inflater2 = layoutInflater
                                             val dialogView2 = inflater2.inflate(R.layout.file_name, null)
                                             builder2.setView(dialogView2)
-                                                    .setTitle("ファイル名を入力して下さい")
+                                                    .setTitle(R.string.button_setOnClickListener)
                                                     .setPositiveButton("保存") { _, _ ->
                                                             val nt = dialogView2.findViewById<EditText>(R.id.filename)
                                                             val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text.replace("/".toRegex(), "") + audioName.replaceBeforeLast(".", "")
