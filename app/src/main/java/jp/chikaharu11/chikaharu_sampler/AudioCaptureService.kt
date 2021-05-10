@@ -176,7 +176,7 @@ class AudioCaptureService : Service() {
 
         mediaProjection!!.stop()
         stopSelf()
-        Toast.makeText(this, "Musicフォルダに保存されました", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
     }
 
     override fun onBind(p0: Intent?): IBinder? = null

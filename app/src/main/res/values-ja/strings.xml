@@ -75,7 +75,18 @@
 
     <string name="stopRecording">録音停止に失敗しました。</string>
 
-    <string name="button_setOnClickListener">ファイル名を入力して下さい。</string>
+    <string name="button_setOnClickListener1">ファイル名を入力して下さい。</string>
+    <string name="button_setOnClickListener2">保存</string>
+    <string name="button_setOnClickListener3">Musicフォルダに保存されました。</string>
+    <string name="button_setOnClickListener4">保存できませんでした。</string>
+    <string name="button_setOnClickListener5">キャンセル</string>
+    <string name="button_setOnClickListener6">時間を設定し直してください。</string>
+
+    <string name="menu6">終了しますか？</string>
+    <string name="menu8">この機能はAndroid10以上の機種で使えます。</string>
+
+    <string name="builder3">録音を(開始/終了)するには、マイクをタッチしてください。</string>
+    <string name="back">戻る</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>

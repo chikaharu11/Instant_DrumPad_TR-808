@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Instant_DrumPad</string>
     <string name="todo">1</string>
     <string name="todo2">2</string>
@@ -75,7 +75,18 @@
 
     <string name="stopRecording">Failed to stop recording.</string>
 
-    <string name="button_setOnClickListener">Enter the file name.</string>
+    <string name="button_setOnClickListener1">Enter the file name.</string>
+    <string name="button_setOnClickListener2">Save file</string>
+    <string name="button_setOnClickListener3">Saved in the Music folder.</string>
+    <string name="button_setOnClickListener4">Failed to save.</string>
+    <string name="button_setOnClickListener5" tools:ignore="ButtonCase">cancel</string>
+    <string name="button_setOnClickListener6">Set the time again.</string>
+
+    <string name="menu6">Do you want to exit?</string>
+    <string name="menu8">This feature is available on Android 10 and above.</string>
+
+    <string name="builder3">To (start/stop) recording, touch the microphone.</string>
+    <string name="back">back</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>

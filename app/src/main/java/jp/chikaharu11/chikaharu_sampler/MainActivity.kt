@@ -1963,26 +1963,26 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                             val inflater2 = layoutInflater
                                             val dialogView2 = inflater2.inflate(R.layout.file_name, null)
                                             builder2.setView(dialogView2)
-                                                    .setTitle(R.string.button_setOnClickListener)
-                                                    .setPositiveButton("保存") { _, _ ->
+                                                    .setTitle(R.string.button_setOnClickListener1)
+                                                    .setPositiveButton(R.string.button_setOnClickListener2) { _, _ ->
                                                             val nt = dialogView2.findViewById<EditText>(R.id.filename)
                                                             val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text.replace("/".toRegex(), "") + audioName.replaceBeforeLast(".", "")
                                                             try {
                                                                 FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $audioName -y $fnt")
                                                                 button3.performClick()
-                                                                Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
+                                                                Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
                                                             } catch (e: Exception) {
-                                                                Toast.makeText(applicationContext, "保存できませんでした", Toast.LENGTH_LONG).show()
+                                                                Toast.makeText(applicationContext, R.string.button_setOnClickListener4, Toast.LENGTH_LONG).show()
                                                             }
                                                     }
-                                                    .setNegativeButton("キャンセル") { _, _ ->
+                                                    .setNegativeButton(R.string.button_setOnClickListener5) { _, _ ->
 
                                                     }
                                                     .show()
 
                                     }
-                                    start > stop -> Toast.makeText(applicationContext, "時間を設定し直してください", Toast.LENGTH_SHORT).show()
-                                    start == stop -> Toast.makeText(applicationContext, "時間を設定し直してください", Toast.LENGTH_SHORT).show()
+                                    start > stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_SHORT).show()
+                                    start == stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_SHORT).show()
                             }
                     }
 
@@ -2050,7 +2050,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             R.id.menu6 -> {
                 AlertDialog.Builder(this)
-                        .setTitle("終了しますか？")
+                        .setTitle(R.string.menu6)
                         .setPositiveButton("YES") { _, _ ->
                             finish()
                         }
@@ -2065,7 +2065,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             R.id.menu8 -> {
                 when {
 
-                    Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> Toast.makeText(applicationContext, "この機能はAndroid10以上の機種で使えます", Toast.LENGTH_LONG).show()
+                    Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> Toast.makeText(applicationContext, R.string.menu8, Toast.LENGTH_LONG).show()
 
                     switch0.isChecked -> stopCapturing()
 
@@ -2102,7 +2102,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         if (switch2.isChecked) {
                             menuSwitch2 = true
                             stopRecording()
-                            Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
                             rec.setImageResource(R.drawable.ic_baseline_mic_24)
                             switch2.isChecked = false
                         } else {
@@ -2113,12 +2113,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     builder3.setView(dialogView3)
-                            .setTitle("録音を(開始/終了)するには、\nマイクをタッチしてください。")
-                            .setNegativeButton("戻る") { _, _ ->
+                            .setTitle(R.string.builder3)
+                            .setNegativeButton(R.string.back) { _, _ ->
                                 if (switch2.isChecked) {
                                     menuSwitch2 = true
                                     stopRecording()
-                                    Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
                                     rec.setImageResource(R.drawable.ic_baseline_mic_24)
                                     switch2.isChecked = false
                                 }
@@ -2127,7 +2127,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 if (switch2.isChecked) {
                                     menuSwitch2 = true
                                     stopRecording()
-                                    Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
                                     rec.setImageResource(R.drawable.ic_baseline_mic_24)
                                     switch2.isChecked = false
                                 }
@@ -2175,7 +2175,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             menuSwitch2 = true
             invalidateOptionsMenu()
             mediaRecorder.stop()
-            Toast.makeText(applicationContext, "Musicフォルダに保存されました", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
             switch2.isChecked = false
         }
 
