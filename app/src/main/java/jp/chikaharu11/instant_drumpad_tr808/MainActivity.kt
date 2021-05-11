@@ -1,4 +1,4 @@
-package jp.chikaharu11.chikaharu_sampler
+package jp.chikaharu11.instant_drumpad_tr808
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     fun selectAudio() {
-        val uri = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fjp.chikaharu11.chikaharu_sampler%2Ffiles%2FMusic")
+        val uri = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fjp.chikaharu11.instant_drumpad_tr808%2Ffiles%2FMusic")
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             putExtra(DocumentsContract.EXTRA_INITIAL_URI, uri)

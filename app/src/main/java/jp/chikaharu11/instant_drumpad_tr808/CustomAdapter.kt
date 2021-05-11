@@ -1,4 +1,4 @@
-package jp.chikaharu11.chikaharu_sampler
+package jp.chikaharu11.instant_drumpad_tr808
 
 import android.annotation.SuppressLint
 import android.content.Context

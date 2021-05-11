@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "ch_sampler"
+rootProject.name = "Instant_DrumPad_TR-808"

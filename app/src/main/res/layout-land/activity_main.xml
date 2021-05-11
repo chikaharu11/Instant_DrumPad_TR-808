@@ -656,7 +656,7 @@
     </RadioGroup>
 
 
-    <jp.chikaharu11.chikaharu_sampler.CSpinner
+    <jp.chikaharu11.instant_drumpad_tr808.CSpinner
         android:id="@+id/menu_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -667,7 +667,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <jp.chikaharu11.chikaharu_sampler.CSpinner
+    <jp.chikaharu11.instant_drumpad_tr808.CSpinner
         android:id="@+id/choose_loop_spinner"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
