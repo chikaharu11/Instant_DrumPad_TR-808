@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "937548219984",
+    "project_id": "chikaharu11-admob",
+    "storage_bucket": "chikaharu11-admob.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937548219984:android:2118f25ac0bc5fb12db355",
+        "android_client_info": {
+          "package_name": "jp.chikaharu11.instant_drumpad_tr808"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937548219984-enq1ti8i6fa78h1sfs9b4ii9m084c2qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD89yI_RmK4wEH5BXPXY6VenQayb8FZuUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937548219984-enq1ti8i6fa78h1sfs9b4ii9m084c2qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
