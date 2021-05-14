@@ -151,14 +151,28 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sound16 = 0
 
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        MobileAds.initialize(
-            this
-        )
+        textView.text = "e808_bd_short_01"
+        textView2.text = "e808_bd_long_02"
+        textView3.text = "e808_bd_long_03"
+        textView4.text = "e808_rs09"
+        textView5.text = "e808_bd_short_05"
+        textView6.text = "e808_hc03"
+        textView7.text = "e808_lc08"
+        textView8.text = "e808_lt02"
+        textView9.text = "e808_cy04"
+        textView10.text = "e808_mc05"
+        textView11.text = "e808_cb07"
+        textView12.text = "e808_sd09"
+        textView13.text = "e808_bd_long_07"
+        textView14.text = "e808_lc10"
+        textView15.text = "e808_oh09"
+
+        MobileAds.initialize(this) {}
 
         val adView = findViewById<AdView>(R.id.adView)
         val adRequest = AdRequest.Builder().build()
