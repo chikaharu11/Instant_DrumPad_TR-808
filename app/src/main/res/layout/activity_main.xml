@@ -281,6 +281,7 @@
 
     <TextView
         android:id="@+id/textView"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="6"
@@ -298,6 +299,7 @@
 
     <TextView
         android:id="@+id/textView2"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView2"
@@ -314,6 +316,7 @@
 
     <TextView
         android:id="@+id/textView3"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView3"
@@ -330,6 +333,7 @@
 
     <TextView
         android:id="@+id/textView4"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView4"
@@ -346,6 +350,7 @@
 
     <TextView
         android:id="@+id/textView5"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView5"
@@ -362,6 +367,7 @@
 
     <TextView
         android:id="@+id/textView6"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView6"
@@ -378,6 +384,7 @@
 
     <TextView
         android:id="@+id/textView7"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView7"
@@ -394,6 +401,7 @@
 
     <TextView
         android:id="@+id/textView8"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView8"
@@ -410,6 +418,7 @@
 
     <TextView
         android:id="@+id/textView9"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView9"
@@ -426,6 +435,7 @@
 
     <TextView
         android:id="@+id/textView10"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView10"
@@ -442,6 +452,7 @@
 
     <TextView
         android:id="@+id/textView11"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView11"
@@ -458,6 +469,7 @@
 
     <TextView
         android:id="@+id/textView12"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView12"
@@ -474,6 +486,7 @@
 
     <TextView
         android:id="@+id/textView13"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView13"
@@ -490,6 +503,7 @@
 
     <TextView
         android:id="@+id/textView14"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textView14"
@@ -506,6 +520,7 @@
 
     <TextView
         android:id="@+id/textView15"
+        android:autoSizeTextType="uniform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="6"

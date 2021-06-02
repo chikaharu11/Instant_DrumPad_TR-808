@@ -1463,13 +1463,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 Toast.makeText(
                         this,
                         R.string.onRequestPermissionsResult1,
-                        Toast.LENGTH_SHORT
+                        Toast.LENGTH_LONG
                 ).show()
             } else {
                 Toast.makeText(
                         this,
                         R.string.onRequestPermissionsResult2,
-                        Toast.LENGTH_SHORT
+                        Toast.LENGTH_LONG
                 ).show()
             }
         }
@@ -1479,24 +1479,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 Toast.makeText(
                         this,
                         R.string.onRequestPermissionsResult1,
-                        Toast.LENGTH_SHORT
+                        Toast.LENGTH_LONG
                 ).show()
             } else {
                 Toast.makeText(
                         this,
                         R.string.onRequestPermissionsResult2,
-                        Toast.LENGTH_SHORT
+                        Toast.LENGTH_LONG
                 ).show()
             }
         }
     }
 
-    /**
-     * Before a capture session can be started, the capturing app must
-     * call MediaProjectionManager.createScreenCaptureIntent().
-     * This will display a dialog to the user, who must tap "Start now" in order for a
-     * capturing session to be started. This will allow both video and audio to be captured.
-     */
+
     private fun startMediaProjectionRequest() {
         mediaProjectionManager =
                 applicationContext.getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
@@ -1878,7 +1873,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch2 = true
                         invalidateOptionsMenu()
                         switch2.isChecked = false
-                        Toast.makeText(applicationContext, R.string.startRecording1, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, R.string.startRecording1, Toast.LENGTH_LONG).show()
                     }
                 }
                 mediaRecorder.prepare()
@@ -1995,7 +1990,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                             try {
                                                                 FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $audioName -y $fnt")
                                                                 button3.performClick()
-                                                                Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
+                                                                Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
                                                             } catch (e: Exception) {
                                                                 Toast.makeText(applicationContext, R.string.button_setOnClickListener4, Toast.LENGTH_LONG).show()
                                                             }
@@ -2006,8 +2001,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                                     .show()
 
                                     }
-                                    start > stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_SHORT).show()
-                                    start == stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_SHORT).show()
+                                    start > stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_LONG).show()
+                                    start == stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_LONG).show()
                             }
                     }
 
@@ -2127,7 +2122,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         if (switch2.isChecked) {
                             menuSwitch2 = true
                             stopRecording()
-                            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
                             rec.setImageResource(R.drawable.ic_baseline_mic_24)
                             switch2.isChecked = false
                         } else {
@@ -2143,7 +2138,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 if (switch2.isChecked) {
                                     menuSwitch2 = true
                                     stopRecording()
-                                    Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
                                     rec.setImageResource(R.drawable.ic_baseline_mic_24)
                                     switch2.isChecked = false
                                 }
@@ -2152,7 +2147,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                                 if (switch2.isChecked) {
                                     menuSwitch2 = true
                                     stopRecording()
-                                    Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
                                     rec.setImageResource(R.drawable.ic_baseline_mic_24)
                                     switch2.isChecked = false
                                 }
@@ -2200,7 +2195,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             menuSwitch2 = true
             invalidateOptionsMenu()
             mediaRecorder.stop()
-            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
             switch2.isChecked = false
         }
 

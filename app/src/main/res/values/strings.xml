@@ -61,8 +61,8 @@
     <string name="todo_rec">rec</string>
     <string name="select9b">Voice Recording</string>
 
-    <string name="onRequestPermissionsResult1">Permissions to capture audio granted. Click the button once again.</string>
-    <string name="onRequestPermissionsResult2">Permissions to capture audio denied.</string>
+    <string name="onRequestPermissionsResult1">Permissions is granted. Press it again.</string>
+    <string name="onRequestPermissionsResult2">Permissions is denied.</string>
 
     <string name="onActivityResult1">MediaProjection permission obtained. Foreground service will be started to capture audio.</string>
     <string name="onActivityResult2">Request to obtain MediaProjection denied.</string>

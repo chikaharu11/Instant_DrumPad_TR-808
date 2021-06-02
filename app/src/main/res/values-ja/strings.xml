@@ -61,8 +61,8 @@
     <string name="todo_rec">rec</string>
     <string name="select9b">音声録音</string>
 
-    <string name="onRequestPermissionsResult1">オーディオをキャプチャするための権限が付与されました。もう一度、ボタンをクリックしてください。</string>
-    <string name="onRequestPermissionsResult2">オーディオをキャプチャするためのパーミッションが拒否されました。</string>
+    <string name="onRequestPermissionsResult1">権限が付与されました。もう一度押してください。</string>
+    <string name="onRequestPermissionsResult2">権限が拒否されました。</string>
 
     <string name="onActivityResult1">MediaProjectionの許可が得られました。音声を取り込むためのフォアグラウンドサービスが開始されます。</string>
     <string name="onActivityResult2">MediaProjectionを取得するリクエストが拒否されました。</string>
