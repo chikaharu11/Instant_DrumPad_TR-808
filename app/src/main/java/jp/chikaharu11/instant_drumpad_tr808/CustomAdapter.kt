@@ -20,10 +20,9 @@ class CustomAdapter(context: Context, private var mSoundListList: List<SoundList
 
     @SuppressLint("SetTextI18n")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        // Animalの取得
+
         val soundList = mSoundListList[position]
 
-        // レイアウトの設定
         var view = convertView
         if (convertView == null) {
             view = layoutInflater.inflate(R.layout.item_list, parent, false)

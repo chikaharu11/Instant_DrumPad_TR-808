@@ -45,8 +45,6 @@ class AudioCaptureService : Service() {
             NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID).build()
         )
 
-        // use applicationContext to avoid memory leak on Android 10.
-        // see: https://partnerissuetracker.corp.google.com/issues/139732252
         mediaProjectionManager =
             applicationContext.getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
     }
@@ -94,10 +92,6 @@ class AudioCaptureService : Service() {
             .addMatchingUsage(AudioAttributes.USAGE_UNKNOWN)
             .build()
 
-        /**
-         * Using hardcoded values for the audio format, Mono PCM samples with a sample rate of 8000Hz
-         * These can be changed according to your application's needs
-         */
         val audioFormat = AudioFormat.Builder()
             .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
             .setSampleRate(44100)
@@ -106,11 +100,6 @@ class AudioCaptureService : Service() {
 
         audioRecord = AudioRecord.Builder()
             .setAudioFormat(audioFormat)
-            // For optimal performance, the buffer size
-            // can be optionally specified to store audio samples.
-            // If the value is not specified,
-            // uses a single frame and lets the
-            // native code figure out the minimum buffer size.
             .setBufferSizeInBytes(BUFFER_SIZE_IN_BYTES)
             .setAudioPlaybackCaptureConfig(config)
             .build()
@@ -139,11 +128,6 @@ class AudioCaptureService : Service() {
 
         while (!audioCaptureThread.isInterrupted) {
             audioRecord?.read(capturedAudioSamples, 0, NUM_SAMPLES_PER_READ)
-
-            // This loop should be as fast as possible to avoid artifacts in the captured audio
-            // You can uncomment the following line to see the capture samples but
-            // that will incur a performance hit due to logging I/O.
-            // Log.v(LOG_TAG, "Audio samples captured: ${capturedAudioSamples.toList()}")
 
             fileOutputStream.write(
                 capturedAudioSamples.toByteArray(),
@@ -182,8 +166,7 @@ class AudioCaptureService : Service() {
     override fun onBind(p0: Intent?): IBinder? = null
 
     private fun ShortArray.toByteArray(): ByteArray {
-        // Samples get translated into bytes following little-endianness:
-        // least significant byte first and the most significant byte last
+
         val bytes = ByteArray(size * 2)
         for (i in 0 until size) {
             bytes[i * 2] = (this[i] and 0x00FF).toByte()
