@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">インスタントドラムパッド TR-808</string>
+    <string name="app_name">Instant_DrumPad_TR-808</string>
     <string name="todo">1</string>
     <string name="todo2">2</string>
     <string name="todo3">3</string>
@@ -61,6 +61,8 @@
     <string name="todo_rec">rec</string>
     <string name="select9b">音声録音</string>
 
+    <string name="error">このオーディオファイルは編集できません。</string>
+
     <string name="onRequestPermissionsResult1">権限が付与されました。もう一度押してください。</string>
     <string name="onRequestPermissionsResult2">権限が拒否されました。</string>
 
@@ -87,6 +89,13 @@
 
     <string name="builder3">録音を(開始/終了)するには、マイクをタッチしてください。</string>
     <string name="back">戻る</string>
+    <string name="menuPlus">メインの音量を上げる</string>
+    <string name="menuMinus">メインの音量を下げる</string>
+    <string name="lowest">音量:Lowest</string>
+    <string name="low">音量:Low</string>
+    <string name="middle">音量:Middle</string>
+    <string name="high">音量:High</string>
+    <string name="highest">音量:Highest</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>

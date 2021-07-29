@@ -31,24 +31,34 @@
         <menu>
 
             <item
+                android:id="@+id/menuPlus"
+                android:title="@string/menuPlus"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menuMinus"
+                android:title="@string/menuMinus"
+                app:showAsAction="never" />
+
+            <item
                 android:id="@+id/menu9"
                 android:title="@string/select9"
                 app:showAsAction="never" />
 
             <item
-        android:id="@+id/menu1a"
-        android:title="@string/menu1a"
-        app:showAsAction="never"
-        tools:ignore="AlwaysShowAction" />
+                android:id="@+id/menu1a"
+                android:title="@string/menu1a"
+                app:showAsAction="never"
+                tools:ignore="AlwaysShowAction" />
 
             <item
                 android:id="@+id/menu9b"
                 android:title="@string/select9b"
                 app:showAsAction="never" />
 
-    <item android:id="@+id/menu6"
-        android:title="@string/end"
-        app:showAsAction="never"/>
+            <item android:id="@+id/menu6"
+                android:title="@string/end"
+                app:showAsAction="never"/>
 
         </menu>
     </item>

@@ -61,6 +61,8 @@
     <string name="todo_rec">rec</string>
     <string name="select9b">Voice Recording</string>
 
+    <string name="error">This audio file cannot be edited.</string>
+
     <string name="onRequestPermissionsResult1">Permissions is granted. Press it again.</string>
     <string name="onRequestPermissionsResult2">Permissions is denied.</string>
 
@@ -87,6 +89,13 @@
 
     <string name="builder3">To (start/stop) recording, touch the microphone.</string>
     <string name="back">back</string>
+    <string name="menuPlus">Main Volume UP</string>
+    <string name="menuMinus">Main Volume DOWN</string>
+    <string name="lowest">Volume:Lowest</string>
+    <string name="low">Volume:Low</string>
+    <string name="middle">Volume:Middle</string>
+    <string name="high">Volume:High</string>
+    <string name="highest">Volume:Highest</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>

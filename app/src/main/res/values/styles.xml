@@ -8,6 +8,7 @@
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
         <item name="android:actionBarStyle">@style/CustomActionBar</item>
         <item name="actionBarStyle">@style/CustomActionBar</item>
+        <item name="actionBarPopupTheme">@style/PopupMenuStyle</item>
     </style>
 
     <style name="CustomActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
@@ -16,7 +17,17 @@
 
     <style name="titleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">#ffffff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:autoSizeTextType">uniform</item>
+    </style>
+
+    <style name="PopupMenuStyle" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:colorBackground">#292929</item>
     </style>
 
     <color name="colorPrimary">#5A5A66</color>
