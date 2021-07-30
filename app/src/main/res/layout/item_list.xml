@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:background="#FFFFFF"
+    android:background="#5A5A66"
     android:cacheColorHint="#FFFFFF">
 
     <LinearLayout
@@ -19,8 +19,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

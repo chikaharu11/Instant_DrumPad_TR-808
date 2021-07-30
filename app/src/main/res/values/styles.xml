@@ -27,7 +27,7 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">bold</item>
         <item name="android:autoSizeTextType">uniform</item>
-        <item name="android:colorBackground">#292929</item>
+        <item name="android:colorBackground">#5A5A66</item>
     </style>
 
     <color name="colorPrimary">#5A5A66</color>
