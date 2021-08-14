@@ -638,7 +638,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         mp = MediaPlayer()
 
-        supportActionBar?.title ="loop_toms_8501"
+        supportActionBar?.title ="loop_toms_85_01"
 
 
             val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
@@ -849,7 +849,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         sound15 = soundPool.load(assets.openFd("loop_hats_132_03.ogg"), 1)
 
-        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.loop_bd_85_02))
+        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.loop_toms_85_01))
 
 
         imageView.setOnTouchListener { _, event ->
