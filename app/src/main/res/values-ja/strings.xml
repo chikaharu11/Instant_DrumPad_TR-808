@@ -61,7 +61,7 @@
     <string name="todo_rec">rec</string>
     <string name="select9b">音声録音</string>
 
-    <string name="error">このオーディオファイルは編集できません。</string>
+    <string name="error">このオーディオファイルは指定できません。</string>
 
     <string name="onRequestPermissionsResult1">権限が付与されました。もう一度押してください。</string>
     <string name="onRequestPermissionsResult2">権限が拒否されました。</string>

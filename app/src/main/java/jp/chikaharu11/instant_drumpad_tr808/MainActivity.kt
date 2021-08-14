@@ -1,6 +1,8 @@
 package jp.chikaharu11.instant_drumpad_tr808
 
 import android.Manifest
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
@@ -8,6 +10,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
 import android.media.*
 import android.media.projection.MediaProjectionManager
@@ -18,10 +21,7 @@ import android.os.Environment
 import android.os.Handler
 import android.provider.DocumentsContract
 import android.provider.MediaStore
-import android.view.Menu
-import android.view.MenuItem
-import android.view.MotionEvent
-import android.view.View
+import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -35,6 +35,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_dialog.*
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.hypot
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
@@ -43,6 +44,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private val handler = Handler()
     private var audioName = ""
+    private var mpDuration = 429
+    private var mpDuration2 = 429
+    private var mpDuration3 = 414
+    private var mpDuration4 = 429
+    private var mpDuration5 = 429
+    private var mpDuration6 = 429
+    private var mpDuration7 = 1846
+    private var mpDuration8 = 1846
+    private var mpDuration9 = 1846
+    private var mpDuration10 = 1846
+    private var mpDuration11 = 1846
+    private var mpDuration12 = 1846
+    private var mpDuration13 = 1846
+    private var mpDuration14 = 1846
+    private var mpDuration15 = 1846
     var start = 0
     var stop = 0
 
@@ -85,6 +101,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var soundPool: SoundPool
 
     private lateinit var mp: MediaPlayer
+
+    private lateinit var getmpDuration: MediaPlayer
 
     private lateinit var lmp: LoopMediaPlayer
 
@@ -979,6 +997,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+                effect(imageView,mpDuration)
                 }
                 false
         }
@@ -988,6 +1007,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound2, 1.0f, 1.0f, 1, 0, 1.0f)
+                effect(imageView2,mpDuration2)
                 }
                 false
         }
@@ -997,6 +1017,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView3,mpDuration3)
                 }
                 false
         }
@@ -1006,6 +1027,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView4,mpDuration4)
                 }
                 false
         }
@@ -1015,6 +1037,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound5, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView5,mpDuration5)
                 }
                 false
         }
@@ -1024,6 +1047,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound6, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView6,mpDuration6)
                 }
                 false
         }
@@ -1033,6 +1057,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView7,mpDuration7)
                 }
                 false
         }
@@ -1042,6 +1067,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView8,mpDuration8)
                 }
                 false
         }
@@ -1051,6 +1077,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView9,mpDuration9)
                 }
                 false
 
@@ -1061,6 +1088,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound10, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView10,mpDuration10)
                 }
                 false
         }
@@ -1070,6 +1098,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound11, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView11,mpDuration11)
                 }
                 false
         }
@@ -1079,6 +1108,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView12,mpDuration12)
                 }
                 false
         }
@@ -1088,6 +1118,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound13, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView13,mpDuration13)
                 }
                 false
         }
@@ -1097,6 +1128,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound14, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView14,mpDuration14)
                 }
                 false
         }
@@ -1106,6 +1138,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 listView.visibility = View.INVISIBLE
             } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
+                effect(imageView15,mpDuration15)
                 }
                 false
         }
@@ -1188,6 +1221,33 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
+    private fun effect(imageView: ImageView, mpDuration: Int) {
+        val cx = imageView.width / 2
+        val cy = imageView.height / 2
+
+        val initialRadius = hypot(cx.toDouble(), cy.toDouble()).toFloat()
+
+        val anim = ViewAnimationUtils.createCircularReveal(imageView, cx, cy, initialRadius, 0f)
+
+        anim.addListener(object : AnimatorListenerAdapter() {
+
+            override fun onAnimationStart(animation: Animator?) {
+                super.onAnimationStart(animation)
+                imageView.setColorFilter(Color.parseColor("#e2e3e3"), PorterDuff.Mode.SRC_IN)
+            }
+
+            override fun onAnimationEnd(animation: Animator) {
+                super.onAnimationEnd(animation)
+                imageView.setColorFilter(Color.parseColor("#e2e3e3"), PorterDuff.Mode.SRC_IN)
+            }
+        })
+
+        println(mpDuration)
+
+        anim.duration = mpDuration.toLong()
+        anim.start()
+    }
+
     override fun clicked(soundList: SoundList) {
         sound16 = if (radioButton18.isChecked) {
             soundPool.load(soundList.name, 1)
@@ -1200,297 +1260,544 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     override fun clicked2(soundList: SoundList) {
-        when {
-            radioButton.isChecked && radioButton18.isChecked -> {
-                imageView.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound1 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+        try {
+            when {
+                radioButton.isChecked && radioButton18.isChecked -> {
+                    imageView.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound1 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton2.isChecked && radioButton18.isChecked -> {
-                imageView2.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView2.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound2 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton2.isChecked && radioButton18.isChecked -> {
+                    imageView2.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView2.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound2 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration2 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView2.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView2.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton3.isChecked && radioButton18.isChecked -> {
-                imageView3.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView3.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound3 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton3.isChecked && radioButton18.isChecked -> {
+                    imageView3.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView3.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound3 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration3 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView3.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView3.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton4.isChecked && radioButton18.isChecked -> {
-                imageView4.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView4.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound4 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton4.isChecked && radioButton18.isChecked -> {
+                    imageView4.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView4.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound4 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration4 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView4.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView4.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton5.isChecked && radioButton18.isChecked -> {
-                imageView5.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView5.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound5 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton5.isChecked && radioButton18.isChecked -> {
+                    imageView5.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView5.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound5 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration5 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView5.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView5.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton6.isChecked && radioButton18.isChecked -> {
-                imageView6.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView6.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound6 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton6.isChecked && radioButton18.isChecked -> {
+                    imageView6.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView6.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound6 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration6 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView6.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView6.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton7.isChecked && radioButton18.isChecked -> {
-                imageView7.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView7.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound7 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton7.isChecked && radioButton18.isChecked -> {
+                    imageView7.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView7.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound7 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration7 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView7.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView7.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton8.isChecked && radioButton18.isChecked -> {
-                imageView8.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView8.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound8 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton8.isChecked && radioButton18.isChecked -> {
+                    imageView8.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView8.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound8 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration8 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView8.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView8.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton9.isChecked && radioButton18.isChecked -> {
-                imageView9.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView9.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound9 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton9.isChecked && radioButton18.isChecked -> {
+                    imageView9.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView9.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound9 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration9 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView9.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView9.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton10.isChecked && radioButton18.isChecked -> {
-                imageView10.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView10.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound10 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton10.isChecked && radioButton18.isChecked -> {
+                    imageView10.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView10.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound10 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration10 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView10.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView10.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton11.isChecked && radioButton18.isChecked -> {
-                imageView11.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView11.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound11 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton11.isChecked && radioButton18.isChecked -> {
+                    imageView11.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView11.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound11 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration11 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView11.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView11.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton12.isChecked && radioButton18.isChecked -> {
-                imageView12.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView12.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound12 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton12.isChecked && radioButton18.isChecked -> {
+                    imageView12.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView12.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound12 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration12 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView12.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView12.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton13.isChecked && radioButton18.isChecked -> {
-                imageView13.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView13.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound13 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton13.isChecked && radioButton18.isChecked -> {
+                    imageView13.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView13.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound13 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration13 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView13.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView13.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton14.isChecked && radioButton18.isChecked -> {
-                imageView14.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView14.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound14 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton14.isChecked && radioButton18.isChecked -> {
+                    imageView14.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView14.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound14 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration14 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView14.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView14.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton15.isChecked && radioButton18.isChecked -> {
-                imageView15.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView15.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound15 = soundPool.load(soundList.name, 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton15.isChecked && radioButton18.isChecked -> {
+                    imageView15.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView15.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound15 = soundPool.load(soundList.name, 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(this, Uri.parse(soundList.name))
+                    getmpDuration.prepare()
+                    mpDuration15 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView15.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace(".", "")
                 }
-                textView15.text = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton16.isChecked && radioButton18.isChecked -> {
-                lmp.release()
-                lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
-                supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                radioButton16.isChecked && radioButton18.isChecked -> {
+                    lmp.release()
+                    lmp = LoopMediaPlayer.create(this,
+                        Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
+                    try {
+                        lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
+                        supportActionBar?.title =
+                            soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                                .replaceAfterLast(".", "").replace(".", "")
+                        soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                            soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(applicationContext, R.string.error, Toast.LENGTH_LONG).show()
+                    }
+                }
+                radioButton.isChecked && radioButton19.isChecked -> {
+                    imageView.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound1 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton2.isChecked && radioButton19.isChecked -> {
+                    imageView2.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView2.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound2 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration2 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView2.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton3.isChecked && radioButton19.isChecked -> {
+                    imageView3.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView3.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound3 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration3 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView3.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton4.isChecked && radioButton19.isChecked -> {
+                    imageView4.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView4.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound4 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration4 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView4.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton5.isChecked && radioButton19.isChecked -> {
+                    imageView5.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView5.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound5 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration5 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView5.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton6.isChecked && radioButton19.isChecked -> {
+                    imageView6.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView6.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound6 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration6 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView6.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton7.isChecked && radioButton19.isChecked -> {
+                    imageView7.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView7.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound7 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration7 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView7.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton8.isChecked && radioButton19.isChecked -> {
+                    imageView8.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView8.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound8 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration8 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView8.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton9.isChecked && radioButton19.isChecked -> {
+                    imageView9.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView9.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound9 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration9 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView9.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton10.isChecked && radioButton19.isChecked -> {
+                    imageView10.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView10.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound10 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration10 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView10.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton11.isChecked && radioButton19.isChecked -> {
+                    imageView11.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView11.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound11 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration11 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView11.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton12.isChecked && radioButton19.isChecked -> {
+                    imageView12.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView12.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound12 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration12 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView12.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton13.isChecked && radioButton19.isChecked -> {
+                    imageView13.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView13.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound13 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration13 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView13.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton14.isChecked && radioButton19.isChecked -> {
+                    imageView14.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView14.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound14 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration14 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView14.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton15.isChecked && radioButton19.isChecked -> {
+                    imageView15.setColorFilter(Color.parseColor("#6B6A71"))
+                    handler.postDelayed({ imageView15.setColorFilter(Color.parseColor("#e2e3e3")) },
+                        1000)
+                    sound15 = soundPool.load(assets.openFd(soundList.name), 1)
+                    getmpDuration = MediaPlayer()
+                    getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
+                        assets.openFd(soundList.name).startOffset,
+                        assets.openFd(soundList.name).declaredLength)
+                    getmpDuration.prepare()
+                    mpDuration15 = getmpDuration.duration
+                    getmpDuration.release()
+                    soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                    }
+                    textView15.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                }
+                radioButton16.isChecked -> {
+                    lmp.release()
+                    lmp = LoopMediaPlayer.create(this,
+                        Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
+                    try {
+                        lmp = LoopMediaPlayer(this@MainActivity,
+                            Uri.parse("android.resource://$packageName/raw/" + soundList.name.replace(
+                                ".ogg",
+                                "")))
+                        supportActionBar?.title =
+                            soundList.name.replaceAfterLast(".", "").replace(".", "")
+                        soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
+                            soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(applicationContext, R.string.error, Toast.LENGTH_LONG).show()
+                    }
+                }
+                radioButton17.isChecked -> {
+                    audioName = soundList.name
+                    button4.performClick()
                 }
             }
-            radioButton.isChecked && radioButton19.isChecked -> {
-                imageView.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound1 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton2.isChecked && radioButton19.isChecked -> {
-                imageView2.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView2.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound2 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView2.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton3.isChecked && radioButton19.isChecked -> {
-                imageView3.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView3.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound3 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView3.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton4.isChecked && radioButton19.isChecked -> {
-                imageView4.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView4.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound4 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView4.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton5.isChecked && radioButton19.isChecked -> {
-                imageView5.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView5.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound5 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView5.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton6.isChecked && radioButton19.isChecked -> {
-                imageView6.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView6.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound6 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView6.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton7.isChecked && radioButton19.isChecked -> {
-                imageView7.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView7.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound7 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView7.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton8.isChecked && radioButton19.isChecked -> {
-                imageView8.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView8.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound8 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView8.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton9.isChecked && radioButton19.isChecked -> {
-                imageView9.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView9.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound9 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView9.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton10.isChecked && radioButton19.isChecked -> {
-                imageView10.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView10.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound10 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView10.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton11.isChecked && radioButton19.isChecked -> {
-                imageView11.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView11.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound11 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView11.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton12.isChecked && radioButton19.isChecked -> {
-                imageView12.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView12.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound12 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView12.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton13.isChecked && radioButton19.isChecked -> {
-                imageView13.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView13.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound13 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView13.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton14.isChecked && radioButton19.isChecked -> {
-                imageView14.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView14.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound14 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView14.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton15.isChecked && radioButton19.isChecked -> {
-                imageView15.setColorFilter(Color.parseColor("#FDF5E6"))
-                handler.postDelayed({ imageView15.setColorFilter(Color.parseColor("#E2E3E3")) }, 1000)
-                sound15 = soundPool.load(assets.openFd(soundList.name), 1)
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-                textView15.text = soundList.name.replaceAfterLast(".", "").replace(".", "")
-            }
-            radioButton16.isChecked -> {
-                lmp.release()
-                lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
-                supportActionBar?.title = soundList.name.replaceAfterLast(".", "").replace(".", "")
-                soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
-                    soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                }
-            }
-            radioButton17.isChecked -> {
-                audioName = soundList.name
-                button4.performClick()
-            }
+        } catch (e: Exception) {
+            Toast.makeText(applicationContext, R.string.error, Toast.LENGTH_LONG).show()
         }
         findViewById<ListView>(R.id.list_view).visibility = View.INVISIBLE
     }

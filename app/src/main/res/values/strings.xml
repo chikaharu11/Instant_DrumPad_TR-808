@@ -61,7 +61,7 @@
     <string name="todo_rec">rec</string>
     <string name="select9b">Voice Recording</string>
 
-    <string name="error">This audio file cannot be edited.</string>
+    <string name="error">This audio file cannot be specified.</string>
 
     <string name="onRequestPermissionsResult1">Permissions is granted. Press it again.</string>
     <string name="onRequestPermissionsResult2">Permissions is denied.</string>
