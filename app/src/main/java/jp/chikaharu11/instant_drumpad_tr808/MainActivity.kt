@@ -44,21 +44,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private val handler = Handler()
     private var audioName = ""
-    private var mpDuration = 429
-    private var mpDuration2 = 429
-    private var mpDuration3 = 414
-    private var mpDuration4 = 429
-    private var mpDuration5 = 429
-    private var mpDuration6 = 429
-    private var mpDuration7 = 1846
-    private var mpDuration8 = 1846
-    private var mpDuration9 = 1846
-    private var mpDuration10 = 1846
-    private var mpDuration11 = 1846
-    private var mpDuration12 = 1846
-    private var mpDuration13 = 1846
-    private var mpDuration14 = 1846
-    private var mpDuration15 = 1846
+    private var mpDuration = 1465
+    private var mpDuration2 = 799
+    private var mpDuration3 = 660
+    private var mpDuration4 = 1050
+    private var mpDuration5 = 862
+    private var mpDuration6 = 773
+    private var mpDuration7 = 2824
+    private var mpDuration8 = 2824
+    private var mpDuration9 = 2824
+    private var mpDuration10 = 2286
+    private var mpDuration11 = 2286
+    private var mpDuration12 = 2286
+    private var mpDuration13 = 1818
+    private var mpDuration14 = 1818
+    private var mpDuration15 = 1818
     var start = 0
     var stop = 0
 
@@ -173,21 +173,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        textView.text = "bd_short_01"
-        textView2.text = "bd_long_02"
-        textView3.text = "bd_long_03"
-        textView4.text = "rs09"
-        textView5.text = "bd_short_05"
-        textView6.text = "hc03"
-        textView7.text = "lc08"
-        textView8.text = "lt02"
-        textView9.text = "cy04"
-        textView10.text = "mc05"
-        textView11.text = "cb07"
-        textView12.text = "sd09"
-        textView13.text = "bd_long_07"
-        textView14.text = "lc10"
-        textView15.text = "oh09"
+        textView.text = "clap_05"
+        textView2.text = "rimshot_01"
+        textView3.text = "closed_hi_hat_09"
+        textView4.text = "claves_02"
+        textView5.text = "maracas_03"
+        textView6.text = "bass_drum_short_01"
+        textView7.text = "loop_bd_8502"
+        textView8.text = "loop_bd_8508"
+        textView9.text = "loop_bd_8505"
+        textView10.text = "loop_hats_10501"
+        textView11.text = "loop_perc_10501"
+        textView12.text = "loop_sd_10503"
+        textView13.text = "loop_hats_13201"
+        textView14.text = "loop_toms_13202"
+        textView15.text = "loop_hats_13203"
 
         MobileAds.initialize(this) {}
 
@@ -322,22 +322,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("cowbell_15.ogg")
         )
         gSoundList = arrayListOf(
-                SoundList("cymball_01.ogg"),
-                SoundList("cymball_02.ogg"),
-                SoundList("cymball_03.ogg"),
-                SoundList("cymball_04.ogg"),
-                SoundList("cymball_05.ogg"),
-                SoundList("cymball_06.ogg"),
-                SoundList("cymball_07.ogg"),
-                SoundList("cymball_08.ogg"),
-                SoundList("cymball_09.ogg"),
-                SoundList("cymball_10.ogg"),
-                SoundList("cymball_11.ogg"),
-                SoundList("cymball_12.ogg"),
-                SoundList("cymball_13.ogg"),
-                SoundList("cymball_14.ogg"),
-                SoundList("cymball_15.ogg"),
-                SoundList("cymball_16.ogg")
+                SoundList("cymbal_01.ogg"),
+                SoundList("cymbal_02.ogg"),
+                SoundList("cymbal_03.ogg"),
+                SoundList("cymbal_04.ogg"),
+                SoundList("cymbal_05.ogg"),
+                SoundList("cymbal_06.ogg"),
+                SoundList("cymbal_07.ogg"),
+                SoundList("cymbal_08.ogg"),
+                SoundList("cymbal_09.ogg"),
+                SoundList("cymbal_10.ogg"),
+                SoundList("cymbal_11.ogg"),
+                SoundList("cymbal_12.ogg"),
+                SoundList("cymbal_13.ogg"),
+                SoundList("cymbal_14.ogg"),
+                SoundList("cymbal_15.ogg"),
+                SoundList("cymbal_16.ogg")
         )
         hSoundList = arrayListOf(
                 SoundList("maracas_01.ogg"),
@@ -638,7 +638,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         mp = MediaPlayer()
 
-        supportActionBar?.title ="loop_bd_8501"
+        supportActionBar?.title ="loop_toms_8501"
 
 
             val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
@@ -819,35 +819,35 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 .setMaxStreams(20)
                 .build()
 
-        sound1 = soundPool.load(assets.openFd("bd_long_01.ogg"), 1)
+        sound1 = soundPool.load(assets.openFd("clap_05.ogg"), 1)
 
-        sound2 = soundPool.load(assets.openFd("bd_long_02.ogg"), 1)
+        sound2 = soundPool.load(assets.openFd("rimshot_01.ogg"), 1)
 
-        sound3 = soundPool.load(assets.openFd("bd_long_03.ogg"), 1)
+        sound3 = soundPool.load(assets.openFd("closed_hi_hat_09.ogg"), 1)
 
-        sound4 = soundPool.load(assets.openFd("rs09.ogg"), 1)
+        sound4 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
 
-        sound5 = soundPool.load(assets.openFd("bd_short_05.ogg"), 1)
+        sound5 = soundPool.load(assets.openFd("maracas_03.ogg"), 1)
 
-        sound6 = soundPool.load(assets.openFd("hc03.ogg"), 1)
+        sound6 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
 
-        sound7 = soundPool.load(assets.openFd("lc08.ogg"), 1)
+        sound7 = soundPool.load(assets.openFd("loop_bd_8502.ogg"), 1)
 
-        sound8 = soundPool.load(assets.openFd("lt02.ogg"), 1)
+        sound8 = soundPool.load(assets.openFd("loop_bd_8508.ogg"), 1)
 
-        sound9 = soundPool.load(assets.openFd("cy04.ogg"), 1)
+        sound9 = soundPool.load(assets.openFd("loop_bd_8505.ogg"), 1)
 
-        sound10 = soundPool.load(assets.openFd("mc05.ogg"), 1)
+        sound10 = soundPool.load(assets.openFd("loop_hats_10501.ogg"), 1)
 
-        sound11 = soundPool.load(assets.openFd("cb07.ogg"), 1)
+        sound11 = soundPool.load(assets.openFd("loop_perc_10501.ogg"), 1)
 
-        sound12 = soundPool.load(assets.openFd("sd09.ogg"), 1)
+        sound12 = soundPool.load(assets.openFd("loop_sd_10503.ogg"), 1)
 
-        sound13 = soundPool.load(assets.openFd("bd_long_07.ogg"), 1)
+        sound13 = soundPool.load(assets.openFd("loop_hats_13201.ogg"), 1)
 
-        sound14 = soundPool.load(assets.openFd("lc10.ogg"), 1)
+        sound14 = soundPool.load(assets.openFd("loop_toms_13202.ogg"), 1)
 
-        sound15 = soundPool.load(assets.openFd("oh09.ogg"), 1)
+        sound15 = soundPool.load(assets.openFd("loop_hats_13203.ogg"), 1)
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.loop_bd_8502))
 
