@@ -110,7 +110,11 @@
         <item>Rimshot [RS]</item>
         <item>Snare Drum [SD]</item>
         <item>Tom Toms [LT-MT-HT]</item>
-        <item>Loops</item>
+        <item>Loop [85bpm]</item>
+        <item>Loop [95bpm]</item>
+        <item>Loop [105bpm]</item>
+        <item>Loop [124bpm]</item>
+        <item>Loop [132bpm]</item>
         <item>内部サウンド</item>
         <item>外部サウンド</item>
         <item>Musicフォルダのサウンド"</item>
