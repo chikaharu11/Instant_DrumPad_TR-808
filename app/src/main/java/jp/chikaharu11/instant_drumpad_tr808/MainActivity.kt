@@ -849,7 +849,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         sound15 = soundPool.load(assets.openFd("oh09.ogg"), 1)
 
-        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.loop_bd_8501))
+        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.loop_bd_8502))
 
 
         imageView.setOnTouchListener { _, event ->
