@@ -1364,18 +1364,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 radioButton16.isChecked && radioButton18.isChecked -> {
                     lmp.release()
-                    lmp = LoopMediaPlayer.create(this,
-                        Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
-                    try {
-                        lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
-                        supportActionBar?.title =
-                            soundList.name.replaceBeforeLast("/", "").replace("/", "")
-                                .replaceAfterLast(".", "").replace(".", "")
-                        soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
-                            soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                        }
-                    } catch (e: Exception) {
-                        Toast.makeText(applicationContext, R.string.error, Toast.LENGTH_LONG).show()
+                    lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
+                    supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace(".", "")
+                    soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                 }
                 radioButton.isChecked && radioButton19.isChecked -> {
@@ -1635,20 +1627,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 radioButton16.isChecked -> {
                     lmp.release()
-                    lmp = LoopMediaPlayer.create(this,
-                        Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
-                    try {
-                        lmp = LoopMediaPlayer(this@MainActivity,
-                            Uri.parse("android.resource://$packageName/raw/" + soundList.name.replace(
-                                ".ogg",
-                                "")))
-                        supportActionBar?.title =
-                            soundList.name.replaceAfterLast(".", "").replace(".", "")
-                        soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
-                            soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
-                        }
-                    } catch (e: Exception) {
-                        Toast.makeText(applicationContext, R.string.error, Toast.LENGTH_LONG).show()
+                    lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
+                    supportActionBar?.title = soundList.name.replaceAfterLast(".", "").replace(".", "")
+                    soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
+                        soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                 }
                 radioButton17.isChecked -> {
@@ -2460,7 +2442,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     override fun onDestroy() {
-            lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
         lmp.reset()
         lmp.release()
         mp.reset()
