@@ -21,6 +21,7 @@ import android.os.Environment
 import android.os.Handler
 import android.provider.DocumentsContract
 import android.provider.MediaStore
+import android.util.DisplayMetrics
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -28,9 +29,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.arthenica.mobileffmpeg.FFmpeg
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_dialog.*
 import java.text.SimpleDateFormat
@@ -39,6 +38,9 @@ import kotlin.math.hypot
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
+
+    private lateinit var adViewContainer: FrameLayout
+    private lateinit var admobmAdView: AdView
 
     private lateinit var mediaProjectionManager: MediaProjectionManager
 
@@ -173,6 +175,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initAdMob()
+        loadAdMob()
+
         textView.text = "clap_05"
         textView2.text = "rimshot_01"
         textView3.text = "closed_hi_hat_09"
@@ -188,12 +193,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         textView13.text = "loop_hats_132_01"
         textView14.text = "loop_toms_132_02"
         textView15.text = "loop_hats_132_03"
-
-        MobileAds.initialize(this) {}
-
-        val adView = findViewById<AdView>(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
 
 
         aSoundList = arrayListOf(
@@ -819,37 +818,37 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 .setMaxStreams(20)
                 .build()
 
-        sound1 = soundPool.load(assets.openFd("clap_05.ogg"), 1)
+        sound1 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound2 = soundPool.load(assets.openFd("rimshot_01.ogg"), 1)
+        sound2 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound3 = soundPool.load(assets.openFd("closed_hi_hat_09.ogg"), 1)
+        sound3 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound4 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
+        sound4 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound5 = soundPool.load(assets.openFd("maracas_03.ogg"), 1)
+        sound5 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound6 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
+        sound6 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound7 = soundPool.load(assets.openFd("loop_bd_85_02.ogg"), 1)
+        sound7 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound8 = soundPool.load(assets.openFd("loop_bd_85_08.ogg"), 1)
+        sound8 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound9 = soundPool.load(assets.openFd("loop_bd_85_05.ogg"), 1)
+        sound9 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound10 = soundPool.load(assets.openFd("loop_hats_105_01.ogg"), 1)
+        sound10 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound11 = soundPool.load(assets.openFd("loop_perc_105_01.ogg"), 1)
+        sound11 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound12 = soundPool.load(assets.openFd("loop_sd_105_03.ogg"), 1)
+        sound12 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound13 = soundPool.load(assets.openFd("loop_hats_132_01.ogg"), 1)
+        sound13 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound14 = soundPool.load(assets.openFd("loop_toms_132_02.ogg"), 1)
+        sound14 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound15 = soundPool.load(assets.openFd("loop_hats_132_03.ogg"), 1)
+        sound15 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.loop_toms_85_01))
+        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
 
 
         imageView.setOnTouchListener { _, event ->
@@ -1079,6 +1078,43 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             meSpinner.performClick()
             true
         }
+    }
+
+    private val adSize: AdSize
+        get() {
+            val display = windowManager.defaultDisplay
+            val outMetrics = DisplayMetrics()
+            display.getMetrics(outMetrics)
+
+            val density = outMetrics.density
+            var adWidthPixels = adViewContainer.width.toFloat()
+            if (adWidthPixels == 0.0f) {
+                adWidthPixels = outMetrics.widthPixels.toFloat()
+            }
+            val adWidth = (adWidthPixels / density).toInt()
+
+
+            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this@MainActivity, adWidth)
+        }
+
+    private fun initAdMob() {
+        adViewContainer = findViewById(R.id.adView)
+
+        MobileAds.initialize(this) {}
+        admobmAdView = AdView(this)
+        admobmAdView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
+
+        admobmAdView.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                adViewContainer.addView(admobmAdView)
+            }
+        }
+    }
+
+    private fun loadAdMob() {
+        val request = AdRequest.Builder().build()
+        admobmAdView.adSize = adSize
+        admobmAdView.loadAd(request)
     }
 
     private fun effect(imageView: ImageView, mpDuration: Int) {
