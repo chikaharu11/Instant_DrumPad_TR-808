@@ -818,37 +818,37 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 .setMaxStreams(20)
                 .build()
 
-        sound1 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound1 = soundPool.load(assets.openFd("clap_05.ogg"), 1)
 
-        sound2 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound2 = soundPool.load(assets.openFd("rimshot_01.ogg"), 1)
 
-        sound3 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound3 = soundPool.load(assets.openFd("closed_hi_hat_09.ogg"), 1)
 
-        sound4 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound4 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
 
-        sound5 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound5 = soundPool.load(assets.openFd("maracas_03.ogg"), 1)
 
-        sound6 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound6 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
 
-        sound7 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound7 = soundPool.load(assets.openFd("loop_bd_85_02.ogg"), 1)
 
-        sound8 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound8 = soundPool.load(assets.openFd("loop_bd_85_08.ogg"), 1)
 
-        sound9 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound9 = soundPool.load(assets.openFd("loop_bd_85_05.ogg"), 1)
 
-        sound10 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound10 = soundPool.load(assets.openFd("loop_hats_105_01.ogg"), 1)
 
-        sound11 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound11 = soundPool.load(assets.openFd("loop_perc_105_01.ogg"), 1)
 
-        sound12 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound12 = soundPool.load(assets.openFd("loop_sd_105_03.ogg"), 1)
 
-        sound13 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound13 = soundPool.load(assets.openFd("loop_hats_132_01.ogg"), 1)
 
-        sound14 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound14 = soundPool.load(assets.openFd("loop_toms_132_02.ogg"), 1)
 
-        sound15 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound15 = soundPool.load(assets.openFd("loop_hats_132_03.ogg"), 1)
 
-        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
+        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.loop_toms_85_01))
 
 
         imageView.setOnTouchListener { _, event ->
