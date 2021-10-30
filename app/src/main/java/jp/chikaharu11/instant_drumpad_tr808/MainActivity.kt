@@ -9,6 +9,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
@@ -46,21 +47,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private val handler = Handler()
     private var audioName = ""
-    private var mpDuration = 1465
-    private var mpDuration2 = 799
-    private var mpDuration3 = 660
-    private var mpDuration4 = 1050
-    private var mpDuration5 = 862
-    private var mpDuration6 = 773
-    private var mpDuration7 = 2824
-    private var mpDuration8 = 2824
-    private var mpDuration9 = 2824
-    private var mpDuration10 = 2286
-    private var mpDuration11 = 2286
-    private var mpDuration12 = 2286
-    private var mpDuration13 = 1818
-    private var mpDuration14 = 1818
-    private var mpDuration15 = 1818
+    private var mpDuration = 4189
+    private var mpDuration2 = 625
+    private var mpDuration3 = 4189
+    private var mpDuration4 = 1033
+    private var mpDuration5 = 1465
+    private var mpDuration6 = 4418
+    private var mpDuration7 = 794
+    private var mpDuration8 = 1065
+    private var mpDuration9 = 1065
+    private var mpDuration10 = 1137
+    private var mpDuration11 = 773
+    private var mpDuration12 = 1070
+    private var mpDuration13 = 2824
+    private var mpDuration14 = 2526
+    private var mpDuration15 = 1935
     var start = 0
     var stop = 0
 
@@ -178,21 +179,43 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         initAdMob()
         loadAdMob()
 
-        textView.text = "clap_05"
-        textView2.text = "rimshot_01"
-        textView3.text = "closed_hi_hat_09"
-        textView4.text = "claves_02"
-        textView5.text = "maracas_03"
-        textView6.text = "bass_drum_short_01"
-        textView7.text = "loop_bd_85_02"
-        textView8.text = "loop_bd_85_08"
-        textView9.text = "loop_bd_85_05"
-        textView10.text = "loop_hats_105_01"
-        textView11.text = "loop_perc_105_01"
-        textView12.text = "loop_sd_105_03"
-        textView13.text = "loop_hats_132_01"
-        textView14.text = "loop_toms_132_02"
-        textView15.text = "loop_hats_132_03"
+        val orientation = resources.configuration.orientation
+        when (orientation) {
+            Configuration.ORIENTATION_PORTRAIT -> {
+                textView.text = "cymbal_01"
+                textView2.text = "cowbell_01b"
+                textView3.text = "cymbal_02"
+                textView4.text = "open_hi_hat_01"
+                textView5.text = "clap_01"
+                textView6.text = "cymbal_10"
+                textView7.text = "closed_hi_hat_01"
+                textView8.text = "high_tom_01"
+                textView9.text = "mid_tom_01"
+                textView10.text = "snare_drum_01"
+                textView11.text = "bass_drum_short_01"
+                textView12.text = "low_tom_01"
+                textView13.text = "loop_sd_85_01"
+                textView14.text = "loop_toms_95_02"
+                textView15.text = "loop_bd_124_07"
+            }
+            Configuration.ORIENTATION_LANDSCAPE -> {
+                textView.text = "cymbal_01"
+                textView2.text = "cowbell_01b"
+                textView3.text = "cymbal_02"
+                textView4.text = "open_hi_hat_01"
+                textView5.text = "clap_01"
+                textView6.text = "cymbal_10"
+                textView7.text = "closed_hi_hat_01"
+                textView8.text = "high_tom_01"
+                textView9.text = "mid_tom_01"
+                textView10.text = "snare_drum_01"
+                textView11.text = "bass_drum_short_01"
+                textView12.text = "low_tom_01"
+                textView13.text = "loop_sd_85_01"
+                textView14.text = "loop_toms_95_02"
+                textView15.text = "loop_bd_124_07"
+            }
+        }
 
 
         aSoundList = arrayListOf(
@@ -304,7 +327,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("low_conga_10.ogg")
         )
         fSoundList = arrayListOf(
-                SoundList("cowbell_01.ogg"),
+                SoundList("cowbell_01a.ogg"),
+                SoundList("cowbell_01b.ogg"),
                 SoundList("cowbell_02.ogg"),
                 SoundList("cowbell_03.ogg"),
                 SoundList("cowbell_04.ogg"),
@@ -781,19 +805,51 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundListView.visibility = View.VISIBLE
                     }
                     17 -> {
+                        textView.text = ""
+                        textView2.text = ""
+                        textView3.text = ""
+                        textView4.text = ""
+                        textView5.text = ""
+                        textView6.text = ""
+                        textView7.text = ""
+                        textView8.text = ""
+                        textView9.text = ""
+                        textView10.text = ""
+                        textView11.text = ""
+                        textView12.text = ""
+                        textView13.text = ""
+                        textView14.text = ""
+                        textView15.text = ""
+                        sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    }
+                    18 -> {
                         radioButton18.performClick()
                         soundListView.adapter = sCustomAdapter
                         sCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    18 -> {
+                    19 -> {
                         selectEX()
                         radioButton18.performClick()
                         soundListView.adapter = tCustomAdapter
                         tCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    19 -> selectAudio()
+                    20 -> selectAudio()
                 }
             }
 
@@ -818,35 +874,76 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 .setMaxStreams(20)
                 .build()
 
-        sound1 = soundPool.load(assets.openFd("clap_05.ogg"), 1)
+        when (orientation) {
 
-        sound2 = soundPool.load(assets.openFd("rimshot_01.ogg"), 1)
+            Configuration.ORIENTATION_PORTRAIT -> {
 
-        sound3 = soundPool.load(assets.openFd("closed_hi_hat_09.ogg"), 1)
+                sound1 = soundPool.load(assets.openFd("cymbal_01.ogg"), 1)
 
-        sound4 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
+                sound2 = soundPool.load(assets.openFd("cowbell_01b.ogg"), 1)
 
-        sound5 = soundPool.load(assets.openFd("maracas_03.ogg"), 1)
+                sound3 = soundPool.load(assets.openFd("cymbal_02.ogg"), 1)
 
-        sound6 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
+                sound4 = soundPool.load(assets.openFd("open_hi_hat_01.ogg"), 1)
 
-        sound7 = soundPool.load(assets.openFd("loop_bd_85_02.ogg"), 1)
+                sound5 = soundPool.load(assets.openFd("clap_01.ogg"), 1)
 
-        sound8 = soundPool.load(assets.openFd("loop_bd_85_08.ogg"), 1)
+                sound6 = soundPool.load(assets.openFd("cymbal_10.ogg"), 1)
 
-        sound9 = soundPool.load(assets.openFd("loop_bd_85_05.ogg"), 1)
+                sound7 = soundPool.load(assets.openFd("closed_hi_hat_01.ogg"), 1)
 
-        sound10 = soundPool.load(assets.openFd("loop_hats_105_01.ogg"), 1)
+                sound8 = soundPool.load(assets.openFd("high_tom_01.ogg"), 1)
 
-        sound11 = soundPool.load(assets.openFd("loop_perc_105_01.ogg"), 1)
+                sound9 = soundPool.load(assets.openFd("mid_tom_01.ogg"), 1)
 
-        sound12 = soundPool.load(assets.openFd("loop_sd_105_03.ogg"), 1)
+                sound10 = soundPool.load(assets.openFd("snare_drum_01.ogg"), 1)
 
-        sound13 = soundPool.load(assets.openFd("loop_hats_132_01.ogg"), 1)
+                sound11 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
 
-        sound14 = soundPool.load(assets.openFd("loop_toms_132_02.ogg"), 1)
+                sound12 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
 
-        sound15 = soundPool.load(assets.openFd("loop_hats_132_03.ogg"), 1)
+                sound13 = soundPool.load(assets.openFd("loop_sd_85_01.ogg"), 1)
+
+                sound14 = soundPool.load(assets.openFd("loop_toms_95_02.ogg"), 1)
+
+                sound15 = soundPool.load(assets.openFd("loop_bd_124_07.ogg"), 1)
+
+            }
+
+            Configuration.ORIENTATION_LANDSCAPE -> {
+
+                sound1 = soundPool.load(assets.openFd("cymbal_01.ogg"), 1)
+
+                sound2 = soundPool.load(assets.openFd("cowbell_01b.ogg"), 1)
+
+                sound3 = soundPool.load(assets.openFd("cymbal_02.ogg"), 1)
+
+                sound4 = soundPool.load(assets.openFd("open_hi_hat_01.ogg"), 1)
+
+                sound5 = soundPool.load(assets.openFd("clap_01.ogg"), 1)
+
+                sound6 = soundPool.load(assets.openFd("cymbal_10.ogg"), 1)
+
+                sound7 = soundPool.load(assets.openFd("closed_hi_hat_01.ogg"), 1)
+
+                sound8 = soundPool.load(assets.openFd("high_tom_01.ogg"), 1)
+
+                sound9 = soundPool.load(assets.openFd("mid_tom_01.ogg"), 1)
+
+                sound10 = soundPool.load(assets.openFd("snare_drum_01.ogg"), 1)
+
+                sound11 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
+
+                sound12 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
+
+                sound13 = soundPool.load(assets.openFd("loop_sd_85_01.ogg"), 1)
+
+                sound14 = soundPool.load(assets.openFd("loop_toms_95_02.ogg"), 1)
+
+                sound15 = soundPool.load(assets.openFd("loop_bd_124_07.ogg"), 1)
+
+            }
+        }
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.loop_toms_85_01))
 
@@ -1137,8 +1234,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 imageView.setColorFilter(Color.parseColor("#e2e3e3"), PorterDuff.Mode.SRC_IN)
             }
         })
-
-        println(mpDuration)
 
         anim.duration = mpDuration.toLong()
         anim.start()
