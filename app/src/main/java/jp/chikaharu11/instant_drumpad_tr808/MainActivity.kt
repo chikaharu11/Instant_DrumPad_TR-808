@@ -82,6 +82,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         startActivityForResult(intent, READ_REQUEST_CODE2)
     }
 
+    @SuppressLint("Range")
     fun selectEX() {
         if (!isReadExternalStoragePermissionGranted()) {
             requestReadExternalStoragePermission()
@@ -171,7 +172,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sound16 = 0
 
 
-    @SuppressLint("ClickableViewAccessibility", "SetTextI18n")
+    @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -214,6 +215,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 textView13.text = "loop_sd_85_01"
                 textView14.text = "loop_toms_95_02"
                 textView15.text = "loop_bd_124_07"
+            }
+            Configuration.ORIENTATION_SQUARE -> {
+                TODO()
+            }
+            Configuration.ORIENTATION_UNDEFINED -> {
+                TODO()
             }
         }
 
@@ -942,6 +949,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 sound15 = soundPool.load(assets.openFd("loop_bd_124_07.ogg"), 1)
 
+            }
+            Configuration.ORIENTATION_SQUARE -> {
+                TODO()
+            }
+            Configuration.ORIENTATION_UNDEFINED -> {
+                TODO()
             }
         }
 

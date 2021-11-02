@@ -24,7 +24,8 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713"/>
 
-        <activity android:name="jp.chikaharu11.instant_drumpad_tr808.MainActivity">
+        <activity android:name="jp.chikaharu11.instant_drumpad_tr808.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
