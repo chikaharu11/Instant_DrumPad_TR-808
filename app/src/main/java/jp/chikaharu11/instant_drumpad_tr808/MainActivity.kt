@@ -4,21 +4,15 @@ import android.Manifest
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.PorterDuff
-import android.graphics.drawable.ColorDrawable
 import android.media.*
-import android.media.projection.MediaProjectionManager
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.os.Handler
 import android.provider.DocumentsContract
 import android.provider.MediaStore
@@ -29,11 +23,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.arthenica.mobileffmpeg.FFmpeg
 import com.google.android.gms.ads.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.custom_dialog.*
-import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.hypot
 
@@ -42,8 +33,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private lateinit var adViewContainer: FrameLayout
     private lateinit var admobmAdView: AdView
-
-    private lateinit var mediaProjectionManager: MediaProjectionManager
 
     private val handler = Handler()
     private var audioName = ""
@@ -62,24 +51,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration13 = 2824
     private var mpDuration14 = 2526
     private var mpDuration15 = 1935
-    var start = 0
-    var stop = 0
 
     companion object {
         private const val READ_REQUEST_CODE2: Int = 43
         private const val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 41
         private const val RECORD_AUDIO_PERMISSION_REQUEST_CODE = 42
-        private const val MEDIA_PROJECTION_REQUEST_CODE = 13
-    }
-
-    fun selectAudio() {
-        val uri = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fjp.chikaharu11.instant_drumpad_tr808%2Ffiles%2FMusic")
-        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-            addCategory(Intent.CATEGORY_OPENABLE)
-            putExtra(DocumentsContract.EXTRA_INITIAL_URI, uri)
-            type = "audio/*"
-        }
-        startActivityForResult(intent, READ_REQUEST_CODE2)
     }
 
     @SuppressLint("Range")
@@ -812,6 +788,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundListView.visibility = View.VISIBLE
                     }
                     17 -> {
+                        radioButton18.performClick()
+                        soundListView.adapter = sCustomAdapter
+                        sCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
+                    }
+                    18 -> {
+                        selectEX()
+                        radioButton18.performClick()
+                        soundListView.adapter = tCustomAdapter
+                        tCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
+                    }
+                    19 -> {
                         textView.text = ""
                         textView2.text = ""
                         textView3.text = ""
@@ -843,20 +832,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                         sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                     }
-                    18 -> {
-                        radioButton18.performClick()
-                        soundListView.adapter = sCustomAdapter
-                        sCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    19 -> {
-                        selectEX()
-                        radioButton18.performClick()
-                        soundListView.adapter = tCustomAdapter
-                        tCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    20 -> selectAudio()
                 }
             }
 
@@ -1788,40 +1763,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         findViewById<ListView>(R.id.list_view).visibility = View.INVISIBLE
     }
 
-    private fun startCapturing() {
-        if (!isRecordAudioPermissionGranted()) {
-            requestRecordAudioPermission()
-        } else {
-            startMediaProjectionRequest()
-        }
-    }
-
-    private fun stopCapturing() {
-
-        startService(Intent(this, AudioCaptureService::class.java).apply {
-            action = AudioCaptureService.ACTION_STOP
-        })
-        menuSwitch0 = true
-        switch0.isChecked = false
-        invalidateOptionsMenu()
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#5A5A66")))
-    }
-
-    private fun isRecordAudioPermissionGranted(): Boolean {
-        return ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.RECORD_AUDIO
-        ) == PackageManager.PERMISSION_GRANTED
-    }
-
-    private fun requestRecordAudioPermission() {
-        ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.RECORD_AUDIO),
-                RECORD_AUDIO_PERMISSION_REQUEST_CODE
-        )
-    }
-
     private fun isReadExternalStoragePermissionGranted(): Boolean {
         return ContextCompat.checkSelfPermission(
                 this,
@@ -1877,43 +1818,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
 
-    private fun startMediaProjectionRequest() {
-        mediaProjectionManager =
-                applicationContext.getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
-        startActivityForResult(
-                mediaProjectionManager.createScreenCaptureIntent(),
-                MEDIA_PROJECTION_REQUEST_CODE
-        )
-    }
-
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
-        if (requestCode == MEDIA_PROJECTION_REQUEST_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                menuSwitch0 = false
-                switch0.isChecked = true
-                invalidateOptionsMenu()
-                supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#EC7357")))
-                Toast.makeText(
-                        this,
-                        R.string.onActivityResult1,
-                        Toast.LENGTH_SHORT
-                ).show()
-
-                val audioCaptureIntent = Intent(this, AudioCaptureService::class.java).apply {
-                    action = AudioCaptureService.ACTION_START
-                    putExtra(AudioCaptureService.EXTRA_RESULT_DATA, resultData!!)
-                }
-                startForegroundService(audioCaptureIntent)
-            } else {
-                Toast.makeText(
-                        this,
-                        R.string.onActivityResult2,
-                        Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
         if (resultCode != RESULT_OK) {
             return
         }
@@ -2171,25 +2077,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         switch1.isChecked = false
                         radioButton16.performClick()
                         radioButton18.performClick()
-                        soundListView.adapter = sCustomAdapter
-                        sCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    6 -> {
-                        lmp.stop()
-                        menuSwitch = true
-                        invalidateOptionsMenu()
-                        switch1.isChecked = false
-                        radioButton16.performClick()
-                        radioButton18.performClick()
                         selectEX()
                         soundListView.adapter = tCustomAdapter
                         tCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
-                    }
-                    7 -> {
-                        radioButton16.performClick()
-                        selectAudio()
                     }
                 }
             }
@@ -2214,224 +2105,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             menuLamp.setIcon(R.drawable.ic_baseline_stop_24)
         }
 
-        val menuLamp3 = menu.findItem(R.id.menu8)
-        if (menuSwitch0) {
-            menuLamp3.setIcon(R.drawable.ic_baseline_radio_button_checked_24_2)
-        } else {
-            menuLamp3.setIcon(R.drawable.ic_baseline_radio_button_checked_24)
-        }
-
         return true
     }
 
     private var menuSwitch = true
     private var menuSwitch2 = true
-    private var menuSwitch0 = true
     private var mediaRecorder = MediaRecorder()
-
-    private val locale: Locale = Locale.getDefault()
 
 
     @SuppressLint("SimpleDateFormat")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        val timeStamp: String = SimpleDateFormat("MM月dd日HH時mm分ss秒").format(Date())
-        val soundFilePathJA = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/$timeStamp" + "の録音.ogg"
-
-        val timestamp2: String = SimpleDateFormat("dd-MM-yyyy-hh-mm-ss", Locale.US).format(Date())
-        val soundFilePathEN = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/Record-$timestamp2.ogg"
-
-        fun startRecording() {
-            try {
-                mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
-                mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
-                mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
-                if (locale == Locale.JAPAN) {
-                    mediaRecorder.setOutputFile(soundFilePathJA)
-                } else {
-                    mediaRecorder.setOutputFile(soundFilePathEN)
-                }
-                mediaRecorder.setMaxDuration(180000)
-                mediaRecorder.setOnInfoListener { _, what, _ ->
-                    if (what == MediaRecorder.MEDIA_RECORDER_INFO_MAX_DURATION_REACHED) {
-                        mediaRecorder.stop()
-                        menuSwitch2 = true
-                        invalidateOptionsMenu()
-                        switch2.isChecked = false
-                        Toast.makeText(applicationContext, R.string.startRecording1, Toast.LENGTH_LONG).show()
-                    }
-                }
-                mediaRecorder.prepare()
-                mediaRecorder.start()
-                Toast.makeText(applicationContext, R.string.startRecording2, Toast.LENGTH_SHORT).show()
-            } catch (e: Exception) {
-                Toast.makeText(applicationContext, R.string.startRecording3, Toast.LENGTH_LONG).show()
-
-            }
-        }
-
-        fun stopRecording() {
-            try {
-                mediaRecorder.stop()
-            } catch (e: Exception) {
-                Toast.makeText(applicationContext, R.string.stopRecording, Toast.LENGTH_LONG).show()
-            }
-        }
-
-            button4.setOnClickListener {
-                try {
-                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).toString() + "/showwavespics.png"
-                FFmpeg.execute("-i $audioName -filter_complex showwavespic=s=2560x1280:colors=blue:scale=0 -y $myDir")
-
-                val builder = AlertDialog.Builder(this)
-                val inflater = layoutInflater
-                val dialogView = inflater.inflate(R.layout.custom_dialog, null)
-
-                mp.release()
-                mp = MediaPlayer()
-                mp.setDataSource(this, Uri.parse(audioName))
-                mp.prepare()
-
-                val seekBar = dialogView.findViewById<SeekBar>(R.id.seekBar)
-                val seekBar2 = dialogView.findViewById<SeekBar>(R.id.seekBar2)
-
-                seekBar.progress = 0
-                seekBar2.progress = 0
-
-                seekBar.max = mp.duration
-
-                seekBar2.max = mp.duration
-                seekBar2.progress = mp.duration
-
-                start = 0
-                stop = mp.duration
-
-                val text1 = dialogView.findViewById<TextView>(R.id.textView16)
-                val text2 = dialogView.findViewById<TextView>(R.id.textView17)
-                val text3 = dialogView.findViewById<TextView>(R.id.textView18)
-
-                text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(0.toLong())).toString()
-                text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(mp.duration.toLong())).toString()
-                text3.text = audioName.replaceBeforeLast("/", "").replace("/", "")
-
-                    seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-
-
-                        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                            text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
-                                start = progress
-
-                        }
-
-
-                        override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
-                        }
-
-
-                        override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-                        }
-                    })
-
-                    seekBar2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-
-
-                        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                            text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
-                                stop = progress
-                        }
-
-
-                        override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
-                        }
-
-
-                        override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-                        }
-                    })
-
-
-                    val image = dialogView.findViewById<View>(R.id.imageView16) as ImageView
-
-                    image.setImageURI(Uri.parse(myDir))
-
-                    val button = dialogView.findViewById(R.id.button) as Button
-                    val button2 = dialogView.findViewById(R.id.button2) as Button
-                    val button3 = dialogView.findViewById(R.id.button3) as Button
-
-                    button.setOnClickListener {
-                            when {
-                                    start < stop -> {
-                                            val builder2 = AlertDialog.Builder(this)
-                                            val inflater2 = layoutInflater
-                                            val dialogView2 = inflater2.inflate(R.layout.file_name, null)
-                                            builder2.setView(dialogView2)
-                                                    .setTitle(R.string.button_setOnClickListener1)
-                                                    .setPositiveButton(R.string.button_setOnClickListener2) { _, _ ->
-                                                            val nt = dialogView2.findViewById<EditText>(R.id.filename)
-                                                            val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text.replace("/".toRegex(), "") + audioName.replaceBeforeLast(".", "")
-                                                            try {
-                                                                FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $audioName -y $fnt")
-                                                                button3.performClick()
-                                                                Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
-                                                            } catch (e: Exception) {
-                                                                Toast.makeText(applicationContext, R.string.button_setOnClickListener4, Toast.LENGTH_LONG).show()
-                                                            }
-                                                    }
-                                                    .setNegativeButton(R.string.button_setOnClickListener5) { _, _ ->
-
-                                                    }
-                                                    .show()
-
-                                    }
-                                    start > stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_LONG).show()
-                                    start == stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_LONG).show()
-                            }
-                    }
-
-                    button2.setOnClickListener {
-                        if (switch3.isChecked) {
-                            mp.stop()
-                            mp.prepare()
-                            handler.removeCallbacksAndMessages(null)
-                            switch3.isChecked = false
-                        } else {
-                            mp.seekTo(start)
-                            mp.start()
-                            switch3.isChecked = true
-                            if (mp.isPlaying)
-                                handler.postDelayed({
-                                    mp.stop()
-                                    mp.prepare()
-                                    switch3.isChecked = false
-                                }, (stop - start).toLong())
-                        }
-                    }
-
-
-
-                    builder.setView(dialogView)
-                            .setOnCancelListener {
-                                mp.stop()
-                                mp.prepare()
-                                switch3.isChecked = false
-                            }
-                            val dialog = builder.create()
-                            dialog.show()
-
-                button3.setOnClickListener {
-                    dialog.cancel()
-                }
-                } catch (e: Exception) {
-                    Toast.makeText(applicationContext,
-                        R.string.error,
-                        Toast.LENGTH_LONG).show()
-                }
-
-            }
 
         val soundListView = findViewById<ListView>(R.id.list_view)
 
@@ -2456,12 +2139,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 return true
             }
 
-            R.id.menu1a -> {
-                radioButton17.performClick()
-                selectAudio()
-                return true
-            }
-
             R.id.menu6 -> {
                 AlertDialog.Builder(this)
                         .setTitle(R.string.menu6)
@@ -2476,23 +2153,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 return true
             }
 
-            R.id.menu8 -> {
-                if (soundListView.isVisible) {
-                    soundListView.visibility = View.INVISIBLE
-                }
-                when {
-
-                    Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> Toast.makeText(applicationContext, R.string.menu8, Toast.LENGTH_LONG).show()
-
-                    switch0.isChecked -> stopCapturing()
-
-                    else -> startCapturing()
-
-                }
-
-                return true
-            }
-
             R.id.menuPlus -> {
                 lmp.volumePlus()
                 return true
@@ -2500,69 +2160,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             R.id.menuMinus -> {
                 lmp.volumeMinus()
-                return true
-            }
-
-            R.id.menu9 -> {
-                radioButton17.performClick()
-                radioButton18.performClick()
-                selectEX()
-                soundListView.adapter = tCustomAdapter
-                tCustomAdapter.notifyDataSetChanged()
-                soundListView.visibility = View.VISIBLE
-                return true
-            }
-
-            R.id.menu9b -> {
-                if (!isRecordAudioPermissionGranted()) {
-                    requestRecordAudioPermission()
-                } else {
-                    if (switch0.isChecked) {
-                        stopCapturing()
-                    }
-                    val builder3 = AlertDialog.Builder(this)
-                    val inflater3 = layoutInflater
-                    val dialogView3 = inflater3.inflate(R.layout.record_dialog, null)
-                    val rec = dialogView3.findViewById<ImageView>(R.id.imageView17)
-                    rec.setImageResource(R.drawable.ic_baseline_mic_24)
-                    rec.setOnClickListener {
-                        if (switch2.isChecked) {
-                            menuSwitch2 = true
-                            stopRecording()
-                            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
-                            rec.setImageResource(R.drawable.ic_baseline_mic_24)
-                            switch2.isChecked = false
-                        } else {
-                            menuSwitch2 = false
-                            startRecording()
-                            rec.setImageResource(R.drawable.ic_baseline_mic_24_2)
-                            switch2.isChecked = true
-                        }
-                    }
-                    builder3.setView(dialogView3)
-                            .setTitle(R.string.builder3)
-                            .setNegativeButton(R.string.back) { _, _ ->
-                                if (switch2.isChecked) {
-                                    menuSwitch2 = true
-                                    stopRecording()
-                                    Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
-                                    rec.setImageResource(R.drawable.ic_baseline_mic_24)
-                                    switch2.isChecked = false
-                                }
-                            }
-                            .setOnCancelListener {
-                                if (switch2.isChecked) {
-                                    menuSwitch2 = true
-                                    stopRecording()
-                                    Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
-                                    rec.setImageResource(R.drawable.ic_baseline_mic_24)
-                                    switch2.isChecked = false
-                                }
-                            }
-                    val dialog = builder3.create()
-                    dialog.show()
-
-                }
                 return true
             }
 

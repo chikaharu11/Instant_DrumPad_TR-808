@@ -115,10 +115,9 @@
         <item>Loop [105bpm]</item>
         <item>Loop [124bpm]</item>
         <item>Loop [132bpm]</item>
-        <item>ドラムパッドをリセット</item>
         <item>内部サウンド</item>
         <item>外部サウンド</item>
-        <item>Musicフォルダのサウンド"</item>
+        <item>ドラムパッドをリセット</item>
     </string-array>
 
     <string-array name="spinnerItems2">
@@ -127,9 +126,7 @@
         <item>Loop [105bpm]</item>
         <item>Loop [124bpm]</item>
         <item>Loop [132bpm]</item>
-        <item>内部サウンド</item>
         <item>外部サウンド</item>
-        <item>Musicフォルダのサウンド"</item>
     </string-array>
 
 
