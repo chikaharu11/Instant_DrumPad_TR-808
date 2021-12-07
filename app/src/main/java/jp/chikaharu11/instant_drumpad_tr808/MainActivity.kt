@@ -804,38 +804,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    19 -> {
-                        textView.text = ""
-                        textView2.text = ""
-                        textView3.text = ""
-                        textView4.text = ""
-                        textView5.text = ""
-                        textView6.text = ""
-                        textView7.text = ""
-                        textView8.text = ""
-                        textView9.text = ""
-                        textView10.text = ""
-                        textView11.text = ""
-                        textView12.text = ""
-                        textView13.text = ""
-                        textView14.text = ""
-                        textView15.text = ""
-                        sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    }
                 }
             }
 
@@ -2070,9 +2038,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     0 -> {
                         if (paste == 0) {
                             paste = 1
-                            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
+                            Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
                         } else if (paste == 1)
                             paste = 0
+                        Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
                     }
                     1 -> {
                         lmp.stop()
@@ -2140,6 +2109,38 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundListView.adapter = tCustomAdapter
                         tCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
+                    }
+                    7 -> {
+                        textView.text = ""
+                        textView2.text = ""
+                        textView3.text = ""
+                        textView4.text = ""
+                        textView5.text = ""
+                        textView6.text = ""
+                        textView7.text = ""
+                        textView8.text = ""
+                        textView9.text = ""
+                        textView10.text = ""
+                        textView11.text = ""
+                        textView12.text = ""
+                        textView13.text = ""
+                        textView14.text = ""
+                        textView15.text = ""
+                        sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                     }
                 }
             }

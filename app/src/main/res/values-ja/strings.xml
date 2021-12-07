@@ -97,6 +97,9 @@
     <string name="high">音量:High</string>
     <string name="highest">音量:Highest</string>
 
+    <string name="change">パッドをタッチするとパッド音を変更できます</string>
+    <string name="change2">演奏モード</string>
+
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
         <item>Clap [CP]</item>
@@ -117,16 +120,17 @@
         <item>Loop [132bpm]</item>
         <item>内部サウンド</item>
         <item>外部サウンド</item>
-        <item>ドラムパッドをリセット</item>
     </string-array>
 
     <string-array name="spinnerItems2">
+        <item>パッド音の変更⇔演奏モード</item>
         <item>Loop [85bpm]</item>
         <item>Loop [95bpm]</item>
         <item>Loop [105bpm]</item>
         <item>Loop [124bpm]</item>
         <item>Loop [132bpm]</item>
         <item>外部サウンド</item>
+        <item>ドラムパッドをリセット</item>
     </string-array>
 
 

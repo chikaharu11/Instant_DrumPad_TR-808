@@ -97,6 +97,9 @@
     <string name="high">Volume:High</string>
     <string name="highest">Volume:Highest</string>
 
+    <string name="change">Touch the pad to change the pad sound.</string>
+    <string name="change2">Play mode</string>
+
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
         <item>Clap [CP]</item>
@@ -117,16 +120,17 @@
         <item>Loop [132bpm]</item>
         <item>Internal sounds</item>
         <item>External sounds</item>
-        <item>Reset drum pads</item>
     </string-array>
 
     <string-array name="spinnerItems2">
+        <item>Change pad sounds ↔ Play mode</item>
         <item>Loop [85bpm]</item>
         <item>Loop [95bpm]</item>
         <item>Loop [105bpm]</item>
         <item>Loop [124bpm]</item>
         <item>Loop [132bpm]</item>
         <item>External sounds</item>
+        <item>Reset drum pads</item>
     </string-array>
 
 
