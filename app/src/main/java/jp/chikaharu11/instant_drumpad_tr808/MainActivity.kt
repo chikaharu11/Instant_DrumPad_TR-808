@@ -146,6 +146,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sound15 = 0
     private var sound16 = 0
 
+    private var paste = 0
+
     private var buttonA = 0
     private var buttonB = 0
 
@@ -939,231 +941,291 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
 
         imageView.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
-                effect(imageView,mpDuration)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+                    effect(imageView,mpDuration)
+                }
+            }
                 false
         }
 
         imageView2.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound2, 1.0f, 1.0f, 1, 0, 1.0f)
-                effect(imageView2,mpDuration2)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound2, 1.0f, 1.0f, 1, 0, 1.0f)
+                    effect(imageView2,mpDuration2)
+                }
+            }
                 false
         }
 
         imageView3.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView3,mpDuration3)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView3,mpDuration3)
+                }
+            }
                 false
         }
 
         imageView4.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView4,mpDuration4)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView4,mpDuration4)
+                }
+            }
                 false
         }
 
         imageView5.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound5, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView5,mpDuration5)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound5, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView5,mpDuration5)
+                }
+            }
                 false
         }
 
         imageView6.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound6, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView6,mpDuration6)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound6, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView6,mpDuration6)
+                }
+            }
                 false
         }
 
         imageView7.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView7,mpDuration7)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView7,mpDuration7)
+                }
+            }
                 false
         }
 
         imageView8.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView8,mpDuration8)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView8,mpDuration8)
+                }
+            }
                 false
         }
 
         imageView9.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView9,mpDuration9)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView9,mpDuration9)
+                }
+            }
                 false
 
         }
 
         imageView10.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound10, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView10,mpDuration10)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound10, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView10,mpDuration10)
+                }
+            }
                 false
         }
 
         imageView11.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound11, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView11,mpDuration11)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound11, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView11,mpDuration11)
+                }
+            }
                 false
         }
 
         imageView12.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView12,mpDuration12)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView12,mpDuration12)
+                }
+            }
                 false
         }
 
         imageView13.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound13, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView13,mpDuration13)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound13, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView13,mpDuration13)
+                }
+            }
                 false
         }
 
         imageView14.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound14, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView14,mpDuration14)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound14, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView14,mpDuration14)
+                }
+            }
                 false
         }
 
         imageView15.setOnTouchListener { _, event ->
-            if (listView.isVisible) {
-                listView.visibility = View.INVISIBLE
-            } else if (event.action == MotionEvent.ACTION_DOWN) {
-                        soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
-                effect(imageView15,mpDuration15)
+            when {
+                listView.isVisible -> {
+                    listView.visibility = View.INVISIBLE
                 }
+                event.action == MotionEvent.ACTION_DOWN -> {
+                    soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
+                    effect(imageView15,mpDuration15)
+                }
+            }
                 false
         }
 
 
-        imageView.setOnLongClickListener {
-            buttonA = 1
-            meSpinner.performClick()
-            true
+        imageView.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 1
+                meSpinner.performClick()
+            }
         }
-        imageView2.setOnLongClickListener {
-            buttonA = 2
-            meSpinner.performClick()
-            true
+        imageView2.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 2
+                meSpinner.performClick()
+            }
         }
-        imageView3.setOnLongClickListener {
-            buttonA = 3
-            meSpinner.performClick()
-            true
+        imageView3.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 3
+                meSpinner.performClick()
+            }
         }
-        imageView4.setOnLongClickListener {
-            buttonA = 4
-            meSpinner.performClick()
-            true
+        imageView4.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 4
+                meSpinner.performClick()
+            }
         }
-        imageView5.setOnLongClickListener {
-            buttonA = 5
-            meSpinner.performClick()
-            true
+        imageView5.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 5
+                meSpinner.performClick()
+            }
         }
-        imageView6.setOnLongClickListener {
-            buttonA = 6
-            meSpinner.performClick()
-            true
+        imageView6.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 6
+                meSpinner.performClick()
+            }
         }
-        imageView7.setOnLongClickListener {
-            buttonA = 7
-            meSpinner.performClick()
-            true
+        imageView7.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 7
+                meSpinner.performClick()
+            }
         }
-        imageView8.setOnLongClickListener {
-            buttonA = 8
-            meSpinner.performClick()
-            true
+        imageView8.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 8
+                meSpinner.performClick()
+            }
         }
-        imageView9.setOnLongClickListener {
-            buttonA = 9
-            meSpinner.performClick()
-            true
+        imageView9.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 9
+                meSpinner.performClick()
+            }
         }
-        imageView10.setOnLongClickListener {
-            buttonA = 10
-            meSpinner.performClick()
-            true
+        imageView10.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 10
+                meSpinner.performClick()
+            }
         }
-        imageView11.setOnLongClickListener {
-            buttonA = 11
-            meSpinner.performClick()
-            true
+        imageView11.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 11
+                meSpinner.performClick()
+            }
         }
-        imageView12.setOnLongClickListener {
-            buttonA = 12
-            meSpinner.performClick()
-            true
+        imageView12.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 12
+                meSpinner.performClick()
+            }
         }
-        imageView13.setOnLongClickListener {
-            buttonA = 13
-            meSpinner.performClick()
-            true
+        imageView13.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 13
+                meSpinner.performClick()
+            }
         }
-        imageView14.setOnLongClickListener {
-            buttonA = 14
-            meSpinner.performClick()
-            true
+        imageView14.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 14
+                meSpinner.performClick()
+            }
         }
-        imageView15.setOnLongClickListener {
-            buttonA = 15
-            meSpinner.performClick()
-            true
+        imageView15.setOnClickListener {
+            if (paste == 1) {
+                buttonA = 15
+                meSpinner.performClick()
+            }
         }
     }
 
@@ -2006,6 +2068,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 when(position){
                     0 -> {
+                        if (paste == 0) {
+                            paste = 1
+                            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
+                        } else if (paste == 1)
+                            paste = 0
+                    }
+                    1 -> {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
@@ -2016,7 +2085,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         nCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    1 -> {
+                    2 -> {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
@@ -2027,7 +2096,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         oCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    2 -> {
+                    3 -> {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
@@ -2038,7 +2107,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         pCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    3 -> {
+                    4 -> {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
@@ -2049,7 +2118,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         qCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    4 -> {
+                    5 -> {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
@@ -2060,7 +2129,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         rCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    5 -> {
+                    6 -> {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
