@@ -147,6 +147,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var sound15 = 0
     private var sound16 = 0
 
+    private var buttonA = 0
+    private var buttonB = 0
+
 
     @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -686,116 +689,116 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 when(position){
                     0 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = aCustomAdapter
                         aCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     1 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = bCustomAdapter
                         bCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     2 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = cCustomAdapter
                         cCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     3 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = dCustomAdapter
                         dCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     4 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = eCustomAdapter
                         eCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     5 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = fCustomAdapter
                         fCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     6 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = gCustomAdapter
                         gCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     7 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = hCustomAdapter
                         hCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     8 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = iCustomAdapter
                         iCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     9 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = jCustomAdapter
                         jCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     10 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = kCustomAdapter
                         kCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     11 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = lCustomAdapter
                         lCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     12 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = nCustomAdapter
                         nCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     13 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = oCustomAdapter
                         oCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     14 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = pCustomAdapter
                         pCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     15 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = qCustomAdapter
                         qCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     16 -> {
-                        radioButton19.performClick()
+                        buttonB = 2
                         soundListView.adapter = rCustomAdapter
                         rCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     17 -> {
-                        radioButton18.performClick()
+                        buttonB = 1
                         soundListView.adapter = sCustomAdapter
                         sCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     18 -> {
                         selectEX()
-                        radioButton18.performClick()
+                        buttonB = 1
                         soundListView.adapter = tCustomAdapter
                         tCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -1089,77 +1092,77 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
 
         imageView.setOnLongClickListener {
-            radioButton.performClick()
+            buttonA = 1
             meSpinner.performClick()
             true
         }
         imageView2.setOnLongClickListener {
-            radioButton2.performClick()
+            buttonA = 2
             meSpinner.performClick()
             true
         }
         imageView3.setOnLongClickListener {
-            radioButton3.performClick()
+            buttonA = 3
             meSpinner.performClick()
             true
         }
         imageView4.setOnLongClickListener {
-            radioButton4.performClick()
+            buttonA = 4
             meSpinner.performClick()
             true
         }
         imageView5.setOnLongClickListener {
-            radioButton5.performClick()
+            buttonA = 5
             meSpinner.performClick()
             true
         }
         imageView6.setOnLongClickListener {
-            radioButton6.performClick()
+            buttonA = 6
             meSpinner.performClick()
             true
         }
         imageView7.setOnLongClickListener {
-            radioButton7.performClick()
+            buttonA = 7
             meSpinner.performClick()
             true
         }
         imageView8.setOnLongClickListener {
-            radioButton8.performClick()
+            buttonA = 8
             meSpinner.performClick()
             true
         }
         imageView9.setOnLongClickListener {
-            radioButton9.performClick()
+            buttonA = 9
             meSpinner.performClick()
             true
         }
         imageView10.setOnLongClickListener {
-            radioButton10.performClick()
+            buttonA = 10
             meSpinner.performClick()
             true
         }
         imageView11.setOnLongClickListener {
-            radioButton11.performClick()
+            buttonA = 11
             meSpinner.performClick()
             true
         }
         imageView12.setOnLongClickListener {
-            radioButton12.performClick()
+            buttonA = 12
             meSpinner.performClick()
             true
         }
         imageView13.setOnLongClickListener {
-            radioButton13.performClick()
+            buttonA = 13
             meSpinner.performClick()
             true
         }
         imageView14.setOnLongClickListener {
-            radioButton14.performClick()
+            buttonA = 14
             meSpinner.performClick()
             true
         }
         imageView15.setOnLongClickListener {
-            radioButton15.performClick()
+            buttonA = 15
             meSpinner.performClick()
             true
         }
@@ -1228,7 +1231,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     override fun clicked(soundList: SoundList) {
-        sound16 = if (radioButton18.isChecked) {
+        sound16 = if (buttonB == 1) {
             soundPool.load(soundList.name, 1)
         } else {
             soundPool.load(assets.openFd(soundList.name), 1)
@@ -1241,7 +1244,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     override fun clicked2(soundList: SoundList) {
         try {
             when {
-                radioButton.isChecked && radioButton18.isChecked -> {
+                buttonA == 1 && buttonB == 1 -> {
                     imageView.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1257,7 +1260,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton2.isChecked && radioButton18.isChecked -> {
+                buttonA == 2 && buttonB == 1 -> {
                     imageView2.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView2.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1273,7 +1276,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView2.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton3.isChecked && radioButton18.isChecked -> {
+                buttonA == 3 && buttonB == 1 -> {
                     imageView3.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView3.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1289,7 +1292,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView3.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton4.isChecked && radioButton18.isChecked -> {
+                buttonA == 4 && buttonB == 1 -> {
                     imageView4.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView4.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1305,7 +1308,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView4.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton5.isChecked && radioButton18.isChecked -> {
+                buttonA == 5 && buttonB == 1 -> {
                     imageView5.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView5.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1321,7 +1324,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView5.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton6.isChecked && radioButton18.isChecked -> {
+                buttonA == 6 && buttonB == 1 -> {
                     imageView6.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView6.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1337,7 +1340,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView6.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton7.isChecked && radioButton18.isChecked -> {
+                buttonA == 7 && buttonB == 1 -> {
                     imageView7.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView7.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1353,7 +1356,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView7.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton8.isChecked && radioButton18.isChecked -> {
+                buttonA == 8 && buttonB == 1 -> {
                     imageView8.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView8.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1369,7 +1372,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView8.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton9.isChecked && radioButton18.isChecked -> {
+                buttonA == 9 && buttonB == 1 -> {
                     imageView9.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView9.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1385,7 +1388,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView9.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton10.isChecked && radioButton18.isChecked -> {
+                buttonA == 10 && buttonB == 1 -> {
                     imageView10.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView10.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1401,7 +1404,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView10.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton11.isChecked && radioButton18.isChecked -> {
+                buttonA == 11 && buttonB == 1 -> {
                     imageView11.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView11.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1417,7 +1420,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView11.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton12.isChecked && radioButton18.isChecked -> {
+                buttonA == 12 && buttonB == 1 -> {
                     imageView12.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView12.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1433,7 +1436,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView12.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton13.isChecked && radioButton18.isChecked -> {
+                buttonA == 13 && buttonB == 1 -> {
                     imageView13.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView13.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1449,7 +1452,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView13.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton14.isChecked && radioButton18.isChecked -> {
+                buttonA == 14 && buttonB == 1 -> {
                     imageView14.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView14.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1465,7 +1468,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView14.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton15.isChecked && radioButton18.isChecked -> {
+                buttonA == 15 && buttonB == 1 -> {
                     imageView15.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView15.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1481,7 +1484,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     textView15.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton16.isChecked && radioButton18.isChecked -> {
+                buttonA == 16 && buttonB == 1 -> {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
                     supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
@@ -1489,7 +1492,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                 }
-                radioButton.isChecked && radioButton19.isChecked -> {
+                buttonA == 1 && buttonB == 2 -> {
                     imageView.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1506,7 +1509,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton2.isChecked && radioButton19.isChecked -> {
+                buttonA == 2 && buttonB == 2 -> {
                     imageView2.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView2.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1523,7 +1526,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView2.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton3.isChecked && radioButton19.isChecked -> {
+                buttonA == 3 && buttonB == 2 -> {
                     imageView3.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView3.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1540,7 +1543,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView3.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton4.isChecked && radioButton19.isChecked -> {
+                buttonA == 4 && buttonB == 2 -> {
                     imageView4.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView4.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1557,7 +1560,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView4.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton5.isChecked && radioButton19.isChecked -> {
+                buttonA == 5 && buttonB == 2 -> {
                     imageView5.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView5.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1574,7 +1577,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView5.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton6.isChecked && radioButton19.isChecked -> {
+                buttonA == 6 && buttonB == 2 -> {
                     imageView6.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView6.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1591,7 +1594,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView6.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton7.isChecked && radioButton19.isChecked -> {
+                buttonA == 7 && buttonB == 2 -> {
                     imageView7.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView7.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1608,7 +1611,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView7.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton8.isChecked && radioButton19.isChecked -> {
+                buttonA == 8 && buttonB == 2 -> {
                     imageView8.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView8.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1625,7 +1628,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView8.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton9.isChecked && radioButton19.isChecked -> {
+                buttonA == 9 && buttonB == 2 -> {
                     imageView9.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView9.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1642,7 +1645,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView9.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton10.isChecked && radioButton19.isChecked -> {
+                buttonA == 10 && buttonB == 2 -> {
                     imageView10.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView10.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1659,7 +1662,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView10.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton11.isChecked && radioButton19.isChecked -> {
+                buttonA == 11 && buttonB == 2 -> {
                     imageView11.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView11.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1676,7 +1679,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView11.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton12.isChecked && radioButton19.isChecked -> {
+                buttonA == 12 && buttonB == 2 -> {
                     imageView12.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView12.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1693,7 +1696,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView12.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton13.isChecked && radioButton19.isChecked -> {
+                buttonA == 13 && buttonB == 2 -> {
                     imageView13.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView13.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1710,7 +1713,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView13.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton14.isChecked && radioButton19.isChecked -> {
+                buttonA == 14 && buttonB == 2 -> {
                     imageView14.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView14.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1727,7 +1730,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView14.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton15.isChecked && radioButton19.isChecked -> {
+                buttonA == 15 && buttonB == 2 -> {
                     imageView15.setColorFilter(Color.parseColor("#6B6A71"))
                     handler.postDelayed({ imageView15.setColorFilter(Color.parseColor("#e2e3e3")) },
                         1000)
@@ -1744,17 +1747,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     textView15.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
-                radioButton16.isChecked -> {
+                buttonA == 16 -> {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
                     supportActionBar?.title = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                }
-                radioButton17.isChecked -> {
-                    audioName = soundList.name
-                    button4.performClick()
                 }
             }
         } catch (e: Exception) {
@@ -1833,149 +1832,141 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     val type = split[0]
                     if ("primary".equals(type, ignoreCase = true)) {
                         val item = "/storage/emulated/0/" + split[1]
-                        when {
-                            radioButton.isChecked -> {
+                        when (buttonA) {
+                            1 -> {
                                 sound1 = soundPool.load(item, 1)
                                 textView.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton2.isChecked -> {
+                            2 -> {
                                 sound2 = soundPool.load(item, 1)
                                 textView2.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton3.isChecked -> {
+                            3 -> {
                                 sound3 = soundPool.load(item, 1)
                                 textView3.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton4.isChecked -> {
+                            4 -> {
                                 sound4 = soundPool.load(item, 1)
                                 textView4.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton5.isChecked -> {
+                            5 -> {
                                 sound5 = soundPool.load(item, 1)
                                 textView5.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton6.isChecked -> {
+                            6 -> {
                                 sound6 = soundPool.load(item, 1)
                                 textView6.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton7.isChecked -> {
+                            7 -> {
                                 sound7 = soundPool.load(item, 1)
                                 textView7.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton8.isChecked -> {
+                            8 -> {
                                 sound8 = soundPool.load(item, 1)
                                 textView8.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton9.isChecked -> {
+                            9 -> {
                                 sound9 = soundPool.load(item, 1)
                                 textView9.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton10.isChecked -> {
+                            10 -> {
                                 sound10 = soundPool.load(item, 1)
                                 textView10.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton11.isChecked -> {
+                            11 -> {
                                 sound11 = soundPool.load(item, 1)
                                 textView11.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton12.isChecked -> {
+                            12 -> {
                                 sound12 = soundPool.load(item, 1)
                                 textView12.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton13.isChecked -> {
+                            13 -> {
                                 sound13 = soundPool.load(item, 1)
                                 textView13.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton14.isChecked -> {
+                            14 -> {
                                 sound14 = soundPool.load(item, 1)
                                 textView14.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton15.isChecked -> {
+                            15 -> {
                                 sound15 = soundPool.load(item, 1)
                                 textView15.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                             }
-                            radioButton16.isChecked -> {
+                            16 -> {
                                 lmp.release()
                                 lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item))
                                 supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            radioButton17.isChecked -> {
-                                audioName = item
-                                button4.performClick()
                             }
                         }
                     } else {
                         try {
                             val item2 = "/stroage/" + type + "/" + split[1]
-                            when {
-                                radioButton.isChecked -> {
+                            when (buttonA) {
+                                1 -> {
                                     sound1 = soundPool.load(item2, 1)
                                     textView.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton2.isChecked -> {
+                                2 -> {
                                     sound2 = soundPool.load(item2, 1)
                                     textView2.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton3.isChecked -> {
+                                3 -> {
                                     sound3 = soundPool.load(item2, 1)
                                     textView3.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton4.isChecked -> {
+                                4 -> {
                                     sound4 = soundPool.load(item2, 1)
                                     textView4.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton5.isChecked -> {
+                                5 -> {
                                     sound5 = soundPool.load(item2, 1)
                                     textView5.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton6.isChecked -> {
+                                6 -> {
                                     sound6 = soundPool.load(item2, 1)
                                     textView6.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton7.isChecked -> {
+                                7 -> {
                                     sound7 = soundPool.load(item2, 1)
                                     textView7.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton8.isChecked -> {
+                                8 -> {
                                     sound8 = soundPool.load(item2, 1)
                                     textView8.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton9.isChecked -> {
+                                9 -> {
                                     sound9 = soundPool.load(item2, 1)
                                     textView9.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton10.isChecked -> {
+                                10 -> {
                                     sound10 = soundPool.load(item2, 1)
                                     textView10.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton11.isChecked -> {
+                                11 -> {
                                     sound11 = soundPool.load(item2, 1)
                                     textView11.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton12.isChecked -> {
+                                12 -> {
                                     sound12 = soundPool.load(item2, 1)
                                     textView12.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton13.isChecked -> {
+                                13 -> {
                                     sound13 = soundPool.load(item2, 1)
                                     textView13.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton14.isChecked -> {
+                                14 -> {
                                     sound14 = soundPool.load(item2, 1)
                                     textView14.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton15.isChecked -> {
+                                15 -> {
                                     sound15 = soundPool.load(item2, 1)
                                     textView15.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                                 }
-                                radioButton16.isChecked -> {
+                                16 -> {
                                     lmp.release()
                                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item2))
                                     supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                radioButton17.isChecked -> {
-                                    audioName = item2
-                                    button4.performClick()
                                 }
                             }
                         } catch (e: Exception) {
@@ -2020,8 +2011,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1.isChecked = false
-                        radioButton16.performClick()
-                        radioButton19.performClick()
+                        buttonA = 16
+                        buttonB = 2
                         soundListView.adapter = nCustomAdapter
                         nCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -2031,8 +2022,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1.isChecked = false
-                        radioButton16.performClick()
-                        radioButton19.performClick()
+                        buttonA = 16
+                        buttonB = 2
                         soundListView.adapter = oCustomAdapter
                         oCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -2042,8 +2033,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1.isChecked = false
-                        radioButton16.performClick()
-                        radioButton19.performClick()
+                        buttonA = 16
+                        buttonB = 2
                         soundListView.adapter = pCustomAdapter
                         pCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -2053,8 +2044,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1.isChecked = false
-                        radioButton16.performClick()
-                        radioButton19.performClick()
+                        buttonA = 16
+                        buttonB = 2
                         soundListView.adapter = qCustomAdapter
                         qCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -2064,8 +2055,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1.isChecked = false
-                        radioButton16.performClick()
-                        radioButton19.performClick()
+                        buttonA = 16
+                        buttonB = 2
                         soundListView.adapter = rCustomAdapter
                         rCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
@@ -2075,8 +2066,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         menuSwitch = true
                         invalidateOptionsMenu()
                         switch1.isChecked = false
-                        radioButton16.performClick()
-                        radioButton18.performClick()
+                        buttonA = 16
+                        buttonB = 1
                         selectEX()
                         soundListView.adapter = tCustomAdapter
                         tCustomAdapter.notifyDataSetChanged()
