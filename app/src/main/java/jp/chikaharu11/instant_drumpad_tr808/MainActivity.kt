@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var admobmAdView: AdView
 
     private val handler = Handler()
-    private var audioName = ""
     private var mpDuration = 4189
     private var mpDuration2 = 625
     private var mpDuration3 = 4189
@@ -2010,7 +2009,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
-                        switch1.isChecked = false
+                        switch1 = 2
                         buttonA = 16
                         buttonB = 2
                         soundListView.adapter = nCustomAdapter
@@ -2021,7 +2020,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
-                        switch1.isChecked = false
+                        switch1 = 2
                         buttonA = 16
                         buttonB = 2
                         soundListView.adapter = oCustomAdapter
@@ -2032,7 +2031,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
-                        switch1.isChecked = false
+                        switch1 = 2
                         buttonA = 16
                         buttonB = 2
                         soundListView.adapter = pCustomAdapter
@@ -2043,7 +2042,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
-                        switch1.isChecked = false
+                        switch1 = 2
                         buttonA = 16
                         buttonB = 2
                         soundListView.adapter = qCustomAdapter
@@ -2054,7 +2053,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
-                        switch1.isChecked = false
+                        switch1 = 2
                         buttonA = 16
                         buttonB = 2
                         soundListView.adapter = rCustomAdapter
@@ -2065,7 +2064,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
-                        switch1.isChecked = false
+                        switch1 = 2
                         buttonA = 16
                         buttonB = 1
                         selectEX()
@@ -2102,6 +2101,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var menuSwitch = true
     private var menuSwitch2 = true
     private var mediaRecorder = MediaRecorder()
+    private var switch1 = 0
 
 
     @SuppressLint("SimpleDateFormat")
@@ -2115,17 +2115,17 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 if (soundListView.isVisible) {
                     soundListView.visibility = View.INVISIBLE
                 }
-                if (switch1.isChecked) {
+                if (switch1 == 1) {
                     lmp.stop()
                     soundPool.autoPause()
                     menuSwitch = true
                     invalidateOptionsMenu()
-                    switch1.isChecked = false
+                    switch1 = 2
                 } else {
                     lmp.start()
                     menuSwitch = false
                     invalidateOptionsMenu()
-                    switch1.isChecked = true
+                    switch1 = 1
                 }
                 return true
             }
@@ -2189,18 +2189,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     override fun onPause() {
         menuSwitch = true
         invalidateOptionsMenu()
-        switch1.isChecked = false
+        switch1 = 2
         if (mp.isPlaying) {
             mp.stop()
             mp.prepare()
-            switch3.isChecked = false
         }
         if (!menuSwitch2) {
             menuSwitch2 = true
             invalidateOptionsMenu()
             mediaRecorder.stop()
             Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
-            switch2.isChecked = false
         }
 
             lmp.stop()
