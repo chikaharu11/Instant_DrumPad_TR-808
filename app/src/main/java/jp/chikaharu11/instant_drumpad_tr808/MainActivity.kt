@@ -2036,12 +2036,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 when(position){
                     0 -> {
-                        if (paste == 0) {
-                            paste = 1
-                            Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
-                        } else if (paste == 1)
-                            paste = 0
-                        Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
+                        when (paste) {
+                            0 -> {
+                                paste = 1
+                                Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
+                            }
+                            1 -> {
+                                paste = 0
+                                Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
+                            }
+                        }
                     }
                     1 -> {
                         lmp.stop()
