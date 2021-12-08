@@ -2214,7 +2214,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
 
             R.id.menu5 -> {
-
+                adView.visibility = View.GONE
                 return true
             }
 
