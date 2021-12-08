@@ -84,6 +84,7 @@
     <string name="button_setOnClickListener5" tools:ignore="ButtonCase">cancel</string>
     <string name="button_setOnClickListener6">Set the time again.</string>
 
+    <string name="menu5">Watch video ads and hide banner ads.</string>
     <string name="menu6">Do you want to exit?</string>
     <string name="menu8">This feature is available on Android 10 and above.</string>
 
@@ -97,8 +98,8 @@
     <string name="high">Volume:High</string>
     <string name="highest">Volume:Highest</string>
 
-    <string name="change">Touch the pad to change the pad sound.</string>
-    <string name="change2">Play mode</string>
+    <string name="change"><b>Touch the pad to change the pad sound.</b></string>
+    <string name="change2"><b>Play mode</b></string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
@@ -123,7 +124,7 @@
     </string-array>
 
     <string-array name="spinnerItems2">
-        <item>Change pad sounds ↔ Play mode</item>
+        <item>Play mode ↔ <h1><font color="#FFA630">Change pad sounds</font></h1></item>
         <item>Loop [85bpm]</item>
         <item>Loop [95bpm]</item>
         <item>Loop [105bpm]</item>

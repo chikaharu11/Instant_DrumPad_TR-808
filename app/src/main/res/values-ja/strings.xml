@@ -84,6 +84,7 @@
     <string name="button_setOnClickListener5">キャンセル</string>
     <string name="button_setOnClickListener6">時間を設定し直してください。</string>
 
+    <string name="menu5">動画広告を視聴して、広告を非表示にする</string>
     <string name="menu6">終了しますか？</string>
     <string name="menu8">この機能はAndroid10以上の機種で使えます。</string>
 
@@ -97,8 +98,8 @@
     <string name="high">音量:High</string>
     <string name="highest">音量:Highest</string>
 
-    <string name="change">パッドをタッチするとパッド音を変更できます</string>
-    <string name="change2">演奏モード</string>
+    <string name="change"><b>パッドをタッチするとパッド音を変更できます</b></string>
+    <string name="change2"><b>演奏モード</b></string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
@@ -123,7 +124,7 @@
     </string-array>
 
     <string-array name="spinnerItems2">
-        <item>パッド音の変更⇔演奏モード</item>
+        <item>演奏モード⇔<h1><font color="#FFA630">パッド音の変更</font></h1></item>
         <item>Loop [85bpm]</item>
         <item>Loop [95bpm]</item>
         <item>Loop [105bpm]</item>

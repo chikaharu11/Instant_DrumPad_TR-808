@@ -2039,10 +2039,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         when (paste) {
                             0 -> {
                                 paste = 1
+                                invalidateOptionsMenu()
                                 Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
                             }
                             1 -> {
                                 paste = 0
+                                invalidateOptionsMenu()
                                 Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
                             }
                         }
@@ -2169,6 +2171,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             menuLamp.setIcon(R.drawable.ic_baseline_stop_24)
         }
 
+        val menuLamp2 = menu.findItem(R.id.menu10)
+        if (paste == 1) {
+            menuLamp2.setIcon(R.drawable.ic_baseline_library_music_24_c)
+        } else if (paste == 2) {
+            menuLamp2.setIcon(R.drawable.ic_baseline_library_music_24)
+        }
+
         return true
     }
 
@@ -2201,6 +2210,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     invalidateOptionsMenu()
                     switch1 = 1
                 }
+                return true
+            }
+
+            R.id.menu5 -> {
+
                 return true
             }
 
