@@ -59,7 +59,7 @@
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         
         tools:ignore="MissingConstraints" />
@@ -113,7 +113,7 @@
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView5"
         app:layout_constraintStart_toEndOf="@id/imageView3"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView9"
         
         tools:ignore="MissingConstraints" />
@@ -167,7 +167,7 @@
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView8"
         app:layout_constraintStart_toEndOf="@id/imageView6"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView12"
         
         tools:ignore="MissingConstraints" />
@@ -221,7 +221,7 @@
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView11"
         app:layout_constraintStart_toEndOf="@id/imageView9"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView15"
         
         tools:ignore="MissingConstraints" />
@@ -276,7 +276,7 @@
         app:layout_constraintTop_toBottomOf="@id/imageView14"
         app:layout_constraintStart_toEndOf="@id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         
         tools:ignore="MissingConstraints" />
 
@@ -328,7 +328,7 @@
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         android:foreground="@drawable/my_ripple"
         
@@ -382,7 +382,7 @@
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView5"
         app:layout_constraintStart_toEndOf="@id/imageView3"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView9"
         android:foreground="@drawable/my_ripple"
         
@@ -436,7 +436,7 @@
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView8"
         app:layout_constraintStart_toEndOf="@id/imageView6"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView12"
         android:foreground="@drawable/my_ripple"
         
@@ -490,7 +490,7 @@
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView11"
         app:layout_constraintStart_toEndOf="@id/imageView9"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView15"
         android:foreground="@drawable/my_ripple"
         
@@ -545,7 +545,7 @@
         app:layout_constraintTop_toBottomOf="@id/imageView14"
         app:layout_constraintStart_toEndOf="@id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         android:foreground="@drawable/my_ripple"
         
         tools:ignore="MissingConstraints" />
@@ -830,7 +830,6 @@
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -848,7 +847,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintTop_toTopOf="parent" />
 
 
