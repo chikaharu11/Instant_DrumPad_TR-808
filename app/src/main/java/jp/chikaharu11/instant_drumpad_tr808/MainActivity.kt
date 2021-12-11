@@ -151,6 +151,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var buttonA = 0
     private var buttonB = 0
 
+    private var adCheck = 0
+
 
     @SuppressLint("ClickableViewAccessibility", "SetTextI18n", "Range")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -678,8 +680,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         meSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long,
             ) {
                 if (!meSpinner.isFocusable) {
                     meSpinner.isFocusable = true
@@ -1807,9 +1809,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     override fun onRequestPermissionsResult(
-            requestCode: Int,
-            permissions: Array<out String>,
-            grantResults: IntArray
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray,
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == RECORD_AUDIO_PERMISSION_REQUEST_CODE) {
@@ -2024,8 +2026,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         chSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long,
             ) {
                 if (!chSpinner.isFocusable) {
                     chSpinner.isFocusable = true
@@ -2215,6 +2217,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             R.id.menu5 -> {
                 adView.visibility = View.GONE
+                adCheck = 1
                 return true
             }
 
@@ -2293,5 +2296,18 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             soundPool.autoPause()
 
         super.onPause()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("DATA", adCheck)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        adCheck = savedInstanceState.getInt("DATA")
+        if ( adCheck == 1) {
+            adView.visibility = View.GONE
+        }
     }
 }
