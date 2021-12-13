@@ -2270,15 +2270,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
 
             R.id.menu5 -> {
-                AlertDialog.Builder(this)
-                    .setTitle(R.string.menu5a)
-                    .setPositiveButton("YES") { _, _ ->
-                        showRewardAd()
-                    }
-                    .setNegativeButton("NO") { _, _ ->
+                if (adCheck == 0) {
+                    AlertDialog.Builder(this)
+                        .setTitle(R.string.menu5a)
+                        .setMessage(R.string.menu5b)
+                        .setPositiveButton("YES") { _, _ ->
+                            showRewardAd()
+                        }
+                        .setNegativeButton("NO") { _, _ ->
 
-                    }
-                    .show()
+                        }
+                        .show()
+                } else if (adCheck == 1){
+                    AlertDialog.Builder(this)
+                        .setTitle(R.string.menu5c)
+                        .setPositiveButton("OK") { _, _ ->
+
+                        }
+                        .show()
+                }
                 return true
             }
 
