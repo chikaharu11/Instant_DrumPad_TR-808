@@ -85,6 +85,7 @@
     <string name="button_setOnClickListener6">時間を設定し直してください。</string>
 
     <string name="menu5">動画広告を視聴して、広告を非表示にする</string>
+    <string name="menu5a">動画広告を視聴しますか？¥n(次回起動時まで広告を非表示にできます)</string>
     <string name="menu6">終了しますか？</string>
     <string name="menu8">この機能はAndroid10以上の機種で使えます。</string>
 

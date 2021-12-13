@@ -1241,6 +1241,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private fun showRewardAd() {
         if (mRewardedAd != null) {
             mRewardedAd?.show(this) { rewardItem ->
+                adView.visibility = View.GONE
+                adCheck = 1
                 var rewardAmount = rewardItem.amount
                 var rewardType = rewardItem.type
                 Log.d("TAG", rewardItem.toString())
@@ -2268,9 +2270,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
 
             R.id.menu5 -> {
-                showRewardAd()
-                adView.visibility = View.GONE
-                adCheck = 1
+                AlertDialog.Builder(this)
+                    .setTitle(R.string.menu5a)
+                    .setPositiveButton("YES") { _, _ ->
+                        showRewardAd()
+                    }
+                    .setNegativeButton("NO") { _, _ ->
+
+                    }
+                    .show()
                 return true
             }
 
