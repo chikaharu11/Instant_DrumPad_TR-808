@@ -17,6 +17,7 @@ import android.os.Handler
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -24,12 +25,16 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.math.hypot
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
+
+    private var mRewardedAd: RewardedAd? = null
 
     private lateinit var adViewContainer: FrameLayout
     private lateinit var admobmAdView: AdView
@@ -161,6 +166,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         initAdMob()
         loadAdMob()
+        loadRewardedAd()
 
         val orientation = resources.configuration.orientation
         when (orientation) {
@@ -1199,6 +1205,52 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
+    private fun loadRewardedAd() {
+        val adRequest = AdRequest.Builder().build()
+
+        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917", adRequest, object : RewardedAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.d("rewarded ads", adError.message)
+                mRewardedAd = null
+            }
+
+            override fun onAdLoaded(rewardedAd: RewardedAd) {
+                Log.d("rewarded ads", "Ad was loaded.")
+                mRewardedAd = rewardedAd
+            }
+        })
+
+        mRewardedAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdDismissedFullScreenContent() {
+                Log.d("rewarded ads", "Ad was dismissed.")
+            }
+
+            override fun onAdFailedToShowFullScreenContent(adError: AdError?) {
+                Log.d("rewarded ads", "Ad failed to show.")
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                Log.d("rewarded ads", "Ad showed fullscreen content.")
+                // Called when ad is dismissed.
+                // Don't set the ad reference to null to avoid showing the ad a second time.
+                mRewardedAd = null
+            }
+        }
+    }
+
+    private fun showRewardAd() {
+        if (mRewardedAd != null) {
+            mRewardedAd?.show(this) { rewardItem ->
+                var rewardAmount = rewardItem.amount
+                var rewardType = rewardItem.type
+                Log.d("TAG", rewardItem.toString())
+                Log.d("TAG", "User earned the reward.")
+            }
+        } else {
+            Log.d("TAG", "The rewarded ad wasn't ready yet.")
+        }
+    }
+
     private val adSize: AdSize
         get() {
             val display = windowManager.defaultDisplay
@@ -2216,6 +2268,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
 
             R.id.menu5 -> {
+                showRewardAd()
                 adView.visibility = View.GONE
                 adCheck = 1
                 return true
