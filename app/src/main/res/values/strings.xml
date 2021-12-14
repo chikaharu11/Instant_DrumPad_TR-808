@@ -86,7 +86,7 @@
 
     <string name="menu5">Watch video ads &amp; hide banner ads.</string>
     <string name="menu5a">Do you watch video ads?</string>
-    <string name="menu5b">(You can hide the banner ads until the \nnext time you start the program.)</string>
+    <string name="menu5b">(You can hide the banner ads\nuntil the next time you start the program.)</string>
     <string name="menu5c">Video ads have been viewed.</string>
     <string name="menu6">Do you want to exit?</string>
     <string name="menu8">This feature is available on Android 10 and above.</string>
