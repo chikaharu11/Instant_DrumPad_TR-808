@@ -84,7 +84,7 @@
     <string name="button_setOnClickListener5">キャンセル</string>
     <string name="button_setOnClickListener6">時間を設定し直してください。</string>
 
-    <string name="menu5">動画広告を視聴して、バナー広告を非表示にする</string>
+    <string name="menu5">動画広告を視聴する</string>
     <string name="menu5a">動画広告を視聴しますか？</string>
     <string name="menu5b">(次回起動時まで、\nバナー広告を非表示にできます)</string>
     <string name="menu5c">動画広告は視聴済みです</string>
