@@ -20,60 +20,24 @@
     <string name="select3c">Loop [105bpm]</string>
     <string name="select3d">Loop [124bpm]</string>
     <string name="select3e">Loop [132bpm]</string>
-    <string name="radiobutton">RadioButton</string>
-    <string name="dialog_button">DialogButton</string>
     <string name="play">再生</string>
     <string name="end">終了する</string>
-    <string name="switch0">録音/停止</string>
-    <string name="switch1">再生/停止</string>
-    <string name="switch2">録音/終了</string>
-    <string name="menu1a">Musicフォルダの編集</string>
-    <string name="select9">外部サウンドの編集</string>
-    <string name="button1">切り取り</string>
-    <string name="button2">再生/停止</string>
-    <string name="button3">閉じる</string>
-    <string name="time1">00:00.000</string>
-    <string name="time2">00:00.000</string>
-    <string name="filename" />
-    <string name="title">TextView</string>
-    <string name="range">〜</string>
     <string name="menu10">選択</string>
     <string name="menu">メニュー</string>
-    <string name="button5">録音/停止</string>
-    <string name="todo_rec">rec</string>
-    <string name="select9b">音声録音</string>
 
     <string name="error">このオーディオファイルは指定できません。</string>
 
     <string name="onRequestPermissionsResult1">権限が付与されました。もう一度押してください。</string>
     <string name="onRequestPermissionsResult2">権限が拒否されました。</string>
 
-    <string name="onActivityResult1">MediaProjectionの許可が得られました。音声を取り込むためのフォアグラウンドサービスが開始されます。</string>
-    <string name="onActivityResult2">MediaProjectionを取得するリクエストが拒否されました。</string>
-
     <string name="READ_REQUEST_CODE2">Musicフォルダ以外の音声ファイルは指定できません。</string>
-
-    <string name="startRecording1">録音時間の上限の３分に達しました。</string>
-    <string name="startRecording2">音声録音を開始します。</string>
-    <string name="startRecording3">録音に失敗したか、マイクの権限がありません。</string>
-
-    <string name="stopRecording">録音停止に失敗しました。</string>
-
-    <string name="button_setOnClickListener1">ファイル名を入力して下さい。</string>
-    <string name="button_setOnClickListener2">保存</string>
-    <string name="button_setOnClickListener3">Musicフォルダに保存されました。</string>
-    <string name="button_setOnClickListener4">保存できませんでした。</string>
-    <string name="button_setOnClickListener5">キャンセル</string>
-    <string name="button_setOnClickListener6">時間を設定し直してください。</string>
 
     <string name="menu5">動画広告を視聴する</string>
     <string name="menu5a">動画広告を視聴しますか？</string>
     <string name="menu5b">(次回起動時まで、\nバナー広告を非表示にできます)</string>
     <string name="menu5c">動画広告は視聴済みです</string>
     <string name="menu6">終了しますか？</string>
-    <string name="menu8">この機能はAndroid10以上の機種で使えます。</string>
 
-    <string name="builder3">録音を(開始/終了)するには、マイクをタッチしてください。</string>
     <string name="back">戻る</string>
     <string name="menuPlus">メインの音量を上げる</string>
     <string name="menuMinus">メインの音量を下げる</string>

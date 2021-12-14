@@ -5,7 +5,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
@@ -14,7 +13,6 @@ import android.media.*
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
-import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.util.DisplayMetrics
 import android.util.Log
@@ -57,7 +55,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration15 = 1935
 
     companion object {
-        private const val READ_REQUEST_CODE2: Int = 43
         private const val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 41
         private const val RECORD_AUDIO_PERMISSION_REQUEST_CODE = 42
     }
@@ -1902,167 +1899,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
-        super.onActivityResult(requestCode, resultCode, resultData)
-        if (resultCode != RESULT_OK) {
-            return
-        }
-        when (requestCode) {
-
-            READ_REQUEST_CODE2 -> {
-
-                resultData?.data?.also { uri ->
-                    val docId = DocumentsContract.getDocumentId(uri)
-                    val split = docId.split(":".toRegex()).toTypedArray()
-                    val type = split[0]
-                    if ("primary".equals(type, ignoreCase = true)) {
-                        val item = "/storage/emulated/0/" + split[1]
-                        when (buttonA) {
-                            1 -> {
-                                sound1 = soundPool.load(item, 1)
-                                textView.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            2 -> {
-                                sound2 = soundPool.load(item, 1)
-                                textView2.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            3 -> {
-                                sound3 = soundPool.load(item, 1)
-                                textView3.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            4 -> {
-                                sound4 = soundPool.load(item, 1)
-                                textView4.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            5 -> {
-                                sound5 = soundPool.load(item, 1)
-                                textView5.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            6 -> {
-                                sound6 = soundPool.load(item, 1)
-                                textView6.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            7 -> {
-                                sound7 = soundPool.load(item, 1)
-                                textView7.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            8 -> {
-                                sound8 = soundPool.load(item, 1)
-                                textView8.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            9 -> {
-                                sound9 = soundPool.load(item, 1)
-                                textView9.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            10 -> {
-                                sound10 = soundPool.load(item, 1)
-                                textView10.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            11 -> {
-                                sound11 = soundPool.load(item, 1)
-                                textView11.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            12 -> {
-                                sound12 = soundPool.load(item, 1)
-                                textView12.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            13 -> {
-                                sound13 = soundPool.load(item, 1)
-                                textView13.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            14 -> {
-                                sound14 = soundPool.load(item, 1)
-                                textView14.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            15 -> {
-                                sound15 = soundPool.load(item, 1)
-                                textView15.text = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                            16 -> {
-                                lmp.release()
-                                lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item))
-                                supportActionBar?.title = item.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                            }
-                        }
-                    } else {
-                        try {
-                            val item2 = "/stroage/" + type + "/" + split[1]
-                            when (buttonA) {
-                                1 -> {
-                                    sound1 = soundPool.load(item2, 1)
-                                    textView.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                2 -> {
-                                    sound2 = soundPool.load(item2, 1)
-                                    textView2.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                3 -> {
-                                    sound3 = soundPool.load(item2, 1)
-                                    textView3.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                4 -> {
-                                    sound4 = soundPool.load(item2, 1)
-                                    textView4.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                5 -> {
-                                    sound5 = soundPool.load(item2, 1)
-                                    textView5.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                6 -> {
-                                    sound6 = soundPool.load(item2, 1)
-                                    textView6.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                7 -> {
-                                    sound7 = soundPool.load(item2, 1)
-                                    textView7.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                8 -> {
-                                    sound8 = soundPool.load(item2, 1)
-                                    textView8.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                9 -> {
-                                    sound9 = soundPool.load(item2, 1)
-                                    textView9.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                10 -> {
-                                    sound10 = soundPool.load(item2, 1)
-                                    textView10.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                11 -> {
-                                    sound11 = soundPool.load(item2, 1)
-                                    textView11.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                12 -> {
-                                    sound12 = soundPool.load(item2, 1)
-                                    textView12.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                13 -> {
-                                    sound13 = soundPool.load(item2, 1)
-                                    textView13.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                14 -> {
-                                    sound14 = soundPool.load(item2, 1)
-                                    textView14.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                15 -> {
-                                    sound15 = soundPool.load(item2, 1)
-                                    textView15.text = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                                16 -> {
-                                    lmp.release()
-                                    lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(item2))
-                                    supportActionBar?.title = item2.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
-                                }
-                            }
-                        } catch (e: Exception) {
-                            Toast.makeText(applicationContext, R.string.READ_REQUEST_CODE2, Toast.LENGTH_LONG).show()
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     private fun selectCh() {
 
         val chSpinner = findViewById<Spinner>(R.id.choose_loop_spinner)
@@ -2254,7 +2090,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private var menuSwitch = true
     private var menuSwitch2 = true
-    private var mediaRecorder = MediaRecorder()
     private var switch1 = 0
 
 
@@ -2358,8 +2193,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         soundPool.autoPause()
         soundPool.release()
 
-        mediaRecorder.reset()
-        mediaRecorder.release()
         super.onDestroy()
     }
 
@@ -2374,8 +2207,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if (!menuSwitch2) {
             menuSwitch2 = true
             invalidateOptionsMenu()
-            mediaRecorder.stop()
-            Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
         }
 
             lmp.stop()

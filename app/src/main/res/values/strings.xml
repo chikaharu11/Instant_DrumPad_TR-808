@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">Instant_DrumPad_TR-808</string>
     <string name="textView">bd_short_01</string>
     <string name="textView2">bd_long_02</string>
@@ -20,60 +20,25 @@
     <string name="select3c">Loop [105bpm]</string>
     <string name="select3d">Loop [124bpm]</string>
     <string name="select3e">Loop [132bpm]</string>
-    <string name="radiobutton">RadioButton</string>
-    <string name="dialog_button">DialogButton</string>
     <string name="play">play</string>
     <string name="end">EXIT</string>
-    <string name="switch0">rec/stop</string>
-    <string name="switch1">play/stop</string>
-    <string name="switch2">rec/end</string>
-    <string name="menu1a">Edit Music folder</string>
-    <string name="select9">Edit External sounds</string>
-    <string name="button1">cut</string>
-    <string name="button2">play/stop</string>
-    <string name="button3">exit</string>
-    <string name="time1">00:00.000</string>
-    <string name="time2">00:00.000</string>
-    <string name="filename" />
-    <string name="title">TextView</string>
-    <string name="range">〜</string>
     <string name="menu10">choose</string>
     <string name="menu">menu</string>
-    <string name="button5">rec/stop</string>
-    <string name="todo_rec">rec</string>
-    <string name="select9b">Voice Recording</string>
 
     <string name="error">This audio file cannot be specified.</string>
 
     <string name="onRequestPermissionsResult1">Permissions is granted. Press it again.</string>
     <string name="onRequestPermissionsResult2">Permissions is denied.</string>
 
-    <string name="onActivityResult1">MediaProjection permission obtained. Foreground service will be started to capture audio.</string>
-    <string name="onActivityResult2">Request to obtain MediaProjection denied.</string>
 
     <string name="READ_REQUEST_CODE2">cannot specify audio files outside of the Music folder.</string>
-
-    <string name="startRecording1">The recording time limit of 3 minutes has been reached.</string>
-    <string name="startRecording2">Start voice recording.</string>
-    <string name="startRecording3">Recording failed or the microphone is not authorized.</string>
-
-    <string name="stopRecording">Failed to stop recording.</string>
-
-    <string name="button_setOnClickListener1">Enter the file name.</string>
-    <string name="button_setOnClickListener2">Save file</string>
-    <string name="button_setOnClickListener3">Saved in the Music folder.</string>
-    <string name="button_setOnClickListener4">Failed to save.</string>
-    <string name="button_setOnClickListener5" tools:ignore="ButtonCase">cancel</string>
-    <string name="button_setOnClickListener6">Set the time again.</string>
 
     <string name="menu5">Watch video ads &amp; hide banner ads.</string>
     <string name="menu5a">Do you watch video ads?</string>
     <string name="menu5b">(You can hide the banner ads\nuntil the next time you start the program.)</string>
     <string name="menu5c">Video ads have been viewed.</string>
     <string name="menu6">Do you want to exit?</string>
-    <string name="menu8">This feature is available on Android 10 and above.</string>
 
-    <string name="builder3">To (start/stop) recording, touch the microphone.</string>
     <string name="back">back</string>
     <string name="menuPlus">Main Volume UP</string>
     <string name="menuMinus">Main Volume DOWN</string>
