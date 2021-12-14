@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    tools:ignore="MissingDefaultResource">
+    tools:ignore="MissingDefaultResource,ContentDescription">
 
     <ImageView
         android:id="@+id/background_view"
@@ -18,15 +18,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view2"
@@ -36,15 +34,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo2"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view3"
@@ -54,15 +50,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo3"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view4"
@@ -72,15 +66,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo4"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintBottom_toTopOf="@id/imageView5"
         app:layout_constraintEnd_toStartOf="@id/imageView7"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view5"
@@ -90,15 +82,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo5"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView4"
         app:layout_constraintStart_toEndOf="@id/imageView2"
         app:layout_constraintBottom_toTopOf="@id/imageView6"
         app:layout_constraintEnd_toStartOf="@id/imageView8"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view6"
@@ -108,15 +98,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo6"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView5"
         app:layout_constraintStart_toEndOf="@id/imageView3"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView9"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view7"
@@ -126,15 +114,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo7"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView4"
         app:layout_constraintBottom_toTopOf="@id/imageView8"
         app:layout_constraintEnd_toStartOf="@id/imageView10"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view8"
@@ -144,15 +130,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo8"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView7"
         app:layout_constraintStart_toEndOf="@id/imageView5"
         app:layout_constraintBottom_toTopOf="@id/imageView9"
         app:layout_constraintEnd_toStartOf="@id/imageView11"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view9"
@@ -162,15 +146,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo9"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView8"
         app:layout_constraintStart_toEndOf="@id/imageView6"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView12"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view10"
@@ -180,15 +162,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo10"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView7"
         app:layout_constraintBottom_toTopOf="@id/imageView11"
         app:layout_constraintEnd_toStartOf="@id/imageView13"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view11"
@@ -198,15 +178,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo11"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView10"
         app:layout_constraintStart_toEndOf="@id/imageView8"
         app:layout_constraintBottom_toTopOf="@id/imageView12"
         app:layout_constraintEnd_toStartOf="@id/imageView14"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view12"
@@ -216,15 +194,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo12"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView11"
         app:layout_constraintStart_toEndOf="@id/imageView9"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView15"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view13"
@@ -234,15 +210,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo13"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView10"
         app:layout_constraintBottom_toTopOf="@id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view14"
@@ -252,15 +226,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo14"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView13"
         app:layout_constraintStart_toEndOf="@id/imageView11"
         app:layout_constraintBottom_toTopOf="@id/imageView15"
         app:layout_constraintEnd_toEndOf="parent"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/background_view15"
@@ -270,15 +242,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo15"
         android:scaleType="fitXY"
         android:foreground="@drawable/my_ripple2"
         app:layout_constraintTop_toBottomOf="@id/imageView14"
         app:layout_constraintStart_toEndOf="@id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/adView"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView"
@@ -288,15 +258,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo"
         android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -307,14 +275,12 @@
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
         android:foreground="@drawable/my_ripple"
-        android:contentDescription="@string/todo2"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -324,15 +290,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo3"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -342,15 +306,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo4"
         android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintBottom_toTopOf="@id/imageView5"
         app:layout_constraintEnd_toStartOf="@id/imageView7"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -360,15 +322,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo5"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView4"
         app:layout_constraintStart_toEndOf="@id/imageView2"
         app:layout_constraintBottom_toTopOf="@id/imageView6"
         app:layout_constraintEnd_toStartOf="@id/imageView8"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -378,15 +338,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo6"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView5"
         app:layout_constraintStart_toEndOf="@id/imageView3"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView9"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -396,15 +354,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo7"
         android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView4"
         app:layout_constraintBottom_toTopOf="@id/imageView8"
         app:layout_constraintEnd_toStartOf="@id/imageView10"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -414,15 +370,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo8"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView7"
         app:layout_constraintStart_toEndOf="@id/imageView5"
         app:layout_constraintBottom_toTopOf="@id/imageView9"
         app:layout_constraintEnd_toStartOf="@id/imageView11"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -432,15 +386,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo9"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView8"
         app:layout_constraintStart_toEndOf="@id/imageView6"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView12"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -450,15 +402,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo10"
         android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView7"
         app:layout_constraintBottom_toTopOf="@id/imageView11"
         app:layout_constraintEnd_toStartOf="@id/imageView13"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -468,15 +418,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo11"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView10"
         app:layout_constraintStart_toEndOf="@id/imageView8"
         app:layout_constraintBottom_toTopOf="@id/imageView12"
         app:layout_constraintEnd_toStartOf="@id/imageView14"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -486,15 +434,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo12"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView11"
         app:layout_constraintStart_toEndOf="@id/imageView9"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toStartOf="@id/imageView15"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -504,15 +450,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo13"
         android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView10"
         app:layout_constraintBottom_toTopOf="@id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView14"
@@ -522,15 +466,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo14"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView13"
         app:layout_constraintStart_toEndOf="@id/imageView11"
         app:layout_constraintBottom_toTopOf="@id/imageView15"
         app:layout_constraintEnd_toEndOf="parent"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -540,15 +482,13 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:contentDescription="@string/todo15"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/imageView14"
         app:layout_constraintStart_toEndOf="@id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/adView"
         android:foreground="@drawable/my_ripple"
-        
-        tools:ignore="MissingConstraints" />
+        />
 
     <TextView
         android:id="@+id/textView"
@@ -564,8 +504,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -581,8 +520,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -598,8 +536,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -615,8 +552,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -632,8 +568,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView5"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView6"
@@ -649,8 +584,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView7"
@@ -666,8 +600,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -683,8 +616,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView9"
@@ -700,8 +632,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="@+id/imageView9"
         app:layout_constraintTop_toTopOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView10"
@@ -717,8 +648,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView10"
         app:layout_constraintStart_toStartOf="@+id/imageView10"
         app:layout_constraintTop_toTopOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView11"
@@ -734,8 +664,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView11"
         app:layout_constraintStart_toStartOf="@+id/imageView11"
         app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView12"
@@ -751,8 +680,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView12"
         app:layout_constraintStart_toStartOf="@+id/imageView12"
         app:layout_constraintTop_toTopOf="@+id/imageView12"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView13"
@@ -768,8 +696,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView13"
         app:layout_constraintStart_toStartOf="@+id/imageView13"
         app:layout_constraintTop_toTopOf="@+id/imageView13"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView14"
@@ -785,8 +712,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView14"
         app:layout_constraintStart_toStartOf="@+id/imageView14"
         app:layout_constraintTop_toTopOf="@+id/imageView14"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <TextView
         android:id="@+id/textView15"
@@ -802,8 +728,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView15"
         app:layout_constraintStart_toStartOf="@+id/imageView15"
         app:layout_constraintTop_toTopOf="@+id/imageView15"
-        app:layout_constraintVertical_bias="0.95"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.95"/>
 
 
     <jp.chikaharu11.instant_drumpad_tr808.CSpinner
@@ -814,8 +739,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <jp.chikaharu11.instant_drumpad_tr808.CSpinner
         android:id="@+id/choose_loop_spinner"
@@ -823,8 +747,7 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <FrameLayout
         android:id="@+id/adView"

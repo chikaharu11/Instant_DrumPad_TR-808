@@ -1,23 +1,5 @@
 <resources>
     <string name="app_name">Instant_DrumPad_TR-808</string>
-    <string name="todo">1</string>
-    <string name="todo2">2</string>
-    <string name="todo3">3</string>
-    <string name="todo4">4</string>
-    <string name="todo5">5</string>
-    <string name="todo6">6</string>
-    <string name="todo7">7</string>
-    <string name="todo8">8</string>
-    <string name="todo9">9</string>
-    <string name="todo10">10</string>
-    <string name="todo11">11</string>
-    <string name="todo12">12</string>
-    <string name="todo13">13</string>
-    <string name="todo14">14</string>
-    <string name="todo15">15</string>
-    <string name="todo16">16</string>
-    <string name="todo17">17</string>
-    <string name="todo23">23</string>
     <string name="textView">bd_short_01</string>
     <string name="textView2">bd_long_02</string>
     <string name="textView3">bd_long_03</string>
