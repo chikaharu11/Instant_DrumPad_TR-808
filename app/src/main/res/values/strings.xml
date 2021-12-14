@@ -41,7 +41,7 @@
     <string name="radiobutton">RadioButton</string>
     <string name="dialog_button">DialogButton</string>
     <string name="play">play</string>
-    <string name="end">exit</string>
+    <string name="end">EXIT</string>
     <string name="switch0">rec/stop</string>
     <string name="switch1">play/stop</string>
     <string name="switch2">rec/end</string>
