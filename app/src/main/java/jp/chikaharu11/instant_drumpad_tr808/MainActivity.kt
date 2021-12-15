@@ -12,7 +12,6 @@ import android.graphics.PorterDuff
 import android.media.*
 import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
 import android.provider.MediaStore
 import android.util.DisplayMetrics
 import android.util.Log
@@ -39,7 +38,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var adViewContainer: FrameLayout
     private lateinit var admobmAdView: AdView
 
-    private val handler = Handler()
     private var mpDuration = 4189
     private var mpDuration2 = 625
     private var mpDuration3 = 4189
@@ -1330,9 +1328,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         try {
             when {
                 buttonA == 1 && buttonB == 1 -> {
-                    binding.imageView.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView,400)
                     sound1 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1346,9 +1342,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 2 && buttonB == 1 -> {
-                    binding.imageView2.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView2.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView2,400)
                     sound2 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1362,9 +1356,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 3 && buttonB == 1 -> {
-                    binding.imageView3.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView3.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView3,400)
                     sound3 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1378,9 +1370,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 4 && buttonB == 1 -> {
-                    binding.imageView4.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView4.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView4,400)
                     sound4 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1394,9 +1384,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 5 && buttonB == 1 -> {
-                    binding.imageView5.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView5.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView5,400)
                     sound5 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1410,9 +1398,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 6 && buttonB == 1 -> {
-                    binding.imageView6.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView6.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView6,400)
                     sound6 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1426,9 +1412,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 7 && buttonB == 1 -> {
-                    binding.imageView7.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView7.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView7,400)
                     sound7 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1442,9 +1426,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 8 && buttonB == 1 -> {
-                    binding.imageView8.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView8.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView8,400)
                     sound8 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1458,9 +1440,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 9 && buttonB == 1 -> {
-                    binding.imageView9.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView9.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView9,400)
                     sound9 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1474,9 +1454,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 10 && buttonB == 1 -> {
-                    binding.imageView10.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView10.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView10,400)
                     sound10 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1490,9 +1468,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 11 && buttonB == 1 -> {
-                    binding.imageView11.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView11.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView11,400)
                     sound11 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1506,9 +1482,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 12 && buttonB == 1 -> {
-                    binding.imageView12.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView12.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView12,400)
                     sound12 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1522,9 +1496,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 13 && buttonB == 1 -> {
-                    binding.imageView13.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView13.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView13,400)
                     sound13 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1538,9 +1510,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 14 && buttonB == 1 -> {
-                    binding.imageView14.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView14.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView14,400)
                     sound14 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1554,9 +1524,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 15 && buttonB == 1 -> {
-                    binding.imageView15.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView15.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView15,400)
                     sound15 = soundPool.load(soundList.name, 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(this, Uri.parse(soundList.name))
@@ -1578,9 +1546,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                 }
                 buttonA == 1 && buttonB == 2 -> {
-                    binding.imageView.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView,400)
                     sound1 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1595,9 +1561,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 2 && buttonB == 2 -> {
-                    binding.imageView2.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView2.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView2,400)
                     sound2 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1612,9 +1576,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView2.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 3 && buttonB == 2 -> {
-                    binding.imageView3.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView3.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView3,400)
                     sound3 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1629,9 +1591,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView3.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 4 && buttonB == 2 -> {
-                    binding.imageView4.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView4.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView4,400)
                     sound4 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1646,9 +1606,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView4.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 5 && buttonB == 2 -> {
-                    binding.imageView5.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView5.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView5,400)
                     sound5 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1663,9 +1621,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView5.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 6 && buttonB == 2 -> {
-                    binding.imageView6.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView6.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView6,400)
                     sound6 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1680,9 +1636,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView6.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 7 && buttonB == 2 -> {
-                    binding.imageView7.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView7.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView7,400)
                     sound7 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1697,9 +1651,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView7.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 8 && buttonB == 2 -> {
-                    binding.imageView8.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView8.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView8,400)
                     sound8 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1714,9 +1666,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView8.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 9 && buttonB == 2 -> {
-                    binding.imageView9.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView9.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView9,400)
                     sound9 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1731,9 +1681,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView9.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 10 && buttonB == 2 -> {
-                    binding.imageView10.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView10.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView10,400)
                     sound10 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1748,9 +1696,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView10.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 11 && buttonB == 2 -> {
-                    binding.imageView11.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView11.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView11,400)
                     sound11 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1765,9 +1711,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView11.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 12 && buttonB == 2 -> {
-                    binding.imageView12.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView12.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView12,400)
                     sound12 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1782,9 +1726,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView12.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 13 && buttonB == 2 -> {
-                    binding.imageView13.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView13.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView13,400)
                     sound13 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1799,9 +1741,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView13.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 14 && buttonB == 2 -> {
-                    binding.imageView14.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView14.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView14,400)
                     sound14 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
@@ -1816,9 +1756,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView14.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 15 && buttonB == 2 -> {
-                    binding.imageView15.setColorFilter(Color.parseColor("#6B6A71"))
-                    handler.postDelayed({ binding.imageView15.setColorFilter(Color.parseColor("#e2e3e3")) },
-                        1000)
+                    effect(binding.imageView15,400)
                     sound15 = soundPool.load(assets.openFd(soundList.name), 1)
                     getmpDuration = MediaPlayer()
                     getmpDuration.setDataSource(assets.openFd(soundList.name).fileDescriptor,
