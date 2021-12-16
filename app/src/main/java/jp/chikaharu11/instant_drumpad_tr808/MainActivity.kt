@@ -186,21 +186,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.textView15.text = "loop_bd_124_07".replace("_"," ")
             }
             Configuration.ORIENTATION_LANDSCAPE -> {
-                binding.textView.text = "cymbal_01"
-                binding.textView2.text = "cowbell_01b"
-                binding.textView3.text = "cymbal_02"
-                binding.textView4.text = "open_hi_hat_01"
-                binding.textView5.text = "clap_01"
-                binding.textView6.text = "cymbal_10"
-                binding.textView7.text = "closed_hi_hat_01"
-                binding.textView8.text = "high_tom_01"
-                binding.textView9.text = "mid_tom_01"
-                binding.textView10.text = "snare_drum_01"
-                binding.textView11.text = "bass_drum_short_01"
-                binding.textView12.text = "low_tom_01"
-                binding.textView13.text = "loop_sd_85_01"
-                binding.textView14.text = "loop_toms_95_02"
-                binding.textView15.text = "loop_bd_124_07"
+                binding.textView.text = "cymbal_01".replace("_"," ")
+                binding.textView2.text = "cowbell_01b".replace("_"," ")
+                binding.textView3.text = "cymbal_02".replace("_"," ")
+                binding.textView4.text = "open_hi_hat_01".replace("_"," ")
+                binding.textView5.text = "clap_01".replace("_"," ")
+                binding.textView6.text = "cymbal_10".replace("_"," ")
+                binding.textView7.text = "closed_hi_hat_01".replace("_"," ")
+                binding.textView8.text = "high_tom_01".replace("_"," ")
+                binding.textView9.text = "mid_tom_01".replace("_"," ")
+                binding.textView10.text = "snare_drum_01".replace("_"," ")
+                binding.textView11.text = "bass_drum_short_01".replace("_"," ")
+                binding.textView12.text = "low_tom_01".replace("_"," ")
+                binding.textView13.text = "loop_sd_85_01".replace("_"," ")
+                binding.textView14.text = "loop_toms_95_02".replace("_"," ")
+                binding.textView15.text = "loop_bd_124_07".replace("_"," ")
             }
             Configuration.ORIENTATION_SQUARE -> {
                 TODO()
@@ -240,7 +240,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("bass_drum_short_09.ogg"),
                 SoundList("bass_drum_short_10.ogg"),
                 SoundList("bass_drum_short_11.ogg"),
-                SoundList("bass_drum_short_12.ogg")
+                SoundList("bass_drum_short_12.ogg"),
+            SoundList("tr_909_kick_01.ogg"),
+            SoundList("tr_909_kick_02.ogg"),
+            SoundList("tr_909_kick_03.ogg"),
+            SoundList("tr_8_kick_01.ogg"),
+            SoundList("tr_8_kick_02.ogg"),
+            SoundList("tr_8_kick_03.ogg"),
+            SoundList("tr_8_kick_04.ogg")
                 )
 
         bSoundList = arrayListOf(
@@ -258,7 +265,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("clap_12.ogg"),
                 SoundList("clap_13.ogg"),
                 SoundList("clap_14.ogg"),
-                SoundList("clap_15.ogg")
+                SoundList("clap_15.ogg"),
+            SoundList("tr_909_clap.ogg"),
+            SoundList("tr_8_clap_01.ogg"),
+            SoundList("tr_8_clap_02.ogg"),
+            SoundList("tr_8_clap_03.ogg")
         )
         cSoundList = arrayListOf(
                 SoundList("claves_01.ogg"),
@@ -285,7 +296,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("closed_hi_hat_09.ogg"),
                 SoundList("closed_hi_hat_10.ogg"),
                 SoundList("closed_hi_hat_11.ogg"),
-                SoundList("closed_hi_hat_12.ogg")
+                SoundList("closed_hi_hat_12.ogg"),
+            SoundList("tr_909_closed_hi_hat_01.ogg"),
+            SoundList("tr_909_closed_hi_hat_02.ogg"),
+            SoundList("tr_8_closed_hi_hat_01.ogg"),
+            SoundList("tr_8_closed_hi_hat_02.ogg"),
+            SoundList("tr_8_closed_hi_hat_03.ogg")
         )
         eSoundList = arrayListOf(
                 SoundList("high_conga_01.ogg"),
@@ -335,7 +351,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("cowbell_12.ogg"),
                 SoundList("cowbell_13.ogg"),
                 SoundList("cowbell_14.ogg"),
-                SoundList("cowbell_15.ogg")
+                SoundList("cowbell_15.ogg"),
+            SoundList("tr_8_cowbell.ogg")
         )
         gSoundList = arrayListOf(
                 SoundList("cymbal_01.ogg"),
@@ -353,7 +370,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("cymbal_13.ogg"),
                 SoundList("cymbal_14.ogg"),
                 SoundList("cymbal_15.ogg"),
-                SoundList("cymbal_16.ogg")
+                SoundList("cymbal_16.ogg"),
+            SoundList("tr_909_cymbal_01.ogg"),
+            SoundList("tr_909_cymbal_02.ogg"),
+            SoundList("tr_909_cymbal_03.ogg"),
+            SoundList("tr_909_cymbal_04.ogg"),
+            SoundList("tr_8_cymbal_01.ogg"),
+            SoundList("tr_8_cymbal_02.ogg"),
+            SoundList("tr_8_cymbal_03.ogg"),
+            SoundList("tr_8_cymbal_04.ogg")
         )
         hSoundList = arrayListOf(
                 SoundList("maracas_01.ogg"),
@@ -381,7 +406,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("open_hi_hat_10.ogg"),
                 SoundList("open_hi_hat_11.ogg"),
                 SoundList("open_hi_hat_12.ogg"),
-                SoundList("open_hi_hat_13.ogg")
+                SoundList("open_hi_hat_13.ogg"),
+            SoundList("tr_909_open_hi_hat_01.ogg"),
+            SoundList("tr_909_open_hi_hat_02.ogg"),
+            SoundList("tr_8_open_hi_hat_01.ogg"),
+            SoundList("tr_8_open_hi_hat_02.ogg"),
+            SoundList("tr_8_open_hi_hat_03.ogg")
         )
         jSoundList = arrayListOf(
                 SoundList("rimshot_01.ogg"),
@@ -394,7 +424,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("rimshot_08.ogg"),
                 SoundList("rimshot_09.ogg"),
                 SoundList("rimshot_10.ogg"),
-                SoundList("rimshot_11.ogg")
+                SoundList("rimshot_11.ogg"),
+            SoundList("tr_909_rimshot.ogg"),
+            SoundList("tr_8_rimshot_01.ogg"),
+            SoundList("tr_8_rimshot_02.ogg"),
+            SoundList("tr_8_rimshot_03.ogg")
         )
         kSoundList = arrayListOf(
                 SoundList("snare_drum_01.ogg"),
@@ -416,7 +450,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("snare_drum_17.ogg"),
                 SoundList("snare_drum_18.ogg"),
                 SoundList("snare_drum_19.ogg"),
-                SoundList("snare_drum_20.ogg")
+                SoundList("snare_drum_20.ogg"),
+            SoundList("tr_909_snare_01.ogg"),
+            SoundList("tr_909_snare_02.ogg"),
+            SoundList("tr_909_snare_03.ogg"),
+            SoundList("tr_8_snare_01.ogg"),
+            SoundList("tr_8_snare_02.ogg"),
+            SoundList("tr_8_snare_03.ogg"),
+            SoundList("tr_8_snare_04.ogg")
         )
         lSoundList = arrayListOf(
                 SoundList("low_tom_01.ogg"),
@@ -454,7 +495,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("high_tom_09.ogg"),
                 SoundList("high_tom_10.ogg"),
                 SoundList("high_tom_11.ogg"),
-                SoundList("high_tom_12.ogg")
+                SoundList("high_tom_12.ogg"),
+            SoundList("tr_909_tom_01.ogg"),
+            SoundList("tr_909_tom_02.ogg"),
+            SoundList("tr_909_tom_03.ogg"),
+            SoundList("tr_8_tom_01.ogg"),
+            SoundList("tr_8_tom_02.ogg"),
+            SoundList("tr_8_tom_03.ogg"),
+            SoundList("tr_8_tom_04.ogg"),
+            SoundList("tr_8_tom_05.ogg")
         )
         nSoundList = arrayListOf(
                 SoundList("loop_bd_85_01.ogg"),
