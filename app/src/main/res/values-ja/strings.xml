@@ -51,7 +51,7 @@
     <string name="change2"><b>演奏モード</b></string>
 
     <string-array name="spinnerItems">
-        <item>Bass Drum [BD]</item>
+        <item>Kick Drum [KD]</item>
         <item>Clap [CP]</item>
         <item>Claves [CL]</item>
         <item>Closed Hi Hat [CH]</item>
@@ -61,7 +61,7 @@
         <item>Maracas [MA]</item>
         <item>Open Hi Hat [OH]</item>
         <item>Rimshot [RS]</item>
-        <item>Snare Drum [SD]</item>
+        <item>Snare [S]</item>
         <item>Tom Toms [LT-MT-HT]</item>
         <item>Loop [85bpm]</item>
         <item>Loop [95bpm]</item>
