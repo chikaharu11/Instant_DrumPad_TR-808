@@ -1388,6 +1388,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 2 && buttonB == 1 -> {
@@ -1402,6 +1403,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView2.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 3 && buttonB == 1 -> {
@@ -1416,6 +1418,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView3.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 4 && buttonB == 1 -> {
@@ -1430,6 +1433,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView4.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 5 && buttonB == 1 -> {
@@ -1444,6 +1448,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView5.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 6 && buttonB == 1 -> {
@@ -1458,6 +1463,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView6.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 7 && buttonB == 1 -> {
@@ -1472,6 +1478,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView7.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 8 && buttonB == 1 -> {
@@ -1486,6 +1493,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView8.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 9 && buttonB == 1 -> {
@@ -1500,6 +1508,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView9.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 10 && buttonB == 1 -> {
@@ -1514,6 +1523,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView10.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 11 && buttonB == 1 -> {
@@ -1528,6 +1538,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView11.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 12 && buttonB == 1 -> {
@@ -1542,6 +1553,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView12.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 13 && buttonB == 1 -> {
@@ -1556,6 +1568,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView13.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 14 && buttonB == 1 -> {
@@ -1570,6 +1583,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView14.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 15 && buttonB == 1 -> {
@@ -1584,12 +1598,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
                     binding.textView15.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 16 && buttonB == 1 -> {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
-                    supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "").replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
@@ -1607,7 +1623,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 2 && buttonB == 2 -> {
                     effect(binding.imageView2,400)
@@ -1622,7 +1639,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView2.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView2.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 3 && buttonB == 2 -> {
                     effect(binding.imageView3,400)
@@ -1637,7 +1655,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView3.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView3.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 4 && buttonB == 2 -> {
                     effect(binding.imageView4,400)
@@ -1652,7 +1671,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView4.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView4.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 5 && buttonB == 2 -> {
                     effect(binding.imageView5,400)
@@ -1667,7 +1687,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView5.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView5.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 6 && buttonB == 2 -> {
                     effect(binding.imageView6,400)
@@ -1682,7 +1703,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView6.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView6.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 7 && buttonB == 2 -> {
                     effect(binding.imageView7,400)
@@ -1697,7 +1719,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView7.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView7.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 8 && buttonB == 2 -> {
                     effect(binding.imageView8,400)
@@ -1712,7 +1735,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView8.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView8.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 9 && buttonB == 2 -> {
                     effect(binding.imageView9,400)
@@ -1727,7 +1751,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView9.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView9.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 10 && buttonB == 2 -> {
                     effect(binding.imageView10,400)
@@ -1742,7 +1767,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView10.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView10.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 11 && buttonB == 2 -> {
                     effect(binding.imageView11,400)
@@ -1757,7 +1783,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView11.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView11.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 12 && buttonB == 2 -> {
                     effect(binding.imageView12,400)
@@ -1772,7 +1799,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView12.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView12.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 13 && buttonB == 2 -> {
                     effect(binding.imageView13,400)
@@ -1787,7 +1815,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView13.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView13.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 14 && buttonB == 2 -> {
                     effect(binding.imageView14,400)
@@ -1802,7 +1831,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView14.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView14.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 15 && buttonB == 2 -> {
                     effect(binding.imageView15,400)
@@ -1817,7 +1847,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView15.text = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    binding.textView15.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                 }
                 buttonA == 16 -> {
                     lmp.release()
