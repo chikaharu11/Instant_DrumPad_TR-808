@@ -38,21 +38,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var adViewContainer: FrameLayout
     private lateinit var admobmAdView: AdView
 
-    private var mpDuration = 4189
+    private var mpDuration = 320
     private var mpDuration2 = 625
-    private var mpDuration3 = 4189
+    private var mpDuration3 = 1294
     private var mpDuration4 = 1033
     private var mpDuration5 = 1465
-    private var mpDuration6 = 4418
+    private var mpDuration6 = 1072
     private var mpDuration7 = 794
     private var mpDuration8 = 1065
     private var mpDuration9 = 1065
     private var mpDuration10 = 1137
     private var mpDuration11 = 773
     private var mpDuration12 = 1070
-    private var mpDuration13 = 2824
-    private var mpDuration14 = 2526
-    private var mpDuration15 = 1935
+    private var mpDuration13 = 1050
+    private var mpDuration14 = 608
+    private var mpDuration15 = 55
 
     companion object {
         private const val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 41
@@ -169,38 +169,38 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         val orientation = resources.configuration.orientation
         when (orientation) {
             Configuration.ORIENTATION_PORTRAIT -> {
-                binding.textView.text = "cymbal_01".replace("_"," ")
+                binding.textView.text = "TR-8_cymbal_01".replace("_"," ")
                 binding.textView2.text = "cowbell_01b".replace("_"," ")
-                binding.textView3.text = "cymbal_02".replace("_"," ")
+                binding.textView3.text = "TR-909_cymbal_01".replace("_"," ")
                 binding.textView4.text = "open_hi_hat_01".replace("_"," ")
                 binding.textView5.text = "clap_01".replace("_"," ")
-                binding.textView6.text = "cymbal_10".replace("_"," ")
+                binding.textView6.text = "TR-909_cymbal_02".replace("_"," ")
                 binding.textView7.text = "closed_hi_hat_01".replace("_"," ")
                 binding.textView8.text = "high_tom_01".replace("_"," ")
                 binding.textView9.text = "mid_tom_01".replace("_"," ")
                 binding.textView10.text = "snare_01".replace("_"," ")
                 binding.textView11.text = "kick_drum_short_01".replace("_"," ")
                 binding.textView12.text = "low_tom_01".replace("_"," ")
-                binding.textView13.text = "loop_sd_85_01".replace("_"," ")
-                binding.textView14.text = "loop_toms_95_02".replace("_"," ")
-                binding.textView15.text = "loop_bd_124_07".replace("_"," ")
+                binding.textView13.text = "claves_02".replace("_"," ")
+                binding.textView14.text = "high_conga_01".replace("_"," ")
+                binding.textView15.text = "TR-8_rimshot_03".replace("_"," ")
             }
             Configuration.ORIENTATION_LANDSCAPE -> {
-                binding.textView.text = "cymbal_01".replace("_"," ")
+                binding.textView.text = "TR-8_cymbal_01".replace("_"," ")
                 binding.textView2.text = "cowbell_01b".replace("_"," ")
-                binding.textView3.text = "cymbal_02".replace("_"," ")
+                binding.textView3.text = "TR-909_cymbal_01".replace("_"," ")
                 binding.textView4.text = "open_hi_hat_01".replace("_"," ")
                 binding.textView5.text = "clap_01".replace("_"," ")
-                binding.textView6.text = "cymbal_10".replace("_"," ")
+                binding.textView6.text = "TR-909_cymbal_02".replace("_"," ")
                 binding.textView7.text = "closed_hi_hat_01".replace("_"," ")
                 binding.textView8.text = "high_tom_01".replace("_"," ")
                 binding.textView9.text = "mid_tom_01".replace("_"," ")
                 binding.textView10.text = "snare_01".replace("_"," ")
                 binding.textView11.text = "kick_drum_short_01".replace("_"," ")
                 binding.textView12.text = "low_tom_01".replace("_"," ")
-                binding.textView13.text = "loop_sd_85_01".replace("_"," ")
-                binding.textView14.text = "loop_toms_95_02".replace("_"," ")
-                binding.textView15.text = "loop_bd_124_07".replace("_"," ")
+                binding.textView13.text = "claves_02".replace("_"," ")
+                binding.textView14.text = "high_conga_01".replace("_"," ")
+                binding.textView15.text = "TR-8_rimshot_03".replace("_"," ")
             }
             Configuration.ORIENTATION_SQUARE -> {
                 TODO()
@@ -887,17 +887,17 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             Configuration.ORIENTATION_PORTRAIT -> {
 
-                sound1 = soundPool.load(assets.openFd("cymbal_01.ogg"), 1)
+                sound1 = soundPool.load(assets.openFd("tr_8_cymbal_01.ogg"), 1)
 
                 sound2 = soundPool.load(assets.openFd("cowbell_01b.ogg"), 1)
 
-                sound3 = soundPool.load(assets.openFd("cymbal_02.ogg"), 1)
+                sound3 = soundPool.load(assets.openFd("tr_909_cymbal_01.ogg"), 1)
 
                 sound4 = soundPool.load(assets.openFd("open_hi_hat_01.ogg"), 1)
 
                 sound5 = soundPool.load(assets.openFd("clap_01.ogg"), 1)
 
-                sound6 = soundPool.load(assets.openFd("cymbal_10.ogg"), 1)
+                sound6 = soundPool.load(assets.openFd("tr_909_cymbal_02.ogg"), 1)
 
                 sound7 = soundPool.load(assets.openFd("closed_hi_hat_01.ogg"), 1)
 
@@ -911,27 +911,27 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 sound12 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
 
-                sound13 = soundPool.load(assets.openFd("loop_sd_85_01.ogg"), 1)
+                sound13 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
 
-                sound14 = soundPool.load(assets.openFd("loop_toms_95_02.ogg"), 1)
+                sound14 = soundPool.load(assets.openFd("high_conga_01.ogg"), 1)
 
-                sound15 = soundPool.load(assets.openFd("loop_bd_124_07.ogg"), 1)
+                sound15 = soundPool.load(assets.openFd("tr_8_rimshot_03.ogg"), 1)
 
             }
 
             Configuration.ORIENTATION_LANDSCAPE -> {
 
-                sound1 = soundPool.load(assets.openFd("cymbal_01.ogg"), 1)
+                sound1 = soundPool.load(assets.openFd("tr_8_cymbal_01.ogg"), 1)
 
                 sound2 = soundPool.load(assets.openFd("cowbell_01b.ogg"), 1)
 
-                sound3 = soundPool.load(assets.openFd("cymbal_02.ogg"), 1)
+                sound3 = soundPool.load(assets.openFd("tr_909_cymbal_01.ogg"), 1)
 
                 sound4 = soundPool.load(assets.openFd("open_hi_hat_01.ogg"), 1)
 
                 sound5 = soundPool.load(assets.openFd("clap_01.ogg"), 1)
 
-                sound6 = soundPool.load(assets.openFd("cymbal_10.ogg"), 1)
+                sound6 = soundPool.load(assets.openFd("tr_909_cymbal_02.ogg"), 1)
 
                 sound7 = soundPool.load(assets.openFd("closed_hi_hat_01.ogg"), 1)
 
@@ -945,11 +945,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 sound12 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
 
-                sound13 = soundPool.load(assets.openFd("loop_sd_85_01.ogg"), 1)
+                sound13 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
 
-                sound14 = soundPool.load(assets.openFd("loop_toms_95_02.ogg"), 1)
+                sound14 = soundPool.load(assets.openFd("high_conga_01.ogg"), 1)
 
-                sound15 = soundPool.load(assets.openFd("loop_bd_124_07.ogg"), 1)
+                sound15 = soundPool.load(assets.openFd("tr_8_rimshot_03.ogg"), 1)
 
             }
             Configuration.ORIENTATION_SQUARE -> {
