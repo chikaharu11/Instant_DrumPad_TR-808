@@ -22,7 +22,7 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
         mCurrentPlayer!!.setNextMediaPlayer(mNextPlayer)
         mCurrentPlayer!!.setOnCompletionListener(onCompletionListener)
         setVolume(count,count)
-        speed()
+        speed(bpm)
     }
 
     private val onCompletionListener =
@@ -69,10 +69,15 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
         }
     }
 
-    private fun speed() {
+    private fun speed(tempo : Float) {
         val params = PlaybackParams()
-        params.speed = bpm
+        params.speed = tempo
         mCurrentPlayer!!.playbackParams = params
+    }
+
+    fun speedChange() {
+        bpm += 0.1f
+        speed(bpm)
     }
 
     @Throws(IllegalStateException::class)
