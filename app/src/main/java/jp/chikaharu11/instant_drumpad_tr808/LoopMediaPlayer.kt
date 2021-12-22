@@ -3,6 +3,7 @@ package jp.chikaharu11.instant_drumpad_tr808
 import android.content.Context
 import android.media.MediaPlayer
 import android.media.MediaPlayer.OnCompletionListener
+import android.media.PlaybackParams
 import android.net.Uri
 import android.util.Log
 import android.widget.Toast
@@ -15,11 +16,13 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     private var mCurrentPlayer: MediaPlayer? = null
     private var mNextPlayer: MediaPlayer? = null
     private var count = 0.6f
+    private var bpm = 1.0f
     private fun createNextMediaPlayer() {
         mNextPlayer = MediaPlayer.create(mContext, mResId)
         mCurrentPlayer!!.setNextMediaPlayer(mNextPlayer)
         mCurrentPlayer!!.setOnCompletionListener(onCompletionListener)
         setVolume(count,count)
+        speed()
     }
 
     private val onCompletionListener =
@@ -64,6 +67,12 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
             count >= 0.25f -> Toast.makeText(mContext, R.string.low, Toast.LENGTH_SHORT).show()
             count >= 0.0f -> Toast.makeText(mContext, R.string.lowest, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun speed() {
+        val params = PlaybackParams()
+        params.speed = bpm
+        mCurrentPlayer!!.playbackParams = params
     }
 
     @Throws(IllegalStateException::class)

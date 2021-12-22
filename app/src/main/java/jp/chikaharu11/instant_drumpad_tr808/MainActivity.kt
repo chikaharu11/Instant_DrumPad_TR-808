@@ -961,6 +961,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.loop_toms_85_01))
+        lmp.stop()
 
 
         binding.imageView.setOnTouchListener { _, event ->
@@ -1604,6 +1605,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 buttonA == 16 && buttonB == 1 -> {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
+                    lmp.stop()
                     supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
@@ -1853,6 +1855,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 buttonA == 16 -> {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
+                    lmp.stop()
                     supportActionBar?.title = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
