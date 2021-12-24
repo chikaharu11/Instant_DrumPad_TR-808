@@ -42,6 +42,8 @@
     <string name="back">back</string>
     <string name="menuPlus">Main Volume UP</string>
     <string name="menuMinus">Main Volume DOWN</string>
+    <string name="menuUp">Main Tempo UP</string>
+    <string name="menuDown">Main Tempo DOWN</string>
     <string name="lowest">Volume:Lowest</string>
     <string name="low">Volume:Low</string>
     <string name="middle">Volume:Middle</string>

@@ -2155,6 +2155,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 return true
             }
 
+            R.id.menuUp -> {
+                lmp.speedUp()
+                return true
+            }
+
+            R.id.menuDown -> {
+                lmp.speedDown()
+                return true
+            }
+
             R.id.menu10 -> {
                 if (soundListView.isVisible) {
                     soundListView.visibility = View.INVISIBLE

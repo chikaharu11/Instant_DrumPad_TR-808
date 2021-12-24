@@ -39,8 +39,10 @@
     <string name="menu6">終了しますか？</string>
 
     <string name="back">戻る</string>
-    <string name="menuPlus">メインの音量を上げる</string>
-    <string name="menuMinus">メインの音量を下げる</string>
+    <string name="menuPlus">ループの音量を上げる</string>
+    <string name="menuMinus">ループの音量を下げる</string>
+    <string name="menuUp">ループのテンポを上げる</string>
+    <string name="menuDown">ループのテンポを下げる</string>
     <string name="lowest">音量:Lowest</string>
     <string name="low">音量:Low</string>
     <string name="middle">音量:Middle</string>

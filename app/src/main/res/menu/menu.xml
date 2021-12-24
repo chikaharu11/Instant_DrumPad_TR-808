@@ -35,6 +35,16 @@
                 android:title="@string/menuMinus"
                 app:showAsAction="never" />
 
+            <item
+                android:id="@+id/menuUp"
+                android:title="@string/menuUp"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menuDown"
+                android:title="@string/menuDown"
+                app:showAsAction="never" />
+
             <item android:id="@+id/menu5"
                 android:title="@string/menu5"
                 app:showAsAction="never"/>
