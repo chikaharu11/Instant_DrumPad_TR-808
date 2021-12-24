@@ -75,11 +75,8 @@
 
     <string-array name="spinnerItems2">
         <item>Play mode ↔ <h1><font color="#FFA630">Change pad sounds</font></h1></item>
-        <item>Loop [85bpm]</item>
-        <item>Loop [95bpm]</item>
-        <item>Loop [105bpm]</item>
-        <item>Loop [124bpm]</item>
-        <item>Loop [132bpm]</item>
+        <item>Metronome Loops</item>
+        <item>Sample Loops</item>
         <item>External sounds</item>
         <item>Reset drum pads</item>
     </string-array>

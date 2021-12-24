@@ -75,8 +75,13 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
         mCurrentPlayer!!.playbackParams = params
     }
 
-    fun speedChange() {
+    fun speedUp() {
         bpm += 0.1f
+        speed(bpm)
+    }
+
+    fun speedDown() {
+        bpm -= 0.1f
         speed(bpm)
     }
 

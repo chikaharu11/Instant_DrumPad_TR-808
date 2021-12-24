@@ -1966,15 +1966,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                     }
                     1 -> {
-                        lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
-                        switch1 = 2
-                        buttonA = 16
-                        buttonB = 2
-                        soundListView.adapter = nCustomAdapter
-                        nCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
+                        lmp.release()
+                        lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.closed_hi_hat_01))
+                        lmp.stop()
+                        supportActionBar?.title = "bpm120 closed_hi_hat_01"
                     }
                     2 -> {
                         lmp.stop()
@@ -1987,40 +1984,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         oCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
+
                     3 -> {
-                        lmp.stop()
-                        menuSwitch = true
-                        invalidateOptionsMenu()
-                        switch1 = 2
-                        buttonA = 16
-                        buttonB = 2
-                        soundListView.adapter = pCustomAdapter
-                        pCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    4 -> {
-                        lmp.stop()
-                        menuSwitch = true
-                        invalidateOptionsMenu()
-                        switch1 = 2
-                        buttonA = 16
-                        buttonB = 2
-                        soundListView.adapter = qCustomAdapter
-                        qCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    5 -> {
-                        lmp.stop()
-                        menuSwitch = true
-                        invalidateOptionsMenu()
-                        switch1 = 2
-                        buttonA = 16
-                        buttonB = 2
-                        soundListView.adapter = rCustomAdapter
-                        rCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    6 -> {
                         lmp.stop()
                         menuSwitch = true
                         invalidateOptionsMenu()
@@ -2032,7 +1997,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    7 -> {
+                    4 -> {
                         binding.textView.text = ""
                         binding.textView2.text = ""
                         binding.textView3.text = ""

@@ -74,11 +74,8 @@
 
     <string-array name="spinnerItems2">
         <item>演奏モード⇔<h1><font color="#FFA630">パッド音の変更</font></h1></item>
-        <item>Loop [85bpm]</item>
-        <item>Loop [95bpm]</item>
-        <item>Loop [105bpm]</item>
-        <item>Loop [124bpm]</item>
-        <item>Loop [132bpm]</item>
+        <item>メトロノーム・ループ</item>
+        <item>サンプル・ループ</item>
         <item>外部サウンド</item>
         <item>ドラムパッドをリセット</item>
     </string-array>
