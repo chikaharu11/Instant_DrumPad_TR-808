@@ -12,7 +12,7 @@ import android.widget.Toast
 class LoopMediaPlayer(context: Context, resId: Uri) {
     private var mContext: Context? = null
     private var mResId: Uri? = null
-    private var mCounter = 1
+    private var mCounter = 0
     private var mCurrentPlayer: MediaPlayer? = null
     private var mNextPlayer: MediaPlayer? = null
     private var count = 0.6f
@@ -112,7 +112,7 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     companion object {
-        val TAG = LoopMediaPlayer::class.java.simpleName
+        val TAG: String = LoopMediaPlayer::class.java.simpleName
         fun create(context: Context, resId: Uri): LoopMediaPlayer {
             return LoopMediaPlayer(context, resId)
         }
