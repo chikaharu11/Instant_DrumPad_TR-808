@@ -17,6 +17,7 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     private var mNextPlayer: MediaPlayer? = null
     private var count = 0.6f
     private var bpm = 1.0f
+
     private fun createNextMediaPlayer() {
         mNextPlayer = MediaPlayer.create(mContext, mResId)
         mCurrentPlayer!!.setNextMediaPlayer(mNextPlayer)
