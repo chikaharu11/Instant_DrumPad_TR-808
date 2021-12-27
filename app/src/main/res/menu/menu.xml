@@ -25,34 +25,6 @@
 
         <menu>
 
-            <item
-                android:id="@+id/menuPlus"
-                android:title="@string/menuPlus"
-                app:showAsAction="never" />
-
-            <item
-                android:id="@+id/menuMinus"
-                android:title="@string/menuMinus"
-                app:showAsAction="never" />
-
-            <item
-                android:id="@+id/menuUp"
-                android:title="@string/menuUp"
-                app:showAsAction="never" />
-
-            <item
-                android:id="@+id/menuDown"
-                android:title="@string/menuDown"
-                app:showAsAction="never" />
-
-            <item android:id="@+id/menu5"
-                android:title="@string/menu5"
-                app:showAsAction="never"/>
-
-            <item android:id="@+id/menu6"
-                android:title="@string/end"
-                app:showAsAction="never"/>
-
         </menu>
     </item>
 </menu>

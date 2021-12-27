@@ -20,6 +20,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
@@ -236,10 +237,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.speedDown()
                 }
                 "動画広告を視聴する" -> {
+                    if (adCheck == 0) {
+                        AlertDialog.Builder(this)
+                            .setTitle(R.string.menu5a)
+                            .setMessage(R.string.menu5b)
+                            .setPositiveButton("YES") { _, _ ->
+                                showRewardAd()
+                            }
+                            .setNegativeButton("NO") { _, _ ->
 
+                            }
+                            .show()
+                    } else if (adCheck == 1){
+                        AlertDialog.Builder(this)
+                            .setTitle(R.string.menu5c)
+                            .setPositiveButton("OK") { _, _ ->
+
+                            }
+                            .show()
+                    }
                 }
                 "終了する" -> {
+                    AlertDialog.Builder(this)
+                        .setTitle(R.string.menu6)
+                        .setPositiveButton("YES") { _, _ ->
+                            finish()
+                        }
+                        .setNegativeButton("NO") { _, _ ->
 
+                        }
+                        .show()
                 }
             }
         }
@@ -1015,6 +1042,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1028,6 +1058,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView2.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1041,6 +1074,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView3.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1054,6 +1090,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView4.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1067,6 +1106,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView5.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1080,6 +1122,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView6.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1093,6 +1138,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView7.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1106,6 +1154,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView8.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1119,6 +1170,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView9.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1133,6 +1187,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView10.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1146,6 +1203,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView11.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1159,6 +1219,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView12.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1172,6 +1235,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView13.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1185,6 +1251,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView14.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -1198,6 +1267,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         binding.imageView15.setOnTouchListener { _, event ->
             when {
+                gridView.isVisible -> {
+                    gridView.visibility = View.INVISIBLE
+                }
                 listView.isVisible -> {
                     listView.visibility = View.INVISIBLE
                 }
@@ -2139,12 +2211,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         val soundListView = findViewById<ListView>(R.id.list_view)
+        val gridView = findViewById<GridView>(R.id.grid_view)
 
         when (item.itemId) {
 
             R.id.menu1 -> {
-                if (soundListView.isVisible) {
-                    soundListView.visibility = View.INVISIBLE
+                when {
+                    soundListView.isVisible -> {
+                        soundListView.visibility = View.INVISIBLE
+                    }
+                    gridView.isVisible -> {
+                        gridView.visibility = View.INVISIBLE
+                    }
+
                 }
                 if (switch1 == 1) {
                     lmp.stop()
@@ -2161,74 +2240,32 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 return true
             }
 
-            R.id.menu5 -> {
-                if (adCheck == 0) {
-                    AlertDialog.Builder(this)
-                        .setTitle(R.string.menu5a)
-                        .setMessage(R.string.menu5b)
-                        .setPositiveButton("YES") { _, _ ->
-                            showRewardAd()
-                        }
-                        .setNegativeButton("NO") { _, _ ->
-
-                        }
-                        .show()
-                } else if (adCheck == 1){
-                    AlertDialog.Builder(this)
-                        .setTitle(R.string.menu5c)
-                        .setPositiveButton("OK") { _, _ ->
-
-                        }
-                        .show()
-                }
-                return true
-            }
-
-            R.id.menu6 -> {
-                AlertDialog.Builder(this)
-                        .setTitle(R.string.menu6)
-                        .setPositiveButton("YES") { _, _ ->
-                            finish()
-                        }
-                        .setNegativeButton("NO") { _, _ ->
-
-                        }
-                        .show()
-
-                return true
-            }
-
-            R.id.menuPlus -> {
-                lmp.volumePlus()
-                return true
-            }
-
-            R.id.menuMinus -> {
-                lmp.volumeMinus()
-                return true
-            }
-
-            R.id.menuUp -> {
-                lmp.speedUp()
-                return true
-            }
-
-            R.id.menuDown -> {
-                lmp.speedDown()
-                return true
-            }
-
             R.id.menu10 -> {
-                if (soundListView.isVisible) {
-                    soundListView.visibility = View.INVISIBLE
+                when {
+                    soundListView.isVisible -> {
+                        soundListView.visibility = View.INVISIBLE
+                    }
+                    gridView.isVisible -> {
+                        gridView.visibility = View.INVISIBLE
+                    }
+
                 }
                 selectCh()
                 return true
             }
 
             R.id.action_settings -> {
-                if (soundListView.isVisible) {
-                    soundListView.visibility = View.INVISIBLE
+                when {
+                    soundListView.isVisible -> {
+                        soundListView.visibility = View.INVISIBLE
+                    }
+                    gridView.isInvisible -> {
+                        gridView.visibility = View.VISIBLE
+                    }
+                    gridView.isVisible -> {
+                        gridView.visibility = View.INVISIBLE
+                    }
+
                 }
                 return true
             }
