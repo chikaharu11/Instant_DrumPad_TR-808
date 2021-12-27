@@ -33,8 +33,8 @@
     <string name="READ_REQUEST_CODE2">Musicフォルダ以外の音声ファイルは指定できません。</string>
 
     <string name="menu5">動画広告を視聴する</string>
-    <string name="menu5a">動画広告を視聴しますか？</string>
-    <string name="menu5b">(次回起動時まで、\nバナー広告を非表示にできます)</string>
+    <string name="menu5a">動画広告を見て、バナー広告を\n非表示にしますか？</string>
+    <string name="menu5b">(次回起動時まで非表示にできます)</string>
     <string name="menu5c">動画広告は視聴済みです</string>
     <string name="menu6">終了しますか？</string>
 

@@ -55,6 +55,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration14 = 608
     private var mpDuration15 = 55
 
+    private val locale: Locale = Locale.getDefault()
+
     companion object {
         private const val READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 41
         private const val RECORD_AUDIO_PERMISSION_REQUEST_CODE = 42
@@ -211,13 +213,23 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
 
-        val countries = arrayOf(
-            "ループの音量を上げる",
-            "ループの音量を下げる",
-            "ループのテンポを上げる",
-            "ループのテンポを下げる",
-            "動画広告を視聴する",
-            "終了する")
+        val countries = if (locale == Locale.JAPAN) { arrayOf(
+                "ループの音量を上げる",
+                "ループの音量を下げる",
+                "ループのテンポを上げる",
+                "ループのテンポを下げる",
+                "バナー広告を非表示にする",
+                "終了する"
+            ) } else {
+            arrayOf(
+                "Main Volume UP",
+                "Main Volume DOWN",
+                "Main Tempo UP",
+                "Main Tempo DOWN",
+                "Hide banner Ads",
+                "EXIT"
+            )
+            }
         val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, countries)
         val gridView: GridView = findViewById(R.id.grid_view)
         gridView.adapter = adapter
@@ -236,7 +248,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "ループのテンポを下げる" -> {
                     lmp.speedDown()
                 }
-                "動画広告を視聴する" -> {
+                "バナー広告を非表示にする" -> {
                     if (adCheck == 0) {
                         AlertDialog.Builder(this)
                             .setTitle(R.string.menu5a)
@@ -258,6 +270,50 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                 }
                 "終了する" -> {
+                    AlertDialog.Builder(this)
+                        .setTitle(R.string.menu6)
+                        .setPositiveButton("YES") { _, _ ->
+                            finish()
+                        }
+                        .setNegativeButton("NO") { _, _ ->
+
+                        }
+                        .show()
+                }
+                "Main Volume UP" -> {
+                    lmp.volumePlus()
+                }
+                "Main Volume DOWN" -> {
+                    lmp.volumeMinus()
+                }
+                "Main Tempo UP" -> {
+                    lmp.speedUp()
+                }
+                "Main Tempo DOWN" -> {
+                    lmp.speedDown()
+                }
+                "Hide banner Ads" -> {
+                    if (adCheck == 0) {
+                        AlertDialog.Builder(this)
+                            .setTitle(R.string.menu5a)
+                            .setMessage(R.string.menu5b)
+                            .setPositiveButton("YES") { _, _ ->
+                                showRewardAd()
+                            }
+                            .setNegativeButton("NO") { _, _ ->
+
+                            }
+                            .show()
+                    } else if (adCheck == 1){
+                        AlertDialog.Builder(this)
+                            .setTitle(R.string.menu5c)
+                            .setPositiveButton("OK") { _, _ ->
+
+                            }
+                            .show()
+                    }
+                }
+                "EXIT" -> {
                     AlertDialog.Builder(this)
                         .setTitle(R.string.menu6)
                         .setPositiveButton("YES") { _, _ ->

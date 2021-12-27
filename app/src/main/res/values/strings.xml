@@ -33,9 +33,9 @@
 
     <string name="READ_REQUEST_CODE2">cannot specify audio files outside of the Music folder.</string>
 
-    <string name="menu5">Watch video ads &amp; hide banner ads.</string>
-    <string name="menu5a">Do you watch video ads?</string>
-    <string name="menu5b">(You can hide the banner ads\nuntil the next time you start the program.)</string>
+    <string name="menu5">Watch video ads &amp; hide banner ads</string>
+    <string name="menu5a">Do you want to hide banner ads \nby watching video ads?</string>
+    <string name="menu5b">(It can be hidden until the next time \nit is started.)</string>
     <string name="menu5c">Video ads have been viewed.</string>
     <string name="menu6">Do you want to exit?</string>
 

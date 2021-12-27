@@ -12,10 +12,9 @@ import android.widget.Toast
 class LoopMediaPlayer(context: Context, resId: Uri) {
     private var mContext: Context? = null
     private var mResId: Uri? = null
-    private var mCounter = 0
     private var mCurrentPlayer: MediaPlayer? = null
     private var mNextPlayer: MediaPlayer? = null
-    private var count = 0.6f
+    private var count = 0.5f
     private var bpm = 1.0f
 
     private fun createNextMediaPlayer() {
@@ -31,7 +30,6 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
             mediaPlayer.release()
             mCurrentPlayer = mNextPlayer
             createNextMediaPlayer()
-            Log.d(TAG, String.format("Loop #%d", ++mCounter))
         }
 
     @get:Throws(IllegalStateException::class)
@@ -44,7 +42,7 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
 
     fun volumePlus() {
         if (count <= 1.0f) {
-            count += 0.25f
+            count += 0.1f
         }
         setVolume(count, count)
         when {
@@ -57,8 +55,8 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     fun volumeMinus() {
-        if (count >= 0.11f) {
-            count -= 0.25f
+        if (count >= 0.1f) {
+            count -= 0.1f
         }
         setVolume(count,count)
         when {
@@ -77,13 +75,19 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     fun speedUp() {
-        bpm += 0.1f
+        if (bpm <= 5.9f) {
+            bpm += 0.1f
+        }
         speed(bpm)
+        println(bpm)
     }
 
     fun speedDown() {
-        bpm -= 0.1f
+        if (bpm >= 0.2f) {
+            bpm -= 0.1f
+        }
         speed(bpm)
+        println(bpm)
     }
 
     @Throws(IllegalStateException::class)
@@ -113,7 +117,6 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     companion object {
-        val TAG: String = LoopMediaPlayer::class.java.simpleName
         fun create(context: Context, resId: Uri): LoopMediaPlayer {
             return LoopMediaPlayer(context, resId)
         }
