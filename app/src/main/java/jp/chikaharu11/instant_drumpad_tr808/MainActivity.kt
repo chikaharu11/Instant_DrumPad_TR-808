@@ -210,6 +210,40 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
 
+        val countries = arrayOf(
+            "ループの音量を上げる",
+            "ループの音量を下げる",
+            "ループのテンポを上げる",
+            "ループのテンポを下げる",
+            "動画広告を視聴する",
+            "終了する")
+        val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, countries)
+        val gridView: GridView = findViewById(R.id.grid_view)
+        gridView.adapter = adapter
+
+        gridView.setOnItemClickListener { adapterView, _, position, _ ->
+            when(adapterView.getItemAtPosition(position)) {
+                "ループの音量を上げる" -> {
+                    lmp.volumePlus()
+                }
+                "ループの音量を下げる" -> {
+                    lmp.volumeMinus()
+                }
+                "ループのテンポを上げる" -> {
+                    lmp.speedUp()
+                }
+                "ループのテンポを下げる" -> {
+                    lmp.speedDown()
+                }
+                "動画広告を視聴する" -> {
+
+                }
+                "終了する" -> {
+
+                }
+            }
+        }
+
 
         aSoundList = arrayListOf(
                 SoundList("kick_drum_long_01.ogg"),
