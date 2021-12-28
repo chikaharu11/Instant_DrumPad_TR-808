@@ -55,6 +55,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration14 = 608
     private var mpDuration15 = 55
 
+    private var actionTitle = ""
+    private var count = 0.5f
+    private var bpm = 1.0f
+
     private val locale: Locale = Locale.getDefault()
 
     companion object {
@@ -282,15 +286,27 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 "Main Volume UP" -> {
                     lmp.volumePlus()
+                    if (count <= 1.0f) {
+                        count += 0.1f
+                    }
                 }
                 "Main Volume DOWN" -> {
                     lmp.volumeMinus()
+                    if (count >= 0.1f) {
+                        count -= 0.1f
+                    }
                 }
                 "Main Tempo UP" -> {
                     lmp.speedUp()
+                    if (bpm <= 5.9f) {
+                        bpm += 0.1f
+                    }
                 }
                 "Main Tempo DOWN" -> {
                     lmp.speedDown()
+                    if (bpm >= 0.2f) {
+                        bpm -= 0.1f
+                    }
                 }
                 "Hide banner Ads" -> {
                     if (adCheck == 0) {
@@ -835,7 +851,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         mp = MediaPlayer()
 
-        supportActionBar?.title ="rimshot_01".replace("_"," ")
+        supportActionBar?.title = "Vo:$count" + " BPM:$bpm" + " rimshot_01".replace("_"," ")
 
 
             val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
@@ -1759,8 +1775,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
                     lmp.stop()
-                    supportActionBar?.title = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    actionTitle = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    supportActionBar?.title = actionTitle
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
@@ -2009,7 +2026,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
                     lmp.stop()
-                    supportActionBar?.title = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    actionTitle = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
+                    supportActionBar?.title = actionTitle
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }

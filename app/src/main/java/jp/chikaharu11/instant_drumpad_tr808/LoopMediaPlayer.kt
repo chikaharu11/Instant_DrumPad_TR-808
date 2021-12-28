@@ -45,13 +45,6 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
             count += 0.1f
         }
         setVolume(count, count)
-        when {
-            count >= 1.0f -> Toast.makeText(mContext, R.string.highest, Toast.LENGTH_SHORT).show()
-            count >= 0.75f -> Toast.makeText(mContext, R.string.high, Toast.LENGTH_SHORT).show()
-            count >= 0.5f -> Toast.makeText(mContext, R.string.middle, Toast.LENGTH_SHORT).show()
-            count >= 0.25f -> Toast.makeText(mContext, R.string.low, Toast.LENGTH_SHORT).show()
-            count >= 0.0f -> Toast.makeText(mContext, R.string.lowest, Toast.LENGTH_SHORT).show()
-        }
     }
 
     fun volumeMinus() {
@@ -59,13 +52,6 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
             count -= 0.1f
         }
         setVolume(count,count)
-        when {
-            count >= 1.0f -> Toast.makeText(mContext, R.string.highest, Toast.LENGTH_SHORT).show()
-            count >= 0.75f -> Toast.makeText(mContext, R.string.high, Toast.LENGTH_SHORT).show()
-            count >= 0.5f -> Toast.makeText(mContext, R.string.middle, Toast.LENGTH_SHORT).show()
-            count >= 0.25f -> Toast.makeText(mContext, R.string.low, Toast.LENGTH_SHORT).show()
-            count >= 0.0f -> Toast.makeText(mContext, R.string.lowest, Toast.LENGTH_SHORT).show()
-        }
     }
 
     private fun speed(tempo : Float) {
@@ -79,7 +65,6 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
             bpm += 0.1f
         }
         speed(bpm)
-        println(bpm)
     }
 
     fun speedDown() {
@@ -87,7 +72,6 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
             bpm -= 0.1f
         }
         speed(bpm)
-        println(bpm)
     }
 
     @Throws(IllegalStateException::class)
