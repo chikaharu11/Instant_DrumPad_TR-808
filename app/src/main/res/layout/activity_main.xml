@@ -735,10 +735,11 @@
     <jp.chikaharu11.instant_drumpad_tr808.CSpinner
         android:id="@+id/menu_spinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@id/imageView12"
+        app:layout_constraintEnd_toEndOf="@id/imageView3"/>
 
     <jp.chikaharu11.instant_drumpad_tr808.CSpinner
         android:id="@+id/choose_loop_spinner"
@@ -771,9 +772,9 @@
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="64dp"
         android:divider="@null"
         android:visibility="invisible"

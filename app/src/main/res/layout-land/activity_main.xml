@@ -733,13 +733,11 @@
 
     <jp.chikaharu11.instant_drumpad_tr808.CSpinner
         android:id="@+id/menu_spinner"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <jp.chikaharu11.instant_drumpad_tr808.CSpinner
         android:id="@+id/choose_loop_spinner"
@@ -773,16 +771,13 @@
 
     <ListView
         android:id="@+id/list_view"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="8dp"
         android:divider="@null"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/imageView11"
+        app:layout_constraintStart_toStartOf="@id/imageView5"
         app:layout_constraintBottom_toBottomOf="@id/imageView9"
         app:layout_constraintTop_toTopOf="parent" />
 
