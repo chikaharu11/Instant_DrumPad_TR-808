@@ -55,9 +55,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration14 = 608
     private var mpDuration15 = 55
 
-    private var actionTitle = ""
-    private var count = 0.5f
-    private var bpm = 1.0f
+    private var actionTitle = "rimshot_01".replace("_"," ")
+    private var count = 5
+    private var bpm = 10
 
     private val locale: Locale = Locale.getDefault()
 
@@ -242,15 +242,31 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when(adapterView.getItemAtPosition(position)) {
                 "ループの音量を上げる" -> {
                     lmp.volumePlus()
+                    if (count < 10) {
+                        count += 1
+                    }
+                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
                 }
                 "ループの音量を下げる" -> {
                     lmp.volumeMinus()
+                    if (count > 1) {
+                        count -= 1
+                    }
+                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
                 }
                 "ループのテンポを上げる" -> {
                     lmp.speedUp()
+                    if (bpm < 60) {
+                        bpm += 1
+                    }
+                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
                 }
                 "ループのテンポを下げる" -> {
                     lmp.speedDown()
+                    if (bpm > 1) {
+                        bpm -= 1
+                    }
+                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
                 }
                 "バナー広告を非表示にする" -> {
                     if (adCheck == 0) {
@@ -286,27 +302,31 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 "Main Volume UP" -> {
                     lmp.volumePlus()
-                    if (count <= 1.0f) {
-                        count += 0.1f
+                    if (count < 10) {
+                        count += 1
                     }
+                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
                 }
                 "Main Volume DOWN" -> {
                     lmp.volumeMinus()
-                    if (count >= 0.1f) {
-                        count -= 0.1f
+                    if (count > 1) {
+                        count -= 1
                     }
+                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
                 }
                 "Main Tempo UP" -> {
                     lmp.speedUp()
-                    if (bpm <= 5.9f) {
-                        bpm += 0.1f
+                    if (bpm < 60) {
+                        bpm += 1
                     }
+                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
                 }
                 "Main Tempo DOWN" -> {
                     lmp.speedDown()
-                    if (bpm >= 0.2f) {
-                        bpm -= 0.1f
+                    if (bpm > 1) {
+                        bpm -= 1
                     }
+                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
                 }
                 "Hide banner Ads" -> {
                     if (adCheck == 0) {
@@ -851,7 +871,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         mp = MediaPlayer()
 
-        supportActionBar?.title = "Vo:$count" + " BPM:$bpm" + " rimshot_01".replace("_"," ")
+        supportActionBar?.title = actionTitle
 
 
             val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
