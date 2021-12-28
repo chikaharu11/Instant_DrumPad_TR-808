@@ -950,41 +950,17 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     12 -> {
                         buttonB = 2
-                        soundListView.adapter = nCustomAdapter
-                        nCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    13 -> {
-                        buttonB = 2
                         soundListView.adapter = oCustomAdapter
                         oCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    14 -> {
-                        buttonB = 2
-                        soundListView.adapter = pCustomAdapter
-                        pCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    15 -> {
-                        buttonB = 2
-                        soundListView.adapter = qCustomAdapter
-                        qCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    16 -> {
-                        buttonB = 2
-                        soundListView.adapter = rCustomAdapter
-                        rCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    17 -> {
+                    13 -> {
                         buttonB = 1
                         soundListView.adapter = sCustomAdapter
                         sCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    18 -> {
+                    14 -> {
                         selectEX()
                         buttonB = 1
                         soundListView.adapter = tCustomAdapter

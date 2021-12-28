@@ -752,13 +752,15 @@
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="#5A5A66"
         android:numColumns="1"
         android:visibility="invisible"
-        app:layout_constraintTop_toTopOf="@id/imageView2"
-        app:layout_constraintStart_toStartOf="@id/imageView2"
-        app:layout_constraintEnd_toEndOf="@id/imageView6"/>
+        app:layout_constraintTop_toTopOf="@id/imageView13"
+        app:layout_constraintStart_toStartOf="@id/imageView10"
+        app:layout_constraintEnd_toEndOf="@id/imageView13"
+        app:layout_constraintBottom_toBottomOf="@id/imageView15"
+        />
 
     <FrameLayout
         android:id="@+id/adView"

@@ -65,11 +65,7 @@
         <item>Rimshot [RS]</item>
         <item>Snare [S]</item>
         <item>Tom Toms [LT-MT-HT]</item>
-        <item>Loop [85bpm]</item>
-        <item>Loop [95bpm]</item>
-        <item>Loop [105bpm]</item>
-        <item>Loop [124bpm]</item>
-        <item>Loop [132bpm]</item>
+        <item>Sample Loops</item>
         <item>内部サウンド</item>
         <item>外部サウンド</item>
     </string-array>
