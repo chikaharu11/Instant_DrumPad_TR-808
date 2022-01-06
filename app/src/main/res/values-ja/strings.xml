@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Instant_DrumPad_TR-808</string>
+    <string name="app_name">TR-808 Drum Pad Beat maker</string>
     <string name="textView">bd_short_01</string>
     <string name="textView2">bd_long_02</string>
     <string name="textView3">bd_long_03</string>
@@ -53,7 +53,7 @@
     <string name="change2"><b>演奏モード</b></string>
 
     <string-array name="spinnerItems">
-        <item>Kick Drum [KD]</item>
+        <item>Bass Drum [BD]</item>
         <item>Clap [CP]</item>
         <item>Claves [CL]</item>
         <item>Closed Hi Hat [CH]</item>
@@ -63,7 +63,7 @@
         <item>Maracas [MA]</item>
         <item>Open Hi Hat [OH]</item>
         <item>Rimshot [RS]</item>
-        <item>Snare [S]</item>
+        <item>Snare Drum [SD]</item>
         <item>Tom Toms [LT-MT-HT]</item>
         <item>Sample Loops</item>
         <item>内部サウンド</item>

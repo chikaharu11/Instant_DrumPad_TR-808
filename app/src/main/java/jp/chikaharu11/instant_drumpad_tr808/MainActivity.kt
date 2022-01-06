@@ -185,8 +185,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.textView7.text = "closed_hi_hat_01".replace("_"," ")
                 binding.textView8.text = "high_tom_01".replace("_"," ")
                 binding.textView9.text = "mid_tom_01".replace("_"," ")
-                binding.textView10.text = "snare_01".replace("_"," ")
-                binding.textView11.text = "kick_drum_short_01".replace("_"," ")
+                binding.textView10.text = "snare_drum_01".replace("_"," ")
+                binding.textView11.text = "bass_drum_short_01".replace("_"," ")
                 binding.textView12.text = "low_tom_01".replace("_"," ")
                 binding.textView13.text = "claves_02".replace("_"," ")
                 binding.textView14.text = "high_conga_01".replace("_"," ")
@@ -202,8 +202,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.textView7.text = "closed_hi_hat_01".replace("_"," ")
                 binding.textView8.text = "high_tom_01".replace("_"," ")
                 binding.textView9.text = "mid_tom_01".replace("_"," ")
-                binding.textView10.text = "snare_01".replace("_"," ")
-                binding.textView11.text = "kick_drum_short_01".replace("_"," ")
+                binding.textView10.text = "snare_drum_01".replace("_"," ")
+                binding.textView11.text = "bass_drum_short_01".replace("_"," ")
                 binding.textView12.text = "low_tom_01".replace("_"," ")
                 binding.textView13.text = "claves_02".replace("_"," ")
                 binding.textView14.text = "high_conga_01".replace("_"," ")
@@ -365,42 +365,42 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
 
         aSoundList = arrayListOf(
-                SoundList("kick_drum_long_01.ogg"),
-                SoundList("kick_drum_long_02.ogg"),
-                SoundList("kick_drum_long_03.ogg"),
-                SoundList("kick_drum_long_04.ogg"),
-                SoundList("kick_drum_long_05.ogg"),
-                SoundList("kick_drum_long_06.ogg"),
-                SoundList("kick_drum_long_07.ogg"),
-                SoundList("kick_drum_long_08.ogg"),
-                SoundList("kick_drum_long_09.ogg"),
-                SoundList("kick_drum_long_10.ogg"),
-                SoundList("kick_drum_long_11.ogg"),
-                SoundList("kick_drum_long_12.ogg"),
-                SoundList("kick_drum_long_13.ogg"),
-                SoundList("kick_drum_long_14.ogg"),
-                SoundList("kick_drum_long_15.ogg"),
-                SoundList("kick_drum_long_16.ogg"),
-                SoundList("kick_drum_long_17.ogg"),
-                SoundList("kick_drum_short_01.ogg"),
-                SoundList("kick_drum_short_02.ogg"),
-                SoundList("kick_drum_short_03.ogg"),
-                SoundList("kick_drum_short_04.ogg"),
-                SoundList("kick_drum_short_05.ogg"),
-                SoundList("kick_drum_short_06.ogg"),
-                SoundList("kick_drum_short_07.ogg"),
-                SoundList("kick_drum_short_08.ogg"),
-                SoundList("kick_drum_short_09.ogg"),
-                SoundList("kick_drum_short_10.ogg"),
-                SoundList("kick_drum_short_11.ogg"),
-                SoundList("kick_drum_short_12.ogg"),
-            SoundList("tr_909_kick_drum_01.ogg"),
-            SoundList("tr_909_kick_drum_02.ogg"),
-            SoundList("tr_909_kick_drum_03.ogg"),
-            SoundList("tr_8_kick_drum_01.ogg"),
-            SoundList("tr_8_kick_drum_02.ogg"),
-            SoundList("tr_8_kick_drum_03.ogg"),
-            SoundList("tr_8_kick_drum_04.ogg")
+                SoundList("bass_drum_long_01.ogg"),
+                SoundList("bass_drum_long_02.ogg"),
+                SoundList("bass_drum_long_03.ogg"),
+                SoundList("bass_drum_long_04.ogg"),
+                SoundList("bass_drum_long_05.ogg"),
+                SoundList("bass_drum_long_06.ogg"),
+                SoundList("bass_drum_long_07.ogg"),
+                SoundList("bass_drum_long_08.ogg"),
+                SoundList("bass_drum_long_09.ogg"),
+                SoundList("bass_drum_long_10.ogg"),
+                SoundList("bass_drum_long_11.ogg"),
+                SoundList("bass_drum_long_12.ogg"),
+                SoundList("bass_drum_long_13.ogg"),
+                SoundList("bass_drum_long_14.ogg"),
+                SoundList("bass_drum_long_15.ogg"),
+                SoundList("bass_drum_long_16.ogg"),
+                SoundList("bass_drum_long_17.ogg"),
+                SoundList("bass_drum_short_01.ogg"),
+                SoundList("bass_drum_short_02.ogg"),
+                SoundList("bass_drum_short_03.ogg"),
+                SoundList("bass_drum_short_04.ogg"),
+                SoundList("bass_drum_short_05.ogg"),
+                SoundList("bass_drum_short_06.ogg"),
+                SoundList("bass_drum_short_07.ogg"),
+                SoundList("bass_drum_short_08.ogg"),
+                SoundList("bass_drum_short_09.ogg"),
+                SoundList("bass_drum_short_10.ogg"),
+                SoundList("bass_drum_short_11.ogg"),
+                SoundList("bass_drum_short_12.ogg"),
+            SoundList("tr_909_bass_drum_01.ogg"),
+            SoundList("tr_909_bass_drum_02.ogg"),
+            SoundList("tr_909_bass_drum_03.ogg"),
+            SoundList("tr_8_bass_drum_01.ogg"),
+            SoundList("tr_8_bass_drum_02.ogg"),
+            SoundList("tr_8_bass_drum_03.ogg"),
+            SoundList("tr_8_bass_drum_04.ogg")
                 )
 
         bSoundList = arrayListOf(
@@ -584,33 +584,33 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             SoundList("tr_8_rimshot_03.ogg")
         )
         kSoundList = arrayListOf(
-                SoundList("snare_01.ogg"),
-                SoundList("snare_02.ogg"),
-                SoundList("snare_03.ogg"),
-                SoundList("snare_04.ogg"),
-                SoundList("snare_05.ogg"),
-                SoundList("snare_06.ogg"),
-                SoundList("snare_07.ogg"),
-                SoundList("snare_08.ogg"),
-                SoundList("snare_09.ogg"),
-                SoundList("snare_10.ogg"),
-                SoundList("snare_11.ogg"),
-                SoundList("snare_12.ogg"),
-                SoundList("snare_13.ogg"),
-                SoundList("snare_14.ogg"),
-                SoundList("snare_15.ogg"),
-                SoundList("snare_16.ogg"),
-                SoundList("snare_17.ogg"),
-                SoundList("snare_18.ogg"),
-                SoundList("snare_19.ogg"),
-                SoundList("snare_20.ogg"),
-            SoundList("tr_909_snare_01.ogg"),
-            SoundList("tr_909_snare_02.ogg"),
-            SoundList("tr_909_snare_03.ogg"),
-            SoundList("tr_8_snare_01.ogg"),
-            SoundList("tr_8_snare_02.ogg"),
-            SoundList("tr_8_snare_03.ogg"),
-            SoundList("tr_8_snare_04.ogg")
+                SoundList("snare_drum_01.ogg"),
+                SoundList("snare_drum_02.ogg"),
+                SoundList("snare_drum_03.ogg"),
+                SoundList("snare_drum_04.ogg"),
+                SoundList("snare_drum_05.ogg"),
+                SoundList("snare_drum_06.ogg"),
+                SoundList("snare_drum_07.ogg"),
+                SoundList("snare_drum_08.ogg"),
+                SoundList("snare_drum_09.ogg"),
+                SoundList("snare_drum_10.ogg"),
+                SoundList("snare_drum_11.ogg"),
+                SoundList("snare_drum_12.ogg"),
+                SoundList("snare_drum_13.ogg"),
+                SoundList("snare_drum_14.ogg"),
+                SoundList("snare_drum_15.ogg"),
+                SoundList("snare_drum_16.ogg"),
+                SoundList("snare_drum_17.ogg"),
+                SoundList("snare_drum_18.ogg"),
+                SoundList("snare_drum_19.ogg"),
+                SoundList("snare_drum_20.ogg"),
+            SoundList("tr_909_snare_drum_01.ogg"),
+            SoundList("tr_909_snare_drum_02.ogg"),
+            SoundList("tr_909_snare_drum_03.ogg"),
+            SoundList("tr_8_snare_drum_01.ogg"),
+            SoundList("tr_8_snare_drum_02.ogg"),
+            SoundList("tr_8_snare_drum_03.ogg"),
+            SoundList("tr_8_snare_drum_04.ogg")
         )
         lSoundList = arrayListOf(
                 SoundList("low_tom_01.ogg"),
@@ -659,7 +659,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             SoundList("tr_8_tom_05.ogg")
         )
         nSoundList = arrayListOf(
-            SoundList("kick_drum_short_11.ogg"),
+            SoundList("bass_drum_short_11.ogg"),
             SoundList("tr_909_clap.ogg"),
             SoundList("claves_04.ogg"),
             SoundList("closed_hi_hat_01.ogg"),
@@ -669,7 +669,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             SoundList("maracas_02.ogg"),
             SoundList("tr_909_open_hi_hat_01.ogg"),
             SoundList("rimshot_01.ogg"),
-            SoundList("tr_8_snare_01.ogg"),
+            SoundList("tr_8_snare_drum_01.ogg"),
             SoundList("tr_909_tom_01.ogg")
         )
         oSoundList = arrayListOf(
@@ -1049,9 +1049,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 sound9 = soundPool.load(assets.openFd("mid_tom_01.ogg"), 1)
 
-                sound10 = soundPool.load(assets.openFd("snare_01.ogg"), 1)
+                sound10 = soundPool.load(assets.openFd("snare_drum_01.ogg"), 1)
 
-                sound11 = soundPool.load(assets.openFd("kick_drum_short_01.ogg"), 1)
+                sound11 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
 
                 sound12 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
 
@@ -1083,9 +1083,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 sound9 = soundPool.load(assets.openFd("mid_tom_01.ogg"), 1)
 
-                sound10 = soundPool.load(assets.openFd("snare_01.ogg"), 1)
+                sound10 = soundPool.load(assets.openFd("snare_drum_01.ogg"), 1)
 
-                sound11 = soundPool.load(assets.openFd("kick_drum_short_01.ogg"), 1)
+                sound11 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
 
                 sound12 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
 
