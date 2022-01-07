@@ -5,6 +5,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
@@ -169,6 +170,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
             .apply { setContentView(this.root) }
 
+        immersiveMode()
         initAdMob()
         loadAdMob()
         loadRewardedAd()
@@ -1353,91 +1355,120 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding.imageView.setOnClickListener {
             if (paste == 1) {
                 buttonA = 1
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView2.setOnClickListener {
             if (paste == 1) {
                 buttonA = 2
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView3.setOnClickListener {
             if (paste == 1) {
                 buttonA = 3
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView4.setOnClickListener {
             if (paste == 1) {
                 buttonA = 4
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView5.setOnClickListener {
             if (paste == 1) {
                 buttonA = 5
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView6.setOnClickListener {
             if (paste == 1) {
                 buttonA = 6
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView7.setOnClickListener {
             if (paste == 1) {
                 buttonA = 7
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView8.setOnClickListener {
             if (paste == 1) {
                 buttonA = 8
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView9.setOnClickListener {
             if (paste == 1) {
                 buttonA = 9
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView10.setOnClickListener {
             if (paste == 1) {
                 buttonA = 10
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView11.setOnClickListener {
             if (paste == 1) {
                 buttonA = 11
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView12.setOnClickListener {
             if (paste == 1) {
                 buttonA = 12
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView13.setOnClickListener {
             if (paste == 1) {
                 buttonA = 13
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView14.setOnClickListener {
             if (paste == 1) {
                 buttonA = 14
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
         }
         binding.imageView15.setOnClickListener {
             if (paste == 1) {
                 buttonA = 15
+                meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
+            }
+        }
+    }
+
+    private fun immersiveMode() {
+        val decorView = window.decorView
+        decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
+                or View.SYSTEM_UI_FLAG_FULLSCREEN
+                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
+        decorView.setOnSystemUiVisibilityChangeListener { visibility ->
+            if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
+                Log.d("debug", "The system bars are visible")
+            } else {
+                Log.d("debug", "The system bars are NOT visible")
             }
         }
     }
@@ -2124,6 +2155,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
 
         chSpinner.adapter = adapterC
+        
+        chSpinner.avoidDropdownFocus()
 
         chSpinner.performClick()
 
