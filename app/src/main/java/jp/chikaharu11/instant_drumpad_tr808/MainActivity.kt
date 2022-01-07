@@ -170,7 +170,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
             .apply { setContentView(this.root) }
 
-        immersiveMode()
+        stickyImmersiveMode()
         initAdMob()
         loadAdMob()
         loadRewardedAd()
@@ -1459,12 +1459,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
-    private fun immersiveMode() {
+    private fun stickyImmersiveMode() {
         val decorView = window.decorView
-        decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
+        decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 or View.SYSTEM_UI_FLAG_FULLSCREEN
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
-        decorView.setOnSystemUiVisibilityChangeListener { visibility ->
+        decorView.setOnSystemUiVisibilityChangeListener { visibility -> // Note that system bars will only be "visible" if none of the
+            // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
             if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
                 Log.d("debug", "The system bars are visible")
             } else {
@@ -1510,6 +1511,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         if (mRewardedAd != null) {
             mRewardedAd?.show(this) { rewardItem ->
                 binding.adView.visibility = View.GONE
+                binding.gridView.visibility = View.INVISIBLE
                 adCheck = 1
                 var rewardAmount = rewardItem.amount
                 var rewardType = rewardItem.type
