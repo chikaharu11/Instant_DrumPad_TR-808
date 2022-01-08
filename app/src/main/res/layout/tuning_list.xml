@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="#5A5A66">
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:text="@string/textView17"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/tempo_plus0"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tempo_minus0"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textView16"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/volume_plus0"
+        app:layout_constraintStart_toStartOf="@+id/volume_minus0"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus0"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus0"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus0"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus0"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/volume_minus0"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <Button
+        android:id="@+id/loop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/s1"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus0"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus0"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus0"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus0"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volume_minus0"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus1"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus1"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus1"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus1"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/volume_minus1"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <Button
+        android:id="@+id/pad1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/s1"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus1"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus1"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus1"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volume_minus1"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus2"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus2"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus2"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus2"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/volume_minus2"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <Button
+        android:id="@+id/pad2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/s1"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus2"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus2"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus2"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus2"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -60,6 +60,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var count = 5
     private var bpm = 10
 
+    private var soundPoolVolume = 1.0f
+    private var soundPoolTempo = 1.0f
+
     private val locale: Locale = Locale.getDefault()
 
     companion object {
@@ -1456,6 +1459,33 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 meSpinner.avoidDropdownFocus()
                 meSpinner.performClick()
             }
+        }
+
+        findViewById<ImageButton>(R.id.volume_minus0).setOnClickListener {
+            lmp.volumeMinus()
+            if (count > 1) {
+                count -= 1
+            }
+        }
+
+        findViewById<Button>(R.id.pad1).setOnClickListener {
+            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+        }
+        findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
+            soundPoolVolume -= 0.1f
+            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+        }
+        findViewById<ImageButton>(R.id.volume_plus1).setOnClickListener {
+            soundPoolVolume += 0.1f
+            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+        }
+        findViewById<ImageButton>(R.id.tempo_minus1).setOnClickListener {
+            soundPoolTempo -= 0.1f
+            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+        }
+        findViewById<ImageButton>(R.id.tempo_plus1).setOnClickListener {
+            soundPoolTempo += 0.1f
+            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
         }
     }
 

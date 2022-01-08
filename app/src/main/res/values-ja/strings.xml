@@ -52,6 +52,9 @@
     <string name="change"><b>パッドをタッチするとパッド音を変更できます</b></string>
     <string name="change2"><b>演奏モード</b></string>
 
+    <string name="textView16">Volume</string>
+    <string name="textView17">Tempo</string>
+
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
         <item>Clap [CP]</item>

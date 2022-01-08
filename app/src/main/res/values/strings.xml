@@ -53,6 +53,9 @@
     <string name="change"><b>Touch the pad to change the pad sound.</b></string>
     <string name="change2"><b>Play mode</b></string>
 
+    <string name="textView16">Volume</string>
+    <string name="textView17">Tempo</string>
+
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
         <item>Clap [CP]</item>
