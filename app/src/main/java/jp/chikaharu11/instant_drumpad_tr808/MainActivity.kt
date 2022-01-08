@@ -1828,6 +1828,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
                     lmp.stop()
+                    count = 5
+                    bpm = 10
                     actionTitle = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                     supportActionBar?.title = actionTitle
@@ -2079,6 +2081,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
                     lmp.stop()
+                    count = 5
+                    bpm = 10
                     actionTitle = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace(".", "")
                     supportActionBar?.title = actionTitle
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
