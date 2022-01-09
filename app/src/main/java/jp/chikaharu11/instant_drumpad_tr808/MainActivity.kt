@@ -5,7 +5,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
@@ -223,18 +222,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
         val countries = if (locale == Locale.JAPAN) { arrayOf(
-                "ループの音量を上げる",
-                "ループの音量を下げる",
-                "ループのテンポを上げる",
-                "ループのテンポを下げる",
+                "サウンドの調整",
                 "バナー広告を非表示にする",
                 "終了する"
             ) } else {
             arrayOf(
-                "Main Volume UP",
-                "Main Volume DOWN",
-                "Main Tempo UP",
-                "Main Tempo DOWN",
+                "Adjusting Sounds",
                 "Hide banner Ads",
                 "EXIT"
             )
@@ -245,29 +238,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
-                "ループの音量を上げる" -> {
+                "サウンドの調整" -> {
                     binding.view?.visibility = View.VISIBLE
-                }
-                "ループの音量を下げる" -> {
-                    lmp.volumeMinus()
-                    if (count > 1) {
-                        count -= 1
-                    }
-                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
-                }
-                "ループのテンポを上げる" -> {
-                    lmp.speedUp()
-                    if (bpm < 60) {
-                        bpm += 1
-                    }
-                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
-                }
-                "ループのテンポを下げる" -> {
-                    lmp.speedDown()
-                    if (bpm > 1) {
-                        bpm -= 1
-                    }
-                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
                 }
                 "バナー広告を非表示にする" -> {
                     if (adCheck == 0) {
@@ -301,33 +273,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         }
                         .show()
                 }
-                "Main Volume UP" -> {
-                    lmp.volumePlus()
-                    if (count < 10) {
-                        count += 1
-                    }
-                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
-                }
-                "Main Volume DOWN" -> {
-                    lmp.volumeMinus()
-                    if (count > 1) {
-                        count -= 1
-                    }
-                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
-                }
-                "Main Tempo UP" -> {
-                    lmp.speedUp()
-                    if (bpm < 60) {
-                        bpm += 1
-                    }
-                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
-                }
-                "Main Tempo DOWN" -> {
-                    lmp.speedDown()
-                    if (bpm > 1) {
-                        bpm -= 1
-                    }
-                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
+                "Adjusting Sounds" -> {
+                    binding.view?.visibility = View.VISIBLE
                 }
                 "Hide banner Ads" -> {
                     if (adCheck == 0) {
@@ -2205,7 +2152,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
 
         chSpinner.adapter = adapterC
-        
+
         chSpinner.avoidDropdownFocus()
 
         chSpinner.performClick()
@@ -2399,14 +2346,18 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.isVisible -> {
                         soundListView.visibility = View.INVISIBLE
                     }
-                    tuningView.isVisible -> {
-                        binding.view?.visibility = View.INVISIBLE
-                    }
                     gridView.isVisible -> {
                         gridView.visibility = View.INVISIBLE
+                        tuningView.visibility = View.INVISIBLE
+                    }
+                    tuningView.isVisible -> {
+                        gridView.visibility = View.INVISIBLE
+                        tuningView.visibility = View.INVISIBLE
+                    }
+                    soundListView.isInvisible && gridView.isInvisible && tuningView.isInvisible -> {
+                        selectCh()
                     }
                 }
-                selectCh()
                 return true
             }
 
@@ -2415,17 +2366,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.isVisible -> {
                         soundListView.visibility = View.INVISIBLE
                     }
+                    gridView.isInvisible && tuningView.isVisible-> {
+                        tuningView.visibility = View.INVISIBLE
+                    }
                     gridView.isInvisible -> {
                         gridView.visibility = View.VISIBLE
                     }
                     gridView.isVisible -> {
                         gridView.visibility = View.INVISIBLE
-                    }
-                    tuningView.isInvisible -> {
-                        binding.view?.visibility = View.VISIBLE
-                    }
-                    tuningView.isVisible -> {
-                        binding.view?.visibility = View.INVISIBLE
+                        tuningView.visibility = View.INVISIBLE
                     }
                 }
                 return true
