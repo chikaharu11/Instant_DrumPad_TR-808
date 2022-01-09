@@ -2387,7 +2387,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView.isVisible -> {
                         gridView.visibility = View.INVISIBLE
                     }
-
                 }
                 selectCh()
                 return true
@@ -2404,7 +2403,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     gridView.isVisible -> {
                         gridView.visibility = View.INVISIBLE
                     }
-
                 }
                 return true
             }
