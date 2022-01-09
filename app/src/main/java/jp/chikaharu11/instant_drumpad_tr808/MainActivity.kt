@@ -246,11 +246,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
                 "ループの音量を上げる" -> {
-                    lmp.volumePlus()
-                    if (count < 10) {
-                        count += 1
-                    }
-                    supportActionBar?.title = "Vol:$count Tempo:$bpm $actionTitle"
+                    binding.view?.visibility = View.VISIBLE
                 }
                 "ループの音量を下げる" -> {
                     lmp.volumeMinus()
@@ -1467,6 +1463,24 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 count -= 1
             }
         }
+        findViewById<ImageButton>(R.id.volume_plus0).setOnClickListener {
+            lmp.volumePlus()
+            if (count < 10) {
+                count += 1
+            }
+        }
+        findViewById<ImageButton>(R.id.tempo_minus0).setOnClickListener {
+            lmp.speedDown()
+            if (bpm > 1) {
+                bpm -= 1
+            }
+        }
+        findViewById<ImageButton>(R.id.tempo_plus0).setOnClickListener {
+            lmp.speedUp()
+            if (bpm < 60) {
+                bpm += 1
+            }
+        }
 
         findViewById<Button>(R.id.pad1).setOnClickListener {
             soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -2351,6 +2365,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val soundListView = findViewById<ListView>(R.id.list_view)
         val gridView = findViewById<GridView>(R.id.grid_view)
+        val tuningView = findViewById<View>(R.id.view)
 
         when (item.itemId) {
 
@@ -2384,6 +2399,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.isVisible -> {
                         soundListView.visibility = View.INVISIBLE
                     }
+                    tuningView.isVisible -> {
+                        binding.view?.visibility = View.INVISIBLE
+                    }
                     gridView.isVisible -> {
                         gridView.visibility = View.INVISIBLE
                     }
@@ -2402,6 +2420,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     gridView.isVisible -> {
                         gridView.visibility = View.INVISIBLE
+                    }
+                    tuningView.isInvisible -> {
+                        binding.view?.visibility = View.VISIBLE
+                    }
+                    tuningView.isVisible -> {
+                        binding.view?.visibility = View.INVISIBLE
                     }
                 }
                 return true
