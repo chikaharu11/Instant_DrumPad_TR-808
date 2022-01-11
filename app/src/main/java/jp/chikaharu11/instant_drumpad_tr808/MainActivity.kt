@@ -1748,19 +1748,83 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
         }
-        findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
-            if (soundPoolVolume > 0.1f) {
-                soundPoolVolume -= 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+        findViewById<ImageButton>(R.id.volume_minus9).setOnClickListener {
+            if (soundPoolVolume9 > 0.1f) {
+                soundPoolVolume9 -= 0.1f
+                soundPoolVolume9 = "%.1f".format(soundPoolVolume9).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+        }
+        findViewById<ImageButton>(R.id.volume_plus9).setOnClickListener {
+            if (soundPoolVolume9 < 1.0f) {
+                soundPoolVolume9 += 0.1f
+                soundPoolVolume9 = "%.1f".format(soundPoolVolume9).toFloat()
+            }
+            soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+        }
+        findViewById<ImageButton>(R.id.tempo_minus9).setOnClickListener {
+            if (soundPoolTempo9 > 0.2f) {
+                soundPoolTempo9 -= 0.1f
+                soundPoolTempo9 = "%.1f".format(soundPoolTempo9).toFloat()
+            } else if (soundPoolTempo9 == 0.2f) {
+                soundPoolTempo9 = 0.125f
+            }
+            soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+        }
+        findViewById<ImageButton>(R.id.tempo_plus9).setOnClickListener {
+            if (soundPoolTempo9 == 0.125f) {
+                soundPoolTempo9 = 0.2f
+            } else if (soundPoolTempo9 < 8.0f) {
+                soundPoolTempo9 += 0.1f
+                soundPoolTempo9 = "%.1f".format(soundPoolTempo9).toFloat()
+            }
+            soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+        }
+        findViewById<ImageButton>(R.id.volume_minus10).setOnClickListener {
+            if (soundPoolVolume10 > 0.1f) {
+                soundPoolVolume10 -= 0.1f
+                soundPoolVolume10 = "%.1f".format(soundPoolVolume10).toFloat()
+            }
+            soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+        }
+        findViewById<ImageButton>(R.id.volume_plus10).setOnClickListener {
+            if (soundPoolVolume10 < 1.0f) {
+                soundPoolVolume10 += 0.1f
+                soundPoolVolume10 = "%.1f".format(soundPoolVolume10).toFloat()
+            }
+            soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+        }
+        findViewById<ImageButton>(R.id.tempo_minus10).setOnClickListener {
+            if (soundPoolTempo10 > 0.2f) {
+                soundPoolTempo10 -= 0.1f
+                soundPoolTempo10 = "%.1f".format(soundPoolTempo10).toFloat()
+            } else if (soundPoolTempo10 == 0.2f) {
+                soundPoolTempo10 = 0.125f
+            }
+            soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+        }
+        findViewById<ImageButton>(R.id.tempo_plus10).setOnClickListener {
+            if (soundPoolTempo10 == 0.125f) {
+                soundPoolTempo10 = 0.2f
+            } else if (soundPoolTempo10 < 8.0f) {
+                soundPoolTempo10 += 0.1f
+                soundPoolTempo10 = "%.1f".format(soundPoolTempo10).toFloat()
+            }
+            soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+        }
+        findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
+            if (soundPoolVolume10 > 0.1f) {
+                soundPoolVolume10 -= 0.1f
+                soundPoolVolume10 = "%.1f".format(soundPoolVolume10).toFloat()
+            }
+            soundPool.play(sound1, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo)
         }
         findViewById<ImageButton>(R.id.volume_plus1).setOnClickListener {
-            if (soundPoolVolume < 1.0f) {
-                soundPoolVolume += 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+            if (soundPoolVolume10 < 1.0f) {
+                soundPoolVolume10 += 0.1f
+                soundPoolVolume10 = "%.1f".format(soundPoolVolume10).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound1, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo)
         }
         findViewById<ImageButton>(R.id.tempo_minus1).setOnClickListener {
             if (soundPoolTempo > 0.2f) {
@@ -1769,7 +1833,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             } else if (soundPoolTempo == 0.2f) {
                 soundPoolTempo = 0.125f
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound1, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo)
         }
         findViewById<ImageButton>(R.id.tempo_plus1).setOnClickListener {
             if (soundPoolTempo == 0.125f) {
@@ -1778,71 +1842,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolTempo += 0.1f
                 soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-        }
-        findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
-            if (soundPoolVolume > 0.1f) {
-                soundPoolVolume -= 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
-            }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-        }
-        findViewById<ImageButton>(R.id.volume_plus1).setOnClickListener {
-            if (soundPoolVolume < 1.0f) {
-                soundPoolVolume += 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
-            }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-        }
-        findViewById<ImageButton>(R.id.tempo_minus1).setOnClickListener {
-            if (soundPoolTempo > 0.2f) {
-                soundPoolTempo -= 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
-            } else if (soundPoolTempo == 0.2f) {
-                soundPoolTempo = 0.125f
-            }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-        }
-        findViewById<ImageButton>(R.id.tempo_plus1).setOnClickListener {
-            if (soundPoolTempo == 0.125f) {
-                soundPoolTempo = 0.2f
-            } else if (soundPoolTempo < 8.0f) {
-                soundPoolTempo += 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
-            }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-        }
-        findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
-            if (soundPoolVolume > 0.1f) {
-                soundPoolVolume -= 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
-            }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-        }
-        findViewById<ImageButton>(R.id.volume_plus1).setOnClickListener {
-            if (soundPoolVolume < 1.0f) {
-                soundPoolVolume += 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
-            }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-        }
-        findViewById<ImageButton>(R.id.tempo_minus1).setOnClickListener {
-            if (soundPoolTempo > 0.2f) {
-                soundPoolTempo -= 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
-            } else if (soundPoolTempo == 0.2f) {
-                soundPoolTempo = 0.125f
-            }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
-        }
-        findViewById<ImageButton>(R.id.tempo_plus1).setOnClickListener {
-            if (soundPoolTempo == 0.125f) {
-                soundPoolTempo = 0.2f
-            } else if (soundPoolTempo < 8.0f) {
-                soundPoolTempo += 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
-            }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound1, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo)
         }
         findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
             if (soundPoolVolume > 0.1f) {
