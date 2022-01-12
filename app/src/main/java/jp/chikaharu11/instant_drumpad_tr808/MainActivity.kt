@@ -56,11 +56,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration15 = 55
 
     private var actionTitle = "rimshot_01".replace("_"," ").uppercase() + " loop"
-    private var padText1 = ""
-    private var padText2 = ""
-    private var padText3 = ""
-    private var padText4 = ""
-    private var padText5 = ""
+    private var padText1 = "TR-8_cymbal_01".replace("_"," ").uppercase()
+    private var padText2 = "cowbell_01b".replace("_"," ").uppercase()
+    private var padText3 = "TR-909_cymbal_01".replace("_"," ").uppercase()
+    private var padText4 = "open_hi_hat_01".replace("_"," ").uppercase()
+    private var padText5 = "clap_01".replace("_"," ").uppercase()
     private var padText6 = ""
     private var padText7 = ""
     private var padText8 = ""
@@ -1722,7 +1722,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolVolume -= 0.1f
                 soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
                 findViewById<Button>(R.id.pad1).text = ""
-                findViewById<Button>(R.id.pad1).text = soundPoolVolume.toString().replace("f","") + padText1 + soundPoolTempo.toString().replace("f","")
+                findViewById<Button>(R.id.pad1).text = soundPoolVolume.toString().replace("f","") + " " + padText1 + " " + soundPoolTempo.toString().replace("f","")
             }
             soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
         }
@@ -1730,6 +1730,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume < 1.0f) {
                 soundPoolVolume += 0.1f
                 soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+                findViewById<Button>(R.id.pad1).text = ""
+                findViewById<Button>(R.id.pad1).text = soundPoolVolume.toString().replace("f","") + " " + padText1 + " " + soundPoolTempo.toString().replace("f","")
             }
             soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
         }
@@ -2338,6 +2340,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun clicked2(soundList: SoundList) {
         try {
             when {
@@ -2355,9 +2358,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.textView.text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    findViewById<Button>(R.id.pad1).text = soundList.name.replaceBeforeLast("/", "").replace("/", "")
+                    padText1 = " " + soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
+                        .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " "
+                    findViewById<Button>(R.id.pad1).text = padText1
                 }
                 buttonA == 2 && buttonB == 1 -> {
                     effect(binding.imageView2,400)
@@ -2637,10 +2641,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPool.setOnLoadCompleteListener { soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
                     }
-                    binding.textView.text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                    binding.textView.text = " " + soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
-                    findViewById<Button>(R.id.pad1).text = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
-                        .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase()
+                    padText1 = soundList.name.replace("tr_8", "TR-8").replace("tr_909", "TR-909")
+                        .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " "
+                    findViewById<Button>(R.id.pad1).text = padText1
                 }
                 buttonA == 2 && buttonB == 2 -> {
                     effect(binding.imageView2,400)
