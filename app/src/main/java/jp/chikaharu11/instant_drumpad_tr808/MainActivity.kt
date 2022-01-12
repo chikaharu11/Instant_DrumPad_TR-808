@@ -1141,8 +1141,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound2, 1.0f, 1.0f, 1, 0, 1.0f)
-                    effect(binding.imageView2,mpDuration2)
+                    soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
+                    effect(binding.imageView2,"%.0f".format((mpDuration2 * 10) / (soundPoolTempo2 * 10)).toInt())
                 }
             }
                 false
@@ -1157,8 +1157,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView3,mpDuration3)
+                    soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
+                    effect(binding.imageView3,"%.0f".format((mpDuration3 * 10) / (soundPoolTempo3 * 10)).toInt())
                 }
             }
                 false
@@ -1173,8 +1173,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView4,mpDuration4)
+                    soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
+                    effect(binding.imageView4,"%.0f".format((mpDuration4 * 10) / (soundPoolTempo4 * 10)).toInt())
                 }
             }
                 false
@@ -1189,8 +1189,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound5, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView5,mpDuration5)
+                    soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
+                    effect(binding.imageView5,"%.0f".format((mpDuration5 * 10) / (soundPoolTempo5 * 10)).toInt())
                 }
             }
                 false
@@ -1205,8 +1205,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound6, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView6,mpDuration6)
+                    soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
+                    effect(binding.imageView6,"%.0f".format((mpDuration6 * 10) / (soundPoolTempo6 * 10)).toInt())
                 }
             }
                 false
@@ -1221,8 +1221,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView7,mpDuration7)
+                    soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
+                    effect(binding.imageView7,"%.0f".format((mpDuration7 * 10) / (soundPoolTempo7 * 10)).toInt())
                 }
             }
                 false
@@ -1237,8 +1237,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView8,mpDuration8)
+                    soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
+                    effect(binding.imageView8,"%.0f".format((mpDuration8 * 10) / (soundPoolTempo8 * 10)).toInt())
                 }
             }
                 false
@@ -1253,8 +1253,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView9,mpDuration9)
+                    soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
+                    effect(binding.imageView9,"%.0f".format((mpDuration9 * 10) / (soundPoolTempo9 * 10)).toInt())
                 }
             }
                 false
@@ -1270,8 +1270,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound10, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView10,mpDuration10)
+                    soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
+                    effect(binding.imageView10,"%.0f".format((mpDuration10 * 10) / (soundPoolTempo10 * 10)).toInt())
                 }
             }
                 false
@@ -1286,8 +1286,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound11, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView11,mpDuration11)
+                    soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
+                    effect(binding.imageView11,"%.0f".format((mpDuration11 * 10) / (soundPoolTempo11 * 10)).toInt())
                 }
             }
                 false
@@ -1302,8 +1302,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView12,mpDuration12)
+                    soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
+                    effect(binding.imageView12,"%.0f".format((mpDuration12 * 10) / (soundPoolTempo12 * 10)).toInt())
                 }
             }
                 false
@@ -1318,8 +1318,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound13, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView13,mpDuration13)
+                    soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
+                    effect(binding.imageView13,"%.0f".format((mpDuration13 * 10) / (soundPoolTempo13 * 10)).toInt())
                 }
             }
                 false
@@ -1334,8 +1334,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound14, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView14,mpDuration14)
+                    soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
+                    effect(binding.imageView14,"%.0f".format((mpDuration14 * 10) / (soundPoolTempo14 * 10)).toInt())
                 }
             }
                 false
@@ -1350,8 +1350,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     listView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
-                    soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
-                    effect(binding.imageView15,mpDuration15)
+                    soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
+                    effect(binding.imageView15,"%.0f".format((mpDuration15 * 10) / (soundPoolTempo15 * 10)).toInt())
                 }
             }
                 false
@@ -1876,101 +1876,101 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
         }
-        findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
-            if (soundPoolVolume > 0.1f) {
-                soundPoolVolume -= 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+        findViewById<ImageButton>(R.id.volume_minus13).setOnClickListener {
+            if (soundPoolVolume13 > 0.1f) {
+                soundPoolVolume13 -= 0.1f
+                soundPoolVolume13 = "%.1f".format(soundPoolVolume13).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
-        findViewById<ImageButton>(R.id.volume_plus1).setOnClickListener {
-            if (soundPoolVolume < 1.0f) {
-                soundPoolVolume += 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+        findViewById<ImageButton>(R.id.volume_plus13).setOnClickListener {
+            if (soundPoolVolume13 < 1.0f) {
+                soundPoolVolume13 += 0.1f
+                soundPoolVolume13 = "%.1f".format(soundPoolVolume13).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
-        findViewById<ImageButton>(R.id.tempo_minus1).setOnClickListener {
-            if (soundPoolTempo > 0.2f) {
-                soundPoolTempo -= 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
-            } else if (soundPoolTempo == 0.2f) {
-                soundPoolTempo = 0.125f
+        findViewById<ImageButton>(R.id.tempo_minus13).setOnClickListener {
+            if (soundPoolTempo13 > 0.2f) {
+                soundPoolTempo13 -= 0.1f
+                soundPoolTempo13 = "%.1f".format(soundPoolTempo13).toFloat()
+            } else if (soundPoolTempo13 == 0.2f) {
+                soundPoolTempo13 = 0.125f
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
-        findViewById<ImageButton>(R.id.tempo_plus1).setOnClickListener {
-            if (soundPoolTempo == 0.125f) {
-                soundPoolTempo = 0.2f
-            } else if (soundPoolTempo < 8.0f) {
-                soundPoolTempo += 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
+        findViewById<ImageButton>(R.id.tempo_plus13).setOnClickListener {
+            if (soundPoolTempo13 == 0.125f) {
+                soundPoolTempo13 = 0.2f
+            } else if (soundPoolTempo13 < 8.0f) {
+                soundPoolTempo13 += 0.1f
+                soundPoolTempo13 = "%.1f".format(soundPoolTempo13).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
-        findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
-            if (soundPoolVolume > 0.1f) {
-                soundPoolVolume -= 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+        findViewById<ImageButton>(R.id.volume_minus14).setOnClickListener {
+            if (soundPoolVolume14 > 0.1f) {
+                soundPoolVolume14 -= 0.1f
+                soundPoolVolume14 = "%.1f".format(soundPoolVolume14).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
-        findViewById<ImageButton>(R.id.volume_plus1).setOnClickListener {
-            if (soundPoolVolume < 1.0f) {
-                soundPoolVolume += 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+        findViewById<ImageButton>(R.id.volume_plus14).setOnClickListener {
+            if (soundPoolVolume14 < 1.0f) {
+                soundPoolVolume14 += 0.1f
+                soundPoolVolume14 = "%.1f".format(soundPoolVolume14).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
-        findViewById<ImageButton>(R.id.tempo_minus1).setOnClickListener {
-            if (soundPoolTempo > 0.2f) {
-                soundPoolTempo -= 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
-            } else if (soundPoolTempo == 0.2f) {
-                soundPoolTempo = 0.125f
+        findViewById<ImageButton>(R.id.tempo_minus14).setOnClickListener {
+            if (soundPoolTempo14 > 0.2f) {
+                soundPoolTempo14 -= 0.1f
+                soundPoolTempo14 = "%.1f".format(soundPoolTempo14).toFloat()
+            } else if (soundPoolTempo14 == 0.2f) {
+                soundPoolTempo14 = 0.125f
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
-        findViewById<ImageButton>(R.id.tempo_plus1).setOnClickListener {
-            if (soundPoolTempo == 0.125f) {
-                soundPoolTempo = 0.2f
-            } else if (soundPoolTempo < 8.0f) {
-                soundPoolTempo += 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
+        findViewById<ImageButton>(R.id.tempo_plus14).setOnClickListener {
+            if (soundPoolTempo14 == 0.125f) {
+                soundPoolTempo14 = 0.2f
+            } else if (soundPoolTempo14 < 8.0f) {
+                soundPoolTempo14 += 0.1f
+                soundPoolTempo14 = "%.1f".format(soundPoolTempo14).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
-        findViewById<ImageButton>(R.id.volume_minus1).setOnClickListener {
-            if (soundPoolVolume > 0.1f) {
-                soundPoolVolume -= 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+        findViewById<ImageButton>(R.id.volume_minus15).setOnClickListener {
+            if (soundPoolVolume15 > 0.1f) {
+                soundPoolVolume15 -= 0.1f
+                soundPoolVolume15 = "%.1f".format(soundPoolVolume15).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
-        findViewById<ImageButton>(R.id.volume_plus1).setOnClickListener {
-            if (soundPoolVolume < 1.0f) {
-                soundPoolVolume += 0.1f
-                soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+        findViewById<ImageButton>(R.id.volume_plus15).setOnClickListener {
+            if (soundPoolVolume15 < 1.0f) {
+                soundPoolVolume15 += 0.1f
+                soundPoolVolume15 = "%.1f".format(soundPoolVolume15).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
-        findViewById<ImageButton>(R.id.tempo_minus1).setOnClickListener {
-            if (soundPoolTempo > 0.2f) {
-                soundPoolTempo -= 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
-            } else if (soundPoolTempo == 0.2f) {
-                soundPoolTempo = 0.125f
+        findViewById<ImageButton>(R.id.tempo_minus15).setOnClickListener {
+            if (soundPoolTempo15 > 0.2f) {
+                soundPoolTempo15 -= 0.1f
+                soundPoolTempo15 = "%.1f".format(soundPoolTempo15).toFloat()
+            } else if (soundPoolTempo15 == 0.2f) {
+                soundPoolTempo15 = 0.125f
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
-        findViewById<ImageButton>(R.id.tempo_plus1).setOnClickListener {
-            if (soundPoolTempo == 0.125f) {
-                soundPoolTempo = 0.2f
-            } else if (soundPoolTempo < 8.0f) {
-                soundPoolTempo += 0.1f
-                soundPoolTempo = "%.1f".format(soundPoolTempo).toFloat()
+        findViewById<ImageButton>(R.id.tempo_plus15).setOnClickListener {
+            if (soundPoolTempo15 == 0.125f) {
+                soundPoolTempo15 = 0.2f
+            } else if (soundPoolTempo15 < 8.0f) {
+                soundPoolTempo15 += 0.1f
+                soundPoolTempo15 = "%.1f".format(soundPoolTempo15).toFloat()
             }
-            soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
+            soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
     }
 
