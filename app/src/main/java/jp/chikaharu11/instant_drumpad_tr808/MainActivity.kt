@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration14 = 608
     private var mpDuration15 = 55
 
-    private var actionTitle = "rimshot_01 loop".replace("_"," ").uppercase()
+    private var actionTitle = "rimshot_01".replace("_"," ").uppercase() + " loop"
     private var count = 5
     private var bpm = 10
 
@@ -283,11 +283,13 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val countries = if (locale == Locale.JAPAN) { arrayOf(
                 "サウンドの調整",
+                "サウンドの設定をリセット",
                 "バナー広告を非表示にする",
                 "終了する"
             ) } else {
             arrayOf(
                 "Adjusting Sounds",
+                "Reset the sound settings",
                 "Hide banner Ads",
                 "EXIT"
             )
@@ -300,6 +302,39 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when(adapterView.getItemAtPosition(position)) {
                 "サウンドの調整" -> {
                     binding.view?.visibility = View.VISIBLE
+                }
+                "サウンドの設定をリセット" -> {
+                    soundPoolVolume = 0.5f
+                    soundPoolTempo = 1.0f
+                    soundPoolVolume2 = 0.5f
+                    soundPoolTempo2 = 1.0f
+                    soundPoolVolume3 = 0.5f
+                    soundPoolTempo3 = 1.0f
+                    soundPoolVolume4 = 0.5f
+                    soundPoolTempo4 = 1.0f
+                    soundPoolVolume5 = 0.5f
+                    soundPoolTempo5 = 1.0f
+                    soundPoolVolume6 = 0.5f
+                    soundPoolTempo6 = 1.0f
+                    soundPoolVolume7 = 0.5f
+                    soundPoolTempo7 = 1.0f
+                    soundPoolVolume8 = 0.5f
+                    soundPoolTempo8 = 1.0f
+                    soundPoolVolume9 = 0.5f
+                    soundPoolTempo9 = 1.0f
+                    soundPoolVolume10 = 0.5f
+                    soundPoolTempo10 = 1.0f
+                    soundPoolVolume11 = 0.5f
+                    soundPoolTempo11 = 1.0f
+                    soundPoolVolume12 = 0.5f
+                    soundPoolTempo12 = 1.0f
+                    soundPoolVolume13 = 0.5f
+                    soundPoolTempo13 = 1.0f
+                    soundPoolVolume14 = 0.5f
+                    soundPoolTempo14 = 1.0f
+                    soundPoolVolume15 = 0.5f
+                    soundPoolTempo15 = 1.0f
+                    binding.gridView.visibility = View.INVISIBLE
                 }
                 "バナー広告を非表示にする" -> {
                     if (adCheck == 0) {
@@ -335,6 +370,39 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 "Adjusting Sounds" -> {
                     binding.view?.visibility = View.VISIBLE
+                }
+                "Reset the sound settings" -> {
+                    soundPoolVolume = 0.5f
+                    soundPoolTempo = 1.0f
+                    soundPoolVolume2 = 0.5f
+                    soundPoolTempo2 = 1.0f
+                    soundPoolVolume3 = 0.5f
+                    soundPoolTempo3 = 1.0f
+                    soundPoolVolume4 = 0.5f
+                    soundPoolTempo4 = 1.0f
+                    soundPoolVolume5 = 0.5f
+                    soundPoolTempo5 = 1.0f
+                    soundPoolVolume6 = 0.5f
+                    soundPoolTempo6 = 1.0f
+                    soundPoolVolume7 = 0.5f
+                    soundPoolTempo7 = 1.0f
+                    soundPoolVolume8 = 0.5f
+                    soundPoolTempo8 = 1.0f
+                    soundPoolVolume9 = 0.5f
+                    soundPoolTempo9 = 1.0f
+                    soundPoolVolume10 = 0.5f
+                    soundPoolTempo10 = 1.0f
+                    soundPoolVolume11 = 0.5f
+                    soundPoolTempo11 = 1.0f
+                    soundPoolVolume12 = 0.5f
+                    soundPoolTempo12 = 1.0f
+                    soundPoolVolume13 = 0.5f
+                    soundPoolTempo13 = 1.0f
+                    soundPoolVolume14 = 0.5f
+                    soundPoolTempo14 = 1.0f
+                    soundPoolVolume15 = 0.5f
+                    soundPoolTempo15 = 1.0f
+                    binding.gridView.visibility = View.INVISIBLE
                 }
                 "Hide banner Ads" -> {
                     if (adCheck == 0) {
@@ -1480,15 +1548,40 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             lmp.speedDown()
             if (bpm > 1) {
                 bpm -= 1
+                menuSwitch = false
+                invalidateOptionsMenu()
+                switch1 = 1
             }
         }
         findViewById<ImageButton>(R.id.tempo_plus0).setOnClickListener {
             lmp.speedUp()
             if (bpm < 60) {
                 bpm += 1
+                menuSwitch = false
+                invalidateOptionsMenu()
+                switch1 = 1
             }
         }
 
+        findViewById<Button>(R.id.loop).setOnTouchListener { _, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    if (switch1 == 1) {
+                        lmp.stop()
+                        soundPool.autoPause()
+                        menuSwitch = true
+                        invalidateOptionsMenu()
+                        switch1 = 2
+                    } else {
+                        lmp.start()
+                        menuSwitch = false
+                        invalidateOptionsMenu()
+                        switch1 = 1
+                    }
+                }
+            }
+            false
+        }
         findViewById<Button>(R.id.pad1).setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
@@ -2508,7 +2601,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     count = 5
                     bpm = 10
                     actionTitle = soundList.name.replaceBeforeLast("/", "").replace("/", "")
-                        .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + "LOOP"
+                        .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop"
                     supportActionBar?.title = actionTitle
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
@@ -2790,7 +2883,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.stop()
                     count = 5
                     bpm = 10
-                    actionTitle = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + "LOOP"
+                    actionTitle = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop"
                     supportActionBar?.title = actionTitle
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                         soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
@@ -2953,6 +3046,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         binding.textView13.text = ""
                         binding.textView14.text = ""
                         binding.textView15.text = ""
+                        findViewById<Button>(R.id.pad1).text = ""
+                        findViewById<Button>(R.id.pad2).text = ""
+                        findViewById<Button>(R.id.pad3).text = ""
+                        findViewById<Button>(R.id.pad4).text = ""
+                        findViewById<Button>(R.id.pad5).text = ""
+                        findViewById<Button>(R.id.pad6).text = ""
+                        findViewById<Button>(R.id.pad7).text = ""
+                        findViewById<Button>(R.id.pad8).text = ""
+                        findViewById<Button>(R.id.pad9).text = ""
+                        findViewById<Button>(R.id.pad10).text = ""
+                        findViewById<Button>(R.id.pad11).text = ""
+                        findViewById<Button>(R.id.pad12).text = ""
+                        findViewById<Button>(R.id.pad13).text = ""
+                        findViewById<Button>(R.id.pad14).text = ""
+                        findViewById<Button>(R.id.pad15).text = ""
                         mpDuration = 0
                         mpDuration2 = 0
                         mpDuration3 = 0
@@ -2968,6 +3076,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         mpDuration13 = 0
                         mpDuration14 = 0
                         mpDuration15 = 0
+                        soundPoolVolume = 0.5f
+                        soundPoolTempo = 1.0f
+                        soundPoolVolume2 = 0.5f
+                        soundPoolTempo2 = 1.0f
+                        soundPoolVolume3 = 0.5f
+                        soundPoolTempo3 = 1.0f
+                        soundPoolVolume4 = 0.5f
+                        soundPoolTempo4 = 1.0f
+                        soundPoolVolume5 = 0.5f
+                        soundPoolTempo5 = 1.0f
+                        soundPoolVolume6 = 0.5f
+                        soundPoolTempo6 = 1.0f
+                        soundPoolVolume7 = 0.5f
+                        soundPoolTempo7 = 1.0f
+                        soundPoolVolume8 = 0.5f
+                        soundPoolTempo8 = 1.0f
+                        soundPoolVolume9 = 0.5f
+                        soundPoolTempo9 = 1.0f
+                        soundPoolVolume10 = 0.5f
+                        soundPoolTempo10 = 1.0f
+                        soundPoolVolume11 = 0.5f
+                        soundPoolTempo11 = 1.0f
+                        soundPoolVolume12 = 0.5f
+                        soundPoolTempo12 = 1.0f
+                        soundPoolVolume13 = 0.5f
+                        soundPoolTempo13 = 1.0f
+                        soundPoolVolume14 = 0.5f
+                        soundPoolTempo14 = 1.0f
+                        soundPoolVolume15 = 0.5f
+                        soundPoolTempo15 = 1.0f
                         sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                         sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                         sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
