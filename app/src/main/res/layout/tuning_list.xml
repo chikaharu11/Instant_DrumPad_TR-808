@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:text="@string/s1"
         android:lines="1"
-        android:ellipsize="marquee"
+        android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus1"
         app:layout_constraintEnd_toStartOf="@+id/tempo_minus1"
         app:layout_constraintStart_toEndOf="@+id/volume_plus1"

@@ -56,6 +56,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var mpDuration15 = 55
 
     private var actionTitle = "rimshot_01".replace("_"," ").uppercase() + " loop"
+    private var padText1 = ""
+    private var padText2 = ""
+    private var padText3 = ""
+    private var padText4 = ""
+    private var padText5 = ""
+    private var padText6 = ""
+    private var padText7 = ""
+    private var padText8 = ""
+    private var padText9 = ""
+    private var padText10 = ""
+    private var padText11 = ""
+    private var padText12 = ""
+    private var padText13 = ""
+    private var padText14 = ""
+    private var padText15 = ""
     private var count = 5
     private var bpm = 10
 
@@ -1706,6 +1721,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume > 0.1f) {
                 soundPoolVolume -= 0.1f
                 soundPoolVolume = "%.1f".format(soundPoolVolume).toFloat()
+                findViewById<Button>(R.id.pad1).text = ""
+                findViewById<Button>(R.id.pad1).text = soundPoolVolume.toString().replace("f","") + padText1 + soundPoolTempo.toString().replace("f","")
             }
             soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
         }
