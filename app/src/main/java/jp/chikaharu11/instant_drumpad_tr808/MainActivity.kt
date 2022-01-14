@@ -1765,6 +1765,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume2 > 0.1f) {
                 soundPoolVolume2 -= 0.1f
                 soundPoolVolume2 = "%.1f".format(soundPoolVolume2).toFloat()
+                findViewById<Button>(R.id.pad2).text = ""
+                findViewById<Button>(R.id.pad2).text = soundPoolVolume2.toString().replace("f","") + " " + padText2 + " " + soundPoolTempo2.toString().replace("f","")
             }
             soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
         }
@@ -1772,6 +1774,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume2 < 1.0f) {
                 soundPoolVolume2 += 0.1f
                 soundPoolVolume2 = "%.1f".format(soundPoolVolume2).toFloat()
+                findViewById<Button>(R.id.pad2).text = ""
+                findViewById<Button>(R.id.pad2).text = soundPoolVolume2.toString().replace("f","") + " " + padText2 + " " + soundPoolTempo2.toString().replace("f","")
             }
             soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
         }
@@ -1779,17 +1783,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo2 > 0.2f) {
                 soundPoolTempo2 -= 0.1f
                 soundPoolTempo2 = "%.1f".format(soundPoolTempo2).toFloat()
+                findViewById<Button>(R.id.pad2).text = ""
+                findViewById<Button>(R.id.pad2).text = soundPoolVolume2.toString().replace("f","") + " " + padText2 + " " + soundPoolTempo2.toString().replace("f","")
             } else if (soundPoolTempo2 == 0.2f) {
                 soundPoolTempo2 = 0.125f
+                findViewById<Button>(R.id.pad2).text = ""
+                findViewById<Button>(R.id.pad2).text = soundPoolVolume2.toString().replace("f","") + " " + padText2 + " " + soundPoolTempo2.toString().replace("f","")
             }
             soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
         }
         findViewById<ImageButton>(R.id.tempo_plus2).setOnClickListener {
             if (soundPoolTempo2 == 0.125f) {
                 soundPoolTempo2 = 0.2f
+                findViewById<Button>(R.id.pad2).text = ""
+                findViewById<Button>(R.id.pad2).text = soundPoolVolume2.toString().replace("f","") + " " + padText2 + " " + soundPoolTempo2.toString().replace("f","")
             } else if (soundPoolTempo2 < 8.0f) {
                 soundPoolTempo2 += 0.1f
                 soundPoolTempo2 = "%.1f".format(soundPoolTempo2).toFloat()
+                findViewById<Button>(R.id.pad2).text = ""
+                findViewById<Button>(R.id.pad2).text = soundPoolVolume2.toString().replace("f","") + " " + padText2 + " " + soundPoolTempo2.toString().replace("f","")
             }
             soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
         }
@@ -1797,6 +1809,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume3 > 0.1f) {
                 soundPoolVolume3 -= 0.1f
                 soundPoolVolume3 = "%.1f".format(soundPoolVolume3).toFloat()
+                findViewById<Button>(R.id.pad3).text = ""
+                findViewById<Button>(R.id.pad3).text = soundPoolVolume3.toString().replace("f","") + " " + padText3 + " " + soundPoolTempo3.toString().replace("f","")
             }
             soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
         }
@@ -1804,6 +1818,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume3 < 1.0f) {
                 soundPoolVolume3 += 0.1f
                 soundPoolVolume3 = "%.1f".format(soundPoolVolume3).toFloat()
+                findViewById<Button>(R.id.pad3).text = ""
+                findViewById<Button>(R.id.pad3).text = soundPoolVolume3.toString().replace("f","") + " " + padText3 + " " + soundPoolTempo3.toString().replace("f","")
             }
             soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
         }
@@ -1811,17 +1827,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo3 > 0.2f) {
                 soundPoolTempo3 -= 0.1f
                 soundPoolTempo3 = "%.1f".format(soundPoolTempo3).toFloat()
+                findViewById<Button>(R.id.pad3).text = ""
+                findViewById<Button>(R.id.pad3).text = soundPoolVolume3.toString().replace("f","") + " " + padText3 + " " + soundPoolTempo3.toString().replace("f","")
             } else if (soundPoolTempo3 == 0.2f) {
                 soundPoolTempo3 = 0.125f
+                findViewById<Button>(R.id.pad3).text = ""
+                findViewById<Button>(R.id.pad3).text = soundPoolVolume3.toString().replace("f","") + " " + padText3 + " " + soundPoolTempo3.toString().replace("f","")
             }
             soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
         }
         findViewById<ImageButton>(R.id.tempo_plus3).setOnClickListener {
             if (soundPoolTempo3 == 0.125f) {
                 soundPoolTempo3 = 0.2f
+                findViewById<Button>(R.id.pad3).text = ""
+                findViewById<Button>(R.id.pad3).text = soundPoolVolume3.toString().replace("f","") + " " + padText3 + " " + soundPoolTempo3.toString().replace("f","")
             } else if (soundPoolTempo3 < 8.0f) {
                 soundPoolTempo3 += 0.1f
                 soundPoolTempo3 = "%.1f".format(soundPoolTempo3).toFloat()
+                findViewById<Button>(R.id.pad3).text = ""
+                findViewById<Button>(R.id.pad3).text = soundPoolVolume3.toString().replace("f","") + " " + padText3 + " " + soundPoolTempo3.toString().replace("f","")
             }
             soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
         }
@@ -1829,6 +1853,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume4 > 0.1f) {
                 soundPoolVolume4 -= 0.1f
                 soundPoolVolume4 = "%.1f".format(soundPoolVolume4).toFloat()
+                findViewById<Button>(R.id.pad4).text = ""
+                findViewById<Button>(R.id.pad4).text = soundPoolVolume4.toString().replace("f","") + " " + padText4 + " " + soundPoolTempo4.toString().replace("f","")
             }
             soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
         }
@@ -1836,6 +1862,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume4 < 1.0f) {
                 soundPoolVolume4 += 0.1f
                 soundPoolVolume4 = "%.1f".format(soundPoolVolume4).toFloat()
+                findViewById<Button>(R.id.pad4).text = ""
+                findViewById<Button>(R.id.pad4).text = soundPoolVolume4.toString().replace("f","") + " " + padText4 + " " + soundPoolTempo4.toString().replace("f","")
             }
             soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
         }
@@ -1843,17 +1871,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo4 > 0.2f) {
                 soundPoolTempo4 -= 0.1f
                 soundPoolTempo4 = "%.1f".format(soundPoolTempo4).toFloat()
+                findViewById<Button>(R.id.pad4).text = ""
+                findViewById<Button>(R.id.pad4).text = soundPoolVolume4.toString().replace("f","") + " " + padText4 + " " + soundPoolTempo4.toString().replace("f","")
             } else if (soundPoolTempo4 == 0.2f) {
                 soundPoolTempo4 = 0.125f
+                findViewById<Button>(R.id.pad4).text = ""
+                findViewById<Button>(R.id.pad4).text = soundPoolVolume4.toString().replace("f","") + " " + padText4 + " " + soundPoolTempo4.toString().replace("f","")
             }
             soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
         }
         findViewById<ImageButton>(R.id.tempo_plus4).setOnClickListener {
             if (soundPoolTempo4 == 0.125f) {
                 soundPoolTempo4 = 0.2f
+                findViewById<Button>(R.id.pad4).text = ""
+                findViewById<Button>(R.id.pad4).text = soundPoolVolume4.toString().replace("f","") + " " + padText4 + " " + soundPoolTempo4.toString().replace("f","")
             } else if (soundPoolTempo4 < 8.0f) {
                 soundPoolTempo4 += 0.1f
                 soundPoolTempo4 = "%.1f".format(soundPoolTempo4).toFloat()
+                findViewById<Button>(R.id.pad4).text = ""
+                findViewById<Button>(R.id.pad4).text = soundPoolVolume4.toString().replace("f","") + " " + padText4 + " " + soundPoolTempo4.toString().replace("f","")
             }
             soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
         }
@@ -1861,6 +1897,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume5 > 0.1f) {
                 soundPoolVolume5 -= 0.1f
                 soundPoolVolume5 = "%.1f".format(soundPoolVolume5).toFloat()
+                findViewById<Button>(R.id.pad5).text = ""
+                findViewById<Button>(R.id.pad5).text = soundPoolVolume5.toString().replace("f","") + " " + padText5 + " " + soundPoolTempo5.toString().replace("f","")
             }
             soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
         }
@@ -1868,6 +1906,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume5 < 1.0f) {
                 soundPoolVolume5 += 0.1f
                 soundPoolVolume5 = "%.1f".format(soundPoolVolume5).toFloat()
+                findViewById<Button>(R.id.pad5).text = ""
+                findViewById<Button>(R.id.pad5).text = soundPoolVolume5.toString().replace("f","") + " " + padText5 + " " + soundPoolTempo5.toString().replace("f","")
             }
             soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
         }
@@ -1875,17 +1915,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo5 > 0.2f) {
                 soundPoolTempo5 -= 0.1f
                 soundPoolTempo5 = "%.1f".format(soundPoolTempo5).toFloat()
+                findViewById<Button>(R.id.pad5).text = ""
+                findViewById<Button>(R.id.pad5).text = soundPoolVolume5.toString().replace("f","") + " " + padText5 + " " + soundPoolTempo5.toString().replace("f","")
             } else if (soundPoolTempo5 == 0.2f) {
                 soundPoolTempo5 = 0.125f
+                findViewById<Button>(R.id.pad5).text = ""
+                findViewById<Button>(R.id.pad5).text = soundPoolVolume5.toString().replace("f","") + " " + padText5 + " " + soundPoolTempo5.toString().replace("f","")
             }
             soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
         }
         findViewById<ImageButton>(R.id.tempo_plus5).setOnClickListener {
             if (soundPoolTempo5 == 0.125f) {
                 soundPoolTempo5 = 0.2f
+                findViewById<Button>(R.id.pad5).text = ""
+                findViewById<Button>(R.id.pad5).text = soundPoolVolume5.toString().replace("f","") + " " + padText5 + " " + soundPoolTempo5.toString().replace("f","")
             } else if (soundPoolTempo5 < 8.0f) {
                 soundPoolTempo5 += 0.1f
                 soundPoolTempo5 = "%.1f".format(soundPoolTempo5).toFloat()
+                findViewById<Button>(R.id.pad5).text = ""
+                findViewById<Button>(R.id.pad5).text = soundPoolVolume5.toString().replace("f","") + " " + padText5 + " " + soundPoolTempo5.toString().replace("f","")
             }
             soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
         }
@@ -1893,6 +1941,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume6 > 0.1f) {
                 soundPoolVolume6 -= 0.1f
                 soundPoolVolume6 = "%.1f".format(soundPoolVolume6).toFloat()
+                findViewById<Button>(R.id.pad6).text = ""
+                findViewById<Button>(R.id.pad6).text = soundPoolVolume6.toString().replace("f","") + " " + padText6 + " " + soundPoolTempo6.toString().replace("f","")
             }
             soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
         }
@@ -1900,6 +1950,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume6 < 1.0f) {
                 soundPoolVolume6 += 0.1f
                 soundPoolVolume6 = "%.1f".format(soundPoolVolume6).toFloat()
+                findViewById<Button>(R.id.pad6).text = ""
+                findViewById<Button>(R.id.pad6).text = soundPoolVolume6.toString().replace("f","") + " " + padText6 + " " + soundPoolTempo6.toString().replace("f","")
             }
             soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
         }
@@ -1907,17 +1959,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo6 > 0.2f) {
                 soundPoolTempo6 -= 0.1f
                 soundPoolTempo6 = "%.1f".format(soundPoolTempo6).toFloat()
+                findViewById<Button>(R.id.pad6).text = ""
+                findViewById<Button>(R.id.pad6).text = soundPoolVolume6.toString().replace("f","") + " " + padText6 + " " + soundPoolTempo6.toString().replace("f","")
             } else if (soundPoolTempo6 == 0.2f) {
                 soundPoolTempo6 = 0.125f
+                findViewById<Button>(R.id.pad6).text = ""
+                findViewById<Button>(R.id.pad6).text = soundPoolVolume6.toString().replace("f","") + " " + padText6 + " " + soundPoolTempo6.toString().replace("f","")
             }
             soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
         }
         findViewById<ImageButton>(R.id.tempo_plus6).setOnClickListener {
             if (soundPoolTempo6 == 0.125f) {
                 soundPoolTempo6 = 0.2f
+                findViewById<Button>(R.id.pad6).text = ""
+                findViewById<Button>(R.id.pad6).text = soundPoolVolume6.toString().replace("f","") + " " + padText6 + " " + soundPoolTempo6.toString().replace("f","")
             } else if (soundPoolTempo6 < 8.0f) {
                 soundPoolTempo6 += 0.1f
                 soundPoolTempo6 = "%.1f".format(soundPoolTempo6).toFloat()
+                findViewById<Button>(R.id.pad6).text = ""
+                findViewById<Button>(R.id.pad6).text = soundPoolVolume6.toString().replace("f","") + " " + padText6 + " " + soundPoolTempo6.toString().replace("f","")
             }
             soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
         }
@@ -1925,6 +1985,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume7 > 0.1f) {
                 soundPoolVolume7 -= 0.1f
                 soundPoolVolume7 = "%.1f".format(soundPoolVolume7).toFloat()
+                findViewById<Button>(R.id.pad7).text = ""
+                findViewById<Button>(R.id.pad7).text = soundPoolVolume7.toString().replace("f","") + " " + padText7 + " " + soundPoolTempo7.toString().replace("f","")
             }
             soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
         }
@@ -1932,6 +1994,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume7 < 1.0f) {
                 soundPoolVolume7 += 0.1f
                 soundPoolVolume7 = "%.1f".format(soundPoolVolume7).toFloat()
+                findViewById<Button>(R.id.pad7).text = ""
+                findViewById<Button>(R.id.pad7).text = soundPoolVolume7.toString().replace("f","") + " " + padText7 + " " + soundPoolTempo7.toString().replace("f","")
             }
             soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
         }
@@ -1939,17 +2003,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo7 > 0.2f) {
                 soundPoolTempo7 -= 0.1f
                 soundPoolTempo7 = "%.1f".format(soundPoolTempo7).toFloat()
+                findViewById<Button>(R.id.pad7).text = ""
+                findViewById<Button>(R.id.pad7).text = soundPoolVolume7.toString().replace("f","") + " " + padText7 + " " + soundPoolTempo7.toString().replace("f","")
             } else if (soundPoolTempo7 == 0.2f) {
                 soundPoolTempo7 = 0.125f
+                findViewById<Button>(R.id.pad7).text = ""
+                findViewById<Button>(R.id.pad7).text = soundPoolVolume7.toString().replace("f","") + " " + padText7 + " " + soundPoolTempo7.toString().replace("f","")
             }
             soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
         }
         findViewById<ImageButton>(R.id.tempo_plus7).setOnClickListener {
             if (soundPoolTempo7 == 0.125f) {
                 soundPoolTempo7 = 0.2f
+                findViewById<Button>(R.id.pad7).text = ""
+                findViewById<Button>(R.id.pad7).text = soundPoolVolume7.toString().replace("f","") + " " + padText7 + " " + soundPoolTempo7.toString().replace("f","")
             } else if (soundPoolTempo7 < 8.0f) {
                 soundPoolTempo7 += 0.1f
                 soundPoolTempo7 = "%.1f".format(soundPoolTempo7).toFloat()
+                findViewById<Button>(R.id.pad7).text = ""
+                findViewById<Button>(R.id.pad7).text = soundPoolVolume7.toString().replace("f","") + " " + padText7 + " " + soundPoolTempo7.toString().replace("f","")
             }
             soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
         }
@@ -1957,6 +2029,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume8 > 0.1f) {
                 soundPoolVolume8 -= 0.1f
                 soundPoolVolume8 = "%.1f".format(soundPoolVolume8).toFloat()
+                findViewById<Button>(R.id.pad8).text = ""
+                findViewById<Button>(R.id.pad8).text = soundPoolVolume8.toString().replace("f","") + " " + padText8 + " " + soundPoolTempo8.toString().replace("f","")
             }
             soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
         }
@@ -1964,6 +2038,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume8 < 1.0f) {
                 soundPoolVolume8 += 0.1f
                 soundPoolVolume8 = "%.1f".format(soundPoolVolume8).toFloat()
+                findViewById<Button>(R.id.pad8).text = ""
+                findViewById<Button>(R.id.pad8).text = soundPoolVolume8.toString().replace("f","") + " " + padText8 + " " + soundPoolTempo8.toString().replace("f","")
             }
             soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
         }
@@ -1971,17 +2047,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo8 > 0.2f) {
                 soundPoolTempo8 -= 0.1f
                 soundPoolTempo8 = "%.1f".format(soundPoolTempo8).toFloat()
+                findViewById<Button>(R.id.pad8).text = ""
+                findViewById<Button>(R.id.pad8).text = soundPoolVolume8.toString().replace("f","") + " " + padText8 + " " + soundPoolTempo8.toString().replace("f","")
             } else if (soundPoolTempo8 == 0.2f) {
                 soundPoolTempo8 = 0.125f
+                findViewById<Button>(R.id.pad8).text = ""
+                findViewById<Button>(R.id.pad8).text = soundPoolVolume8.toString().replace("f","") + " " + padText8 + " " + soundPoolTempo8.toString().replace("f","")
             }
             soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
         }
         findViewById<ImageButton>(R.id.tempo_plus8).setOnClickListener {
             if (soundPoolTempo8 == 0.125f) {
                 soundPoolTempo8 = 0.2f
+                findViewById<Button>(R.id.pad8).text = ""
+                findViewById<Button>(R.id.pad8).text = soundPoolVolume8.toString().replace("f","") + " " + padText8 + " " + soundPoolTempo8.toString().replace("f","")
             } else if (soundPoolTempo8 < 8.0f) {
                 soundPoolTempo8 += 0.1f
                 soundPoolTempo8 = "%.1f".format(soundPoolTempo8).toFloat()
+                findViewById<Button>(R.id.pad8).text = ""
+                findViewById<Button>(R.id.pad8).text = soundPoolVolume8.toString().replace("f","") + " " + padText8 + " " + soundPoolTempo8.toString().replace("f","")
             }
             soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
         }
@@ -1989,6 +2073,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume9 > 0.1f) {
                 soundPoolVolume9 -= 0.1f
                 soundPoolVolume9 = "%.1f".format(soundPoolVolume9).toFloat()
+                findViewById<Button>(R.id.pad9).text = ""
+                findViewById<Button>(R.id.pad9).text = soundPoolVolume9.toString().replace("f","") + " " + padText9 + " " + soundPoolTempo9.toString().replace("f","")
             }
             soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
         }
@@ -1996,6 +2082,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume9 < 1.0f) {
                 soundPoolVolume9 += 0.1f
                 soundPoolVolume9 = "%.1f".format(soundPoolVolume9).toFloat()
+                findViewById<Button>(R.id.pad9).text = ""
+                findViewById<Button>(R.id.pad9).text = soundPoolVolume9.toString().replace("f","") + " " + padText9 + " " + soundPoolTempo9.toString().replace("f","")
             }
             soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
         }
@@ -2003,17 +2091,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo9 > 0.2f) {
                 soundPoolTempo9 -= 0.1f
                 soundPoolTempo9 = "%.1f".format(soundPoolTempo9).toFloat()
+                findViewById<Button>(R.id.pad9).text = ""
+                findViewById<Button>(R.id.pad9).text = soundPoolVolume9.toString().replace("f","") + " " + padText9 + " " + soundPoolTempo9.toString().replace("f","")
             } else if (soundPoolTempo9 == 0.2f) {
                 soundPoolTempo9 = 0.125f
+                findViewById<Button>(R.id.pad9).text = ""
+                findViewById<Button>(R.id.pad9).text = soundPoolVolume9.toString().replace("f","") + " " + padText9 + " " + soundPoolTempo9.toString().replace("f","")
             }
             soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
         }
         findViewById<ImageButton>(R.id.tempo_plus9).setOnClickListener {
             if (soundPoolTempo9 == 0.125f) {
                 soundPoolTempo9 = 0.2f
+                findViewById<Button>(R.id.pad9).text = ""
+                findViewById<Button>(R.id.pad9).text = soundPoolVolume9.toString().replace("f","") + " " + padText9 + " " + soundPoolTempo9.toString().replace("f","")
             } else if (soundPoolTempo9 < 8.0f) {
                 soundPoolTempo9 += 0.1f
                 soundPoolTempo9 = "%.1f".format(soundPoolTempo9).toFloat()
+                findViewById<Button>(R.id.pad9).text = ""
+                findViewById<Button>(R.id.pad9).text = soundPoolVolume9.toString().replace("f","") + " " + padText9 + " " + soundPoolTempo9.toString().replace("f","")
             }
             soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
         }
@@ -2021,6 +2117,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume10 > 0.1f) {
                 soundPoolVolume10 -= 0.1f
                 soundPoolVolume10 = "%.1f".format(soundPoolVolume10).toFloat()
+                findViewById<Button>(R.id.pad10).text = ""
+                findViewById<Button>(R.id.pad10).text = soundPoolVolume10.toString().replace("f","") + " " + padText10 + " " + soundPoolTempo10.toString().replace("f","")
             }
             soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
         }
@@ -2028,6 +2126,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume10 < 1.0f) {
                 soundPoolVolume10 += 0.1f
                 soundPoolVolume10 = "%.1f".format(soundPoolVolume10).toFloat()
+                findViewById<Button>(R.id.pad10).text = ""
+                findViewById<Button>(R.id.pad10).text = soundPoolVolume10.toString().replace("f","") + " " + padText10 + " " + soundPoolTempo10.toString().replace("f","")
             }
             soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
         }
@@ -2035,17 +2135,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo10 > 0.2f) {
                 soundPoolTempo10 -= 0.1f
                 soundPoolTempo10 = "%.1f".format(soundPoolTempo10).toFloat()
+                findViewById<Button>(R.id.pad10).text = ""
+                findViewById<Button>(R.id.pad10).text = soundPoolVolume10.toString().replace("f","") + " " + padText10 + " " + soundPoolTempo10.toString().replace("f","")
             } else if (soundPoolTempo10 == 0.2f) {
                 soundPoolTempo10 = 0.125f
+                findViewById<Button>(R.id.pad10).text = ""
+                findViewById<Button>(R.id.pad10).text = soundPoolVolume10.toString().replace("f","") + " " + padText10 + " " + soundPoolTempo10.toString().replace("f","")
             }
             soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
         }
         findViewById<ImageButton>(R.id.tempo_plus10).setOnClickListener {
             if (soundPoolTempo10 == 0.125f) {
                 soundPoolTempo10 = 0.2f
+                findViewById<Button>(R.id.pad10).text = ""
+                findViewById<Button>(R.id.pad10).text = soundPoolVolume10.toString().replace("f","") + " " + padText10 + " " + soundPoolTempo10.toString().replace("f","")
             } else if (soundPoolTempo10 < 8.0f) {
                 soundPoolTempo10 += 0.1f
                 soundPoolTempo10 = "%.1f".format(soundPoolTempo10).toFloat()
+                findViewById<Button>(R.id.pad10).text = ""
+                findViewById<Button>(R.id.pad10).text = soundPoolVolume10.toString().replace("f","") + " " + padText10 + " " + soundPoolTempo10.toString().replace("f","")
             }
             soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
         }
@@ -2053,6 +2161,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume11 > 0.1f) {
                 soundPoolVolume11 -= 0.1f
                 soundPoolVolume11 = "%.1f".format(soundPoolVolume11).toFloat()
+                findViewById<Button>(R.id.pad11).text = ""
+                findViewById<Button>(R.id.pad11).text = soundPoolVolume11.toString().replace("f","") + " " + padText11 + " " + soundPoolTempo11.toString().replace("f","")
             }
             soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
         }
@@ -2060,6 +2170,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume11 < 1.0f) {
                 soundPoolVolume11 += 0.1f
                 soundPoolVolume11 = "%.1f".format(soundPoolVolume11).toFloat()
+                findViewById<Button>(R.id.pad11).text = ""
+                findViewById<Button>(R.id.pad11).text = soundPoolVolume11.toString().replace("f","") + " " + padText11 + " " + soundPoolTempo11.toString().replace("f","")
             }
             soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
         }
@@ -2067,17 +2179,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo11 > 0.2f) {
                 soundPoolTempo11 -= 0.1f
                 soundPoolTempo11 = "%.1f".format(soundPoolTempo11).toFloat()
+                findViewById<Button>(R.id.pad11).text = ""
+                findViewById<Button>(R.id.pad11).text = soundPoolVolume11.toString().replace("f","") + " " + padText11 + " " + soundPoolTempo11.toString().replace("f","")
             } else if (soundPoolTempo11 == 0.2f) {
                 soundPoolTempo11 = 0.125f
+                findViewById<Button>(R.id.pad11).text = ""
+                findViewById<Button>(R.id.pad11).text = soundPoolVolume11.toString().replace("f","") + " " + padText11 + " " + soundPoolTempo11.toString().replace("f","")
             }
             soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
         }
         findViewById<ImageButton>(R.id.tempo_plus11).setOnClickListener {
             if (soundPoolTempo11 == 0.125f) {
                 soundPoolTempo11 = 0.2f
+                findViewById<Button>(R.id.pad11).text = ""
+                findViewById<Button>(R.id.pad11).text = soundPoolVolume11.toString().replace("f","") + " " + padText11 + " " + soundPoolTempo11.toString().replace("f","")
             } else if (soundPoolTempo11 < 8.0f) {
                 soundPoolTempo11 += 0.1f
                 soundPoolTempo11 = "%.1f".format(soundPoolTempo11).toFloat()
+                findViewById<Button>(R.id.pad11).text = ""
+                findViewById<Button>(R.id.pad11).text = soundPoolVolume11.toString().replace("f","") + " " + padText11 + " " + soundPoolTempo11.toString().replace("f","")
             }
             soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
         }
@@ -2085,6 +2205,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume12 > 0.1f) {
                 soundPoolVolume12 -= 0.1f
                 soundPoolVolume12 = "%.1f".format(soundPoolVolume12).toFloat()
+                findViewById<Button>(R.id.pad12).text = ""
+                findViewById<Button>(R.id.pad12).text = soundPoolVolume12.toString().replace("f","") + " " + padText12 + " " + soundPoolTempo12.toString().replace("f","")
             }
             soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
         }
@@ -2092,6 +2214,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume12 < 1.0f) {
                 soundPoolVolume12 += 0.1f
                 soundPoolVolume12 = "%.1f".format(soundPoolVolume12).toFloat()
+                findViewById<Button>(R.id.pad12).text = ""
+                findViewById<Button>(R.id.pad12).text = soundPoolVolume12.toString().replace("f","") + " " + padText12 + " " + soundPoolTempo12.toString().replace("f","")
             }
             soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
         }
@@ -2099,17 +2223,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo12 > 0.2f) {
                 soundPoolTempo12 -= 0.1f
                 soundPoolTempo12 = "%.1f".format(soundPoolTempo12).toFloat()
+                findViewById<Button>(R.id.pad12).text = ""
+                findViewById<Button>(R.id.pad12).text = soundPoolVolume12.toString().replace("f","") + " " + padText12 + " " + soundPoolTempo12.toString().replace("f","")
             } else if (soundPoolTempo12 == 0.2f) {
                 soundPoolTempo12 = 0.125f
+                findViewById<Button>(R.id.pad12).text = ""
+                findViewById<Button>(R.id.pad12).text = soundPoolVolume12.toString().replace("f","") + " " + padText12 + " " + soundPoolTempo12.toString().replace("f","")
             }
             soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
         }
         findViewById<ImageButton>(R.id.tempo_plus12).setOnClickListener {
             if (soundPoolTempo12 == 0.125f) {
                 soundPoolTempo12 = 0.2f
+                findViewById<Button>(R.id.pad12).text = ""
+                findViewById<Button>(R.id.pad12).text = soundPoolVolume12.toString().replace("f","") + " " + padText12 + " " + soundPoolTempo12.toString().replace("f","")
             } else if (soundPoolTempo12 < 8.0f) {
                 soundPoolTempo12 += 0.1f
                 soundPoolTempo12 = "%.1f".format(soundPoolTempo12).toFloat()
+                findViewById<Button>(R.id.pad12).text = ""
+                findViewById<Button>(R.id.pad12).text = soundPoolVolume12.toString().replace("f","") + " " + padText12 + " " + soundPoolTempo12.toString().replace("f","")
             }
             soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
         }
@@ -2117,6 +2249,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume13 > 0.1f) {
                 soundPoolVolume13 -= 0.1f
                 soundPoolVolume13 = "%.1f".format(soundPoolVolume13).toFloat()
+                findViewById<Button>(R.id.pad13).text = ""
+                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
@@ -2124,6 +2258,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume13 < 1.0f) {
                 soundPoolVolume13 += 0.1f
                 soundPoolVolume13 = "%.1f".format(soundPoolVolume13).toFloat()
+                findViewById<Button>(R.id.pad13).text = ""
+                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
@@ -2131,17 +2267,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo13 > 0.2f) {
                 soundPoolTempo13 -= 0.1f
                 soundPoolTempo13 = "%.1f".format(soundPoolTempo13).toFloat()
+                findViewById<Button>(R.id.pad13).text = ""
+                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
             } else if (soundPoolTempo13 == 0.2f) {
                 soundPoolTempo13 = 0.125f
+                findViewById<Button>(R.id.pad13).text = ""
+                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
         findViewById<ImageButton>(R.id.tempo_plus13).setOnClickListener {
             if (soundPoolTempo13 == 0.125f) {
                 soundPoolTempo13 = 0.2f
+                findViewById<Button>(R.id.pad13).text = ""
+                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
             } else if (soundPoolTempo13 < 8.0f) {
                 soundPoolTempo13 += 0.1f
                 soundPoolTempo13 = "%.1f".format(soundPoolTempo13).toFloat()
+                findViewById<Button>(R.id.pad13).text = ""
+                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
@@ -2149,6 +2293,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume14 > 0.1f) {
                 soundPoolVolume14 -= 0.1f
                 soundPoolVolume14 = "%.1f".format(soundPoolVolume14).toFloat()
+                findViewById<Button>(R.id.pad14).text = ""
+                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
@@ -2156,6 +2302,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume14 < 1.0f) {
                 soundPoolVolume14 += 0.1f
                 soundPoolVolume14 = "%.1f".format(soundPoolVolume14).toFloat()
+                findViewById<Button>(R.id.pad14).text = ""
+                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
@@ -2163,17 +2311,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo14 > 0.2f) {
                 soundPoolTempo14 -= 0.1f
                 soundPoolTempo14 = "%.1f".format(soundPoolTempo14).toFloat()
+                findViewById<Button>(R.id.pad14).text = ""
+                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
             } else if (soundPoolTempo14 == 0.2f) {
                 soundPoolTempo14 = 0.125f
+                findViewById<Button>(R.id.pad14).text = ""
+                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
         findViewById<ImageButton>(R.id.tempo_plus14).setOnClickListener {
             if (soundPoolTempo14 == 0.125f) {
                 soundPoolTempo14 = 0.2f
+                findViewById<Button>(R.id.pad14).text = ""
+                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
             } else if (soundPoolTempo14 < 8.0f) {
                 soundPoolTempo14 += 0.1f
                 soundPoolTempo14 = "%.1f".format(soundPoolTempo14).toFloat()
+                findViewById<Button>(R.id.pad14).text = ""
+                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
@@ -2181,6 +2337,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume15 > 0.1f) {
                 soundPoolVolume15 -= 0.1f
                 soundPoolVolume15 = "%.1f".format(soundPoolVolume15).toFloat()
+                findViewById<Button>(R.id.pad15).text = ""
+                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
@@ -2188,6 +2346,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolVolume15 < 1.0f) {
                 soundPoolVolume15 += 0.1f
                 soundPoolVolume15 = "%.1f".format(soundPoolVolume15).toFloat()
+                findViewById<Button>(R.id.pad15).text = ""
+                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
@@ -2195,17 +2355,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo15 > 0.2f) {
                 soundPoolTempo15 -= 0.1f
                 soundPoolTempo15 = "%.1f".format(soundPoolTempo15).toFloat()
+                findViewById<Button>(R.id.pad15).text = ""
+                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
             } else if (soundPoolTempo15 == 0.2f) {
                 soundPoolTempo15 = 0.125f
+                findViewById<Button>(R.id.pad15).text = ""
+                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
         findViewById<ImageButton>(R.id.tempo_plus15).setOnClickListener {
             if (soundPoolTempo15 == 0.125f) {
                 soundPoolTempo15 = 0.2f
+                findViewById<Button>(R.id.pad15).text = ""
+                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
             } else if (soundPoolTempo15 < 8.0f) {
                 soundPoolTempo15 += 0.1f
                 soundPoolTempo15 = "%.1f".format(soundPoolTempo15).toFloat()
+                findViewById<Button>(R.id.pad15).text = ""
+                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
