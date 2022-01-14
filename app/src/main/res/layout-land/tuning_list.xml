@@ -9,58 +9,51 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="wrap_content"
+        android:layout_width="16dp"
         android:layout_height="wrap_content"
         android:text="@string/textView17"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="660dp"
-        tools:layout_editor_absoluteY="8dp" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textView16"
-        android:textColor="#FFFFFF"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="8dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/tempo_minus0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus0" />
 
     <ImageButton
         android:id="@+id/volume_minus0"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus1"
+        app:layout_constraintStart_toStartOf="@+id/volume_plus0"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus0"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="9dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/volume_plus0"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus1"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="9dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/tempo_minus0"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="9dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/tempo_plus0"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tempo_minus0"
+        app:layout_constraintStart_toStartOf="@+id/tempo_minus0"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="9dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button
         android:id="@+id/loop"
@@ -69,45 +62,136 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="7dp" />
 
     <ImageButton
-        android:id="@+id/volume_minus1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="34dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="34dp" />
-
-    <ImageButton
         android:id="@+id/tempo_minus1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus0"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus1"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="34dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus1"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus2"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus2"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus3"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus1"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus1"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus2"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus2"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus3"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus3"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus3"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus4"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus6"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus6"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus4"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus4"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus5"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus6"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus4"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus5"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus6"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus7"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus5"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus5"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/tempo_plus1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus0"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus0"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="34dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button
         android:id="@+id/pad1"
@@ -116,45 +200,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="31dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="58dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="58dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="58dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="58dp" />
 
     <Button
         android:id="@+id/pad2"
@@ -163,45 +212,321 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="56dp" />
 
     <ImageButton
-        android:id="@+id/volume_minus3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="83dp" />
-
-    <ImageButton
         android:id="@+id/volume_plus3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus4"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus2"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus2"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="83dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/tempo_minus3"
-        android:layout_width="wrap_content"
+        android:id="@+id/volume_minus3"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus4"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus2"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus3"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="83dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/tempo_plus3"
-        android:layout_width="wrap_content"
+        android:id="@+id/volume_minus2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus3"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus1"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus2"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus2"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus0"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus0"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="83dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus5"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus3"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus4"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus6"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus4"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus5"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus12"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus10"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus10"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus11"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus9"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus10"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus11"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus9"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus9"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus12"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus10"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus11"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus9"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus7"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus8"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus7"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus5"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus6"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus8"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus6"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus6"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus9"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus7"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus7"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus10"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus8"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus9"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus8"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus6"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus7"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus6"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus4"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus4"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus7"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus5"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus5"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus10"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus8"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus8"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus13"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus11"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus12"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus14"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus12"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus12"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus15"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/volume_minus14"
+        app:layout_constraintTop_toBottomOf="@id/volume_plus15"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/volume_plus15"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus13"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus13"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus15"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus13"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus14"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus15"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus14"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus14"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints,TooManyViews" />
+
+    <ImageButton
+        android:id="@+id/volume_minus13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus14"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus12"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus13"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus13"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus11"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus11"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_minus1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_minus2"
+        app:layout_constraintStart_toEndOf="@+id/volume_minus0"
+        app:layout_constraintTop_toBottomOf="@+id/volume_plus1"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus3"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus1"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus1"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/volume_plus4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/volume_plus5"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus3"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus3"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="16dp"
+        android:layout_height="wrap_content"
+        android:text="@string/textView16"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_minus0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/volume_plus0"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/pad3"
@@ -210,45 +535,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="80dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="108dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="108dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="108dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="108dp" />
 
     <Button
         android:id="@+id/pad4"
@@ -257,45 +547,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="105dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="132dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="132dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="132dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="132dp" />
 
     <Button
         android:id="@+id/pad5"
@@ -304,45 +559,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="130dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="157dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="157dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="157dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="157dp" />
 
     <Button
         android:id="@+id/pad6"
@@ -351,45 +571,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="154dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="182dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="182dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="182dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="182dp" />
 
     <Button
         android:id="@+id/pad7"
@@ -398,45 +583,154 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="179dp" />
 
     <ImageButton
-        android:id="@+id/volume_minus8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="206dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="206dp" />
-
-    <ImageButton
         android:id="@+id/tempo_minus8"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus7"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus8"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="206dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/tempo_plus8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus7"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus7"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus8"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus9"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus8"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus8"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus9"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus9"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus10"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus11"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="206dp" />
+        tools:layout_editor_absoluteX="532dp"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints"
+        tools:layout_editor_absoluteX="484dp"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints"
+        tools:layout_editor_absoluteX="532dp"
+        tools:layout_editor_absoluteY="189dp" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints"
+        tools:layout_editor_absoluteX="484dp"
+        tools:layout_editor_absoluteY="189dp" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints"
+        tools:layout_editor_absoluteX="532dp"
+        tools:layout_editor_absoluteY="164dp" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints"
+        tools:layout_editor_absoluteX="484dp"
+        tools:layout_editor_absoluteY="164dp" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus11"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus11"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus11"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus12"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_plus11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus10"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus10"
+        app:srcCompat="@drawable/add_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/tempo_minus10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus9"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus10"
+        app:srcCompat="@drawable/horizontal_rule_24"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button
         android:id="@+id/pad8"
@@ -445,45 +739,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="204dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="231dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="231dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="231dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="231dp" />
 
     <Button
         android:id="@+id/pad9"
@@ -492,45 +751,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="229dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="256dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="256dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="256dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="256dp" />
 
     <Button
         android:id="@+id/pad10"
@@ -539,45 +763,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="253dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="280dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="280dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="280dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="280dp" />
 
     <Button
         android:id="@+id/pad11"
@@ -586,45 +775,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="278dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="305dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="305dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="305dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="305dp" />
 
     <Button
         android:id="@+id/pad12"
@@ -633,45 +787,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="302dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="330dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="330dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="330dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="330dp" />
 
     <Button
         android:id="@+id/pad13"
@@ -680,45 +799,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="327dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="354dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="354dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="354dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="354dp" />
 
     <Button
         android:id="@+id/pad14"
@@ -727,45 +811,10 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="352dp" />
-
-    <ImageButton
-        android:id="@+id/volume_minus15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="379dp" />
-
-    <ImageButton
-        android:id="@+id/volume_plus15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints,TooManyViews"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="379dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_minus15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="628dp"
-        tools:layout_editor_absoluteY="379dp" />
-
-    <ImageButton
-        android:id="@+id/tempo_plus15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="676dp"
-        tools:layout_editor_absoluteY="379dp" />
 
     <Button
         android:id="@+id/pad15"
@@ -774,6 +823,7 @@
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
+        android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="376dp" />
