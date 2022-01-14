@@ -51,6 +51,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/tempo_minus0"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus1"
         app:layout_constraintStart_toStartOf="@+id/tempo_minus0"
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints" />
@@ -98,6 +99,7 @@
         android:id="@+id/tempo_plus2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus3"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus1"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus1"
         app:srcCompat="@drawable/add_24"
@@ -107,6 +109,7 @@
         android:id="@+id/tempo_plus3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus4"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus2"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus2"
         app:srcCompat="@drawable/add_24"
@@ -116,6 +119,7 @@
         android:id="@+id/tempo_plus4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus5"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus3"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus3"
         app:srcCompat="@drawable/add_24"
@@ -134,6 +138,7 @@
         android:id="@+id/tempo_plus7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus8"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus6"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus6"
         app:srcCompat="@drawable/add_24"
@@ -143,6 +148,7 @@
         android:id="@+id/tempo_plus5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus6"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus4"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus4"
         app:srcCompat="@drawable/add_24"
@@ -179,6 +185,7 @@
         android:id="@+id/tempo_plus6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus7"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus5"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus5"
         app:srcCompat="@drawable/add_24"
@@ -188,6 +195,7 @@
         android:id="@+id/tempo_plus1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus2"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus0"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus0"
         app:srcCompat="@drawable/add_24"
@@ -601,6 +609,7 @@
         android:id="@+id/tempo_plus8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus9"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus7"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus7"
         app:srcCompat="@drawable/add_24"
@@ -619,6 +628,7 @@
         android:id="@+id/tempo_plus9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus10"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus8"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus8"
         app:srcCompat="@drawable/add_24"
@@ -628,6 +638,7 @@
         android:id="@+id/tempo_plus10"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus11"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus9"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus9"
         app:srcCompat="@drawable/add_24"
@@ -644,26 +655,29 @@
 
     <ImageButton
         android:id="@+id/tempo_plus13"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus14"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus12"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus12"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="532dp"
-        tools:layout_editor_absoluteY="140dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/tempo_minus13"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus12"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus13"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="484dp"
-        tools:layout_editor_absoluteY="140dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/tempo_plus15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tempo_plus14"
+        app:layout_constraintStart_toEndOf="@id/tempo_plus14"
         app:srcCompat="@drawable/add_24"
         tools:ignore="ContentDescription,MissingConstraints"
         tools:layout_editor_absoluteX="532dp"
@@ -680,26 +694,27 @@
 
     <ImageButton
         android:id="@+id/tempo_plus14"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_plus13"
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus13"
         app:srcCompat="@drawable/add_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="532dp"
-        tools:layout_editor_absoluteY="164dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/tempo_minus14"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tempo_minus13"
+        app:layout_constraintTop_toBottomOf="@+id/tempo_plus14"
         app:srcCompat="@drawable/horizontal_rule_24"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="484dp"
-        tools:layout_editor_absoluteY="164dp" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/tempo_plus12"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus13"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus11"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus11"
         app:srcCompat="@drawable/add_24"
@@ -718,6 +733,7 @@
         android:id="@+id/tempo_plus11"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_plus12"
         app:layout_constraintStart_toEndOf="@+id/tempo_plus10"
         app:layout_constraintTop_toTopOf="@+id/tempo_plus10"
         app:srcCompat="@drawable/add_24"
