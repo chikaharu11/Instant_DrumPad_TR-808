@@ -59,15 +59,16 @@
 
     <Button
         android:id="@+id/loop"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="7dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus0"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus0"
+        app:layout_constraintStart_toStartOf="@id/volume_minus0"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus0"
+        tools:ignore="MissingConstraints"/>
 
     <ImageButton
         android:id="@+id/tempo_minus1"
@@ -211,27 +212,29 @@
 
     <Button
         android:id="@+id/pad1"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="31dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus1"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus1"
+        app:layout_constraintStart_toStartOf="@id/volume_minus1"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus1"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad2"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="56dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus2"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus2"
+        app:layout_constraintStart_toStartOf="@id/volume_minus2"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus2"
+        tools:ignore="MissingConstraints"/>
 
     <ImageButton
         android:id="@+id/volume_plus3"
@@ -546,63 +549,68 @@
 
     <Button
         android:id="@+id/pad3"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="80dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus3"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus3"
+        app:layout_constraintStart_toStartOf="@id/volume_minus3"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus3"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad4"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="105dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus4"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus4"
+        app:layout_constraintStart_toStartOf="@id/volume_minus4"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus4"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad5"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="130dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus5"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus5"
+        app:layout_constraintStart_toStartOf="@id/volume_minus5"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus5"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad6"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="154dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus6"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus6"
+        app:layout_constraintStart_toStartOf="@id/volume_minus6"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus6"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad7"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="179dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus7"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus7"
+        app:layout_constraintStart_toStartOf="@id/volume_minus7"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus7"
+        tools:ignore="MissingConstraints"/>
 
     <ImageButton
         android:id="@+id/tempo_minus8"
@@ -768,98 +776,106 @@
 
     <Button
         android:id="@+id/pad8"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="204dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus8"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus8"
+        app:layout_constraintStart_toStartOf="@id/volume_minus8"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus8"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad9"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="229dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus9"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus9"
+        app:layout_constraintStart_toStartOf="@id/volume_minus9"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus9"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad10"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="253dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus10"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus10"
+        app:layout_constraintStart_toStartOf="@id/volume_minus10"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus10"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad11"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="278dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus11"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus11"
+        app:layout_constraintStart_toStartOf="@id/volume_minus11"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus11"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad12"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="302dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus12"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus12"
+        app:layout_constraintStart_toStartOf="@id/volume_minus12"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus12"
+        tools:ignore="MissingConstraints,TooManyViews"/>
 
     <Button
         android:id="@+id/pad13"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="327dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus13"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus13"
+        app:layout_constraintStart_toStartOf="@id/volume_minus13"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus13"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad14"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="352dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus14"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus14"
+        app:layout_constraintStart_toStartOf="@id/volume_minus14"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus14"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/pad15"
-        android:layout_width="525dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ellipsize="middle"
         android:lines="1"
         android:text="@string/s1"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintTop_toBottomOf="@id/volume_minus15"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus15"
+        app:layout_constraintStart_toStartOf="@id/volume_minus15"
+        app:layout_constraintEnd_toEndOf="@id/volume_minus15"
+        tools:ignore="MissingConstraints"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
