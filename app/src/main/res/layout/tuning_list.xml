@@ -68,8 +68,7 @@
     <Button
         android:id="@+id/loop"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus0"
@@ -118,8 +117,7 @@
     <Button
         android:id="@+id/pad1"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus1"
@@ -168,8 +166,7 @@
     <Button
         android:id="@+id/pad2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus2"
@@ -218,8 +215,7 @@
     <Button
         android:id="@+id/pad3"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus3"
@@ -268,8 +264,7 @@
     <Button
         android:id="@+id/pad4"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus4"
@@ -318,8 +313,7 @@
     <Button
         android:id="@+id/pad5"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus5"
@@ -368,8 +362,7 @@
     <Button
         android:id="@+id/pad6"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus6"
@@ -418,8 +411,7 @@
     <Button
         android:id="@+id/pad7"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus7"
@@ -468,8 +460,7 @@
     <Button
         android:id="@+id/pad8"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus8"
@@ -518,8 +509,7 @@
     <Button
         android:id="@+id/pad9"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus9"
@@ -568,8 +558,7 @@
     <Button
         android:id="@+id/pad10"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus10"
@@ -618,8 +607,7 @@
     <Button
         android:id="@+id/pad11"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus11"
@@ -668,8 +656,7 @@
     <Button
         android:id="@+id/pad12"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus12"
@@ -718,8 +705,7 @@
     <Button
         android:id="@+id/pad13"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus13"
@@ -768,8 +754,7 @@
     <Button
         android:id="@+id/pad14"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus14"
@@ -818,8 +803,7 @@
     <Button
         android:id="@+id/pad15"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/s1"
+        android:layout_height="0dp"
         android:lines="1"
         android:ellipsize="middle"
         app:layout_constraintBottom_toBottomOf="@+id/volume_plus15"
@@ -827,5 +811,245 @@
         app:layout_constraintStart_toEndOf="@+id/volume_plus15"
         app:layout_constraintTop_toTopOf="@+id/volume_minus15"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/padText0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus0"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus0"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus0"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus0"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus1"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus1"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus1"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus1"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus2"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus2"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus2"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus2"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus3"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus3"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus3"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus3"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus4"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus4"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus4"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus4"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus5"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus5"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus5"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus5"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus6"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus6"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus6"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus6"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus7"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus7"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus7"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus7"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus8"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus8"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus8"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus8"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus9"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus9"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus9"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus9"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus10"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus10"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus10"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus10"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText11"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus11"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus11"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus11"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus11"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText12"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus12"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus12"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus12"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus12"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText13"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus13"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus13"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus13"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus13"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText14"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus14"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus14"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus14"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus14"
+        android:translationZ="10dp" />
+
+    <TextView
+        android:id="@+id/padText15"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/s1"
+        android:textColor="#000000"
+        android:ellipsize="middle"
+        android:lines="1"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/volume_plus15"
+        app:layout_constraintEnd_toStartOf="@+id/tempo_minus15"
+        app:layout_constraintStart_toEndOf="@+id/volume_plus15"
+        app:layout_constraintTop_toTopOf="@+id/volume_minus15"
+        android:translationZ="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
