@@ -2539,7 +2539,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolVolume13 -= 0.1f
                 soundPoolVolume13 = "%.1f".format(soundPoolVolume13).toFloat()
                 findViewById<Button>(R.id.pad13).text = ""
-                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolTempo13.toString().replace("f", "") + " " + padText13 + " " + soundPoolVolume13.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
@@ -2548,7 +2552,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolVolume13 += 0.1f
                 soundPoolVolume13 = "%.1f".format(soundPoolVolume13).toFloat()
                 findViewById<Button>(R.id.pad13).text = ""
-                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolTempo13.toString().replace("f", "") + " " + padText13 + " " + soundPoolVolume13.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
@@ -2557,11 +2565,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolTempo13 -= 0.1f
                 soundPoolTempo13 = "%.1f".format(soundPoolTempo13).toFloat()
                 findViewById<Button>(R.id.pad13).text = ""
-                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolTempo13.toString().replace("f", "") + " " + padText13 + " " + soundPoolVolume13.toString().replace("f", "").uppercase()
+                }
             } else if (soundPoolTempo13 == 0.2f) {
                 soundPoolTempo13 = 0.125f
                 findViewById<Button>(R.id.pad13).text = ""
-                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolTempo13.toString().replace("f", "") + " " + padText13 + " " + soundPoolVolume13.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
@@ -2569,12 +2585,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo13 == 0.125f) {
                 soundPoolTempo13 = 0.2f
                 findViewById<Button>(R.id.pad13).text = ""
-                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolTempo13.toString().replace("f", "") + " " + padText13 + " " + soundPoolVolume13.toString().replace("f", "").uppercase()
+                }
             } else if (soundPoolTempo13 < 8.0f) {
                 soundPoolTempo13 += 0.1f
                 soundPoolTempo13 = "%.1f".format(soundPoolTempo13).toFloat()
                 findViewById<Button>(R.id.pad13).text = ""
-                findViewById<Button>(R.id.pad13).text = soundPoolVolume13.toString().replace("f","") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolVolume13.toString().replace("f", "") + " " + padText13 + " " + soundPoolTempo13.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText13).text = soundPoolTempo13.toString().replace("f", "") + " " + padText13 + " " + soundPoolVolume13.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
         }
@@ -2583,7 +2607,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolVolume14 -= 0.1f
                 soundPoolVolume14 = "%.1f".format(soundPoolVolume14).toFloat()
                 findViewById<Button>(R.id.pad14).text = ""
-                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolTempo14.toString().replace("f", "") + " " + padText14 + " " + soundPoolVolume14.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
@@ -2592,7 +2620,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolVolume14 += 0.1f
                 soundPoolVolume14 = "%.1f".format(soundPoolVolume14).toFloat()
                 findViewById<Button>(R.id.pad14).text = ""
-                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolTempo14.toString().replace("f", "") + " " + padText14 + " " + soundPoolVolume14.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
@@ -2601,11 +2633,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolTempo14 -= 0.1f
                 soundPoolTempo14 = "%.1f".format(soundPoolTempo14).toFloat()
                 findViewById<Button>(R.id.pad14).text = ""
-                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolTempo14.toString().replace("f", "") + " " + padText14 + " " + soundPoolVolume14.toString().replace("f", "").uppercase()
+                }
             } else if (soundPoolTempo14 == 0.2f) {
                 soundPoolTempo14 = 0.125f
                 findViewById<Button>(R.id.pad14).text = ""
-                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolTempo14.toString().replace("f", "") + " " + padText14 + " " + soundPoolVolume14.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
@@ -2613,12 +2653,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo14 == 0.125f) {
                 soundPoolTempo14 = 0.2f
                 findViewById<Button>(R.id.pad14).text = ""
-                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolTempo14.toString().replace("f", "") + " " + padText14 + " " + soundPoolVolume14.toString().replace("f", "").uppercase()
+                }
             } else if (soundPoolTempo14 < 8.0f) {
                 soundPoolTempo14 += 0.1f
                 soundPoolTempo14 = "%.1f".format(soundPoolTempo14).toFloat()
                 findViewById<Button>(R.id.pad14).text = ""
-                findViewById<Button>(R.id.pad14).text = soundPoolVolume14.toString().replace("f","") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolVolume14.toString().replace("f", "") + " " + padText14 + " " + soundPoolTempo14.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText14).text = soundPoolTempo14.toString().replace("f", "") + " " + padText14 + " " + soundPoolVolume14.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
         }
@@ -2627,7 +2675,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolVolume15 -= 0.1f
                 soundPoolVolume15 = "%.1f".format(soundPoolVolume15).toFloat()
                 findViewById<Button>(R.id.pad15).text = ""
-                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolTempo15.toString().replace("f", "") + " " + padText15 + " " + soundPoolVolume15.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
@@ -2636,7 +2688,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolVolume15 += 0.1f
                 soundPoolVolume15 = "%.1f".format(soundPoolVolume15).toFloat()
                 findViewById<Button>(R.id.pad15).text = ""
-                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolTempo15.toString().replace("f", "") + " " + padText15 + " " + soundPoolVolume15.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
@@ -2645,11 +2701,19 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 soundPoolTempo15 -= 0.1f
                 soundPoolTempo15 = "%.1f".format(soundPoolTempo15).toFloat()
                 findViewById<Button>(R.id.pad15).text = ""
-                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolTempo15.toString().replace("f", "") + " " + padText15 + " " + soundPoolVolume15.toString().replace("f", "").uppercase()
+                }
             } else if (soundPoolTempo15 == 0.2f) {
                 soundPoolTempo15 = 0.125f
                 findViewById<Button>(R.id.pad15).text = ""
-                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolTempo15.toString().replace("f", "") + " " + padText15 + " " + soundPoolVolume15.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
@@ -2657,12 +2721,20 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             if (soundPoolTempo15 == 0.125f) {
                 soundPoolTempo15 = 0.2f
                 findViewById<Button>(R.id.pad15).text = ""
-                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolTempo15.toString().replace("f", "") + " " + padText15 + " " + soundPoolVolume15.toString().replace("f", "").uppercase()
+                }
             } else if (soundPoolTempo15 < 8.0f) {
                 soundPoolTempo15 += 0.1f
                 soundPoolTempo15 = "%.1f".format(soundPoolTempo15).toFloat()
                 findViewById<Button>(R.id.pad15).text = ""
-                findViewById<Button>(R.id.pad15).text = soundPoolVolume15.toString().replace("f","") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f","")
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolVolume15.toString().replace("f", "") + " " + padText15 + " " + soundPoolTempo15.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText15).text = soundPoolTempo15.toString().replace("f", "") + " " + padText15 + " " + soundPoolVolume15.toString().replace("f", "").uppercase()
+                }
             }
             soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
         }
