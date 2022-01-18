@@ -26,7 +26,6 @@ import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
-import org.w3c.dom.Text
 import java.util.*
 import kotlin.math.hypot
 
@@ -370,7 +369,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<TextView>(R.id.padText14).text = padText14
                     findViewById<TextView>(R.id.padText15).text = padText15
                     binding.gridView.visibility = View.INVISIBLE
-                    Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, R.string.reset1, Toast.LENGTH_LONG).show()
                 }
                 "バナー広告を非表示にする" -> {
                     if (adCheck == 0) {
@@ -4076,8 +4075,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         val soundListView = findViewById<ListView>(R.id.list_view)
-        val gridView = findViewById<GridView>(R.id.grid_view)
-        val gridView2 = findViewById<GridView>(R.id.grid_view_choose)
+        val actionGridView = findViewById<GridView>(R.id.grid_view)
+        val chooseGridView = findViewById<GridView>(R.id.grid_view_choose)
         val tuningView = findViewById<View>(R.id.view)
 
         when (item.itemId) {
@@ -4087,8 +4086,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundListView.isVisible -> {
                         soundListView.visibility = View.INVISIBLE
                     }
-                    gridView.isVisible -> {
-                        gridView.visibility = View.INVISIBLE
+                    actionGridView.isVisible -> {
+                        actionGridView.visibility = View.INVISIBLE
                     }
 
                 }
@@ -4109,24 +4108,25 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             R.id.menu10 -> {
                 when {
-                    gridView2.isVisible -> {
-                        gridView.visibility = View.INVISIBLE
-                        gridView2.visibility = View.INVISIBLE
+                    chooseGridView.isVisible -> {
+                        actionGridView.visibility = View.INVISIBLE
+                        chooseGridView.visibility = View.INVISIBLE
                         tuningView.visibility = View.INVISIBLE
                     }
                     soundListView.isVisible -> {
                         soundListView.visibility = View.INVISIBLE
                     }
-                    gridView.isVisible -> {
-                        gridView.visibility = View.INVISIBLE
+                    actionGridView.isVisible -> {
+                        chooseGridView.visibility = View.VISIBLE
+                        actionGridView.visibility = View.INVISIBLE
                         tuningView.visibility = View.INVISIBLE
                     }
                     tuningView.isVisible -> {
-                        gridView.visibility = View.INVISIBLE
+                        actionGridView.visibility = View.INVISIBLE
                         tuningView.visibility = View.INVISIBLE
                     }
-                    soundListView.isInvisible && gridView.isInvisible && tuningView.isInvisible -> {
-                        gridView2.visibility = View.VISIBLE
+                    soundListView.isInvisible && actionGridView.isInvisible && tuningView.isInvisible -> {
+                        chooseGridView.visibility = View.VISIBLE
                     }
                 }
                 return true
@@ -4134,22 +4134,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             R.id.action_settings -> {
                 when {
-                    gridView2.isVisible -> {
-                        gridView.visibility = View.INVISIBLE
-                        gridView2.visibility = View.INVISIBLE
+                    chooseGridView.isVisible -> {
+                        actionGridView.visibility = View.VISIBLE
+                        chooseGridView.visibility = View.INVISIBLE
                         tuningView.visibility = View.INVISIBLE
                     }
                     soundListView.isVisible -> {
                         soundListView.visibility = View.INVISIBLE
                     }
-                    gridView.isInvisible && tuningView.isVisible -> {
+                    actionGridView.isInvisible && tuningView.isVisible -> {
                         tuningView.visibility = View.INVISIBLE
                     }
-                    gridView.isInvisible -> {
-                        gridView.visibility = View.VISIBLE
+                    actionGridView.isInvisible -> {
+                        actionGridView.visibility = View.VISIBLE
                     }
-                    gridView.isVisible -> {
-                        gridView.visibility = View.INVISIBLE
+                    actionGridView.isVisible -> {
+                        actionGridView.visibility = View.INVISIBLE
                         tuningView.visibility = View.INVISIBLE
                     }
                 }
