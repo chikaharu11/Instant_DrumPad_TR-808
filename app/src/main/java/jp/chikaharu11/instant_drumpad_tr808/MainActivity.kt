@@ -317,9 +317,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
             when(adapterView.getItemAtPosition(position)) {
                 "サウンドの調整" -> {
-                    binding.view?.visibility = View.VISIBLE
+                    binding.view.visibility = View.VISIBLE
                 }
                 "サウンドの設定をリセット" -> {
+                    count = 0.5f
+                    bpm = 1.0f
                     soundPoolVolume = 0.5f
                     soundPoolTempo = 1.0f
                     soundPoolVolume2 = 0.5f
@@ -350,6 +352,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPoolTempo14 = 1.0f
                     soundPoolVolume15 = 0.5f
                     soundPoolTempo15 = 1.0f
+                    findViewById<TextView>(R.id.padText0).text = actionTitle
+                    findViewById<TextView>(R.id.padText1).text = padText1
+                    findViewById<TextView>(R.id.padText2).text = padText2
+                    findViewById<TextView>(R.id.padText3).text = padText3
+                    findViewById<TextView>(R.id.padText4).text = padText4
+                    findViewById<TextView>(R.id.padText5).text = padText5
+                    findViewById<TextView>(R.id.padText6).text = padText6
+                    findViewById<TextView>(R.id.padText7).text = padText7
+                    findViewById<TextView>(R.id.padText8).text = padText8
+                    findViewById<TextView>(R.id.padText9).text = padText9
+                    findViewById<TextView>(R.id.padText10).text = padText10
+                    findViewById<TextView>(R.id.padText11).text = padText11
+                    findViewById<TextView>(R.id.padText12).text = padText12
+                    findViewById<TextView>(R.id.padText13).text = padText13
+                    findViewById<TextView>(R.id.padText14).text = padText14
+                    findViewById<TextView>(R.id.padText15).text = padText15
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "バナー広告を非表示にする" -> {
@@ -3738,6 +3756,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         findViewById<TextView>(R.id.padText13).text = ""
                         findViewById<TextView>(R.id.padText14).text = ""
                         findViewById<TextView>(R.id.padText15).text = ""
+                        padText1 = ""
+                        padText2 = ""
+                        padText3 = ""
+                        padText4 = ""
+                        padText5 = ""
+                        padText6 = ""
+                        padText7 = ""
+                        padText8 = ""
+                        padText9 = ""
+                        padText10 = ""
+                        padText11 = ""
+                        padText12 = ""
+                        padText13 = ""
+                        padText14 = ""
+                        padText15 = ""
                         mpDuration = 0
                         mpDuration2 = 0
                         mpDuration3 = 0
