@@ -498,6 +498,171 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         gridView2.setOnItemClickListener { adapterView, _, position, _ ->
             when (adapterView.getItemAtPosition(position)) {
+                "演奏モード⇔パッド音の変更" -> {
+                    when (paste) {
+                        0 -> {
+                            paste = 1
+                            invalidateOptionsMenu()
+                            Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
+                            gridView2.visibility = View.INVISIBLE
+                        }
+                        1 -> {
+                            paste = 0
+                            invalidateOptionsMenu()
+                            Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
+                            gridView2.visibility = View.INVISIBLE
+                        }
+                    }
+                }
+                "メトロノーム・ループ" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    buttonA = 16
+                    buttonB = 2
+                    soundListView.adapter = nCustomAdapter
+                    nCustomAdapter.notifyDataSetChanged()
+                    soundListView.visibility = View.VISIBLE
+                    gridView2.visibility = View.INVISIBLE
+                }
+                "サンプル・ループ" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    buttonA = 16
+                    buttonB = 2
+                    soundListView.adapter = oCustomAdapter
+                    oCustomAdapter.notifyDataSetChanged()
+                    soundListView.visibility = View.VISIBLE
+                    gridView2.visibility = View.INVISIBLE
+                }
+
+                "外部サウンド・ループ" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    buttonA = 16
+                    buttonB = 1
+                    selectEX()
+                    soundListView.adapter = tCustomAdapter
+                    tCustomAdapter.notifyDataSetChanged()
+                    soundListView.visibility = View.VISIBLE
+                    gridView2.visibility = View.INVISIBLE
+                }
+                "ドラムパッドをリセット" -> {
+                    binding.textView.text = ""
+                    binding.textView2.text = ""
+                    binding.textView3.text = ""
+                    binding.textView4.text = ""
+                    binding.textView5.text = ""
+                    binding.textView6.text = ""
+                    binding.textView7.text = ""
+                    binding.textView8.text = ""
+                    binding.textView9.text = ""
+                    binding.textView10.text = ""
+                    binding.textView11.text = ""
+                    binding.textView12.text = ""
+                    binding.textView13.text = ""
+                    binding.textView14.text = ""
+                    binding.textView15.text = ""
+                    findViewById<TextView>(R.id.padText1).text = ""
+                    findViewById<TextView>(R.id.padText2).text = ""
+                    findViewById<TextView>(R.id.padText3).text = ""
+                    findViewById<TextView>(R.id.padText4).text = ""
+                    findViewById<TextView>(R.id.padText5).text = ""
+                    findViewById<TextView>(R.id.padText6).text = ""
+                    findViewById<TextView>(R.id.padText7).text = ""
+                    findViewById<TextView>(R.id.padText8).text = ""
+                    findViewById<TextView>(R.id.padText9).text = ""
+                    findViewById<TextView>(R.id.padText10).text = ""
+                    findViewById<TextView>(R.id.padText11).text = ""
+                    findViewById<TextView>(R.id.padText12).text = ""
+                    findViewById<TextView>(R.id.padText13).text = ""
+                    findViewById<TextView>(R.id.padText14).text = ""
+                    findViewById<TextView>(R.id.padText15).text = ""
+                    padText1 = ""
+                    padText2 = ""
+                    padText3 = ""
+                    padText4 = ""
+                    padText5 = ""
+                    padText6 = ""
+                    padText7 = ""
+                    padText8 = ""
+                    padText9 = ""
+                    padText10 = ""
+                    padText11 = ""
+                    padText12 = ""
+                    padText13 = ""
+                    padText14 = ""
+                    padText15 = ""
+                    mpDuration = 0
+                    mpDuration2 = 0
+                    mpDuration3 = 0
+                    mpDuration4 = 0
+                    mpDuration5 = 0
+                    mpDuration6 = 0
+                    mpDuration7 = 0
+                    mpDuration8 = 0
+                    mpDuration9 = 0
+                    mpDuration10 = 0
+                    mpDuration11 = 0
+                    mpDuration12 = 0
+                    mpDuration13 = 0
+                    mpDuration14 = 0
+                    mpDuration15 = 0
+                    count = 0.5f
+                    bpm = 1.0f
+                    soundPoolVolume = 0.5f
+                    soundPoolTempo = 1.0f
+                    soundPoolVolume2 = 0.5f
+                    soundPoolTempo2 = 1.0f
+                    soundPoolVolume3 = 0.5f
+                    soundPoolTempo3 = 1.0f
+                    soundPoolVolume4 = 0.5f
+                    soundPoolTempo4 = 1.0f
+                    soundPoolVolume5 = 0.5f
+                    soundPoolTempo5 = 1.0f
+                    soundPoolVolume6 = 0.5f
+                    soundPoolTempo6 = 1.0f
+                    soundPoolVolume7 = 0.5f
+                    soundPoolTempo7 = 1.0f
+                    soundPoolVolume8 = 0.5f
+                    soundPoolTempo8 = 1.0f
+                    soundPoolVolume9 = 0.5f
+                    soundPoolTempo9 = 1.0f
+                    soundPoolVolume10 = 0.5f
+                    soundPoolTempo10 = 1.0f
+                    soundPoolVolume11 = 0.5f
+                    soundPoolTempo11 = 1.0f
+                    soundPoolVolume12 = 0.5f
+                    soundPoolTempo12 = 1.0f
+                    soundPoolVolume13 = 0.5f
+                    soundPoolTempo13 = 1.0f
+                    soundPoolVolume14 = 0.5f
+                    soundPoolTempo14 = 1.0f
+                    soundPoolVolume15 = 0.5f
+                    soundPoolTempo15 = 1.0f
+                    sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound16 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    gridView2.visibility = View.INVISIBLE
+                }
                 "Play mode ↔ Change pad sounds" -> {
                     when (paste) {
                         0 -> {
