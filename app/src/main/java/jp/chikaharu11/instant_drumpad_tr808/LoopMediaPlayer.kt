@@ -41,15 +41,17 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     fun volumePlus() {
-        if (count <= 1.0f) {
+        if (count < 1.0f) {
             count += 0.1f
+            count = "%.1f".format(count).toFloat()
         }
         setVolume(count, count)
     }
 
     fun volumeMinus() {
-        if (count >= 0.1f) {
+        if (count > 0.1f) {
             count -= 0.1f
+            count = "%.1f".format(count).toFloat()
         }
         setVolume(count,count)
     }
@@ -61,15 +63,17 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     }
 
     fun speedUp() {
-        if (bpm <= 5.9f) {
+        if (bpm < 6.0f) {
             bpm += 0.1f
+            bpm = "%.1f".format(bpm).toFloat()
         }
         speed(bpm)
     }
 
     fun speedDown() {
-        if (bpm >= 0.2f) {
+        if (bpm > 0.1f) {
             bpm -= 0.1f
+            bpm = "%.1f".format(bpm).toFloat()
         }
         speed(bpm)
     }

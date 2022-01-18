@@ -72,8 +72,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var padText13 = "claves_02".replace("_"," ").uppercase()
     private var padText14 = "high_conga_01".replace("_"," ").uppercase()
     private var padText15 = "TR-8_rimshot_03".replace("_"," ").uppercase()
-    private var count = 5
-    private var bpm = 10
+    private var count = 0.5f
+    private var bpm = 1.0f
 
     private var soundPoolVolume = 0.5f
     private var soundPoolTempo = 1.0f
@@ -1550,20 +1550,41 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         findViewById<ImageButton>(R.id.volume_minus0).setOnClickListener {
             lmp.volumeMinus()
-            if (count > 1) {
-                count -= 1
+            if (count > 0.1f) {
+                count -= 0.1f
+                count = "%.1f".format(count).toFloat()
+                findViewById<Button>(R.id.loop).text = ""
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText0).text = bpm.toString().replace("f", "") + " " + actionTitle + " " + count.toString().replace("f", "").uppercase()
+                }
             }
         }
         findViewById<ImageButton>(R.id.volume_plus0).setOnClickListener {
             lmp.volumePlus()
-            if (count < 10) {
-                count += 1
+            if (count < 1.0f) {
+                count += 0.1f
+                count = "%.1f".format(count).toFloat()
+                findViewById<Button>(R.id.loop).text = ""
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText0).text = bpm.toString().replace("f", "") + " " + actionTitle + " " + count.toString().replace("f", "").uppercase()
+                }
             }
         }
         findViewById<ImageButton>(R.id.tempo_minus0).setOnClickListener {
             lmp.speedDown()
-            if (bpm > 1) {
-                bpm -= 1
+            if (bpm > 0.1f) {
+                bpm -= 0.1f
+                bpm = "%.1f".format(bpm).toFloat()
+                findViewById<Button>(R.id.loop).text = ""
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText0).text = bpm.toString().replace("f", "") + " " + actionTitle + " " + count.toString().replace("f", "").uppercase()
+                }
                 menuSwitch = false
                 invalidateOptionsMenu()
                 switch1 = 1
@@ -1571,8 +1592,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
         findViewById<ImageButton>(R.id.tempo_plus0).setOnClickListener {
             lmp.speedUp()
-            if (bpm < 60) {
-                bpm += 1
+            if (bpm < 6.0f) {
+                bpm += 0.1f
+                bpm = "%.1f".format(bpm).toFloat()
+                findViewById<Button>(R.id.loop).text = ""
+                if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    findViewById<TextView>(R.id.padText0).text = count.toString().replace("f", "") + " " + actionTitle + " " + bpm.toString().replace("f", "").uppercase()
+                } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    findViewById<TextView>(R.id.padText0).text = bpm.toString().replace("f", "") + " " + actionTitle + " " + count.toString().replace("f", "").uppercase()
+                }
                 menuSwitch = false
                 invalidateOptionsMenu()
                 switch1 = 1
@@ -3170,8 +3198,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse(soundList.name))
                     lmp.stop()
-                    count = 5
-                    bpm = 10
+                    count = 0.5f
+                    bpm = 1.0f
                     actionTitle = soundList.name.replaceBeforeLast("/", "").replace("/", "")
                         .replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop"
                     supportActionBar?.title = actionTitle
@@ -3468,8 +3496,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     lmp.release()
                     lmp = LoopMediaPlayer(this@MainActivity, Uri.parse("android.resource://" + packageName + "/raw/" + soundList.name.replace(".ogg", "")))
                     lmp.stop()
-                    count = 5
-                    bpm = 10
+                    count = 0.5f
+                    bpm = 1.0f
                     actionTitle = soundList.name.replaceAfterLast(".", "").replace("_", " ").replace("."," ").uppercase() + " loop"
                     supportActionBar?.title = actionTitle
                     soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
@@ -3663,6 +3691,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         mpDuration13 = 0
                         mpDuration14 = 0
                         mpDuration15 = 0
+                        count = 0.5f
+                        bpm = 1.0f
                         soundPoolVolume = 0.5f
                         soundPoolTempo = 1.0f
                         soundPoolVolume2 = 0.5f
