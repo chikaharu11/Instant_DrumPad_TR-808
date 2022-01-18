@@ -297,7 +297,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
         }
 
-        val countries = if (locale == Locale.JAPAN) { arrayOf(
+        val tuning = if (locale == Locale.JAPAN) {
+            arrayOf(
                 "サウンドの調整",
                 "サウンドの設定をリセット",
                 "バナー広告を非表示にする",
@@ -310,7 +311,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "EXIT"
             )
             }
-        val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, countries)
+        val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning)
         val gridView: GridView = findViewById(R.id.grid_view)
         gridView.adapter = adapter
 
@@ -369,6 +370,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     findViewById<TextView>(R.id.padText14).text = padText14
                     findViewById<TextView>(R.id.padText15).text = padText15
                     binding.gridView.visibility = View.INVISIBLE
+                    Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
                 }
                 "バナー広告を非表示にする" -> {
                     if (adCheck == 0) {
@@ -469,6 +471,197 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                         }
                         .show()
+                }
+            }
+        }
+
+        val choose = if (locale == Locale.JAPAN) {
+            arrayOf(
+                "演奏モード⇔パッド音の変更",
+                "メトロノーム・ループ",
+                "サンプル・ループ",
+                "外部サウンド・ループ",
+                "ドラムパッドをリセット"
+            ) } else {
+            arrayOf(
+                "Play mode ↔ Change pad sounds",
+                "Metronome Loops",
+                "Sample Loops",
+                "External sound Loops",
+                "Reset drum pads"
+            )
+        }
+        val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
+        val gridView2: GridView = findViewById(R.id.grid_view_choose)
+        val soundListView = findViewById<ListView>(R.id.list_view)
+        gridView2.adapter = adapter2
+
+        gridView2.setOnItemClickListener { adapterView, _, position, _ ->
+            when (adapterView.getItemAtPosition(position)) {
+                "Play mode ↔ Change pad sounds" -> {
+                    when (paste) {
+                        0 -> {
+                            paste = 1
+                            invalidateOptionsMenu()
+                            Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
+                            gridView2.visibility = View.INVISIBLE
+                        }
+                        1 -> {
+                            paste = 0
+                            invalidateOptionsMenu()
+                            Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
+                            gridView2.visibility = View.INVISIBLE
+                        }
+                    }
+                }
+                "Metronome Loops" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    buttonA = 16
+                    buttonB = 2
+                    soundListView.adapter = nCustomAdapter
+                    nCustomAdapter.notifyDataSetChanged()
+                    soundListView.visibility = View.VISIBLE
+                    gridView2.visibility = View.INVISIBLE
+                }
+                "Sample Loops" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    buttonA = 16
+                    buttonB = 2
+                    soundListView.adapter = oCustomAdapter
+                    oCustomAdapter.notifyDataSetChanged()
+                    soundListView.visibility = View.VISIBLE
+                    gridView2.visibility = View.INVISIBLE
+                }
+
+                "External sound Loops" -> {
+                    lmp.stop()
+                    menuSwitch = true
+                    invalidateOptionsMenu()
+                    switch1 = 2
+                    buttonA = 16
+                    buttonB = 1
+                    selectEX()
+                    soundListView.adapter = tCustomAdapter
+                    tCustomAdapter.notifyDataSetChanged()
+                    soundListView.visibility = View.VISIBLE
+                    gridView2.visibility = View.INVISIBLE
+                }
+                "Reset drum pads" -> {
+                    binding.textView.text = ""
+                    binding.textView2.text = ""
+                    binding.textView3.text = ""
+                    binding.textView4.text = ""
+                    binding.textView5.text = ""
+                    binding.textView6.text = ""
+                    binding.textView7.text = ""
+                    binding.textView8.text = ""
+                    binding.textView9.text = ""
+                    binding.textView10.text = ""
+                    binding.textView11.text = ""
+                    binding.textView12.text = ""
+                    binding.textView13.text = ""
+                    binding.textView14.text = ""
+                    binding.textView15.text = ""
+                    findViewById<TextView>(R.id.padText1).text = ""
+                    findViewById<TextView>(R.id.padText2).text = ""
+                    findViewById<TextView>(R.id.padText3).text = ""
+                    findViewById<TextView>(R.id.padText4).text = ""
+                    findViewById<TextView>(R.id.padText5).text = ""
+                    findViewById<TextView>(R.id.padText6).text = ""
+                    findViewById<TextView>(R.id.padText7).text = ""
+                    findViewById<TextView>(R.id.padText8).text = ""
+                    findViewById<TextView>(R.id.padText9).text = ""
+                    findViewById<TextView>(R.id.padText10).text = ""
+                    findViewById<TextView>(R.id.padText11).text = ""
+                    findViewById<TextView>(R.id.padText12).text = ""
+                    findViewById<TextView>(R.id.padText13).text = ""
+                    findViewById<TextView>(R.id.padText14).text = ""
+                    findViewById<TextView>(R.id.padText15).text = ""
+                    padText1 = ""
+                    padText2 = ""
+                    padText3 = ""
+                    padText4 = ""
+                    padText5 = ""
+                    padText6 = ""
+                    padText7 = ""
+                    padText8 = ""
+                    padText9 = ""
+                    padText10 = ""
+                    padText11 = ""
+                    padText12 = ""
+                    padText13 = ""
+                    padText14 = ""
+                    padText15 = ""
+                    mpDuration = 0
+                    mpDuration2 = 0
+                    mpDuration3 = 0
+                    mpDuration4 = 0
+                    mpDuration5 = 0
+                    mpDuration6 = 0
+                    mpDuration7 = 0
+                    mpDuration8 = 0
+                    mpDuration9 = 0
+                    mpDuration10 = 0
+                    mpDuration11 = 0
+                    mpDuration12 = 0
+                    mpDuration13 = 0
+                    mpDuration14 = 0
+                    mpDuration15 = 0
+                    count = 0.5f
+                    bpm = 1.0f
+                    soundPoolVolume = 0.5f
+                    soundPoolTempo = 1.0f
+                    soundPoolVolume2 = 0.5f
+                    soundPoolTempo2 = 1.0f
+                    soundPoolVolume3 = 0.5f
+                    soundPoolTempo3 = 1.0f
+                    soundPoolVolume4 = 0.5f
+                    soundPoolTempo4 = 1.0f
+                    soundPoolVolume5 = 0.5f
+                    soundPoolTempo5 = 1.0f
+                    soundPoolVolume6 = 0.5f
+                    soundPoolTempo6 = 1.0f
+                    soundPoolVolume7 = 0.5f
+                    soundPoolTempo7 = 1.0f
+                    soundPoolVolume8 = 0.5f
+                    soundPoolTempo8 = 1.0f
+                    soundPoolVolume9 = 0.5f
+                    soundPoolTempo9 = 1.0f
+                    soundPoolVolume10 = 0.5f
+                    soundPoolTempo10 = 1.0f
+                    soundPoolVolume11 = 0.5f
+                    soundPoolTempo11 = 1.0f
+                    soundPoolVolume12 = 0.5f
+                    soundPoolTempo12 = 1.0f
+                    soundPoolVolume13 = 0.5f
+                    soundPoolTempo13 = 1.0f
+                    soundPoolVolume14 = 0.5f
+                    soundPoolTempo14 = 1.0f
+                    soundPoolVolume15 = 0.5f
+                    soundPoolTempo15 = 1.0f
+                    sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    sound16 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    gridView2.visibility = View.INVISIBLE
                 }
             }
         }
@@ -955,8 +1148,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sSoundList = arrayListOf()
         tSoundList = arrayListOf()
 
-        val listView = findViewById<ListView>(R.id.list_view)
-
         aCustomAdapter = CustomAdapter(this, aSoundList, this)
         bCustomAdapter = CustomAdapter(this, bSoundList, this)
         cCustomAdapter = CustomAdapter(this, cSoundList, this)
@@ -977,7 +1168,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         sCustomAdapter = CustomAdapter(this, sSoundList, this)
         tCustomAdapter = CustomAdapter(this, tSoundList, this)
 
-        listView.adapter = aCustomAdapter
+        soundListView.adapter = aCustomAdapter
 
         mp = MediaPlayer()
 
@@ -1018,8 +1209,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     meSpinner.isFocusable = true
                     return
                 }
-
-                val soundListView = findViewById<ListView>(R.id.list_view)
 
                 when(position){
                     0 -> {
@@ -1223,8 +1412,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound1, soundPoolVolume, soundPoolVolume, 1, 0, soundPoolTempo)
@@ -1239,8 +1431,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound2, soundPoolVolume2, soundPoolVolume2, 1, 0, soundPoolTempo2)
@@ -1255,8 +1450,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound3, soundPoolVolume3, soundPoolVolume3, 1, 0, soundPoolTempo3)
@@ -1271,8 +1469,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound4, soundPoolVolume4, soundPoolVolume4, 1, 0, soundPoolTempo4)
@@ -1287,8 +1488,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound5, soundPoolVolume5, soundPoolVolume5, 1, 0, soundPoolTempo5)
@@ -1303,8 +1507,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound6, soundPoolVolume6, soundPoolVolume6, 1, 0, soundPoolTempo6)
@@ -1319,8 +1526,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound7, soundPoolVolume7, soundPoolVolume7, 1, 0, soundPoolTempo7)
@@ -1335,8 +1545,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound8, soundPoolVolume8, soundPoolVolume8, 1, 0, soundPoolTempo8)
@@ -1351,8 +1564,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound9, soundPoolVolume9, soundPoolVolume9, 1, 0, soundPoolTempo9)
@@ -1368,8 +1584,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound10, soundPoolVolume10, soundPoolVolume10, 1, 0, soundPoolTempo10)
@@ -1384,8 +1603,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound11, soundPoolVolume11, soundPoolVolume11, 1, 0, soundPoolTempo11)
@@ -1400,8 +1622,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound12, soundPoolVolume12, soundPoolVolume12, 1, 0, soundPoolTempo12)
@@ -1416,8 +1641,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound13, soundPoolVolume13, soundPoolVolume13, 1, 0, soundPoolTempo13)
@@ -1432,8 +1660,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound14, soundPoolVolume14, soundPoolVolume14, 1, 0, soundPoolTempo14)
@@ -1448,8 +1679,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 gridView.isVisible -> {
                     gridView.visibility = View.INVISIBLE
                 }
-                listView.isVisible -> {
-                    listView.visibility = View.INVISIBLE
+                gridView2.isVisible -> {
+                    gridView2.visibility = View.INVISIBLE
+                }
+                soundListView.isVisible -> {
+                    soundListView.visibility = View.INVISIBLE
                 }
                 event.action == MotionEvent.ACTION_DOWN -> {
                     soundPool.play(sound15, soundPoolVolume15, soundPoolVolume15, 1, 0, soundPoolTempo15)
@@ -3645,206 +3879,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
     }
 
-
-    private fun selectCh() {
-
-        val chSpinner = findViewById<Spinner>(R.id.choose_loop_spinner)
-
-        val adapterC = ArrayAdapter.createFromResource(this, R.array.spinnerItems2, android.R.layout.simple_spinner_item)
-
-        adapterC.setDropDownViewResource(R.layout.custom_spinner_dropdown)
-
-
-        chSpinner.adapter = adapterC
-
-        chSpinner.avoidDropdownFocus()
-
-        chSpinner.performClick()
-
-
-        chSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?, position: Int, id: Long,
-            ) {
-                if (!chSpinner.isFocusable) {
-                    chSpinner.isFocusable = true
-                    return
-                }
-
-                val soundListView = findViewById<ListView>(R.id.list_view)
-
-                when(position){
-                    0 -> {
-                        when (paste) {
-                            0 -> {
-                                paste = 1
-                                invalidateOptionsMenu()
-                                Toast.makeText(applicationContext, R.string.change, Toast.LENGTH_LONG).show()
-                            }
-                            1 -> {
-                                paste = 0
-                                invalidateOptionsMenu()
-                                Toast.makeText(applicationContext, R.string.change2, Toast.LENGTH_LONG).show()
-                            }
-                        }
-                    }
-                    1 -> {
-                        lmp.stop()
-                        menuSwitch = true
-                        invalidateOptionsMenu()
-                        switch1 = 2
-                        buttonA = 16
-                        buttonB = 2
-                        soundListView.adapter = nCustomAdapter
-                        nCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    2 -> {
-                        lmp.stop()
-                        menuSwitch = true
-                        invalidateOptionsMenu()
-                        switch1 = 2
-                        buttonA = 16
-                        buttonB = 2
-                        soundListView.adapter = oCustomAdapter
-                        oCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-
-                    3 -> {
-                        lmp.stop()
-                        menuSwitch = true
-                        invalidateOptionsMenu()
-                        switch1 = 2
-                        buttonA = 16
-                        buttonB = 1
-                        selectEX()
-                        soundListView.adapter = tCustomAdapter
-                        tCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
-                    4 -> {
-                        binding.textView.text = ""
-                        binding.textView2.text = ""
-                        binding.textView3.text = ""
-                        binding.textView4.text = ""
-                        binding.textView5.text = ""
-                        binding.textView6.text = ""
-                        binding.textView7.text = ""
-                        binding.textView8.text = ""
-                        binding.textView9.text = ""
-                        binding.textView10.text = ""
-                        binding.textView11.text = ""
-                        binding.textView12.text = ""
-                        binding.textView13.text = ""
-                        binding.textView14.text = ""
-                        binding.textView15.text = ""
-                        findViewById<TextView>(R.id.padText1).text = ""
-                        findViewById<TextView>(R.id.padText2).text = ""
-                        findViewById<TextView>(R.id.padText3).text = ""
-                        findViewById<TextView>(R.id.padText4).text = ""
-                        findViewById<TextView>(R.id.padText5).text = ""
-                        findViewById<TextView>(R.id.padText6).text = ""
-                        findViewById<TextView>(R.id.padText7).text = ""
-                        findViewById<TextView>(R.id.padText8).text = ""
-                        findViewById<TextView>(R.id.padText9).text = ""
-                        findViewById<TextView>(R.id.padText10).text = ""
-                        findViewById<TextView>(R.id.padText11).text = ""
-                        findViewById<TextView>(R.id.padText12).text = ""
-                        findViewById<TextView>(R.id.padText13).text = ""
-                        findViewById<TextView>(R.id.padText14).text = ""
-                        findViewById<TextView>(R.id.padText15).text = ""
-                        padText1 = ""
-                        padText2 = ""
-                        padText3 = ""
-                        padText4 = ""
-                        padText5 = ""
-                        padText6 = ""
-                        padText7 = ""
-                        padText8 = ""
-                        padText9 = ""
-                        padText10 = ""
-                        padText11 = ""
-                        padText12 = ""
-                        padText13 = ""
-                        padText14 = ""
-                        padText15 = ""
-                        mpDuration = 0
-                        mpDuration2 = 0
-                        mpDuration3 = 0
-                        mpDuration4 = 0
-                        mpDuration5 = 0
-                        mpDuration6 = 0
-                        mpDuration7 = 0
-                        mpDuration8 = 0
-                        mpDuration9 = 0
-                        mpDuration10 = 0
-                        mpDuration11 = 0
-                        mpDuration12 = 0
-                        mpDuration13 = 0
-                        mpDuration14 = 0
-                        mpDuration15 = 0
-                        count = 0.5f
-                        bpm = 1.0f
-                        soundPoolVolume = 0.5f
-                        soundPoolTempo = 1.0f
-                        soundPoolVolume2 = 0.5f
-                        soundPoolTempo2 = 1.0f
-                        soundPoolVolume3 = 0.5f
-                        soundPoolTempo3 = 1.0f
-                        soundPoolVolume4 = 0.5f
-                        soundPoolTempo4 = 1.0f
-                        soundPoolVolume5 = 0.5f
-                        soundPoolTempo5 = 1.0f
-                        soundPoolVolume6 = 0.5f
-                        soundPoolTempo6 = 1.0f
-                        soundPoolVolume7 = 0.5f
-                        soundPoolTempo7 = 1.0f
-                        soundPoolVolume8 = 0.5f
-                        soundPoolTempo8 = 1.0f
-                        soundPoolVolume9 = 0.5f
-                        soundPoolTempo9 = 1.0f
-                        soundPoolVolume10 = 0.5f
-                        soundPoolTempo10 = 1.0f
-                        soundPoolVolume11 = 0.5f
-                        soundPoolTempo11 = 1.0f
-                        soundPoolVolume12 = 0.5f
-                        soundPoolTempo12 = 1.0f
-                        soundPoolVolume13 = 0.5f
-                        soundPoolTempo13 = 1.0f
-                        soundPoolVolume14 = 0.5f
-                        soundPoolTempo14 = 1.0f
-                        soundPoolVolume15 = 0.5f
-                        soundPoolTempo15 = 1.0f
-                        sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                        sound16 = soundPool.load(assets.openFd("soundless.ogg"), 1)
-                    }
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-        }
-        chSpinner.isFocusable = false
-    }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
 
@@ -3878,6 +3912,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val soundListView = findViewById<ListView>(R.id.list_view)
         val gridView = findViewById<GridView>(R.id.grid_view)
+        val gridView2 = findViewById<GridView>(R.id.grid_view_choose)
         val tuningView = findViewById<View>(R.id.view)
 
         when (item.itemId) {
@@ -3909,6 +3944,11 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             R.id.menu10 -> {
                 when {
+                    gridView2.isVisible -> {
+                        gridView.visibility = View.INVISIBLE
+                        gridView2.visibility = View.INVISIBLE
+                        tuningView.visibility = View.INVISIBLE
+                    }
                     soundListView.isVisible -> {
                         soundListView.visibility = View.INVISIBLE
                     }
@@ -3921,7 +3961,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tuningView.visibility = View.INVISIBLE
                     }
                     soundListView.isInvisible && gridView.isInvisible && tuningView.isInvisible -> {
-                        selectCh()
+                        gridView2.visibility = View.VISIBLE
                     }
                 }
                 return true
@@ -3929,10 +3969,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             R.id.action_settings -> {
                 when {
+                    gridView2.isVisible -> {
+                        gridView.visibility = View.INVISIBLE
+                        gridView2.visibility = View.INVISIBLE
+                        tuningView.visibility = View.INVISIBLE
+                    }
                     soundListView.isVisible -> {
                         soundListView.visibility = View.INVISIBLE
                     }
-                    gridView.isInvisible && tuningView.isVisible-> {
+                    gridView.isInvisible && tuningView.isVisible -> {
                         tuningView.visibility = View.INVISIBLE
                     }
                     gridView.isInvisible -> {

@@ -9,13 +9,15 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="16dp"
+        android:layout_width="16sp"
         android:layout_height="wrap_content"
         android:text="@string/textView17"
         android:textColor="#FFFFFF"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/tempo_minus0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tempo_plus0" />
+        app:layout_constraintTop_toTopOf="@+id/tempo_plus0"
+        app:layout_constraintEnd_toStartOf="@id/tempo_plus0"/>
 
     <ImageButton
         android:id="@+id/volume_minus0"
@@ -535,13 +537,15 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="16dp"
+        android:layout_width="16sp"
         android:layout_height="wrap_content"
         android:text="@string/textView16"
         android:textColor="#FFFFFF"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/volume_minus0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/volume_plus0"
+        app:layout_constraintEnd_toStartOf="@id/volume_plus0"
         tools:ignore="MissingConstraints" />
 
     <Button

@@ -52,8 +52,11 @@
     <string name="change"><b>パッドをタッチするとパッド音を変更できます</b></string>
     <string name="change2"><b>演奏モード</b></string>
 
-    <string name="textView16">Volume</string>
-    <string name="textView17">Pitch</string>
+    <string name="reset1">サウンドの設定をリセット</string>
+    <string name="reset2">ドラムパッドをリセット</string>
+
+    <string name="textView16">VOLUME</string>
+    <string name="textView17">PITCH</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>

@@ -53,8 +53,11 @@
     <string name="change"><b>Touch the pad to change the pad sound.</b></string>
     <string name="change2"><b>Play mode</b></string>
 
-    <string name="textView16">Volume</string>
-    <string name="textView17">Pitch</string>
+    <string name="reset1">Reset the sound settings</string>
+    <string name="reset2">Reset drum pads</string>
+
+    <string name="textView16">VOLUME</string>
+    <string name="textView17">PITCH</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
