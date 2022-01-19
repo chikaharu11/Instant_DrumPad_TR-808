@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var padText3 = "TR-909_cymbal_01".replace("_"," ").uppercase()
     private var padText4 = "open_hi_hat_01".replace("_"," ").uppercase()
     private var padText5 = "clap_01".replace("_"," ").uppercase()
-    private var padText6 =  "TR-909_cymbal_02".replace("_"," ").uppercase()
+    private var padText6 = "TR-909_cymbal_02".replace("_"," ").uppercase()
     private var padText7 = "closed_hi_hat_01".replace("_"," ").uppercase()
     private var padText8 = "high_tom_01".replace("_"," ").uppercase()
     private var padText9 = "mid_tom_01".replace("_"," ").uppercase()
@@ -438,6 +438,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPoolVolume15 = 0.5f
                     soundPoolTempo15 = 1.0f
                     binding.gridView.visibility = View.INVISIBLE
+                    Toast.makeText(applicationContext, R.string.reset1, Toast.LENGTH_LONG).show()
                 }
                 "Hide banner Ads" -> {
                     if (adCheck == 0) {
@@ -661,6 +662,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                     sound16 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                     gridView2.visibility = View.INVISIBLE
+                    Toast.makeText(applicationContext, R.string.reset2, Toast.LENGTH_LONG).show()
                 }
                 "Play mode ↔ Change pad sounds" -> {
                     when (paste) {
@@ -826,6 +828,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                     sound16 = soundPool.load(assets.openFd("soundless.ogg"), 1)
                     gridView2.visibility = View.INVISIBLE
+                    Toast.makeText(applicationContext, R.string.reset2, Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -4089,7 +4092,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     actionGridView.isVisible -> {
                         actionGridView.visibility = View.INVISIBLE
                     }
-
+                    chooseGridView.isVisible -> {
+                        chooseGridView.visibility = View.INVISIBLE
+                    }
                 }
                 if (switch1 == 1) {
                     lmp.stop()
