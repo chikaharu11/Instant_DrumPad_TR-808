@@ -15,7 +15,8 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/tempo_plus0"
         app:layout_constraintStart_toStartOf="@+id/tempo_minus0"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tempo_plus0"/>
 
     <TextView
         android:id="@+id/textView16"
@@ -26,6 +27,7 @@
         app:layout_constraintEnd_toEndOf="@+id/volume_plus0"
         app:layout_constraintStart_toStartOf="@+id/volume_minus0"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/volume_minus0"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
