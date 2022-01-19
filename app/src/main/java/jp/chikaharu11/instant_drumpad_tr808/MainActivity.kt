@@ -318,6 +318,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             when(adapterView.getItemAtPosition(position)) {
                 "サウンドの調整" -> {
                     binding.view.visibility = View.VISIBLE
+                    gridView.visibility = View.INVISIBLE
                 }
                 "サウンドの設定をリセット" -> {
                     count = 0.5f
@@ -405,6 +406,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
                 "Adjusting Sounds" -> {
                     binding.view.visibility = View.VISIBLE
+                    gridView.visibility = View.INVISIBLE
                 }
                 "Reset the sound settings" -> {
                     soundPoolVolume = 0.5f
@@ -4119,6 +4121,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tuningView.visibility = View.INVISIBLE
                     }
                     soundListView.isVisible -> {
+                        chooseGridView.visibility = View.VISIBLE
                         soundListView.visibility = View.INVISIBLE
                     }
                     actionGridView.isVisible -> {
@@ -4127,6 +4130,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tuningView.visibility = View.INVISIBLE
                     }
                     tuningView.isVisible -> {
+                        chooseGridView.visibility = View.VISIBLE
                         actionGridView.visibility = View.INVISIBLE
                         tuningView.visibility = View.INVISIBLE
                     }
@@ -4145,10 +4149,12 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         tuningView.visibility = View.INVISIBLE
                     }
                     soundListView.isVisible -> {
+                        actionGridView.visibility = View.VISIBLE
                         soundListView.visibility = View.INVISIBLE
                     }
                     actionGridView.isInvisible && tuningView.isVisible -> {
                         tuningView.visibility = View.INVISIBLE
+                        actionGridView.visibility = View.VISIBLE
                     }
                     actionGridView.isInvisible -> {
                         actionGridView.visibility = View.VISIBLE
