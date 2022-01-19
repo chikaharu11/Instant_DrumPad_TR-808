@@ -56,6 +56,8 @@
     <string name="reset1">Reset the sound settings</string>
     <string name="reset2">Reset drum pads</string>
 
+    <string name="textView16o">VOLUME</string>
+    <string name="textView17o">PITCH</string>
     <string name="textView16">V\nO\nL\nU\nM\nE</string>
     <string name="textView17">P\nI\nT\nC\nH</string>
 

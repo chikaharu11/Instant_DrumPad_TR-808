@@ -55,8 +55,10 @@
     <string name="reset1">サウンドの設定をリセット</string>
     <string name="reset2">ドラムパッドをリセット</string>
 
-    <string name="textView16">VOLUME</string>
-    <string name="textView17">PITCH</string>
+    <string name="textView16o">VOLUME</string>
+    <string name="textView17o">PITCH</string>
+    <string name="textView16">V\nO\nL\nU\nM\nE</string>
+    <string name="textView17">P\nI\nT\nC\nH</string>
 
     <string-array name="spinnerItems">
         <item>Bass Drum [BD]</item>
