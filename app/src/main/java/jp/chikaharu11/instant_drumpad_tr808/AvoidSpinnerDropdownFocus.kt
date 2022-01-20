@@ -1,6 +1,5 @@
 package jp.chikaharu11.instant_drumpad_tr808
 
-import android.app.Dialog
 import android.widget.PopupWindow
 import android.widget.Spinner
 

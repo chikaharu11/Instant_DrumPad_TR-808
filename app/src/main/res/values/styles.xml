@@ -32,6 +32,6 @@
 
     <color name="colorPrimary">#5A5A66</color>
     <color name="colorPrimaryDark">#e2e3e3</color>
-    <color name="colorAccent">#8BC34A</color>
+    <color name="colorAccent">#FFA630</color>
     <color name="colorControlHighlight">#EC7357</color>
 </resources>

@@ -62,18 +62,18 @@
     <string name="textView17">P\nI\nT\nC\nH</string>
 
     <string-array name="spinnerItems">
-        <item>Bass Drum [BD]</item>
-        <item>Clap [CP]</item>
-        <item>Claves [CL]</item>
-        <item>Closed Hi Hat [CH]</item>
-        <item>Congas [HC-MC-LC]</item>
-        <item>Cowbell [CB]</item>
-        <item>Cymbal [CY]</item>
-        <item>Maracas [MA]</item>
-        <item>Open Hi Hat [OH]</item>
-        <item>Rimshot [RS]</item>
-        <item>Snare Drum [SD]</item>
-        <item>Tom Toms [LT-MT-HT]</item>
+        <item>BASS DRUM [BD]</item>
+        <item>HAND CLAP [CP]</item>
+        <item>CLAVES [CL]</item>
+        <item>CLSD HI HAT [CH]</item>
+        <item>CONGA [HC-MC-LC]</item>
+        <item>COWBELL [CB]</item>
+        <item>CYMBAL [CY]</item>
+        <item>MARACAS [MA]</item>
+        <item>OPEN HI HAT [OH]</item>
+        <item>RIMSHOT [RS]</item>
+        <item>SNARE DRUM [SD]</item>
+        <item>TOM [LT-MT-HT]</item>
         <item>Sample Loops</item>
         <item>Internal sounds</item>
         <item>External sounds</item>

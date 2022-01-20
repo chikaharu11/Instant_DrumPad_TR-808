@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var padText4 = "open_hi_hat_01".replace("_"," ").uppercase()
     private var padText5 = "clap_01".replace("_"," ").uppercase()
     private var padText6 = "TR-909_cymbal_02".replace("_"," ").uppercase()
-    private var padText7 = "closed_hi_hat_01".replace("_"," ").uppercase()
+    private var padText7 = "clsd_hi_hat_01".replace("_"," ").uppercase()
     private var padText8 = "high_tom_01".replace("_"," ").uppercase()
     private var padText9 = "mid_tom_01".replace("_"," ").uppercase()
     private var padText10 = "snare_drum_01".replace("_"," ").uppercase()
@@ -229,7 +229,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.textView4.text = "open_hi_hat_01".replace("_"," ").uppercase()
                 binding.textView5.text = "clap_01".replace("_"," ").uppercase()
                 binding.textView6.text = "TR-909_cymbal_02".replace("_"," ").uppercase()
-                binding.textView7.text = "closed_hi_hat_01".replace("_"," ").uppercase()
+                binding.textView7.text = "clsd_hi_hat_01".replace("_"," ").uppercase()
                 binding.textView8.text = "high_tom_01".replace("_"," ").uppercase()
                 binding.textView9.text = "mid_tom_01".replace("_"," ").uppercase()
                 binding.textView10.text = "snare_drum_01".replace("_"," ").uppercase()
@@ -245,7 +245,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<TextView>(R.id.padText4).text = "open_hi_hat_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText5).text = "clap_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText6).text = "TR-909_cymbal_02".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText7).text = "closed_hi_hat_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText7).text = "clsd_hi_hat_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText8).text = "high_tom_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText9).text = "mid_tom_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText10).text = "snare_drum_01".replace("_"," ").uppercase()
@@ -262,7 +262,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.textView4.text = "open_hi_hat_01".replace("_"," ").uppercase()
                 binding.textView5.text = "clap_01".replace("_"," ").uppercase()
                 binding.textView6.text = "TR-909_cymbal_02".replace("_"," ").uppercase()
-                binding.textView7.text = "closed_hi_hat_01".replace("_"," ").uppercase()
+                binding.textView7.text = "clsd_hi_hat_01".replace("_"," ").uppercase()
                 binding.textView8.text = "high_tom_01".replace("_"," ").uppercase()
                 binding.textView9.text = "mid_tom_01".replace("_"," ").uppercase()
                 binding.textView10.text = "snare_drum_01".replace("_"," ").uppercase()
@@ -278,7 +278,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<TextView>(R.id.padText4).text = "open_hi_hat_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText5).text = "clap_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText6).text = "TR-909_cymbal_02".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText7).text = "closed_hi_hat_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText7).text = "clsd_hi_hat_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText8).text = "high_tom_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText9).text = "mid_tom_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText10).text = "snare_drum_01".replace("_"," ").uppercase()
@@ -910,23 +910,23 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("claves_11.ogg")
         )
         dSoundList = arrayListOf(
-                SoundList("closed_hi_hat_01.ogg"),
-                SoundList("closed_hi_hat_02.ogg"),
-                SoundList("closed_hi_hat_03.ogg"),
-                SoundList("closed_hi_hat_04.ogg"),
-                SoundList("closed_hi_hat_05.ogg"),
-                SoundList("closed_hi_hat_06.ogg"),
-                SoundList("closed_hi_hat_07.ogg"),
-                SoundList("closed_hi_hat_08.ogg"),
-                SoundList("closed_hi_hat_09.ogg"),
-                SoundList("closed_hi_hat_10.ogg"),
-                SoundList("closed_hi_hat_11.ogg"),
-                SoundList("closed_hi_hat_12.ogg"),
-            SoundList("tr_909_closed_hi_hat_01.ogg"),
-            SoundList("tr_909_closed_hi_hat_02.ogg"),
-            SoundList("tr_8_closed_hi_hat_01.ogg"),
-            SoundList("tr_8_closed_hi_hat_02.ogg"),
-            SoundList("tr_8_closed_hi_hat_03.ogg")
+                SoundList("clsd_hi_hat_01.ogg"),
+                SoundList("clsd_hi_hat_02.ogg"),
+                SoundList("clsd_hi_hat_03.ogg"),
+                SoundList("clsd_hi_hat_04.ogg"),
+                SoundList("clsd_hi_hat_05.ogg"),
+                SoundList("clsd_hi_hat_06.ogg"),
+                SoundList("clsd_hi_hat_07.ogg"),
+                SoundList("clsd_hi_hat_08.ogg"),
+                SoundList("clsd_hi_hat_09.ogg"),
+                SoundList("clsd_hi_hat_10.ogg"),
+                SoundList("clsd_hi_hat_11.ogg"),
+                SoundList("clsd_hi_hat_12.ogg"),
+            SoundList("tr_909_clsd_hi_hat_01.ogg"),
+            SoundList("tr_909_clsd_hi_hat_02.ogg"),
+            SoundList("tr_8_clsd_hi_hat_01.ogg"),
+            SoundList("tr_8_clsd_hi_hat_02.ogg"),
+            SoundList("tr_8_clsd_hi_hat_03.ogg")
         )
         eSoundList = arrayListOf(
                 SoundList("high_conga_01.ogg"),
@@ -1134,7 +1134,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             SoundList("bass_drum_short_11.ogg"),
             SoundList("tr_909_clap.ogg"),
             SoundList("claves_04.ogg"),
-            SoundList("closed_hi_hat_01.ogg"),
+            SoundList("clsd_hi_hat_01.ogg"),
             SoundList("high_conga_01.ogg"),
             SoundList("cowbell_01b.ogg"),
             SoundList("tr_8_cymbal_01.ogg"),
@@ -1511,7 +1511,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 sound6 = soundPool.load(assets.openFd("tr_909_cymbal_02.ogg"), 1)
 
-                sound7 = soundPool.load(assets.openFd("closed_hi_hat_01.ogg"), 1)
+                sound7 = soundPool.load(assets.openFd("clsd_hi_hat_01.ogg"), 1)
 
                 sound8 = soundPool.load(assets.openFd("high_tom_01.ogg"), 1)
 
@@ -1545,7 +1545,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 sound6 = soundPool.load(assets.openFd("tr_909_cymbal_02.ogg"), 1)
 
-                sound7 = soundPool.load(assets.openFd("closed_hi_hat_01.ogg"), 1)
+                sound7 = soundPool.load(assets.openFd("clsd_hi_hat_01.ogg"), 1)
 
                 sound8 = soundPool.load(assets.openFd("high_tom_01.ogg"), 1)
 
