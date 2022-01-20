@@ -15,11 +15,6 @@
     <string name="textView13">bd_long_07</string>
     <string name="textView14">lc10</string>
     <string name="textView15">oh09</string>
-    <string name="select3a">Loop [85bpm]</string>
-    <string name="select3b">Loop [95bpm]</string>
-    <string name="select3c">Loop [105bpm]</string>
-    <string name="select3d">Loop [124bpm]</string>
-    <string name="select3e">Loop [132bpm]</string>
     <string name="play">再生</string>
     <string name="end">終了する</string>
     <string name="menu10">選択</string>
@@ -39,15 +34,6 @@
     <string name="menu6">終了しますか？</string>
 
     <string name="back">戻る</string>
-    <string name="menuPlus">ループの音量を上げる</string>
-    <string name="menuMinus">ループの音量を下げる</string>
-    <string name="menuUp">ループのテンポを上げる</string>
-    <string name="menuDown">ループのテンポを下げる</string>
-    <string name="lowest">音量:Lowest</string>
-    <string name="low">音量:Low</string>
-    <string name="middle">音量:Middle</string>
-    <string name="high">音量:High</string>
-    <string name="highest">音量:Highest</string>
 
     <string name="change"><b>パッドをタッチするとパッド音を変更できます</b></string>
     <string name="change2"><b>演奏モード</b></string>

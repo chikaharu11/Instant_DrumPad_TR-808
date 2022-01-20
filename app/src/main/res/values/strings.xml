@@ -15,11 +15,6 @@
     <string name="textView13">bd_long_07</string>
     <string name="textView14">lc10</string>
     <string name="textView15">oh09</string>
-    <string name="select3a">Loop [85bpm]</string>
-    <string name="select3b">Loop [95bpm]</string>
-    <string name="select3c">Loop [105bpm]</string>
-    <string name="select3d">Loop [124bpm]</string>
-    <string name="select3e">Loop [132bpm]</string>
     <string name="play">play</string>
     <string name="end">EXIT</string>
     <string name="menu10">choose</string>
@@ -40,15 +35,6 @@
     <string name="menu6">Do you want to exit?</string>
 
     <string name="back">back</string>
-    <string name="menuPlus">Main Volume UP</string>
-    <string name="menuMinus">Main Volume DOWN</string>
-    <string name="menuUp">Main Tempo UP</string>
-    <string name="menuDown">Main Tempo DOWN</string>
-    <string name="lowest">Volume:Lowest</string>
-    <string name="low">Volume:Low</string>
-    <string name="middle">Volume:Middle</string>
-    <string name="high">Volume:High</string>
-    <string name="highest">Volume:Highest</string>
 
     <string name="change"><b>Touch the pad to change the pad sound.</b></string>
     <string name="change2"><b>Play mode</b></string>
