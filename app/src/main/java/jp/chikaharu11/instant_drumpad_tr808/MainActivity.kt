@@ -28,6 +28,10 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import jp.chikaharu11.instant_drumpad_tr808.databinding.ActivityMainBinding
 import java.util.*
 import kotlin.math.hypot
+import android.content.DialogInterface
+
+
+
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
@@ -375,32 +379,41 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "バナー広告を非表示にする" -> {
                     if (adCheck == 0) {
                         AlertDialog.Builder(this)
+                            .setOnCancelListener {
+                                stickyImmersiveMode()
+                            }
                             .setTitle(R.string.menu5a)
                             .setMessage(R.string.menu5b)
                             .setPositiveButton("YES") { _, _ ->
                                 showRewardAd()
                             }
                             .setNegativeButton("NO") { _, _ ->
-
+                                stickyImmersiveMode()
                             }
                             .show()
                     } else if (adCheck == 1){
                         AlertDialog.Builder(this)
+                            .setOnCancelListener {
+                                stickyImmersiveMode()
+                            }
                             .setTitle(R.string.menu5c)
                             .setPositiveButton("OK") { _, _ ->
-
+                                stickyImmersiveMode()
                             }
                             .show()
                     }
                 }
                 "終了する" -> {
                     AlertDialog.Builder(this)
+                        .setOnCancelListener {
+                            stickyImmersiveMode()
+                        }
                         .setTitle(R.string.menu6)
                         .setPositiveButton("YES") { _, _ ->
                             finish()
                         }
                         .setNegativeButton("NO") { _, _ ->
-
+                            stickyImmersiveMode()
                         }
                         .show()
                 }
@@ -445,32 +458,41 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "Hide banner Ads" -> {
                     if (adCheck == 0) {
                         AlertDialog.Builder(this)
+                            .setOnCancelListener {
+                                stickyImmersiveMode()
+                            }
                             .setTitle(R.string.menu5a)
                             .setMessage(R.string.menu5b)
                             .setPositiveButton("YES") { _, _ ->
                                 showRewardAd()
                             }
                             .setNegativeButton("NO") { _, _ ->
-
+                                stickyImmersiveMode()
                             }
                             .show()
                     } else if (adCheck == 1){
                         AlertDialog.Builder(this)
+                            .setOnCancelListener {
+                                stickyImmersiveMode()
+                            }
                             .setTitle(R.string.menu5c)
                             .setPositiveButton("OK") { _, _ ->
-
+                                stickyImmersiveMode()
                             }
                             .show()
                     }
                 }
                 "EXIT" -> {
                     AlertDialog.Builder(this)
+                        .setOnCancelListener {
+                            stickyImmersiveMode()
+                        }
                         .setTitle(R.string.menu6)
                         .setPositiveButton("YES") { _, _ ->
                             finish()
                         }
                         .setNegativeButton("NO") { _, _ ->
-
+                            stickyImmersiveMode()
                         }
                         .show()
                 }
@@ -3243,12 +3265,14 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 binding.adView.visibility = View.GONE
                 binding.gridView.visibility = View.INVISIBLE
                 adCheck = 1
+                stickyImmersiveMode()
                 var rewardAmount = rewardItem.amount
                 var rewardType = rewardItem.type
                 Log.d("TAG", rewardItem.toString())
                 Log.d("TAG", "User earned the reward.")
             }
         } else {
+            stickyImmersiveMode()
             Log.d("TAG", "The rewarded ad wasn't ready yet.")
         }
     }
