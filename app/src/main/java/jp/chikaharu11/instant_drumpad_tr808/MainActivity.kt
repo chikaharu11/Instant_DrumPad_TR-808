@@ -304,12 +304,26 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             arrayOf(
                 "サウンドの調整",
                 "サウンドの設定をリセット",
+                "5x3",
+                "4x3",
+                "3x3",
+                "5x2",
+                "4x2",
+                "3x2",
+                "2x2",
                 "バナー広告を非表示にする",
                 "終了する"
             ) } else {
             arrayOf(
                 "Adjusting Sounds",
                 "Reset the sound settings",
+                "5x3",
+                "4x3",
+                "3x3",
+                "5x2",
+                "4x2",
+                "3x2",
+                "2x2",
                 "Hide banner Ads",
                 "EXIT"
             )
@@ -495,6 +509,215 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                             stickyImmersiveMode()
                         }
                         .show()
+                }
+                "5x3" -> {
+                    binding.imageView3.visibility = View.VISIBLE
+                    binding.imageView6.visibility = View.VISIBLE
+                    binding.imageView7.visibility = View.VISIBLE
+                    binding.imageView8.visibility = View.VISIBLE
+                    binding.imageView9.visibility = View.VISIBLE
+                    binding.imageView10.visibility = View.VISIBLE
+                    binding.imageView11.visibility = View.VISIBLE
+                    binding.imageView12.visibility = View.VISIBLE
+                    binding.imageView13.visibility = View.VISIBLE
+                    binding.imageView14.visibility = View.VISIBLE
+                    binding.imageView15.visibility = View.VISIBLE
+                    binding.backgroundView3.visibility = View.VISIBLE
+                    binding.backgroundView6.visibility = View.VISIBLE
+                    binding.backgroundView7.visibility = View.VISIBLE
+                    binding.backgroundView8.visibility = View.VISIBLE
+                    binding.backgroundView9.visibility = View.VISIBLE
+                    binding.backgroundView10.visibility = View.VISIBLE
+                    binding.backgroundView11.visibility = View.VISIBLE
+                    binding.backgroundView12.visibility = View.VISIBLE
+                    binding.backgroundView13.visibility = View.VISIBLE
+                    binding.backgroundView14.visibility = View.VISIBLE
+                    binding.backgroundView15.visibility = View.VISIBLE
+                    binding.textView3.visibility = View.VISIBLE
+                    binding.textView6.visibility = View.VISIBLE
+                    binding.textView7.visibility = View.VISIBLE
+                    binding.textView8.visibility = View.VISIBLE
+                    binding.textView9.visibility = View.VISIBLE
+                    binding.textView10.visibility = View.VISIBLE
+                    binding.textView11.visibility = View.VISIBLE
+                    binding.textView12.visibility = View.VISIBLE
+                    binding.textView13.visibility = View.VISIBLE
+                    binding.textView14.visibility = View.VISIBLE
+                    binding.textView15.visibility = View.VISIBLE
+                }
+                "4x3" -> {
+                    binding.imageView3.visibility = View.VISIBLE
+                    binding.imageView6.visibility = View.VISIBLE
+                    binding.imageView7.visibility = View.VISIBLE
+                    binding.imageView8.visibility = View.VISIBLE
+                    binding.imageView9.visibility = View.VISIBLE
+                    binding.imageView10.visibility = View.VISIBLE
+                    binding.imageView11.visibility = View.VISIBLE
+                    binding.imageView12.visibility = View.VISIBLE
+                    binding.imageView13.visibility = View.GONE
+                    binding.imageView14.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.VISIBLE
+                    binding.backgroundView6.visibility = View.VISIBLE
+                    binding.backgroundView7.visibility = View.VISIBLE
+                    binding.backgroundView8.visibility = View.VISIBLE
+                    binding.backgroundView9.visibility = View.VISIBLE
+                    binding.backgroundView10.visibility = View.VISIBLE
+                    binding.backgroundView11.visibility = View.VISIBLE
+                    binding.backgroundView12.visibility = View.VISIBLE
+                    binding.backgroundView13.visibility = View.GONE
+                    binding.backgroundView14.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView3.visibility = View.VISIBLE
+                    binding.textView6.visibility = View.VISIBLE
+                    binding.textView7.visibility = View.VISIBLE
+                    binding.textView8.visibility = View.VISIBLE
+                    binding.textView9.visibility = View.VISIBLE
+                    binding.textView10.visibility = View.VISIBLE
+                    binding.textView11.visibility = View.VISIBLE
+                    binding.textView12.visibility = View.VISIBLE
+                    binding.textView13.visibility = View.GONE
+                    binding.textView14.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
+                }
+                "3x3" -> {
+                    binding.imageView3.visibility = View.VISIBLE
+                    binding.imageView6.visibility = View.VISIBLE
+                    binding.imageView7.visibility = View.VISIBLE
+                    binding.imageView8.visibility = View.VISIBLE
+                    binding.imageView9.visibility = View.VISIBLE
+                    binding.imageView10.visibility = View.GONE
+                    binding.imageView11.visibility = View.GONE
+                    binding.imageView12.visibility = View.GONE
+                    binding.imageView13.visibility = View.GONE
+                    binding.imageView14.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.VISIBLE
+                    binding.backgroundView6.visibility = View.VISIBLE
+                    binding.backgroundView7.visibility = View.VISIBLE
+                    binding.backgroundView8.visibility = View.VISIBLE
+                    binding.backgroundView9.visibility = View.VISIBLE
+                    binding.backgroundView10.visibility = View.GONE
+                    binding.backgroundView11.visibility = View.GONE
+                    binding.backgroundView12.visibility = View.GONE
+                    binding.backgroundView13.visibility = View.GONE
+                    binding.backgroundView14.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView3.visibility = View.VISIBLE
+                    binding.textView6.visibility = View.VISIBLE
+                    binding.textView7.visibility = View.VISIBLE
+                    binding.textView8.visibility = View.VISIBLE
+                    binding.textView9.visibility = View.VISIBLE
+                    binding.textView10.visibility = View.GONE
+                    binding.textView11.visibility = View.GONE
+                    binding.textView12.visibility = View.GONE
+                    binding.textView13.visibility = View.GONE
+                    binding.textView14.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
+                }
+                "5x2" -> {
+                    binding.imageView3.visibility = View.GONE
+                    binding.imageView6.visibility = View.GONE
+                    binding.imageView9.visibility = View.GONE
+                    binding.imageView12.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.GONE
+                    binding.backgroundView6.visibility = View.GONE
+                    binding.backgroundView9.visibility = View.GONE
+                    binding.backgroundView12.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView3.visibility = View.GONE
+                    binding.textView6.visibility = View.GONE
+                    binding.textView9.visibility = View.GONE
+                    binding.textView12.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
+                }
+                "4x2" -> {
+                    binding.imageView3.visibility = View.GONE
+                    binding.imageView6.visibility = View.GONE
+                    binding.imageView9.visibility = View.GONE
+                    binding.imageView12.visibility = View.GONE
+                    binding.imageView13.visibility = View.GONE
+                    binding.imageView14.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.GONE
+                    binding.backgroundView6.visibility = View.GONE
+                    binding.backgroundView9.visibility = View.GONE
+                    binding.backgroundView12.visibility = View.GONE
+                    binding.backgroundView13.visibility = View.GONE
+                    binding.backgroundView14.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView3.visibility = View.GONE
+                    binding.textView6.visibility = View.GONE
+                    binding.textView9.visibility = View.GONE
+                    binding.textView12.visibility = View.GONE
+                    binding.textView13.visibility = View.GONE
+                    binding.textView14.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
+                }
+                "3x2" -> {
+                    binding.imageView3.visibility = View.GONE
+                    binding.imageView6.visibility = View.GONE
+                    binding.imageView9.visibility = View.GONE
+                    binding.imageView10.visibility = View.GONE
+                    binding.imageView11.visibility = View.GONE
+                    binding.imageView12.visibility = View.GONE
+                    binding.imageView13.visibility = View.GONE
+                    binding.imageView14.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.GONE
+                    binding.backgroundView6.visibility = View.GONE
+                    binding.backgroundView9.visibility = View.GONE
+                    binding.backgroundView10.visibility = View.GONE
+                    binding.backgroundView11.visibility = View.GONE
+                    binding.backgroundView12.visibility = View.GONE
+                    binding.backgroundView13.visibility = View.GONE
+                    binding.backgroundView14.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView3.visibility = View.GONE
+                    binding.textView6.visibility = View.GONE
+                    binding.textView9.visibility = View.GONE
+                    binding.textView10.visibility = View.GONE
+                    binding.textView11.visibility = View.GONE
+                    binding.textView12.visibility = View.GONE
+                    binding.textView13.visibility = View.GONE
+                    binding.textView14.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
+                }
+                "2x2" -> {
+                    binding.imageView3.visibility = View.GONE
+                    binding.imageView6.visibility = View.GONE
+                    binding.imageView7.visibility = View.GONE
+                    binding.imageView8.visibility = View.GONE
+                    binding.imageView9.visibility = View.GONE
+                    binding.imageView10.visibility = View.GONE
+                    binding.imageView11.visibility = View.GONE
+                    binding.imageView12.visibility = View.GONE
+                    binding.imageView13.visibility = View.GONE
+                    binding.imageView14.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.GONE
+                    binding.backgroundView6.visibility = View.GONE
+                    binding.backgroundView7.visibility = View.GONE
+                    binding.backgroundView8.visibility = View.GONE
+                    binding.backgroundView9.visibility = View.GONE
+                    binding.backgroundView10.visibility = View.GONE
+                    binding.backgroundView11.visibility = View.GONE
+                    binding.backgroundView12.visibility = View.GONE
+                    binding.backgroundView13.visibility = View.GONE
+                    binding.backgroundView14.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView3.visibility = View.GONE
+                    binding.textView6.visibility = View.GONE
+                    binding.textView7.visibility = View.GONE
+                    binding.textView8.visibility = View.GONE
+                    binding.textView9.visibility = View.GONE
+                    binding.textView10.visibility = View.GONE
+                    binding.textView11.visibility = View.GONE
+                    binding.textView12.visibility = View.GONE
+                    binding.textView13.visibility = View.GONE
+                    binding.textView14.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
                 }
             }
         }
