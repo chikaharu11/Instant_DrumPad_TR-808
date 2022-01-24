@@ -722,13 +722,13 @@
         app:layout_constraintTop_toBottomOf="@+id/menu_spinner"
         app:layout_constraintVertical_weight="1" />
 
-    <GridView
+    <ListView
         android:id="@+id/grid_view_choose"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
         android:background="#5A5A66"
-        android:numColumns="1"
+        android:divider="@null"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@id/space2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -747,12 +747,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <GridView
+    <ListView
         android:id="@+id/grid_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#5A5A66"
-        android:numColumns="1"
+        android:divider="@null"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@id/space3"
         app:layout_constraintEnd_toEndOf="parent"
