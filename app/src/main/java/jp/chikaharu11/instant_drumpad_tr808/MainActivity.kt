@@ -257,6 +257,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 findViewById<TextView>(R.id.padText15).text = "TR-8_rimshot_03".replace("_"," ").uppercase()
             }
             Configuration.ORIENTATION_LANDSCAPE -> {
+                mpDuration = 320
+                mpDuration2 = 1033
+                mpDuration3 = 794
+                mpDuration4 = 625
+                mpDuration5 = 1070
+                mpDuration6 = 1137
+                mpDuration7 = 55
+                mpDuration8 = 1065
+                mpDuration9 = 773
+                mpDuration10 = 1050
+                mpDuration11 = 1065
+                mpDuration12 = 608
+                mpDuration13 = 1294
+                mpDuration14 = 1072
+                mpDuration15 = 1465
+                padText1 = "TR-8_cymbal_01".replace("_"," ").uppercase()
+                padText2 = "open_hi_hat_01".replace("_"," ").uppercase()
+                padText3 = "clsd_hi_hat_01".replace("_"," ").uppercase()
+                padText4 = "cowbell_01b".replace("_"," ").uppercase()
+                padText5 = "low_tom_01".replace("_"," ").uppercase()
+                padText6 = "snare_drum_01".replace("_"," ").uppercase()
+                padText7 = "tr_8_rimshot_03".replace("_"," ").uppercase()
+                padText8 = "mid_tom_01".replace("_"," ").uppercase()
+                padText9 = "bass_drum_short_01".replace("_"," ").uppercase()
+                padText10 = "claves_02".replace("_"," ").uppercase()
+                padText11 = "high_tom_01".replace("_"," ").uppercase()
+                padText12 = "high_conga_01".replace("_"," ").uppercase()
+                padText13 = "tr_909_cymbal_01".replace("_"," ").uppercase()
+                padText14 = "tr_909_cymbal_02".replace("_"," ").uppercase()
+                padText15 = "clap_01".replace("_"," ").uppercase()
                 binding.textView.text = "TR-8_cymbal_01".replace("_"," ").uppercase()
                 binding.textView2.text = "open_hi_hat_01".replace("_"," ").uppercase()
                 binding.textView3.text = "clsd_hi_hat_01".replace("_"," ").uppercase()
@@ -299,8 +329,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val tuning = if (locale == Locale.JAPAN) {
             arrayOf(
-                "サウンドの調整",
                 "サウンドの設定をリセット",
+                "サウンドの調整",
                 "バナー広告を非表示にする",
                 "終了する",
                 "5x3","5x2",
@@ -309,8 +339,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 "2x2","2x1"
             ) } else {
             arrayOf(
-                "Adjusting Sounds",
                 "Reset the sound settings",
+                "Adjusting Sounds",
                 "Hide banner Ads",
                 "EXIT",
                 "5x3","5x2",
@@ -457,6 +487,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     soundPoolTempo14 = 1.0f
                     soundPoolVolume15 = 0.5f
                     soundPoolTempo15 = 1.0f
+                    findViewById<TextView>(R.id.padText0).text = actionTitle
+                    findViewById<TextView>(R.id.padText1).text = padText1
+                    findViewById<TextView>(R.id.padText2).text = padText2
+                    findViewById<TextView>(R.id.padText3).text = padText3
+                    findViewById<TextView>(R.id.padText4).text = padText4
+                    findViewById<TextView>(R.id.padText5).text = padText5
+                    findViewById<TextView>(R.id.padText6).text = padText6
+                    findViewById<TextView>(R.id.padText7).text = padText7
+                    findViewById<TextView>(R.id.padText8).text = padText8
+                    findViewById<TextView>(R.id.padText9).text = padText9
+                    findViewById<TextView>(R.id.padText10).text = padText10
+                    findViewById<TextView>(R.id.padText11).text = padText11
+                    findViewById<TextView>(R.id.padText12).text = padText12
+                    findViewById<TextView>(R.id.padText13).text = padText13
+                    findViewById<TextView>(R.id.padText14).text = padText14
+                    findViewById<TextView>(R.id.padText15).text = padText15
                     binding.gridView.visibility = View.INVISIBLE
                     Toast.makeText(applicationContext, R.string.reset1, Toast.LENGTH_LONG).show()
                 }
