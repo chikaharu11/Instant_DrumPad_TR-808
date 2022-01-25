@@ -300,28 +300,22 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             arrayOf(
                 "サウンドの調整",
                 "サウンドの設定をリセット",
-                "5x3",
-                "4x3",
-                "3x3",
-                "5x2",
-                "4x2",
-                "3x2",
-                "2x2",
                 "バナー広告を非表示にする",
-                "終了する"
+                "終了する",
+                "5x3","5x2",
+                "4x3","4x2",
+                "3x3","3x2",
+                "2x2","2x1"
             ) } else {
             arrayOf(
                 "Adjusting Sounds",
                 "Reset the sound settings",
-                "5x3",
-                "4x3",
-                "3x3",
-                "5x2",
-                "4x2",
-                "3x2",
-                "2x2",
                 "Hide banner Ads",
-                "EXIT"
+                "EXIT",
+                "5x3","5x2",
+                "4x3","4x2",
+                "3x3","3x2",
+                "2x2","2x1"
             )
             }
         val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning)
@@ -507,6 +501,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         .show()
                 }
                 "5x3" -> {
+                    binding.imageView2.visibility = View.VISIBLE
+                    binding.imageView5.visibility = View.VISIBLE
                     binding.imageView3.visibility = View.VISIBLE
                     binding.imageView6.visibility = View.VISIBLE
                     binding.imageView7.visibility = View.VISIBLE
@@ -518,6 +514,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.imageView13.visibility = View.VISIBLE
                     binding.imageView14.visibility = View.VISIBLE
                     binding.imageView15.visibility = View.VISIBLE
+                    binding.backgroundView2.visibility = View.VISIBLE
+                    binding.backgroundView5.visibility = View.VISIBLE
                     binding.backgroundView3.visibility = View.VISIBLE
                     binding.backgroundView6.visibility = View.VISIBLE
                     binding.backgroundView7.visibility = View.VISIBLE
@@ -529,6 +527,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.backgroundView13.visibility = View.VISIBLE
                     binding.backgroundView14.visibility = View.VISIBLE
                     binding.backgroundView15.visibility = View.VISIBLE
+                    binding.textView2.visibility = View.VISIBLE
+                    binding.textView5.visibility = View.VISIBLE
                     binding.textView3.visibility = View.VISIBLE
                     binding.textView6.visibility = View.VISIBLE
                     binding.textView7.visibility = View.VISIBLE
@@ -543,6 +543,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "4x3" -> {
+                    binding.imageView2.visibility = View.VISIBLE
+                    binding.imageView5.visibility = View.VISIBLE
                     binding.imageView3.visibility = View.VISIBLE
                     binding.imageView6.visibility = View.VISIBLE
                     binding.imageView7.visibility = View.VISIBLE
@@ -554,6 +556,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.imageView13.visibility = View.GONE
                     binding.imageView14.visibility = View.GONE
                     binding.imageView15.visibility = View.GONE
+                    binding.backgroundView2.visibility = View.VISIBLE
+                    binding.backgroundView5.visibility = View.VISIBLE
                     binding.backgroundView3.visibility = View.VISIBLE
                     binding.backgroundView6.visibility = View.VISIBLE
                     binding.backgroundView7.visibility = View.VISIBLE
@@ -565,6 +569,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.backgroundView13.visibility = View.GONE
                     binding.backgroundView14.visibility = View.GONE
                     binding.backgroundView15.visibility = View.GONE
+                    binding.textView2.visibility = View.VISIBLE
+                    binding.textView5.visibility = View.VISIBLE
                     binding.textView3.visibility = View.VISIBLE
                     binding.textView6.visibility = View.VISIBLE
                     binding.textView7.visibility = View.VISIBLE
@@ -579,6 +585,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "3x3" -> {
+                    binding.imageView2.visibility = View.VISIBLE
+                    binding.imageView5.visibility = View.VISIBLE
                     binding.imageView3.visibility = View.VISIBLE
                     binding.imageView6.visibility = View.VISIBLE
                     binding.imageView7.visibility = View.VISIBLE
@@ -590,6 +598,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.imageView13.visibility = View.GONE
                     binding.imageView14.visibility = View.GONE
                     binding.imageView15.visibility = View.GONE
+                    binding.backgroundView2.visibility = View.VISIBLE
+                    binding.backgroundView5.visibility = View.VISIBLE
                     binding.backgroundView3.visibility = View.VISIBLE
                     binding.backgroundView6.visibility = View.VISIBLE
                     binding.backgroundView7.visibility = View.VISIBLE
@@ -601,6 +611,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.backgroundView13.visibility = View.GONE
                     binding.backgroundView14.visibility = View.GONE
                     binding.backgroundView15.visibility = View.GONE
+                    binding.textView2.visibility = View.VISIBLE
+                    binding.textView5.visibility = View.VISIBLE
                     binding.textView3.visibility = View.VISIBLE
                     binding.textView6.visibility = View.VISIBLE
                     binding.textView7.visibility = View.VISIBLE
@@ -615,6 +627,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "5x2" -> {
+                    binding.imageView2.visibility = View.VISIBLE
+                    binding.imageView5.visibility = View.VISIBLE
                     binding.imageView7.visibility = View.VISIBLE
                     binding.imageView8.visibility = View.VISIBLE
                     binding.imageView10.visibility = View.VISIBLE
@@ -626,6 +640,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.imageView9.visibility = View.GONE
                     binding.imageView12.visibility = View.GONE
                     binding.imageView15.visibility = View.GONE
+                    binding.backgroundView2.visibility = View.VISIBLE
+                    binding.backgroundView5.visibility = View.VISIBLE
                     binding.backgroundView7.visibility = View.VISIBLE
                     binding.backgroundView8.visibility = View.VISIBLE
                     binding.backgroundView10.visibility = View.VISIBLE
@@ -637,6 +653,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.backgroundView9.visibility = View.GONE
                     binding.backgroundView12.visibility = View.GONE
                     binding.backgroundView15.visibility = View.GONE
+                    binding.textView2.visibility = View.VISIBLE
+                    binding.textView5.visibility = View.VISIBLE
                     binding.textView7.visibility = View.VISIBLE
                     binding.textView8.visibility = View.VISIBLE
                     binding.textView10.visibility = View.VISIBLE
@@ -651,6 +669,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "4x2" -> {
+                    binding.imageView2.visibility = View.VISIBLE
+                    binding.imageView5.visibility = View.VISIBLE
                     binding.imageView7.visibility = View.VISIBLE
                     binding.imageView8.visibility = View.VISIBLE
                     binding.imageView10.visibility = View.VISIBLE
@@ -662,6 +682,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.imageView13.visibility = View.GONE
                     binding.imageView14.visibility = View.GONE
                     binding.imageView15.visibility = View.GONE
+                    binding.backgroundView2.visibility = View.VISIBLE
+                    binding.backgroundView5.visibility = View.VISIBLE
                     binding.backgroundView7.visibility = View.VISIBLE
                     binding.backgroundView8.visibility = View.VISIBLE
                     binding.backgroundView10.visibility = View.VISIBLE
@@ -673,6 +695,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.backgroundView13.visibility = View.GONE
                     binding.backgroundView14.visibility = View.GONE
                     binding.backgroundView15.visibility = View.GONE
+                    binding.textView2.visibility = View.VISIBLE
+                    binding.textView5.visibility = View.VISIBLE
                     binding.textView7.visibility = View.VISIBLE
                     binding.textView8.visibility = View.VISIBLE
                     binding.textView10.visibility = View.VISIBLE
@@ -687,6 +711,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "3x2" -> {
+                    binding.imageView2.visibility = View.VISIBLE
+                    binding.imageView5.visibility = View.VISIBLE
                     binding.imageView7.visibility = View.VISIBLE
                     binding.imageView8.visibility = View.VISIBLE
                     binding.imageView3.visibility = View.GONE
@@ -698,6 +724,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.imageView13.visibility = View.GONE
                     binding.imageView14.visibility = View.GONE
                     binding.imageView15.visibility = View.GONE
+                    binding.backgroundView2.visibility = View.VISIBLE
+                    binding.backgroundView5.visibility = View.VISIBLE
                     binding.backgroundView7.visibility = View.VISIBLE
                     binding.backgroundView8.visibility = View.VISIBLE
                     binding.backgroundView3.visibility = View.GONE
@@ -709,6 +737,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.backgroundView13.visibility = View.GONE
                     binding.backgroundView14.visibility = View.GONE
                     binding.backgroundView15.visibility = View.GONE
+                    binding.textView2.visibility = View.VISIBLE
+                    binding.textView5.visibility = View.VISIBLE
                     binding.textView7.visibility = View.VISIBLE
                     binding.textView8.visibility = View.VISIBLE
                     binding.textView3.visibility = View.GONE
@@ -723,6 +753,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.gridView.visibility = View.INVISIBLE
                 }
                 "2x2" -> {
+                    binding.imageView2.visibility = View.VISIBLE
+                    binding.imageView5.visibility = View.VISIBLE
                     binding.imageView3.visibility = View.GONE
                     binding.imageView6.visibility = View.GONE
                     binding.imageView7.visibility = View.GONE
@@ -734,6 +766,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.imageView13.visibility = View.GONE
                     binding.imageView14.visibility = View.GONE
                     binding.imageView15.visibility = View.GONE
+                    binding.backgroundView2.visibility = View.VISIBLE
+                    binding.backgroundView5.visibility = View.VISIBLE
                     binding.backgroundView3.visibility = View.GONE
                     binding.backgroundView6.visibility = View.GONE
                     binding.backgroundView7.visibility = View.GONE
@@ -745,7 +779,51 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     binding.backgroundView13.visibility = View.GONE
                     binding.backgroundView14.visibility = View.GONE
                     binding.backgroundView15.visibility = View.GONE
+                    binding.textView2.visibility = View.VISIBLE
+                    binding.textView5.visibility = View.VISIBLE
                     binding.textView3.visibility = View.GONE
+                    binding.textView6.visibility = View.GONE
+                    binding.textView7.visibility = View.GONE
+                    binding.textView8.visibility = View.GONE
+                    binding.textView9.visibility = View.GONE
+                    binding.textView10.visibility = View.GONE
+                    binding.textView11.visibility = View.GONE
+                    binding.textView12.visibility = View.GONE
+                    binding.textView13.visibility = View.GONE
+                    binding.textView14.visibility = View.GONE
+                    binding.textView15.visibility = View.GONE
+                    binding.gridView.visibility = View.INVISIBLE
+                }
+                "2x1" -> {
+                    binding.imageView2.visibility = View.GONE
+                    binding.imageView3.visibility = View.GONE
+                    binding.imageView5.visibility = View.GONE
+                    binding.imageView6.visibility = View.GONE
+                    binding.imageView7.visibility = View.GONE
+                    binding.imageView8.visibility = View.GONE
+                    binding.imageView9.visibility = View.GONE
+                    binding.imageView10.visibility = View.GONE
+                    binding.imageView11.visibility = View.GONE
+                    binding.imageView12.visibility = View.GONE
+                    binding.imageView13.visibility = View.GONE
+                    binding.imageView14.visibility = View.GONE
+                    binding.imageView15.visibility = View.GONE
+                    binding.backgroundView2.visibility = View.GONE
+                    binding.backgroundView3.visibility = View.GONE
+                    binding.backgroundView5.visibility = View.GONE
+                    binding.backgroundView6.visibility = View.GONE
+                    binding.backgroundView7.visibility = View.GONE
+                    binding.backgroundView8.visibility = View.GONE
+                    binding.backgroundView9.visibility = View.GONE
+                    binding.backgroundView10.visibility = View.GONE
+                    binding.backgroundView11.visibility = View.GONE
+                    binding.backgroundView12.visibility = View.GONE
+                    binding.backgroundView13.visibility = View.GONE
+                    binding.backgroundView14.visibility = View.GONE
+                    binding.backgroundView15.visibility = View.GONE
+                    binding.textView2.visibility = View.GONE
+                    binding.textView3.visibility = View.GONE
+                    binding.textView5.visibility = View.GONE
                     binding.textView6.visibility = View.GONE
                     binding.textView7.visibility = View.GONE
                     binding.textView8.visibility = View.GONE
