@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private var padText13 = "claves_02".replace("_"," ").uppercase()
     private var padText14 = "high_conga_01".replace("_"," ").uppercase()
     private var padText15 = "TR-8_rimshot_03".replace("_"," ").uppercase()
+
     private var count = 0.5f
     private var bpm = 1.0f
 
@@ -257,36 +258,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
             Configuration.ORIENTATION_LANDSCAPE -> {
                 binding.textView.text = "TR-8_cymbal_01".replace("_"," ").uppercase()
-                binding.textView2.text = "cowbell_01b".replace("_"," ").uppercase()
-                binding.textView3.text = "TR-909_cymbal_01".replace("_"," ").uppercase()
-                binding.textView4.text = "open_hi_hat_01".replace("_"," ").uppercase()
-                binding.textView5.text = "clap_01".replace("_"," ").uppercase()
-                binding.textView6.text = "TR-909_cymbal_02".replace("_"," ").uppercase()
-                binding.textView7.text = "clsd_hi_hat_01".replace("_"," ").uppercase()
-                binding.textView8.text = "high_tom_01".replace("_"," ").uppercase()
-                binding.textView9.text = "mid_tom_01".replace("_"," ").uppercase()
-                binding.textView10.text = "snare_drum_01".replace("_"," ").uppercase()
-                binding.textView11.text = "bass_drum_short_01".replace("_"," ").uppercase()
-                binding.textView12.text = "low_tom_01".replace("_"," ").uppercase()
-                binding.textView13.text = "claves_02".replace("_"," ").uppercase()
-                binding.textView14.text = "high_conga_01".replace("_"," ").uppercase()
-                binding.textView15.text = "TR-8_rimshot_03".replace("_"," ").uppercase()
+                binding.textView2.text = "open_hi_hat_01".replace("_"," ").uppercase()
+                binding.textView3.text = "clsd_hi_hat_01".replace("_"," ").uppercase()
+                binding.textView4.text = "cowbell_01b".replace("_"," ").uppercase()
+                binding.textView5.text = "low_tom_01".replace("_"," ").uppercase()
+                binding.textView6.text = "snare_drum_01".replace("_"," ").uppercase()
+                binding.textView7.text = "tr_8_rimshot_03".replace("_"," ").uppercase()
+                binding.textView8.text = "mid_tom_01".replace("_"," ").uppercase()
+                binding.textView9.text = "bass_drum_short_01".replace("_"," ").uppercase()
+                binding.textView10.text = "claves_02".replace("_"," ").uppercase()
+                binding.textView11.text = "high_tom_01".replace("_"," ").uppercase()
+                binding.textView12.text = "high_conga_01".replace("_"," ").uppercase()
+                binding.textView13.text = "tr_909_cymbal_01".replace("_"," ").uppercase()
+                binding.textView14.text = "tr_909_cymbal_02".replace("_"," ").uppercase()
+                binding.textView15.text = "clap_01".replace("_"," ").uppercase()
                 findViewById<TextView>(R.id.padText0).text = actionTitle
                 findViewById<TextView>(R.id.padText1).text = "TR-8_cymbal_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText2).text = "cowbell_01b".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText3).text = "TR-909_cymbal_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText4).text = "open_hi_hat_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText5).text = "clap_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText6).text = "TR-909_cymbal_02".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText7).text = "clsd_hi_hat_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText8).text = "high_tom_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText9).text = "mid_tom_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText10).text = "snare_drum_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText11).text = "bass_drum_short_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText12).text = "low_tom_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText13).text = "claves_02".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText14).text = "high_conga_01".replace("_"," ").uppercase()
-                findViewById<TextView>(R.id.padText15).text = "TR-8_rimshot_03".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText2).text = "open_hi_hat_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText3).text = "clsd_hi_hat_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText4).text = "cowbell_01b".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText5).text = "low_tom_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText6).text = "snare_drum_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText7).text = "tr_8_rimshot_03".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText8).text = "mid_tom_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText9).text = "bass_drum_short_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText10).text = "claves_02".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText11).text = "high_tom_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText12).text = "high_conga_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText13).text = "tr_909_cymbal_01".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText14).text = "tr_909_cymbal_02".replace("_"," ").uppercase()
+                findViewById<TextView>(R.id.padText15).text = "clap_01".replace("_"," ").uppercase()
             }
             Configuration.ORIENTATION_SQUARE -> {
                 TODO()
@@ -1897,33 +1898,33 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
                 sound1 = soundPool.load(assets.openFd("tr_8_cymbal_01.ogg"), 1)
 
-                sound2 = soundPool.load(assets.openFd("cowbell_01b.ogg"), 1)
+                sound2 = soundPool.load(assets.openFd("open_hi_hat_01.ogg"), 1)
 
-                sound3 = soundPool.load(assets.openFd("tr_909_cymbal_01.ogg"), 1)
+                sound3 = soundPool.load(assets.openFd("clsd_hi_hat_01.ogg"), 1)
 
-                sound4 = soundPool.load(assets.openFd("open_hi_hat_01.ogg"), 1)
+                sound4 = soundPool.load(assets.openFd("cowbell_01b.ogg"), 1)
 
-                sound5 = soundPool.load(assets.openFd("clap_01.ogg"), 1)
+                sound5 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
 
-                sound6 = soundPool.load(assets.openFd("tr_909_cymbal_02.ogg"), 1)
+                sound6 = soundPool.load(assets.openFd("snare_drum_01.ogg"), 1)
 
-                sound7 = soundPool.load(assets.openFd("clsd_hi_hat_01.ogg"), 1)
+                sound7 = soundPool.load(assets.openFd("tr_8_rimshot_03.ogg"), 1)
 
-                sound8 = soundPool.load(assets.openFd("high_tom_01.ogg"), 1)
+                sound8 = soundPool.load(assets.openFd("mid_tom_01.ogg"), 1)
 
-                sound9 = soundPool.load(assets.openFd("mid_tom_01.ogg"), 1)
+                sound9 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
 
-                sound10 = soundPool.load(assets.openFd("snare_drum_01.ogg"), 1)
+                sound10 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
 
-                sound11 = soundPool.load(assets.openFd("bass_drum_short_01.ogg"), 1)
+                sound11 = soundPool.load(assets.openFd("high_tom_01.ogg"), 1)
 
-                sound12 = soundPool.load(assets.openFd("low_tom_01.ogg"), 1)
+                sound12 = soundPool.load(assets.openFd("high_conga_01.ogg"), 1)
 
-                sound13 = soundPool.load(assets.openFd("claves_02.ogg"), 1)
+                sound13 = soundPool.load(assets.openFd("tr_909_cymbal_01.ogg"), 1)
 
-                sound14 = soundPool.load(assets.openFd("high_conga_01.ogg"), 1)
+                sound14 = soundPool.load(assets.openFd("tr_909_cymbal_02.ogg"), 1)
 
-                sound15 = soundPool.load(assets.openFd("tr_8_rimshot_03.ogg"), 1)
+                sound15 = soundPool.load(assets.openFd("clap_01.ogg"), 1)
 
             }
             Configuration.ORIENTATION_SQUARE -> {

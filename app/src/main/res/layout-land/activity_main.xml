@@ -784,7 +784,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/space3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="1"/>
+        app:layout_constraintHorizontal_weight="3"/>
 
     <Space
         android:id="@+id/space3"
@@ -796,7 +796,7 @@
         app:layout_constraintEnd_toStartOf="@id/grid_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_weight="1" />
+        app:layout_constraintHorizontal_weight="2" />
 
     <FrameLayout
         android:id="@+id/adView"
