@@ -3639,8 +3639,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
             override fun onAdShowedFullScreenContent() {
                 Log.d("rewarded ads", "Ad showed fullscreen content.")
-                // Called when ad is dismissed.
-                // Don't set the ad reference to null to avoid showing the ad a second time.
                 mRewardedAd = null
             }
         }
@@ -4565,7 +4563,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     }
                     actionGridView.isInvisible && tuningView.isVisible -> {
                         tuningView.visibility = View.INVISIBLE
-                        actionGridView.visibility = View.VISIBLE
                     }
                     actionGridView.isInvisible -> {
                         actionGridView.visibility = View.VISIBLE
