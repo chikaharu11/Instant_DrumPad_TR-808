@@ -722,13 +722,13 @@
         app:layout_constraintTop_toBottomOf="@+id/menu_spinner"
         app:layout_constraintVertical_weight="1" />
 
-    <ListView
+    <GridView
         android:id="@+id/grid_view_choose"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
         android:background="#5A5A66"
-        android:divider="@null"
+        android:numColumns="1"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@id/space2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -747,17 +747,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_weight="1"/>
 
-    <ListView
+    <GridView
         android:id="@+id/grid_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#5A5A66"
-        android:divider="@null"
+        android:numColumns="2"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@id/space3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_weight="2"/>
+        app:layout_constraintHorizontal_weight="1"/>
 
     <Space
         android:id="@+id/space3"
@@ -769,7 +769,7 @@
         app:layout_constraintEnd_toStartOf="@id/grid_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_weight="1"/>
+        app:layout_constraintHorizontal_weight="0"/>
 
     <FrameLayout
         android:id="@+id/adView"

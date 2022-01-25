@@ -325,7 +325,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             )
             }
         val adapter = ArrayAdapter(this, R.layout.custom_spinner_dropdown, tuning)
-        val gridView: ListView = findViewById(R.id.grid_view)
+        val gridView: GridView = findViewById(R.id.grid_view)
         gridView.adapter = adapter
 
         gridView.setOnItemClickListener { adapterView, _, position, _ ->
@@ -778,7 +778,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             )
         }
         val adapter2 = ArrayAdapter(this, R.layout.custom_spinner_dropdown, choose)
-        val gridView2: ListView = findViewById(R.id.grid_view_choose)
+        val gridView2: GridView = findViewById(R.id.grid_view_choose)
         val soundListView = findViewById<ListView>(R.id.list_view)
         gridView2.adapter = adapter2
 
@@ -4366,8 +4366,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         val soundListView = findViewById<ListView>(R.id.list_view)
-        val actionGridView = findViewById<ListView>(R.id.grid_view)
-        val chooseGridView = findViewById<ListView>(R.id.grid_view_choose)
+        val actionGridView = findViewById<GridView>(R.id.grid_view)
+        val chooseGridView = findViewById<GridView>(R.id.grid_view_choose)
         val tuningView = findViewById<View>(R.id.view)
 
         when (item.itemId) {
